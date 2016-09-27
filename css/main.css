@@ -1,0 +1,341 @@
+/*FONT*/
+
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,800';
+.open-sans{
+	font-family: 'Open Sans', sans-serif;
+}
+
+
+
+/*GLOBAL STYLING*/
+html{
+	height: 100%;
+	overflow: hidden;
+}
+
+body{
+	background-color: rgba(33,35,56,1);
+	margin: 0;
+	height: 100%;
+}
+h1{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 800;
+}
+span{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+}
+
+
+
+
+
+
+/*COLORS*/
+.background-light-grey{
+	background-color: #eeeeee;
+}
+
+.back-image{
+	background-image: url("../images/college-students.jpg");
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+}
+
+.background-blue{
+	background-color: #2554B0;
+}
+
+.grayscale{
+	-webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
+    filter: grayscale(100%);
+}
+
+.grayscale-50{
+	-webkit-filter: grayscale(50%); /* Chrome, Safari, Opera */
+    filter: grayscale(50%);
+}
+
+.grayscale-75{
+	-webkit-filter: grayscale(75%); /* Chrome, Safari, Opera */
+    filter: grayscale(75%);
+}
+
+.font-white{
+	color: #ffffff;
+}
+
+.sky-text{
+	color: rgba(215,249,251,1);
+}
+
+
+
+/*OPACITY*/
+
+.opacity-50{
+	opacity: 0.5;
+}
+
+.opacity-25{
+	opacity: 0.25;
+}
+
+.opacity-30{
+	opacity: 0.3;
+}
+
+.opacity-75{
+	opacity: 0.75;
+}
+
+.opacity-65{
+	opacity: 0.65;
+}
+.invisible{
+	visibility:hidden; 
+}
+
+
+/*OBJECT SIZING*/
+
+.full-image{
+	width: 100%;
+	height: auto;
+}
+
+.height-400{
+	height: 400px;
+}
+
+.height-full{
+	height: 100%;
+}
+
+.height-auto{
+	height: auto;
+}
+
+.width-full{
+	width: 100%;
+}
+
+.title-font-size{
+	font-size: 5em;
+}
+
+/*IMAGE SIZING*/
+
+.image-width-full-sizing{
+	width: 100%;
+	height: auto;
+}
+
+/*OBJECT ATTRIBUTES*/
+
+.overflow-hidden{
+	overflow: hidden;
+}
+
+.overflow-x-hidden{
+	overflow-x: hidden; 
+}
+
+.overflow-y-hidden{
+	overflow-y: hidden; 
+}
+.overflow-auto{
+	overflow: auto;
+}
+.overflow-visible{
+	overflow: visible;
+}
+
+.no-margin{
+	margin: 0;
+}
+.no-padding{
+	padding:none;
+}
+.link{
+	cursor: pointer;
+}
+.no-cursor{
+	cursor: default;
+}
+
+.unselectable{
+	-webkit-user-select: none; /* Chrome/Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
+
+	/* Rules below not implemented in browsers yet */
+	-o-user-select: none;
+	user-select: none;
+}
+.skinny-font{
+	font-weight: 300;
+}
+
+/*POSITION*/
+
+.position-relative{
+	position: relative;
+}
+
+.position-absolute{
+	position: absolute;
+}
+
+.position-over{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+
+.position-under{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
+.position-absolute-middle{
+	position: absolute;
+  	left: 50%;
+  	top: 50%;
+  	transform: translateX(-50%) translateY(-50%);
+}
+
+.right-20{
+	right: 20px;
+}
+
+.right-5p{
+	right: 5%;
+}
+
+.top{
+	top: 0;
+}
+
+.top-10{
+	top: 10px;
+}
+
+.position-inline-outer-middle{
+	text-align: center;
+}
+.position-inline-inner-middle{
+	display: inline-block;
+}
+
+.zindex-top{
+	z-index: 999;
+}
+
+.negative-margin-full{
+	transform: translateY(-100%);
+}
+
+.margin-right-10{
+	margin-right: 10px;
+}
+
+.bump-top-left{
+	margin-left: 20px;
+	margin-top: 20px;
+}
+
+/*UNIQUE*/
+#main-image-cover{
+	height: 200%;
+	transform: translateY(-100.3%);
+}
+
+#info-block{
+	-moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+	background-color: rgba(0,0,0,0.15);
+	border: solid;
+	border-width: 5px;
+	border-color: rgba(255,255,255,0.8);
+	border-radius: 10px;
+	color: rgba(255,255,255,1);
+	width: 300px;
+	height: 200px;
+	position: absolute;
+	bottom: -10px;
+	right: 20px;
+	padding: 10px;
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+}
+#info-block:hover{
+	background-color: rgba(0,0,0,0.5);
+}
+/*#info-block h2{
+	font-weight: 400;
+}*/
+
+#info-block h1{
+	/*font-weight: 400;*/
+}
+
+#info-block h3{
+	/*font-weight: 400;*/
+
+	color: rgba(215,249,251,1);
+	/*color: rgba(251,210,227,1);*/
+	/*color: rgba(187,196,255,1);*/
+}
+
+#rsvp-button{
+	-moz-transition: all .1s ease-in;
+    -o-transition: all .1s ease-in;
+    -webkit-transition: all .1s ease-in;
+    transition: all .1s ease-in;
+	border: solid;
+	border-width: 4px;
+	border-radius: 3px;
+	border-color: rgba(215,249,251,1);
+	width: 40%;
+	height: auto;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 1.5em;
+	line-height: 1.5em;
+	cursor: pointer;
+}
+
+#rsvp-button:hover{
+	background-color: rgba(215,249,251,1);
+	color: rgba(0,0,0,0.7);
+}
+
+#schedule{
+	background-color: rgba(33,35,56,1);
+	/*height: 500px;*/
+}
+
+#schedule-container{
+	width: calc(100% - 360px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
