@@ -18,10 +18,10 @@ body{
 	margin: 0;
 	height: 100%;
 }
-h1{
+h1,h2,h3,h4,h5,p,span{
 	font-family: 'Open Sans', sans-serif;
-	font-weight: 800;
 }
+
 span{
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
@@ -62,8 +62,20 @@ span{
     filter: grayscale(75%);
 }
 
+.electric-back{
+	background-color: rgba(98,-18,31,1);
+}
+
 .font-white{
 	color: #ffffff;
+}
+
+.berry-text{
+	color: rgba(148,69,103,1.0);
+}
+
+.sky-back{
+	background-color: rgba(215,249,251,1);
 }
 
 .sky-text{
@@ -174,8 +186,16 @@ span{
 	-o-user-select: none;
 	user-select: none;
 }
+
 .skinny-font{
 	font-weight: 300;
+}
+
+.electric-separator{
+	display: block;
+	height: 2px;
+	background-color: rgba(234,245,186,1);
+	border:none;
 }
 
 /*POSITION*/
@@ -324,8 +344,17 @@ span{
 }
 
 #schedule-container{
-	width: calc(100% - 360px);
+	width: calc(100% - 390px);
 }
+
+#schedule-wrapper{
+	margin-left: 70px;
+	width: calc(100% - 70px);
+	padding-bottom: 40px; 
+	/*height: calc(100% - 200px);*/
+	/*overflow: auto;*/
+}
+
 
 
 
