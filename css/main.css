@@ -164,6 +164,10 @@ span{
 	overflow: visible;
 }
 
+.inline{
+	display: inline;
+}
+
 .no-margin{
 	margin: 0;
 }
@@ -175,6 +179,10 @@ span{
 }
 .no-cursor{
 	cursor: default;
+}
+
+.get-off-right{
+	padding-right: 20px;
 }
 
 .unselectable{
