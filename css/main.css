@@ -212,6 +212,10 @@ span{
 	user-select: none;
 }
 
+.padding-bottom-20{
+	padding-bottom: 20px;
+}
+
 .skinny-font{
 	font-weight: 300;
 }
@@ -232,6 +236,11 @@ span{
 	width: 20px;
 	height: 20px;
 	border-radius: 20px;
+	transform: translateX(calc(-180% - 1px));
+}
+
+.schedule-time{
+	transform: translateX(-160%);
 }
 
 /*POSITION*/
