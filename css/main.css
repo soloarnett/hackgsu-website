@@ -63,7 +63,7 @@ span{
 }
 
 .electric-back{
-	background-color: rgba(98,-18,31,1);
+	background-color: rgba(234,245,186,1);
 }
 
 .font-white{
@@ -74,12 +74,25 @@ span{
 	color: rgba(148,69,103,1.0);
 }
 
+.berry-back{
+	background-color: rgba(148,69,103,1.0);
+}
+
 .sky-back{
 	background-color: rgba(215,249,251,1);
 }
 
 .sky-text{
 	color: rgba(215,249,251,1);
+}
+
+.electric-blue-back{
+	background-color: rgba(10,50,92,1);
+}
+.skinny-border-white{
+	border-style: solid;
+	border-width: 2px;
+	border-color: #ffffff;
 }
 
 
@@ -135,6 +148,10 @@ span{
 
 .title-font-size{
 	font-size: 5em;
+}
+
+.agenda-tracker{
+	width: 2px;
 }
 
 /*IMAGE SIZING*/
@@ -206,6 +223,17 @@ span{
 	border:none;
 }
 
+.day-sign{
+	/*width: 150px;*/
+	height: 300px;
+}
+
+.agenda-trackball{
+	width: 20px;
+	height: 20px;
+	border-radius: 20px;
+}
+
 /*POSITION*/
 
 .position-relative{
@@ -230,11 +258,23 @@ span{
 	z-index: 1;
 }
 
+.float-left{
+	float: left;
+}
+
+.float-right{
+	float: right;
+}
+
 .position-absolute-middle{
 	position: absolute;
   	left: 50%;
   	top: 50%;
   	transform: translateX(-50%) translateY(-50%);
+}
+
+.position-translate-x-middle{
+	transform: translateX(calc(-50% + 1px));
 }
 
 .right-20{
@@ -275,6 +315,9 @@ span{
 .bump-top-left{
 	margin-left: 20px;
 	margin-top: 20px;
+}
+.bump-down-10{
+	padding-top: 10px;
 }
 
 /*UNIQUE*/
@@ -361,6 +404,10 @@ span{
 	padding-bottom: 40px; 
 	/*height: calc(100% - 200px);*/
 	/*overflow: auto;*/
+}
+
+#agenda-object-container{
+	width: 300px;
 }
 
 
