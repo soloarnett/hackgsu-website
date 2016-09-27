@@ -408,8 +408,8 @@ span{
 }
 
 #schedule-wrapper{
-	margin-left: 70px;
-	width: calc(100% - 70px);
+	margin-left: 170px;
+	width: calc(100% - 170px);
 	padding-bottom: 40px; 
 	/*height: calc(100% - 200px);*/
 	/*overflow: auto;*/
@@ -417,6 +417,11 @@ span{
 
 #agenda-object-container{
 	width: 300px;
+}
+
+#schedule-title{
+	padding-top: 50px;
+	padding-left: 50px;
 }
 
 
