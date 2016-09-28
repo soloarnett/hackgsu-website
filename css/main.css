@@ -316,6 +316,10 @@ span{
 	right: 5%;
 }
 
+.left-5p{
+	left: 5%;
+}
+
 .top{
 	top: 0;
 }
@@ -341,6 +345,14 @@ span{
 
 .margin-right-10{
 	margin-right: 10px;
+}
+
+.margin-left-10{
+	margin-left: 10px;
+}
+
+.margin-left-20{
+	margin-left: 20px;
 }
 
 .bump-top-left{
