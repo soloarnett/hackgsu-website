@@ -42,12 +42,6 @@ span{
 	background-color: #eeeeee;
 }
 
-.back-image{
-	background-image: url("../images/college-students.jpg");
-	background-size: 100% auto;
-	background-repeat: no-repeat;
-}
-
 .background-blue{
 	background-color: #2554B0;
 }
@@ -180,6 +174,10 @@ span{
 }
 
 /*OBJECT ATTRIBUTES*/
+.background-big-image{
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+}
 
 .overflow-hidden{
 	overflow: hidden;
@@ -462,9 +460,12 @@ span{
 	
 }
 
-#petit-container{
+#petit-image{
 	background-image: url("../images/petit_sky.jpg");
-	background-size: 100%;
+}
+
+#back-image{
+	background-image: url("../images/college-students.jpg");
 }
 
 
