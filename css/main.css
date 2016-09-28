@@ -33,6 +33,11 @@ span{
 
 
 /*COLORS*/
+
+.background-dark-grey{
+	background-color: #333333;
+}
+
 .background-light-grey{
 	background-color: #eeeeee;
 }
@@ -71,11 +76,11 @@ span{
 }
 
 .berry-text{
-	color: rgba(148,69,103,1.0);
+	color: rgba(51,22,41,1.0);
 }
 
 .berry-back{
-	background-color: rgba(148,69,103,1.0);
+	background-color: rgba(56,24,61,0.5);
 }
 
 .sky-back{
@@ -145,6 +150,19 @@ span{
 .width-full{
 	width: 100%;
 }
+
+.height-fit{
+	height: 80%;
+}
+
+.width-fit{
+	width: 90%;
+}
+
+.ad-avoider{
+	width: calc(100% - 390px);
+}
+
 
 .title-font-size{
 	font-size: 5em;
@@ -249,6 +267,10 @@ span{
 	position: relative;
 }
 
+.relative-centering{
+	margin: 0 auto;
+}
+
 .position-absolute{
 	position: absolute;
 }
@@ -328,6 +350,10 @@ span{
 .bump-down-10{
 	padding-top: 10px;
 }
+.title-placement{
+	padding-top: 50px;
+	padding-left: 50px;
+}
 
 /*UNIQUE*/
 #main-image-cover{
@@ -400,16 +426,17 @@ span{
 
 #schedule{
 	background-color: rgba(33,35,56,1);
+	padding-bottom: 125px;
 	/*height: 500px;*/
 }
 
 #schedule-container{
-	width: calc(100% - 390px);
+	
 }
 
 #schedule-wrapper{
-	margin-left: 170px;
-	width: calc(100% - 170px);
+	margin-left: 20vw;
+	width: calc(100% - 20vw);
 	padding-bottom: 40px; 
 	/*height: calc(100% - 200px);*/
 	/*overflow: auto;*/
@@ -420,8 +447,12 @@ span{
 }
 
 #schedule-title{
-	padding-top: 50px;
-	padding-left: 50px;
+	
+}
+
+#petit-container{
+	background-image: url("../images/petit_sky.jpg");
+	background-size: 100%;
 }
 
 
