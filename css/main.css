@@ -484,9 +484,9 @@ span{
 
 
 /*----------------------------------------@MEDIA----------------------------------------*/
-@media(max-width: 3840px){
+@media(max-width: 2560px){
 	.min-width-1124{
-		min-width: 3067px;
+		min-width: 1218px;
 	}
 }
 
