@@ -157,7 +157,7 @@ span{
 }
 
 .ad-avoider{
-	width: calc(100% - 410px);
+	width: calc(100% - 390px);
 }
 
 
@@ -391,7 +391,7 @@ span{
 	height: 200px;
 	position: absolute;
 	bottom: -10px;
-	right: 40px;
+	right: 20px;
 	padding: 10px;
 	text-align: center;
 	font-family: 'Open Sans', sans-serif;
