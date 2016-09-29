@@ -9,22 +9,27 @@
 	
 
 	<!-- welcome -->
-	<div class="full-image height-full overflow-visible position-relative float-left">
-		<div class="image-cover width-full height-auto position-relative background-big-image" id="back-image">
-			<img class="width-full invisible" src="images/college-students.jpg">
-			<div class="font-white position-absolute top-10 left-5p zindex-top">
+	<div class="full-image height-full position-relative float-left overflow-x-hidden">
+		<div class="width-full height-full zindex-top position-absolute">
+			<div class="font-white position-absolute top-10 left-5p zindex-top mobile-top-links-positioning">
 				<span class="position-relative link unselectable">FAQ</span>
 				<span class="position-relative margin-left-20 link unselectable">Sponsors</span>
 			</div>
+		</div>
+		<div class="width-full height-full background-blue position-absolute zindex-3 opacity-50" id="main-image-cover">
 			<h1 class="font-white zindex-top no-margin opacity-75 position-absolute-middle title-font-size unselectable no-cursor">hackGSU</h1>
 		</div>
-		<div class="width-full background-blue position-relative opacity-50" id="main-image-cover"></div>
+		<div class="image-cover width-full min-width-1121 height-auto position-relative background-big-image" id="back-image">
+			<img class="width-full invisible" src="images/top-image-sizer.png">
+			
+		</div>
+		
 	</div>
 
 	<!-- schedule -->
 	<div class="width-full height-auto position-relative float-left" id="schedule">
 		<div class="height-full ad-avoider position-relative float-left" id="schedule-container">
-			<h1 class="unselectable no-cursor title-font-size skinny-font sky-text bump-top-left title-placement" id="schedule-title">Schedule</h1>
+			<h1 class="unselectable no-cursor title-font-size skinny-font sky-text bump-top-left title-placement mobile-center-h1 mobile-padding-vertical-bump" id="schedule-title">Schedule</h1>
 			<div class="" id="schedule-wrapper">
 				<!-- Agenda -->
 				<div class="day-sign position-relative" id="">
@@ -68,8 +73,8 @@
 	</div>
 
 	<!-- petit image -->
-	<div class="width-full height-full position-relative float-left background-big-image" id="petit-image">
-		
+	<div class="width-full height-full overflow-x-hidden">
+		<div class="width-full height-full position-relative float-left background-big-image min-width-999" id="petit-image"></div>
 	</div>
 
 	<!-- contact and little faq -->
@@ -81,7 +86,7 @@
 	</div>
 
 	<!-- info block -->
-	<div id="info-block">
+	<div class="zindex-top" id="info-block">
 		<h3 class="link unselectable">Georgia State University</h3>
 		<h1 class="no-cursor unselectable">10 . 21 . 16</h1>
 		<div class="open-sans position-inline-inner-middle unselectable" id="rsvp-button">regisTER</div>
