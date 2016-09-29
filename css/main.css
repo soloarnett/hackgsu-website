@@ -169,6 +169,10 @@ span{
 	width: 2px;
 }
 
+.min-height-100p{
+	min-height: 100%;
+}
+
 /*IMAGE SIZING*/
 
 .image-width-full-sizing{
