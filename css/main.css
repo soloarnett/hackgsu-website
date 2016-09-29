@@ -280,6 +280,11 @@ span{
 	position: absolute;
 }
 
+.position-absolute-top{
+	top: 0;
+	left: 0;
+}
+
 .position-over{
 	position: absolute;
 	top: 0;
