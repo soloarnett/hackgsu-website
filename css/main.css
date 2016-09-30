@@ -493,6 +493,15 @@ span{
 	}
 }
 
+@media(max-width: 1500px){
+	.min-width-1124{
+		min-width: 1124px;
+	}
+	.min-width-999{
+		min-width: 999px;
+	}
+}
+
 
 
 @media(max-width:755px){
