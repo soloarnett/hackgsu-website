@@ -124,8 +124,8 @@ span{
 	height: auto;
 }
 
-.min-width-1124{
-	min-width: 1124px;
+.min-width-1331{
+	min-width: 1331px;
 }
 
 .min-width-999{
@@ -479,7 +479,7 @@ span{
 }
 
 #back-image{
-	background-image: url("../images/mobile-college-students.jpg");
+	background-image: url("../images/cover.gif");
 }
 
 
@@ -494,8 +494,8 @@ span{
 }
 
 @media(max-width: 1500px){
-	.min-width-1124{
-		min-width: 1124px;
+	.min-width-1331{
+		min-width: 1331px;
 	}
 	.min-width-999{
 		min-width: 999px;
