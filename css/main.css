@@ -72,6 +72,10 @@ span{
 	background-color: rgba(56,24,61,0.5);
 }
 
+.teal-back{
+	background-color: rgba(18,51,41,0.5);
+}
+
 .sky-back{
 	background-color: rgba(215,249,251,1);
 }
@@ -181,6 +185,10 @@ span{
 }
 
 /*OBJECT ATTRIBUTES*/
+.blur-50{
+	-webkit-filter: blur(5px); /* Chrome, Safari, Opera */
+    filter: blur(5px);
+}
 .background-big-image{
 	background-size: 100% auto;
 	background-repeat: no-repeat;
@@ -385,6 +393,10 @@ span{
 #main-image-cover{
 }
 
+#atlanta-gif{
+	background-image: url("../images/cover.gif");
+}
+
 #info-block{
 	-moz-transition: all .2s ease-in;
     -o-transition: all .2s ease-in;
@@ -408,6 +420,8 @@ span{
 }
 #info-block:hover{
 	background-color: rgba(0,0,0,0.5);
+	/*-webkit-filter: blur(5px); 
+    filter: blur(5px);*/
 }
 /*#info-block h2{
 	font-weight: 400;
@@ -424,6 +438,11 @@ span{
 	/*color: rgba(251,210,227,1);*/
 	/*color: rgba(187,196,255,1);*/
 }
+
+/*#info-block::before{
+	-webkit-filter: blur(5px); 
+    filter: blur(5px);
+}*/
 
 #rsvp-button{
 	-moz-transition: all .1s ease-in;
@@ -479,7 +498,11 @@ span{
 }
 
 #back-image{
-	background-image: url("../images/cover.gif");
+	background-image: url("../images/cover.jpg");
+}
+
+#image2{
+	background-image: url("../images/mobile-image2.jpg");
 }
 
 
@@ -537,6 +560,11 @@ span{
 
 	#info-block{
 		display: none;
+	}
+
+	#bacl-image{
+		background-position: right bottom;
+		width: 100%;
 	}
 }
 
