@@ -702,6 +702,9 @@ span{
 		text-align: left;
 		width: 100%;
 	}
+	.title-font-size{
+		font-size: 4em;
+	}
 
 
 
