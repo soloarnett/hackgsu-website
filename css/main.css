@@ -17,13 +17,10 @@ body{
 	background-color: rgba(33,35,56,1);
 	margin: 0;
 	height: 100%;
-}
-h1,h2,h3,h4,h5,p,span{
 	font-family: 'Open Sans', sans-serif;
 }
 
 span{
-	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
 }
 
@@ -185,6 +182,10 @@ span{
 }
 
 /*OBJECTS*/
+.faq-container{
+	padding: 20px;
+	width: calc(100% - 40px);
+}
 .agenda-object{
 	position: relative;
 	width: 100%;
@@ -259,6 +260,9 @@ span{
 .padding-bottom-20{
 	padding-bottom: 20px;
 }
+.padding-top-20{
+	padding-top: 20px;
+}
 
 .skinny-font{
 	font-weight: 300;
@@ -303,6 +307,21 @@ span{
 	width: 100%;
 	left: 40px;
 	color: #ffffff;
+}
+
+.faq-item{
+	width: calc(50% - 10px);
+	position: relative;
+	color: #ffffff;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.center{
+	clear: both;
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
 }
 
 /*POSITION*/
@@ -545,7 +564,7 @@ span{
 
 @media(max-width: 1500px){
 	.min-width-1331{
-		min-width: 1331px;
+		min-width: 1500px;
 	}
 	.min-width-999{
 		min-width: 999px;
@@ -579,6 +598,11 @@ span{
 		left: 50%;
 		transform: translateX(-50%);
 		bottom: 40px;
+	}
+
+	.faq-item{
+		width: 100%;
+		float: left;
 	}
 
 
