@@ -41,6 +41,10 @@ span{
 	background-color: #333333;
 }
 
+.placeholder{
+	background-color: black;
+}
+
 .background-light-grey{
 	background-color: #eeeeee;
 }
@@ -611,7 +615,7 @@ span{
 }
 
 #back-image{
-	background-image: url("../images/cover.jpg");
+	/*background-image: url("../images/cover.jpg");*/
 }
 
 #image2{
@@ -708,8 +712,10 @@ span{
 	}
 
 	#back-image{
-		background-position: right bottom;
-		width: 100%;
+		background-image: url("../images/mobile-top-image.jpg");
+		background-size: 100%;
+		/*background-position: center;*/
+		background-repeat: no-repeat;
 	}
 	#schedule-wrapper{
 		margin-left: 30vw;
