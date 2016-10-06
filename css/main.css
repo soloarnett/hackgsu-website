@@ -446,8 +446,8 @@ span{
 	margin-left: 10px;
 }
 
-.margin-left-20{
-	margin-left: 20px;
+.margin-left-60{
+	margin-left: 60px;
 }
 
 .bump-top-left{
@@ -617,17 +617,22 @@ span{
 	}
 
 	.mobile-top-links-positioning{
+		background-color: black;
+		height: 60px;
+		position: fixed;
 		top: auto;
 		/*left: 50%;*/
 		/*transform: translateX(-50%);*/
 		width: 100%;
-		bottom: 40px;
+		bottom: 0px;
 		left: 0;
+		vertical-align: middle;
 	}
 	.mobile-top-links-container{
 		margin: 0 auto;
 		width: auto;
 		text-align: center;
+		transform: translateY(90%);
 	}
 
 	.faq-item{
