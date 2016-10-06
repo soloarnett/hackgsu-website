@@ -16,7 +16,7 @@ html{
 body{
 	background-color: rgba(33,35,56,1);
 	margin: 0;
-	height: 100%;
+	height: 100vh;
 	font-family: 'Open Sans', sans-serif;
 }
 
