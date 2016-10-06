@@ -618,9 +618,16 @@ span{
 
 	.mobile-top-links-positioning{
 		top: auto;
-		left: 50%;
-		transform: translateX(-50%);
+		/*left: 50%;*/
+		/*transform: translateX(-50%);*/
+		width: 100%;
 		bottom: 40px;
+		left: 0;
+	}
+	.mobile-top-links-container{
+		margin: 0 auto;
+		width: auto;
+		text-align: center;
 	}
 
 	.faq-item{
