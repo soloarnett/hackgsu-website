@@ -308,6 +308,15 @@ span{
 	left: 40px;
 	color: #ffffff;
 }
+.clear-left{
+	clear: left;
+}
+.clear-right{
+	clear: right;
+}
+.clear-both{
+	clear: both;
+}
 
 .faq-item{
 	width: calc(50% - 10px);
@@ -315,6 +324,20 @@ span{
 	color: #ffffff;
 	padding-left: 5px;
 	padding-right: 5px;
+	clear: none;
+}
+
+.faq-item h4{
+	color: rgba(234,245,186,1);
+}
+
+.faq-item a{
+	cursor: pointer;
+	color: rgba(215,249,251,1);
+}
+
+.faq-item a:visited{
+	color: rgba(215,249,251,1);
 }
 
 .center{
@@ -605,6 +628,11 @@ span{
 		float: left;
 	}
 
+	.center{
+		text-align: left;
+		width: 100%;
+	}
+
 
 
 	/*MOBILE UNIQUE*/
@@ -618,7 +646,7 @@ span{
 		width: 100%;
 	}
 	#schedule-wrapper{
-		margin-left: 25vw;
+		margin-left: 30vw;
 	}
 }
 
