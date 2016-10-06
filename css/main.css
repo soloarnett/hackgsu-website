@@ -18,10 +18,14 @@ body{
 	margin: 0;
 	height: 100vh;
 	font-family: 'Open Sans', sans-serif;
+	overflow: hidden;
 }
 
 span{
 	font-weight: 400;
+}
+#wrapper{
+	height: auto;
 }
 
 /*COLORS*/
@@ -139,6 +143,9 @@ span{
 
 .height-full{
 	height: 100%;
+}
+.height-full-screen{
+	height: 100vh;
 }
 
 .height-auto{
