@@ -859,6 +859,15 @@ span{
 	#slideshow{
 		width: 300vw;
 	}
+	#slideshow-start-text{
+		color: rgba(0,0,0,0.3);
+		font-size: 2em;
+		font-weight: 800;
+		position: absolute;
+		right: 20px;
+		top: 120px;
+		
+	}
 }
 
 
