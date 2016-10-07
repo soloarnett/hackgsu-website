@@ -698,12 +698,22 @@ span{
 
 @media(max-width:755px){
 
-	/*MOBILE POSITIONING*/
+	/*MOBILE GLOBAL*/
+	*{
+		-webkit-user-select: none; /* Chrome/Safari */        
+		-moz-user-select: none; /* Firefox */
+		-ms-user-select: none; /* IE10+ */
+
+		/* Rules below not implemented in browsers yet */
+		-o-user-select: none;
+		user-select: none;
+	}
 	html,body{
 		-moz-transition: height 999999999999s ease-in;
     	-o-transition: height 999999999999s ease-in;
     	-webkit-transition: height 999999999999s ease-in;
 	}
+
 	.height-full-screen{
 		-moz-transition: height 999999999999s ease-in;
     	-o-transition: height 999999999999s ease-in;
@@ -712,6 +722,7 @@ span{
 		height: 100vh;
 	}
 	
+	/*MOBILE POSITIONING*/
 	.ad-avoider{
 		width: 100%;
 	}
