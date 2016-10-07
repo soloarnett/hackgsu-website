@@ -162,9 +162,17 @@ span{
 }
 
 .height-full{
+	-moz-transition: all 999999999999s ease-in;
+    -o-transition: all 999999999999s ease-in;
+    -webkit-transition: all 999999999999s ease-in;
+    transition: all 999999999999s ease-in;
 	height: 100%;
 }
 .height-full-screen{
+	-moz-transition: all 999999999999s ease-in;
+    -o-transition: all 999999999999s ease-in;
+    -webkit-transition: all 999999999999s ease-in;
+    transition: all 999999999999s ease-in;
 	height: 100vh;
 }
 
