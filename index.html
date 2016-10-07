@@ -11,19 +11,20 @@
 		<!-- welcome -->
 		<div class="full-image height-full-screen position-relative float-left overflow-hidden">
 			
+			<div class="position-absolute zindex-top mobile-cover-full-image" id="appstore"></div>
 			<div class="width-full height-full background-blue position-absolute zindex-3 opacity-50" id="main-image-cover">
 				<h1 class="font-white zindex-top no-margin position-absolute-middle title-font-size unselectable no-cursor" id="title">hackGSU</h1>
 			</div>
-			<div class="height-full-screen position-relative" id="back-image"></div>
+			<div class="position-relative" id="back-image"></div>
 				<!-- <img class="width-full invisible" src="images/top-image-sizer.png"> -->
 				
 			<!-- </div> -->
 			<div class="width-full height-full zindex-top position-absolute position-absolute-top">
 				<div class="font-white position-absolute top-10 left-5p zindex-top mobile-top-links-positioning">
 					<div class="mobile-top-links-container">
-						<span class="position-relative link unselectable">FAQ</span>
-						<span class="position-relative margin-left-60 link unselectable">Sponsors</span>
-						<span class="position-relative margin-left-60 link unselectable">Gallery</span>
+						<div class="position-relative float-left link unselectable width-third">FAQ</div>
+						<div class="position-relative float-left link unselectable width-third">Sponsors</div>
+						<div class="position-relative float-left link unselectable width-third">Gallery</div>
 					</div>
 				</div>
 			</div>
@@ -141,7 +142,7 @@
 					<div class="day-sign position-relative" id="">
 						<div class="day-box position-relative float-left width-full height-auto">
 							<h2 class="bump-top-left unselectable no-cursor sky-text">Sunday 23<sup>rd</sup></h2>
-							<div class="agenda-tracker position-absolute sky-back"></div>
+							<div class="agenda-tracker short-tracker position-absolute sky-back"></div>
 							<div class="agenda-object" id="agenda-object-selected">
 								<span class="agenda-time unselectable" id="">8am</span>
 								<div class="agenda-trackball"></div>
@@ -172,11 +173,11 @@
 
 				</div>
 			</div>
-			<span class="ad ad-avoider" id="registration-reminder">*Registration ends October 20, 2016 11:59pm. Late Registration requires individual pre-approval.</span>
+			<span class="ad ad-avoider skinny-font" id="registration-reminder">*Registration ends October 20, 2016 11:59pm. Late Registration requires individual pre-approval.</span>
 		</div>
 
 		<!-- petit image -->
-		<div class="width-full placeholder height-full-screen overflow-x-hidden">
+		<div class="mobile-cover-full-image position-relative float-left" id="petit-image">
 			<!-- <div class="width-full height-full position-relative float-left background-big-image min-width-999" id="petit-image"></div> -->
 		</div>
 
@@ -255,23 +256,36 @@
 			</div>
 		</div>
 
-		<!-- image -->
-		<div class="height-full-screen placeholder width-full overflow-x-hidden">
-			<!-- <div class="width-full height-full position-relative float-left background-big-image min-width-1331" id="image2"></div> -->
+		<!-- blurred programmer -->
+		<div class="height-full-screen width-full-screen position-relative float-left">
+			<div class="width-full height-full background-teal position-absolute zindex-3 opacity-50" id="main-image-cover">
+				<div class="zindex-top no-margin position-absolute-middle unselectable no-cursor center-text eat-sleep">
+					<h1 class="font-white" id="">EAT</h1>
+					<h1 class="font-white" id="">SLEEP</h1>
+					<h1 class="font-white" id="hack-text">HACK</h1>
+					<h1 class="font-white" id="">REPEAT</h1>
+				</div>
+				
+			</div>
+			<div class="mobile-cover-full-image position-relative float-left" id="blurgrammer"></div>
 		</div>
+		
 
 		<!-- sponsors -->
-		<div class="height-full-screen width-full teal-back position-relative float-left" id="sponsors">
+		<div class="width-full height-full-screen position-relative float-left mobile-cover-full-image teal-back" id="sponsors">
 			<div class="height-full ad-avoider position-relative float-left">
 			<h1 class="unselectable no-cursor title-font-size skinny-font sky-text bump-top-left title-placement mobile-center-h1 mobile-padding-vertical-bump" id="sponsors-title">Sponsors</h1>
 
 			</div>
 		</div>
 
-		<!-- image -->
-		<div class="height-full-screen placeholder width-full overflow-x-hidden">
-			<!-- <div class="width-full height-full position-relative float-left background-big-image min-width-1331" id="atlanta-gif"></div> -->
+		<!-- city gif -->
+		<div class="height-full-screen width-full-screen position-relative float-left overflow-hidden">
+			<div class="width-full height-full background-rose position-absolute zindex-3 opacity-50" id="main-image-cover"></div>
+			<div class="position-relative float-left mobile-cover-full-image" id="city-gif"></div>
 		</div>
+		
+		<div id="mobile-spacer"></div>
 
 		<!-- info block -->
 		<div class="z-index-top" id="mlh">

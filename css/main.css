@@ -52,7 +52,12 @@ span{
 .background-blue{
 	background-color: #2554B0;
 }
-
+.background-teal{
+	background-color: #163A4C;
+}
+.background-rose{
+	background-color: #0E0D21;
+}
 .grayscale{
 	-webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
     filter: grayscale(100%);
@@ -140,6 +145,10 @@ span{
 	height: auto;
 }
 
+.width-third{
+	width: calc(100% / 3);
+}
+
 .min-width-1331{
 	min-width: 1331px;
 }
@@ -167,6 +176,10 @@ span{
 	width: 100%;
 }
 
+.width-full-screen{
+	width: 100vw;
+}
+
 .height-fit{
 	height: 80%;
 }
@@ -188,7 +201,7 @@ span{
 	width: 2px;
 	height: 100%;
 }
-.agenda-tracker:nth-child(2){
+.short-tracker{
 	height: 90%;
 }
 
@@ -313,7 +326,7 @@ span{
 	width: 10px;
 	height: 10px;
 	border-radius: 10px;
-	left: -5.5px;
+	left: calc(-5.799px);
 	margin-top: 6px;
 	position: absolute;
 	border-style: solid;
@@ -395,6 +408,15 @@ span{
 	text-align: center;
 }
 
+.eat-sleep{
+	font-size: 1.4em;
+}
+.eat-sleep h1:nth-child(3){
+	font-size: 3em;
+	/*opacity: ;*/
+	color: rgba(180,255,248,1);
+}
+
 /*POSITION*/
 
 .position-relative{
@@ -403,6 +425,10 @@ span{
 
 .relative-centering{
 	margin: 0 auto;
+}
+
+.center-text{
+	text-align: center;
 }
 
 .position-absolute{
@@ -611,7 +637,7 @@ span{
 }
 
 #petit-image{
-	background-image: url("../images/mobile-petit-sky.jpg");
+	/*background-image: url("../images/mobile-petit-sky.jpg");*/
 }
 
 #back-image{
@@ -627,7 +653,7 @@ span{
 	margin-top: 0;
 	height: 20px;
 	border-radius: 20px;
-	left: -11px;
+	left: -10.5px;
 	background-color: rgba(10,50,92,1);
 	z-index: 3;
 }
@@ -657,7 +683,10 @@ span{
 @media(max-width:755px){
 
 	/*MOBILE POSITIONING*/
-
+	.height-full-screen{
+		height: calc(100vh - 60px);
+	}
+	
 	.ad-avoider{
 		width: 100%;
 	}
@@ -674,6 +703,14 @@ span{
 		padding-bottom: 40px;
 	}
 
+	.mobile-cover-full-image{
+		background-size: cover;
+		background-repeat: no-repeat;
+    	width: 100vw;
+    	height: calc(100vh - 60px);
+    	background-position: center;
+	}
+
 	.mobile-top-links-positioning{
 		background-color: black;
 		height: 60px;
@@ -687,6 +724,7 @@ span{
 		vertical-align: middle;
 	}
 	.mobile-top-links-container{
+		height: 22px;
 		margin: 0 auto;
 		width: auto;
 		text-align: center;
@@ -715,17 +753,47 @@ span{
 	}
 
 	#back-image{
-		background-image: url("../images/mobile-top-image.jpg");
-		background-size: 100%;
-		/*background-position: center;*/
-		background-repeat: no-repeat;
+		background-image: url(../images/mobile-top-image.jpg);
+    	background-size: cover;
+    	background-position: center;
+    	background-repeat: no-repeat;
+    	width: 100vw;
+    	height: calc(100vh - 60px);
 	}
+
+	#petit-image{
+		background-image: url(../images/mobile-petit-sky.jpg);
+	}
+
+	#blurgrammer{
+		background-image: url(../images/mobile-blurred-programmer.jpg);
+	}
+
 	#schedule-wrapper{
 		margin-left: 30vw;
 	}
 	#registration-reminder{
 		width: 90%;
 		text-align: center;
+	}
+	#city-gif{
+		-webkit-filter:blur(4px);
+		filter: blur(4px);
+		background-image: url(../images/mobile-city.gif);
+	}
+	#mobile-spacer{
+		display: block;
+		width: 100vw;
+		height: 60px;
+		position: relative;
+		float: left;
+	}
+
+	#sponsors{
+		background-image: url("../images/sponsors.png");
+	}
+	#appstore{
+		background-image: url("../images/appstore.png");
 	}
 }
 
