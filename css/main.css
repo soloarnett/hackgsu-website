@@ -9,6 +9,10 @@
 
 /*GLOBAL STYLING*/
 html{
+	-moz-transition: height 999999999999s ease-in;
+    -o-transition: height 999999999999s ease-in;
+    -webkit-transition: height 999999999999s ease-in;
+    transition: height 999999999999s ease-in;
 	height: 100vh;
 	/*overflow: hidden;*/
 }
@@ -16,6 +20,10 @@ html{
 body{
 	background-color: rgba(33,35,56,1);
 	margin: 0;
+	-moz-transition: height 999999999999s ease-in;
+    -o-transition: height 999999999999s ease-in;
+    -webkit-transition: height 999999999999s ease-in;
+    transition: height 999999999999s ease-in;
 	height: 100vh;
 	font-family: 'Open Sans', sans-serif;
 	overflow: hidden;
@@ -162,17 +170,17 @@ span{
 }
 
 .height-full{
-	-moz-transition: all 999999999999s ease-in;
-    -o-transition: all 999999999999s ease-in;
-    -webkit-transition: all 999999999999s ease-in;
-    transition: all 999999999999s ease-in;
+	-moz-transition: height 999999999999s ease-in;
+    -o-transition: height 999999999999s ease-in;
+    -webkit-transition: height 999999999999s ease-in;
+    transition: height 999999999999s ease-in;
 	height: 100%;
 }
 .height-full-screen{
-	-moz-transition: all 999999999999s ease-in;
-    -o-transition: all 999999999999s ease-in;
-    -webkit-transition: all 999999999999s ease-in;
-    transition: all 999999999999s ease-in;
+	-moz-transition: height 999999999999s ease-in;
+    -o-transition: height 999999999999s ease-in;
+    -webkit-transition: height 999999999999s ease-in;
+    transition: height 999999999999s ease-in;
 	height: 100vh;
 }
 
@@ -692,6 +700,10 @@ span{
 
 	/*MOBILE POSITIONING*/
 	.height-full-screen{
+		-moz-transition: height 999999999999s ease-in;
+    	-o-transition: height 999999999999s ease-in;
+    	-webkit-transition: height 999999999999s ease-in;
+    	transition: height 999999999999s ease-in;
 		height: calc(100vh - 60px);
 	}
 	
@@ -715,6 +727,10 @@ span{
 		background-size: cover;
 		background-repeat: no-repeat;
     	width: 100vw;
+    	-moz-transition: height 999999999999s ease-in;
+   		-o-transition: height 999999999999s ease-in;
+   		-webkit-transition: height 999999999999s ease-in;
+    	transition: height 999999999999s ease-in;
     	height: calc(100vh - 60px);
     	background-position: center;
 	}
@@ -766,6 +782,10 @@ span{
     	background-position: center;
     	background-repeat: no-repeat;
     	width: 100vw;
+    	-moz-transition: height 999999999999s ease-in;
+	    -o-transition: height 999999999999s ease-in;
+	    -webkit-transition: height 999999999999s ease-in;
+	    transition: height 999999999999s ease-in;
     	height: calc(100vh - 60px);
 	}
 
