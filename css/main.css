@@ -154,7 +154,7 @@ span{
 }
 
 .width-third{
-	width: calc(100% / 3);
+	margin-left: 20px;
 }
 
 .min-width-1331{
@@ -723,6 +723,12 @@ span{
 	}
 	
 	/*MOBILE POSITIONING*/
+	
+	.width-third{
+		margin-left: 0;
+		width: calc(100% / 3);
+	}
+
 	.ad-avoider{
 		width: 100%;
 	}
@@ -783,6 +789,9 @@ span{
 	.title-font-size{
 		font-size: 4em;
 	}
+	.slideshow-image{
+		display: inline-block;
+	}
 
 
 
@@ -806,7 +815,15 @@ span{
 	}
 
 	#petit-image{
-		background-image: url(../images/mobile-petit-sky.jpg);
+		background-image: url(../images/slideshow/mobile-petit-sky.jpg);
+	}
+
+	#standing-image{
+		background-image: url(../images/slideshow/mobile-standing.jpg);
+	}
+
+	#browsing-image{
+		background-image: url(../images/slideshow/mobile-browsing.jpg);
 	}
 
 	#blurgrammer{
@@ -838,6 +855,9 @@ span{
 	}
 	#appstore{
 		background-image: url("../images/appstore.png");
+	}
+	#slideshow{
+		width: 300vw;
 	}
 }
 
