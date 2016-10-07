@@ -9,10 +9,10 @@
 
 /*GLOBAL STYLING*/
 html{
-	-moz-transition: height 999999999999s ease-in;
+	/*-moz-transition: height 999999999999s ease-in;
     -o-transition: height 999999999999s ease-in;
     -webkit-transition: height 999999999999s ease-in;
-    transition: height 999999999999s ease-in;
+    transition: height 999999999999s ease-in;*/
 	height: 100vh;
 	/*overflow: hidden;*/
 }
@@ -20,10 +20,10 @@ html{
 body{
 	background-color: rgba(33,35,56,1);
 	margin: 0;
-	-moz-transition: height 999999999999s ease-in;
+	/*-moz-transition: height 999999999999s ease-in;
     -o-transition: height 999999999999s ease-in;
     -webkit-transition: height 999999999999s ease-in;
-    transition: height 999999999999s ease-in;
+    transition: height 999999999999s ease-in;*/
 	height: 100vh;
 	font-family: 'Open Sans', sans-serif;
 	overflow: hidden;
@@ -170,17 +170,17 @@ span{
 }
 
 .height-full{
-	-moz-transition: height 999999999999s ease-in;
+/*	-moz-transition: height 999999999999s ease-in;
     -o-transition: height 999999999999s ease-in;
     -webkit-transition: height 999999999999s ease-in;
-    transition: height 999999999999s ease-in;
+    transition: height 999999999999s ease-in;*/
 	height: 100%;
 }
 .height-full-screen{
-	-moz-transition: height 999999999999s ease-in;
+	/*-moz-transition: height 999999999999s ease-in;
     -o-transition: height 999999999999s ease-in;
     -webkit-transition: height 999999999999s ease-in;
-    transition: height 999999999999s ease-in;
+    transition: height 999999999999s ease-in;*/
 	height: 100vh;
 }
 
@@ -699,12 +699,17 @@ span{
 @media(max-width:755px){
 
 	/*MOBILE POSITIONING*/
+	html,body{
+		-moz-transition: height 999999999999s ease-in;
+    	-o-transition: height 999999999999s ease-in;
+    	-webkit-transition: height 999999999999s ease-in;
+	}
 	.height-full-screen{
 		-moz-transition: height 999999999999s ease-in;
     	-o-transition: height 999999999999s ease-in;
     	-webkit-transition: height 999999999999s ease-in;
     	transition: height 999999999999s ease-in;
-		height: calc(100vh - 60px);
+		height: 100vh;
 	}
 	
 	.ad-avoider{
@@ -731,7 +736,7 @@ span{
    		-o-transition: height 999999999999s ease-in;
    		-webkit-transition: height 999999999999s ease-in;
     	transition: height 999999999999s ease-in;
-    	height: calc(100vh - 60px);
+    	height: 100vh;
     	background-position: center;
 	}
 
@@ -786,7 +791,7 @@ span{
 	    -o-transition: height 999999999999s ease-in;
 	    -webkit-transition: height 999999999999s ease-in;
 	    transition: height 999999999999s ease-in;
-    	height: calc(100vh - 60px);
+    	height: 100vh;
 	}
 
 	#petit-image{
