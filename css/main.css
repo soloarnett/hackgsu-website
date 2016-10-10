@@ -834,7 +834,7 @@ span{
 	    -o-transition: top 999999999999s ease-in;
 	    -webkit-transition: top 999999999999s ease-in;
 	    transition: top 999999999999s ease-in;
-		top: 50vh;
+		top: 50%;
 		-moz-transition: transform 999999999999s ease-in;
 	    -o-transition: transform 999999999999s ease-in;
 	    -webkit-transition: transform 999999999999s ease-in;
