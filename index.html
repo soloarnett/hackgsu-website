@@ -261,14 +261,26 @@
 			</div>
 		</div>
 
-		<!-- petit image -->
+		<!-- slideshow image -->
 		<div class="mobile-cover-full-image position-relative float-left overflow-auto">
 			<div class="height-full-screen position-relative float-left" id="slideshow">
-				<div class="mobile-cover-full-image position-relative float-left slideshow-image" id="petit-image">
-					<span id="slideshow-start-text">swipe left<br>for more >></span>
+				<div class="arrow-image" id="arrow-image-left">
+					<img class="slideshow-image-placement" id="slideshow-right" src="images/slideshow/arrows/right.png">
+					<span class="slideshow-start-text" id="slideshow-start-text-left">swipe<br>left</span>
 				</div>
+				<div class="arrow-image" id="arrow-image-right">
+					<img class="slideshow-image-placement" id="slideshow-left" src="images/slideshow/arrows/left.png">
+					<span class="slideshow-start-text" id="slideshow-start-text-right">swipe<br>right</span>
+				</div>
+				<div class="mobile-cover-full-image position-relative float-left slideshow-image" id="petit-image">
+				</div>
+				<div class="mobile-cover-full-image mobile-cover-full-image-large position-relative float-left slideshow-image" id="ad-group1-image"></div>
+				<div class="mobile-cover-full-image mobile-cover-full-image-large position-relative float-left slideshow-image" id="browsing-image"></div>
 				<div class="mobile-cover-full-image position-relative float-left slideshow-image" id="standing-image"></div>
-				<div class="mobile-cover-full-image position-relative float-left slideshow-image" id="browsing-image"></div>
+				<div class="mobile-cover-full-image mobile-cover-full-image-large position-relative float-left slideshow-image" id="two-programmers-image"></div>
+				<div class="mobile-cover-full-image mobile-cover-full-image-large position-relative float-left slideshow-image" id="hacktop-image"></div>
+				<div class="mobile-cover-full-image position-relative float-left slideshow-image" id="two-programmers2-image"></div>
+
 			</div>
 		</div>
 		
@@ -282,10 +294,12 @@
 			</div>
 		</div>
 
-		<!-- city gif -->
+		<!-- mobile bottom image -->
 		<div class="height-full-screen width-full-screen position-relative float-left overflow-hidden">
-			<div class="width-full height-full background-rose position-absolute zindex-3 opacity-50" id="main-image-cover"></div>
+			<div class="width-full height-full background-rose position-absolute zindex-3 opacity-50" id="bottom-image-cover"></div>
 			<div class="position-relative float-left mobile-cover-full-image" id="city-gif"></div>
+			<div class="position-relative float-left mobile-cover-full-image" id="bottom-image"></div>
+
 		</div>
 		
 		<div id="mobile-spacer"></div>
@@ -305,7 +319,7 @@
 	
 
 	
-	<script type="text/javascript">$(function(){var $w = $(window),$background = $('#background');if ((/Android|iPhone|iPad|iPod|BlackBerry/i).test(navigator.userAgent || navigator.vendor || window.opera)){$background.css({'top': 'auto', 'bottom': 0});$w.resize(sizeBackground);sizeBackground();}function sizeBackground(){$background.height(screen.height);}});
-	</script>
+	<!-- <script type="text/javascript">$(function(){var $w = $(window),$background = $('#background');if ((/Android|iPhone|iPad|iPod|BlackBerry/i).test(navigator.userAgent || navigator.vendor || window.opera)){$background.css({'top': 'auto', 'bottom': 0});$w.resize(sizeBackground);sizeBackground();}function sizeBackground(){$background.height(screen.height);}});
+	</script> -->
 </body>
 </html>

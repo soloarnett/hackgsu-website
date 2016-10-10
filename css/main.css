@@ -757,6 +757,10 @@ span{
     	background-position: center;
 	}
 
+	.mobile-cover-full-image-large{
+		width: 200vw;
+	}
+
 	.mobile-top-links-positioning{
 		background-color: black;
 		height: 60px;
@@ -792,10 +796,39 @@ span{
 	.slideshow-image{
 		display: inline-block;
 	}
+	.arrow-image{
+		position: absolute;
+		top: 0;
+		z-index: 4;
+		width: 100%;
+		height: 100%;
+	}
+	.slideshow-start-text{
+		width: 25px;
+		color: rgba(255,255,255,1);
+		font-size: 0.5em;
+		font-weight: 300;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		margin-top: 25px;
+		z-index: 5;		
+		text-align: center;
+	}
+
+	.slideshow-image-placement{
+		position: absolute;
+		top: 50vh;
+		transform: translateY(-50%);
+		width: 100px;
+		height: auto;
+	}
 
 
 
 	/*MOBILE UNIQUE*/
+
+
 
 	#info-block{
 		display: none;
@@ -823,12 +856,34 @@ span{
 	}
 
 	#browsing-image{
-		background-image: url(../images/slideshow/mobile-browsing.jpg);
+		background-image: url(../images/slideshow/mobile-hacktop2.jpg);
 	}
 
 	#blurgrammer{
 		background-image: url(../images/mobile-blurred-programmer.jpg);
 	}
+	#ad-group1-image{
+		background-image: url(../images/slideshow/mobile-ad-group1.jpg);
+	}
+	#two-programmers-image{
+		background-image: url(../images/slideshow/mobile-2programmers.jpg);
+	}
+	#two-programmers2-image{
+		background-image: url(../images/slideshow/mobile-2programmers2.jpg);
+	}
+	#hacktop-image{
+		background-image: url(../images/slideshow/mobile-hacktop.jpg);
+	}
+	#bottom-image{
+		background-image: url(../images/mobile-bottom-image.jpg);
+	}
+	#slideshow-right{
+		left: calc(100vw - 100px);
+	}
+	#slideshow-left{
+		right: calc(100vw - 100px);
+	}
+
 
 	#schedule-wrapper{
 		margin-left: 30vw;
@@ -837,10 +892,15 @@ span{
 		width: 90%;
 		text-align: center;
 	}
+
+	#bottom-image-cover{
+		display: none;
+	}
 	#city-gif{
-		-webkit-filter:blur(4px);
+		display: none;
+		/*-webkit-filter:blur(4px);
 		filter: blur(4px);
-		background-image: url(../images/mobile-city.gif);
+		background-image: url(../ima*/ges/mobile-city.gif);
 	}
 	#mobile-spacer{
 		display: block;
@@ -857,16 +917,22 @@ span{
 		background-image: url("../images/appstore.png");
 	}
 	#slideshow{
-		width: 300vw;
+		width: calc(100vw * 3 + 200vw * 4);
 	}
-	#slideshow-start-text{
-		color: rgba(0,0,0,0.3);
-		font-size: 2em;
-		font-weight: 800;
-		position: absolute;
-		right: 20px;
-		top: 120px;
-		
+	#slideshow-start-text-left{
+		left: calc(100vw - 25px);
+		margin-left: -33px;
+	}
+	#slideshow-start-text-right{
+		right: calc(100vw - 25px);
+		margin-right: -33px;
+	}
+
+	#arrow-image-left{
+		left: 0;
+	}
+	#arrow-image-right{
+		right: 0;
 	}
 }
 
