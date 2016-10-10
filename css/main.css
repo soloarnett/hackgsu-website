@@ -802,6 +802,10 @@ span{
 		z-index: 4;
 		width: 100%;
 		height: 100%;
+		-moz-transition: height 999999999999s ease-in;
+	    -o-transition: height 999999999999s ease-in;
+	    -webkit-transition: height 999999999999s ease-in;
+	    transition: height 999999999999s ease-in;
 	}
 	.slideshow-start-text{
 		width: 25px;
@@ -822,6 +826,10 @@ span{
 		transform: translateY(-50%);
 		width: 100px;
 		height: auto;
+		-moz-transition: height 999999999999s ease-in;
+	    -o-transition: height 999999999999s ease-in;
+	    -webkit-transition: height 999999999999s ease-in;
+	    transition: height 999999999999s ease-in;
 	}
 
 
@@ -906,6 +914,10 @@ span{
 		display: block;
 		width: 100vw;
 		height: 60px;
+		-moz-transition: height 999999999999s ease-in;
+	    -o-transition: height 999999999999s ease-in;
+	    -webkit-transition: height 999999999999s ease-in;
+	    transition: height 999999999999s ease-in;
 		position: relative;
 		float: left;
 	}
