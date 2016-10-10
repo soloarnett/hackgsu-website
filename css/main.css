@@ -835,6 +835,10 @@ span{
 	    -webkit-transition: top 999999999999s ease-in;
 	    transition: top 999999999999s ease-in;
 		top: 50vh;
+		-moz-transition: transform 999999999999s ease-in;
+	    -o-transition: transform 999999999999s ease-in;
+	    -webkit-transition: transform 999999999999s ease-in;
+	    transition: transform 999999999999s ease-in;
 		transform: translateY(-50%);
 		width: 100px;
 		-moz-transition: height 999999999999s ease-in;
