@@ -822,14 +822,19 @@ span{
 
 	.slideshow-image-placement{
 		position: absolute;
+		-moz-transition: top 999999999999s ease-in;
+	    -o-transition: top 999999999999s ease-in;
+	    -webkit-transition: top 999999999999s ease-in;
+	    transition: top 999999999999s ease-in;
 		top: 50vh;
 		transform: translateY(-50%);
 		width: 100px;
-		height: auto;
 		-moz-transition: height 999999999999s ease-in;
 	    -o-transition: height 999999999999s ease-in;
 	    -webkit-transition: height 999999999999s ease-in;
 	    transition: height 999999999999s ease-in;
+		height: auto;
+		
 	}
 
 
