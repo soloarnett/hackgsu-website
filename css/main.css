@@ -859,10 +859,9 @@ span{
 		height: 100%;
 	}
 
-	.nav-link:hover{
-		
+	/*.nav-link:hover{
 		background-color: #666666;
-	}
+	}*/
 
 	.nav-link-text{
 		height: 0.9em;
