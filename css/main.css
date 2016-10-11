@@ -13,7 +13,7 @@ html{
     -o-transition: height 999999999999s ease-in;
     -webkit-transition: height 999999999999s ease-in;
     transition: height 999999999999s ease-in;*/
-	/*height: 100vh;*/
+	height: 100vh;
 	/*overflow: hidden;*/
 }
 
@@ -26,7 +26,7 @@ body{
     transition: height 999999999999s ease-in;*/
 	height: 100vh;
 	font-family: 'Open Sans', sans-serif;
-	overflow: auto;
+	overflow: hidden;
 }
 
 span{
@@ -249,17 +249,6 @@ span{
 }
 
 /*OBJECT ATTRIBUTES*/
-.no-select {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-.no-select:focus{
-	outline: none;
-}
 .agenda-object-container{
 }
 .blur-50{
@@ -860,33 +849,6 @@ span{
 		
 	}
 
-<<<<<<< HEAD
-	.nav-link{
-		-moz-transition: all .3s ease-in;
-	    -o-transition: all .3s ease-in;
-	    -webkit-transition: all .3s ease-in;
-    	transition: all .3s ease-in;
-		height: 100%;
-		text-decoration: none;
-	}
-
-	/*.nav-link:hover{
-		background-color: #666666;
-	}*/
-
-	.nav-link-text{
-		height: 0.9em;
-		font-size: 0.9em;
-		line-height: 0.9em;
-		top: 50%;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		transform: translateY(-50%);
-	}
-
-=======
->>>>>>> parent of 2f105f7... animations added to mobile nav bar and image nav
 
 
 	/*MOBILE UNIQUE*/
