@@ -785,11 +785,11 @@ span{
 		vertical-align: middle;
 	}
 	.mobile-top-links-container{
-		height: 100%;
+		height: 22px;
 		margin: 0 auto;
 		width: auto;
 		text-align: center;
-		/*transform: translateY(30%);*/
+		transform: translateY(90%);
 	}
 
 	.faq-item{
@@ -815,7 +815,7 @@ span{
 	    transition: top 999999999999s ease-in;
 		top: 0;
 		z-index: 4;
-		width: 100vw;
+		width: 100%;
 		height: 100%;
 		-moz-transition: height 999999999999s ease-in;
 	    -o-transition: height 999999999999s ease-in;
@@ -840,7 +840,6 @@ span{
 	}
 
 	.slideshow-image-placement{
-		cursor: pointer;
 		position: absolute;
 		-moz-transition: top 999999999999s ease-in;
 	    -o-transition: top 999999999999s ease-in;
@@ -858,10 +857,10 @@ span{
 	    -webkit-transition: height 999999999999s ease-in;
 	    transition: height 999999999999s ease-in;
 		height: auto;
-		z-index: 6;
 		
 	}
 
+<<<<<<< HEAD
 	.nav-link{
 		-moz-transition: all .3s ease-in;
 	    -o-transition: all .3s ease-in;
@@ -886,6 +885,8 @@ span{
 		transform: translateY(-50%);
 	}
 
+=======
+>>>>>>> parent of 2f105f7... animations added to mobile nav bar and image nav
 
 
 	/*MOBILE UNIQUE*/
@@ -996,13 +997,9 @@ span{
 
 	#arrow-image-left{
 		left: 0;
-		z-index: 5;
 	}
 	#arrow-image-right{
 		right: 0;
-	}
-	#faq-link{
-		vertical-align: middle;
 	}
 }
 
