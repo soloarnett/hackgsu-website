@@ -23,9 +23,15 @@
 			<div class="width-full height-full zindex-top position-absolute position-absolute-top">
 				<div class="font-white position-absolute top-10 left-5p zindex-top mobile-top-links-positioning">
 					<div class="mobile-top-links-container">
-						<div class="position-relative float-left link  width-third">FAQ</div>
-						<div class="position-relative float-left link  width-third">Sponsors</div>
-						<div class="position-relative float-left link  width-third">Gallery</div>
+						<div class="position-relative float-left link nav-link  width-third" id="faq-link">
+							<span class="nav-link-text position-absolute">FAQ</span>
+						</div>
+						<div class="position-relative float-left link nav-link width-third" id="sponsors-link">
+							<span class="nav-link-text position-absolute">Sponsors</span>
+						</div>
+						<div class="position-relative float-left link nav-link width-third" id="galler-link">
+						<span class="nav-link-text position-absolute">Gallery</span>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -262,7 +268,7 @@
 		</div>
 
 		<!-- slideshow image -->
-		<div class="mobile-cover-full-image position-relative float-left overflow-auto">
+		<div class="mobile-cover-full-image position-relative float-left overflow-auto" id="slideshow-container">
 			<div class="height-full-screen position-relative float-left" id="slideshow">
 				<div class="arrow-image" id="arrow-image-left">
 					<img class="slideshow-image-placement" id="slideshow-right" src="images/slideshow/arrows/right.png">
@@ -321,5 +327,6 @@
 	
 	<!-- <script type="text/javascript">$(function(){var $w = $(window),$background = $('#background');if ((/Android|iPhone|iPad|iPod|BlackBerry/i).test(navigator.userAgent || navigator.vendor || window.opera)){$background.css({'top': 'auto', 'bottom': 0});$w.resize(sizeBackground);sizeBackground();}function sizeBackground(){$background.height(screen.height);}});
 	</script> -->
+	<!-- <script type="text/javascript" src="scripts/main.js"></script> -->
 </body>
 </html>
