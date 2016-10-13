@@ -119,8 +119,8 @@ carousel();
 
 function carousel() {
     $('#desktop-slideshow-image').css('background-image', images[index]);
-    console.log("running");
-    console.log(images[index]);
+    // console.log("running");
+    // console.log(images[index]);
     index++;
     if (index >= images.length) {index = 0}
     setTimeout(carousel, 3000); // Change image every 2 seconds
