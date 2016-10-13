@@ -83,6 +83,24 @@ $(document).ready(function(){
 	    $('body').css("overflow", "auto");
 	});
 
+	$("#schedule-link").click(function() {
+		// console.log("faq clicked");
+		$('body').css("overflow", "hidden");
+	    $('body').animate({
+	        scrollTop: $("#schedule").offset().top
+	    }, 500);
+	    $('body').css("overflow", "auto");
+	});
+
+	$("#explore-link").click(function() {
+		// console.log("faq clicked");
+		$('body').css("overflow", "hidden");
+	    $('body').animate({
+	        scrollTop: $("#explore-title").offset().top
+	    }, 500);
+	    $('body').css("overflow", "auto");
+	});
+
 	$("#sponsors-link").click(function() {
 	    $('body').animate({
 	        scrollTop: $("#sponsors").offset().top
