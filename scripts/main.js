@@ -19,18 +19,50 @@ function navColorSelctor(){
 	explorePos = $('#explore').offset().top;
 
 	if (windowWidth > 756) {
-		if (bodyPos > schedulePos-1){
-			if (bodyPos > eatSleepPos -1) {
-				if (bodyPos > faqPos-1) {
-					if (bodyPos > slideshowPos-1) {
-						if (bodyPos > sponsorsPos-1) {
-							if (bodyPos > explorePos -1) {
+		if (bodyPos > schedulePos-2){
+			if (bodyPos > eatSleepPos -2) {
+				if (bodyPos > faqPos-2) {
+					if (bodyPos > slideshowPos-2) {
+						if (bodyPos > sponsorsPos-2) {
+							if (bodyPos > explorePos -2) {
 								return "rgba(0,0,0,1)";
 							}else{
 								return "rgba(0,33,38,1)"
 							}
 						}else{
-							return "rgba(0,0,0,0)";
+							return "rgba(0,0,0,1)";
+						}
+					}else{
+						return "rgba(31,4,41,1)";
+					}
+				}else{
+					return "rgba(0,0,0,0)";
+				}
+			}else{
+				return "rgba(28,30,51,1)";
+			}
+		}else{
+			return "rgba(0,0,0,0)";
+		}
+	}else{
+		return "rgba(0,0,0,1)"
+	}
+}
+
+function bottomNavColorSelector(){
+	if (windowWidth > 756) {
+		if (bodyPos > schedulePos - windowHeight + 220){
+			if (bodyPos > eatSleepPos - windowHeight + 220) {
+				if (bodyPos > faqPos - windowHeight + 220) {
+					if (bodyPos > slideshowPos - windowHeight + 220) {
+						if (bodyPos > sponsorsPos - windowHeight + 220) {
+							if (bodyPos > explorePos -windowHeight + 220) {
+								return "rgba(0,0,0,1)";
+							}else{
+								return "rgba(0,33,38,1)"
+							}
+						}else{
+							return "rgba(0,0,0,1)";
 						}
 					}else{
 						return "rgba(31,4,41,1)";
@@ -52,10 +84,46 @@ function navColorSelctor(){
 function resizeCatcher(){
 	windowWidth = window.innerWidth;
 	$(".desktop-top-links-positioning").css("background-color",navColorSelctor);
+	if (bottomNavColorSelector() == "rgba(0,0,0,1)" || bottomNavColorSelector() == "rgba(0,0,0,0)") {
+		// console.log('yup');
+		$(".rsvp-button").css("background-color","rgba(215,249,251,1)");
+		$(".rsvp-button").css("color","rgba(0,0,0,0.7)");
+		$(".rsvp-button").css("border-color","rgba(215,249,251,1)");
+	}else{
+		// console.log('nope');
+		$(".rsvp-button").css("background-color",bottomNavColorSelector);
+		$(".rsvp-button").css("color","rgba(255,255,255,1)");
+		$(".rsvp-button").css("border-color",bottomNavColorSelector);
+	}
 }
 
 function scrollCatcher(){
 	$(".desktop-top-links-positioning").css("background-color",navColorSelctor);
+	if (bottomNavColorSelector() == "rgba(0,0,0,1)" || bottomNavColorSelector() == "rgba(0,0,0,0)") {
+		// console.log(bottomNavColorSelector());
+		$(".rsvp-button").css("background-color","rgba(215,249,251,1)");
+		$(".rsvp-button").css("color","rgba(0,0,0,0.7)");
+		$(".rsvp-button").css("border-color","rgba(215,249,251,1)");
+	}else{
+		// console.log('nope');
+		$(".rsvp-button").css("background-color",bottomNavColorSelector);
+		$(".rsvp-button").css("color","rgba(255,255,255,1)");
+		$(".rsvp-button").css("border-color",bottomNavColorSelector);
+	}
+}
+
+var index = 0;
+var desktopShow = "url(\"images/slideshow/desktop/";
+var images = [ (desktopShow + "hackathon.jpg\")"), (desktopShow + "silly-students.jpg\")")]
+carousel();
+
+function carousel() {
+    $('#desktop-slideshow-image').css('background-image', images[index]);
+    console.log("running");
+    console.log(images[index]);
+    index++;
+    if (index >= images.length) {index = 0}
+    setTimeout(carousel, 3000); // Change image every 2 seconds
 }
 
 
@@ -107,6 +175,12 @@ $(document).ready(function(){
 	    }, 500);
 	});
 
+	$("#gallery-link").click(function() {
+	    $('body').animate({
+	        scrollTop: $("#slideshow").offset().top
+	    }, 500);
+	});
+
 	$("#slideshow-left").click(function() {
 		// console.log("click");
 	    $('#slideshow-container').animate({
@@ -114,7 +188,7 @@ $(document).ready(function(){
 	    }, 1000);
 	});
 	$("#slideshow-right").click(function() {
-		console.log("click");
+		// console.log("click");
 	    $('#slideshow-container').animate({
 	        scrollLeft: $('#slideshow-left').offset().left
 	    }, 1000);

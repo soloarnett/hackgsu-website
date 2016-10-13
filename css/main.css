@@ -655,11 +655,12 @@ span{
     -o-transition: all .2s ease-in;
     -webkit-transition: all .2s ease-in;
     transition: all .2s ease-in;
-	background-color: rgba(0,0,0,0.15);
-	border: solid;
-	border-width: 5px;
-	border-color: rgba(255,255,255,0.8);
-	border-radius: 10px;
+	/*background-color: rgba(0,0,0,0.15);*/
+	background-color: rgba(255,255,255,0.8);
+	/*border: solid;*/
+	/*border-width: 5px;*/
+	/*border-color: rgba(255,255,255,0.8);*/
+	border-radius: 5px;
 	color: rgba(255,255,255,1);
 	width: 300px;
 	height: 200px;
@@ -670,9 +671,11 @@ span{
 	text-align: center;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
+
 }
 #info-block:hover{
-	background-color: rgba(0,0,0,0.5);
+	background-color: rgba(255,255,255,1);
+	/*background-color: rgba(0,0,0,0.5);*/
 	/*-webkit-filter: blur(5px); 
     filter: blur(5px);*/
 }
@@ -682,12 +685,17 @@ span{
 
 #info-block h1{
 	/*font-weight: 400;*/
+	/*color: rgba(51,22,41,1.0);*/
+	color: rgba(0,0,0,0.7)
+	/*-webkit-text-stroke-width: 2px;*/
+  	/*-webkit-text-stroke-color: rgba(0,0,0,0.4);*/
 }
 
 #info-block h3{
 	/*font-weight: 400;*/
 
-	color: rgba(215,249,251,1);
+	/*color: rgba(215,249,251,1);*/
+	color: rgba(0,0,0,0.7)
 	/*color: rgba(251,210,227,1);*/
 	/*color: rgba(187,196,255,1);*/
 }
@@ -713,11 +721,21 @@ span{
 	font-size: 1.5em;
 	line-height: 1.5em;
 	cursor: pointer;
+	
+	box-shadow: -1px 2px 5px #888888;
+	-webkit-box-shadow: -1px 2px 5px #888888;
+	-moz-box-shadow: -1px 2px 5px #888888;
+	-o-box-shadow: -1px 2px 5px #888888;
+}
+.rsvp-button{
+	background-color: rgba(215,249,251,1);
+	color: rgba(0,0,0,0.7);
 }
 
 #rsvp-button:hover{
-	background-color: rgba(215,249,251,1);
-	color: rgba(0,0,0,0.7);
+	background-color: rgba(0,0,0,0.7) !important;
+	color: rgba(215,249,251,1) !important;
+	border-color: rgba(215,249,251,1) !important;
 }
 
 #schedule{
@@ -785,6 +803,30 @@ span{
 }
 #sponsors{
 	padding-bottom: 100px;
+}
+.desktop-slideshow-image{
+	-moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+	background-image: url("../images/slideshow/desktop/hackathon.jpg");
+}
+#desktop-slideshow-image{
+	display: block;
+	position: relative;
+	float: left;
+	width: 90%;
+	left: 50%;
+	top: 70px;
+	transform: translateX(-50%);
+	height: calc(100% - 290px);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+#slideshow-container{
+	background-color: rgba(0,0,0,1);
+	padding-bottom: 40px;
 }
 
 
@@ -1086,7 +1128,7 @@ span{
 		display: none;
 		/*-webkit-filter:blur(4px);
 		filter: blur(4px);
-		background-image: url(../ima*/ges/mobile-city.gif);
+		background-image: url(../images/mobile-city.gif);*/
 	}
 	#mobile-spacer{
 		display: block;
@@ -1158,6 +1200,15 @@ span{
 	}
 	#explore-link{
 		display: none;
+	}
+	#desktop-slideshow-image{
+		display: none;
+	}
+	#gallery-link{
+		display: none;
+	}
+	#slideshow-container{
+		padding-bottom: 0;
 	}
 }
 
