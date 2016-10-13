@@ -781,6 +781,9 @@ span{
 #view-text-wrapper{
 	display: none;
 }
+#sponsors{
+	padding-bottom: 100px;
+}
 
 
 
@@ -1124,6 +1127,7 @@ span{
 		display: none;
 	}
 	#sponsors{
+		margin-bottom: 0;
 		background-repeat: no-repeat;
 		background-size: contain;
 		background-image: url("../images/sponsors.png");
