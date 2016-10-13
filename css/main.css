@@ -14,6 +14,7 @@ html{
     -webkit-transition: height 999999999999s ease-in;
     transition: height 999999999999s ease-in;*/
 	height: 100vh;
+	width: 100vw;
 	/*overflow: hidden;*/
 }
 
@@ -25,6 +26,7 @@ body{
     -webkit-transition: height 999999999999s ease-in;
     transition: height 999999999999s ease-in;*/
 	height: 100vh;
+	width: 100vw;
 	font-family: 'Open Sans', sans-serif;
 	overflow: hidden;
 }
