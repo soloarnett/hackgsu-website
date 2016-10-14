@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" type="text/css" href="css/main.css">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
 <head>
+	<title>hackGSU / October 21-23 / Georgia State University</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
+	<link rel="icon" href="images/favicon.ico">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<title>hackGSU</title>
+	<meta name="description" content="">
+    <meta name="author" content="">
 </head>
 <body class="overflow-auto">
 
@@ -13,7 +16,11 @@
 		<div class="full-image height-full-screen position-relative float-left overflow-hidden">
 			
 			<div class="width-full-screen height-full background-blue position-absolute zindex-3 opacity-50" id="main-image-cover">
-				<h1 class="font-white zindex-top no-margin position-absolute-middle title-font-size  no-cursor" id="title">hackGSU</h1>
+				<div class="position-absolute-middle" id="main-image-container">
+					<div class="zindex-top no-margin no-cursor" id="main-logo"></div>
+					<h1 class="font-white zindex-top no-margin title-font-size float-left no-cursor" id="title">hackGSU</h1>
+				</div>
+				
 			</div>
 			<div class="position-absolute position-absolute-top width-full-screen height-full-screen" id="back-image"></div>
 				<!-- <img class="width-full invisible" src="images/top-image-sizer.png"> -->
@@ -23,25 +30,25 @@
 				<div class="desktop-top-links-positioning mobile-top-links-positioning">
 					<div class="mobile-top-links-container">
 						<div class="position-relative float-left unselectable link nav-link width-third" id="register-link">
-							<span class="nav-link-text">Register</span>
+							<a href="http://my.mlh.io/oauth/authorize?client_id=83b1262b912a0d252d2d5f44c9506e8beaba4a67035ebe8d498f8dacc685d284&redirect_uri=http%3A%2F%2Fwww.hackgsu.com%2Fskills.php&response_type=token" class="click-nav-link"><span class="nav-link-text">Register</span></a>
 						</div>
 						<div class="position-relative float-left unselectable link nav-link width-third" id="schedule-link">
-							<span class="nav-link-text">Schedule</span>
+							<a class="click-nav-link" href="#/schedule"><span class="nav-link-text">Schedule</span></a>
 						</div>
 						<div class="position-relative float-left unselectable link nav-link  width-third" id="faq-link">
-							<span class="nav-link-text">FAQ</span>
+							<a class="click-nav-link" href="#/faq"><span class="nav-link-text">FAQ</span></a>
 						</div>
 						<div class="position-relative float-left unselectable link nav-link width-third" id="sponsors-link">
-							<span class="nav-link-text">Sponsors</span>
-						</div>
-						<div class="position-relative float-left unselectable link nav-link width-third" id="slack-link">
-							<span class="nav-link-text">Devpost</span>
+							<a class="click-nav-link" href="#/sponsors"><span class="nav-link-text">Sponsors</span></a>
 						</div>
 						<div class="position-relative float-left unselectable link nav-link width-third" id="gallery-link">
-							<span class="nav-link-text">Gallery</span>
+							<a class="click-nav-link" href="#/gallery"><span class="nav-link-text">Gallery</span></a>
 						</div>
 						<div class="position-relative float-left unselectable link nav-link width-third" id="explore-link">
-							<span class="nav-link-text">About</span>
+							<a class="click-nav-link" href="#/explore"><span class="nav-link-text">About</span></a>
+						</div>
+						<div class="position-relative float-left unselectable link nav-link width-third" id="slack-link">
+							<a class="click-nav-link" href="http://hackgsu-fall16.devpost.com"><span class="nav-link-text">Devpost</span></a>
 						</div>
 					</div>
 				</div>
@@ -326,9 +333,11 @@
 
 		<!-- mobile bottom image -->
 		<div class="height-full-screen width-full-screen position-relative float-left overflow-hidden background-black" id="explore">
-			<h1 class="no-cursor title-font-size skinny-font sky-text bump-top-left title-placement mobile-center-h1 mobile-padding-vertical-bump" id="explore-title">Explore</h1>
-			<div class="width-full-screen height-auto position-relative float-left clear-both ad-avoider">
-				
+			<div class="height-auto position-relative float-left clear-both ad-avoider">
+				<h1 class="no-cursor title-font-size skinny-font sky-text bump-top-left title-placement mobile-center-h1 mobile-padding-vertical-bump" id="explore-title">Explore</h1>
+				<div class="left-vw">
+					<h2 class="sky-text skinny-font">Apps</h2>
+				</div>
 			</div>
 			<!-- <div class="width-full height-full background-rose position-absolute zindex-3 opacity-50" id="bottom-image-cover"></div>
 			<div class="position-relative float-left mobile-cover-full-image" id="city-gif"></div>
@@ -346,11 +355,13 @@
 			<!-- <div class="width-full height-full blur-50 position-absolute position-absolute-top"></div> -->
 			<h3 class="link">Georgia State University</h3>
 			<h1 class="no-cursor ">10 . 21 . 16</h1>
-			<div class="open-sans position-inline-inner-middle rsvp-button" id="rsvp-button">REGISTER</div>
+			<a href="http://my.mlh.io/oauth/authorize?client_id=83b1262b912a0d252d2d5f44c9506e8beaba4a67035ebe8d498f8dacc685d284&redirect_uri=http%3A%2F%2Fwww.hackgsu.com%2Fskills.php&response_type=token" class="click-nav-link"><div class="open-sans position-inline-inner-middle rsvp-button" id="rsvp-button">REGISTER</div></a>
 			
 		</div>
 	</div>
-	
+	<div class="explore-title-fixed" id="explore-title-fixed">
+		<h1 class="sky-text skinny-font title-font-size bump-top-left title-placement">Explore</h1>
+	</div>
 
 	
 	<!-- <script type="text/javascript">$(function(){var $w = $(window),$background = $('#background');if ((/Android|iPhone|iPad|iPod|BlackBerry/i).test(navigator.userAgent || navigator.vendor || window.opera)){$background.css({'top': 'auto', 'bottom': 0});$w.resize(sizeBackground);sizeBackground();}function sizeBackground(){$background.height(screen.height);}});
