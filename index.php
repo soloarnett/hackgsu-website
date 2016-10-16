@@ -30,7 +30,7 @@
 				<div class="desktop-top-links-positioning mobile-top-links-positioning">
 					<div class="mobile-top-links-container">
 						<div class="position-relative float-left unselectable link nav-link width-third" id="register-link">
-							<a href="http://my.mlh.io/oauth/authorize?client_id=83b1262b912a0d252d2d5f44c9506e8beaba4a67035ebe8d498f8dacc685d284&redirect_uri=http%3A%2F%2Fwww.hackgsu.com%2Fskills.php&response_type=token" class="click-nav-link"><span class="nav-link-text">Register</span></a>
+							<a href="http://my.mlh.io/oauth/authorize?client_id=83b1262b912a0d252d2d5f44c9506e8beaba4a67035ebe8d498f8dacc685d284&redirect_uri=http%3A%2F%2Fwww.hackgsu.com%2Fskills.php&response_type=token" target="_blank" class="click-nav-link"><span class="nav-link-text">Register</span></a>
 						</div>
 						<div class="position-relative float-left unselectable link nav-link width-third" id="schedule-link">
 							<a class="click-nav-link" href="#/schedule"><span class="nav-link-text">Schedule</span></a>
@@ -48,7 +48,7 @@
 							<a class="click-nav-link" href="#/explore"><span class="nav-link-text">About</span></a>
 						</div>
 						<div class="position-relative float-left unselectable link nav-link width-third" id="slack-link">
-							<a class="click-nav-link" href="http://hackgsu-fall16.devpost.com"><span class="nav-link-text">Devpost</span></a>
+							<a class="click-nav-link" href="http://hackgsu-fall16.devpost.com" target="_blank"><span class="nav-link-text">Devpost</span></a>
 						</div>
 					</div>
 				</div>
@@ -297,6 +297,7 @@
 		<!-- slideshow image -->
 		<div class="height-full-screen width-full-screen mobile-cover-full-image position-relative float-left overflow-auto" id="slideshow-container">
 			<div class="desktop-slideshow-image" id="desktop-slideshow-image"></div>
+			<h1 class="sky-text skinny-font gallery-text">Gallery</h1>
 			<div class="height-full-screen position-relative float-left" id="slideshow">
 				<div class="arrow-image" id="arrow-image-left">
 					<img class="slideshow-image-placement" id="slideshow-right" src="images/slideshow/arrows/right.png">
@@ -337,6 +338,15 @@
 				<h1 class="no-cursor title-font-size skinny-font sky-text bump-top-left title-placement mobile-center-h1 mobile-padding-vertical-bump" id="explore-title">Explore</h1>
 				<div class="left-vw">
 					<h2 class="sky-text skinny-font">Apps</h2>
+					<p class="font-white">The Official hackGSU iOS and Android Apps are coming to your pocket soon! Stay tuned...</p>
+					<h2 class="sky-text skinny-font">Where's GSU?</h2>
+					<p class="font-white">33 Gilmer Street<br>Atlanta, GA 30303<br>404-413-2500</p>
+					<iframe class="gsu-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3317.2939950489917!2d-84.38747594929099!3d33.75306798059353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f5038613efe1b9%3A0x4ac19f9be05c6e97!2sGeorgia+State+University!5e0!3m2!1sen!2sus!4v1476580650698" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+					<h2 class="sky-text skinny-font">Stay in the know</h2>
+					<div>
+						<a href="https://www.facebook.com/groups/hackgsu/" target="_blank"><img class="position-relative float-left" src="images/facebook.png"></a>
+						<a href="https://twitter.com/hackgsu" target="_blank"><img class="position-relative float-left" src="images/twitter.png"></a>
+					</div>
 				</div>
 			</div>
 			<!-- <div class="width-full height-full background-rose position-absolute zindex-3 opacity-50" id="bottom-image-cover"></div>

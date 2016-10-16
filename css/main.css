@@ -263,6 +263,15 @@ span{
 	margin-left: 15vw;
 }
 
+.gallery-text{
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	top: calc(100% - 220px);
+	margin: 0;
+	font-size: 5em;
+}
+
 .click-nav-link{
 	text-decoration: none;
 	color: #ffffff;
@@ -1114,6 +1123,20 @@ span{
 		width: calc(100% - 40px);
 	}
 
+	.left-vw{
+		margin-left: 5vw;
+		margin-right: 5vw;
+	}
+	.gsu-map{
+		width: 70% !important;
+	}
+	.explore-title-fixed{
+		display: none !important;
+	}
+	.gallery-text{
+		display: none;
+	}
+
 
 
 	/*MOBILE UNIQUE*/
@@ -1278,9 +1301,7 @@ span{
 	#main-image-container{
 		min-width: 0px;
 	}
-	.explore-title-fixed{
-		display: none !important;
-	}
+
 }
 
 

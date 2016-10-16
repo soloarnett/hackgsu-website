@@ -60,6 +60,7 @@ function navColorSelctor(){
 			return "rgba(0,0,0,0)";
 		}
 	}else{
+		$('#explore-title').css('opacity', '1');
 		return "rgba(0,0,0,1)"
 	}
 }
@@ -116,8 +117,8 @@ function resizeCatcher(){
 }
 
 function scrollCatcher(){
-	console.log(explorePos);
-	console.log(bodyPos);
+	// console.log(explorePos);
+	// console.log(bodyPos);
 	$(".desktop-top-links-positioning").css("background-color",navColorSelctor);
 	if (bottomNavColorSelector() == "rgba(0,0,0,1)" || bottomNavColorSelector() == "rgba(0,0,0,0)") {
 		// console.log(bottomNavColorSelector());
@@ -138,16 +139,23 @@ function scrollCatcher(){
 
 var index = 0;
 var desktopShow = "url(\"images/slideshow/desktop/";
-var images = [ (desktopShow + "hackathon.jpg\")"), (desktopShow + "silly-students.jpg\")")]
+var imagesRawUrl = 'images/slideshow/desktop/';
+var imagesRaw = [(imagesRawUrl + "hackathon.jpg"), (imagesRawUrl + "silly-students.jpg"), (imagesRawUrl + "2students.jpg"), (imagesRawUrl + "batman.jpg"), (imagesRawUrl + "group.jpg"), (imagesRawUrl + "group2.jpg"), (imagesRawUrl + "hackbook.jpg"), (imagesRawUrl + "hacking.jpg"), (imagesRawUrl + "laughing-student.jpg"), (imagesRawUrl + "mlh-group.jpg"), (imagesRawUrl + "seminar.jpg")];
+var images = [ (desktopShow + "hackathon.jpg\")"), (desktopShow + "silly-students.jpg\")"), (desktopShow + "2students.jpg\")"), (desktopShow + "batman.jpg\")"), (desktopShow + "group.jpg\")"), (desktopShow + "group2.jpg\")"), (desktopShow + "hackbook.jpg\")"), (desktopShow + "hacking.jpg\")"), (desktopShow + "laughing-student.jpg\")"), (desktopShow + "mlh-group.jpg\")"), (desktopShow + "seminar.jpg\")")];
 carousel();
 
 function carousel() {
     $('#desktop-slideshow-image').css('background-image', images[index]);
     // console.log("running");
     // console.log(images[index]);
+    // console.log(images.length);
     index++;
-    if (index >= images.length) {index = 0}
-    setTimeout(carousel, 3000); // Change image every 2 seconds
+    if (index >= images.length) {
+    	index = 0;
+    }else{
+    	$('desktop-slideshow-image').load(imagesRaw[index+1]);
+    }
+    setTimeout(carousel, 5000); // Change image every 5 seconds
 }
 
 
