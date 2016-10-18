@@ -126,6 +126,7 @@ input[type="text"], textarea{
 	border-top-style: none !important;
 	border-left-style: none !important;
 	border-right-style: none !important;
+	border-bottom-color: #000000;
 }
 
 textarea{

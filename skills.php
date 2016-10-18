@@ -27,7 +27,7 @@ if (!isset($p_access_token)) {
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="http://www.gsu.edu/wp-content/themes/gsu-core/favicon.ico">
+    <link rel="icon" href="http://hackgsu.com/assets/img/fall2016/favicon.ico">
     <title>hackGSU / Oct 21-23 / Georgia State University</title>
 
     <!-- Bootstrap core CSS -->
@@ -40,7 +40,7 @@ if (!isset($p_access_token)) {
     <link href="assets/css/cover.css" rel="stylesheet">
 	<link rel="alternate" href="http://www.hackgsu.com/mobile" media="handheld">
 	<link rel="alternate" href="http://www.hackgsu.com/mobile" media="only screen and (max-width: 640px)">
-	<link rel="stylesheet" type="text/css" href="http://hackgsu.com/new/test/beta/01/css/register.css">
+	<link rel="stylesheet" type="text/css" href="http://hackgsu.com/assets/css/fall2016/register.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -196,7 +196,7 @@ if (!isset($p_access_token)) {
 								</td>
 							  </tr>
 							  <tr>
-								<td align="center"colspan="100%"><p class="info-title card-text skinny-text">Your GPA (overall): <input style="background-color:#fff;text-align: center;" type = "text" name = "gpa" id = "gpa" size = "5" > </p>
+								<td align="center"colspan="100%"><p class="info-title card-text skinny-text">Your GPA (overall): <input style="background-color:#fff;text-align: center;" placeholder="3.0?" type = "text" name = "gpa" id = "gpa" size = "5" > </p>
 								<p class="info-title card-text skinny-text text-bump-under">Here's your chance to brag! Give us your 30-second spill:
 								<br/><textarea style="background-color:#000" name="speech" id="speech" rows="4" cols="50" placeholder="start typing here..." maxlength="255"></textarea></p>
 								</td>
