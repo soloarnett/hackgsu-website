@@ -335,6 +335,9 @@
 				<div class="position-relative float-left clear-both" id="sponsors-image">
 					
 				</div>
+				<div class="position-relative float-left clear-both" id="mobile-sponsors-image">
+					
+				</div>
 			</div>
 
 		</div>

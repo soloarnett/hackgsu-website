@@ -477,6 +477,16 @@ var explore = beginningUrl + "explore";
 		scrollTo("#explore");
 	}
 }
+
+function preventScrollOf(enter, target){
+	$(enter).mouseenter(function(){
+			$(target).css('overflow', 'hidden');
+		});
+		$(enter).mouseleave(function(){
+			$(target).css('overflow', 'auto');
+		});
+}
+
 var previousTimestamp = null;
 var announcementsEmpty = false;
 function announcementLoader(){
@@ -491,6 +501,21 @@ function announcementLoader(){
 				anClose = 0;
 			}		
 		});
+
+		// document.getElementById("announcement-block").addEventListener("mouseenter", function( event ){
+		// 	$('body').css('overflow', 'hidden');
+		// });
+		// document.getElementById("announcement-block").addEventListener("mouseexit", function( event ){
+		// 	$('body').css('overflow', 'auto');
+		// });
+
+		preventScrollOf('.announcement-block-active', 'body');
+		// $('#announcement-block').mouseenter(function(){
+		// 	$('body').css('overflow', 'hidden');
+		// });
+		// $('#announcement-block').mouseleave(function(){
+		// 	$('body').css('overflow', 'auto');
+		// });
 
 		// console.log(previousTimestamp);
 		// console.log(announcementTimestamp4);

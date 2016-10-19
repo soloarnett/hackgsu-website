@@ -1050,33 +1050,40 @@ span{
 	padding: 20px 0px 20px 0px;
 	right: 40px;
 	background-color: #ffffff;
+	overflow: auto;
 	
 	width: 260px;
-	z-index: 998;
+	
 	/*border-top-left-radius: 5px;*/
 	/*border-top-right-radius: 5px;*/
 }
 .announcement-block{
+	-moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+	opacity: 0;	
+	/*display: none;*/
+	z-index: 998;
 	height: calc(100vh - 130px);
 }
 
-.announcement-block-hidden{
+/*.announcement-block-hidden{
 	overflow: hidden !important;
 	height: 60px;
-}
-
-
-
-.announcement-block{
-	opacity: 0;
-}
+}*/
 
 .announcement-block-active{
+	-moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+	/*display: block;*/
 	opacity: 0.8;
 }
 
-#announcement-block:hover{
-	opacity: 1;
+.announcement-block-active:hover{
+	/*opacity: 1;*/
 }
 
 .announcement-close{
@@ -1101,7 +1108,7 @@ span{
 	padding-bottom: 20px;
 	border-left-style: solid;
 	border-left-width: 20px;
-	cursor: pointer;
+	cursor: default;
 	/*border-bottom-style: solid;*/
 	/*border-bottom-width: 4px;*/
 	/*border-bottom-color: rgba(255,255,255,0.5);*/
@@ -1117,9 +1124,9 @@ span{
 	float: left;
 	clear: both;
 	overflow: hidden;
-	text-overflow: ellipsis;
+	text-overflow: all;
 	width: calc(100% - 40px);
-	white-space: nowrap;
+	white-space: all;
 	text-align: left;
 	margin-top: 5px;
 	margin-bottom: 10px;
@@ -1135,10 +1142,10 @@ span{
 	padding-left: 20px;
 	padding-right: 20px;
 	margin: 0;
-	text-overflow: ellipsis;
-	width: calc(260px - 20px - 20px);
+	text-overflow: all;
+	width: calc(240px - 20px - 20px);
 	overflow: hidden;
-	white-space: nowrap;
+	white-space: all;
 	/*max-height: 30px;*/
 	/*position: relative;*/
 	/*float: left;*/
@@ -1150,10 +1157,10 @@ span{
 }
 
 .announcement-minimizer{
-	-moz-transition: all .1s ease-in;
+	/*-moz-transition: all .1s ease-in;
     -o-transition: all .1s ease-in;
     -webkit-transition: all .1s ease-in;
-    transition: all .1s ease-in;
+    transition: all .1s ease-in;*/
 	cursor: pointer;
 	height: 100px;
 	width: 100%;
@@ -1581,12 +1588,31 @@ span{
 	}
 	#sponsors{
 		margin-bottom: 0;
-		background-repeat: no-repeat;
-		background-size: contain;
-		background-image: url("../../img/fall2016/sponsors.png");
+		-moz-transition: height 999999999999s ease-in;
+	    -o-transition: height 999999999999s ease-in;
+	    -webkit-transition: height 999999999999s ease-in;
+	    transition: height 999999999999s ease-in;
+		height: auto;
+		/*background-repeat: no-repeat;*/
+		/*background-size: contain;*/
+		/*background-image: url("../../img/fall2016/sponsors.png");*/
 	}
 	#sponsors-image{
 		display: none;
+	}
+	#mobile-sponsors-image{
+		display: block;
+		width: 100%;
+		-moz-transition: height 999999999999s ease-in;
+	    -o-transition: height 999999999999s ease-in;
+	    -webkit-transition: height 999999999999s ease-in;
+	    transition: height 999999999999s ease-in;
+		height: 100vh;
+		padding-top: 150px;
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+		background-image: url("../../img/fall2016/sponsors.png");
 	}
 	#view-text-wrapper{
 		width: auto;

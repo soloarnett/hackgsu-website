@@ -23,6 +23,7 @@
 
 
 	$value = $firebase->get($path, array('orderBy' => '"timestamp"&endAt="$time"&limitToLast=5'));
+	$value = 'null';
 	if ($value != 'null') {
 		$value = str_replace("{", "", $value);
 	$value = str_replace("}", "", $value);
@@ -159,7 +160,7 @@
 		 	} 
 	}else{
 		echo "
-			<p style=\"width:100%;text-align:center;\">Nothing to see here...</p>
+			<p style=\"width:100%;text-align:center;\">Nothing to see yet...</p>
 			<script type=\"text/javascript\">announcementsEmpty = true;</script>
 		";
 
