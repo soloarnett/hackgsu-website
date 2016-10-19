@@ -3,9 +3,20 @@
 <div class="announcement-minimizer"></div>
 <?php 
 	$root = $_SERVER['DOCUMENT_ROOT'];
-	require_once( $root . '/site1/vendor/autoload.php');
-	require_once($root . '/site1/firebase.php');
+	// echo $root;
 
+	if ($root == '/Applications/XAMPP/xamppfiles/htdocs' ) {
+		require_once( $root . '/site1/vendor/autoload.php');
+		require_once($root . '/site1/firebase.php');
+	}else{
+		require_once( $root . '/vendor/autoload.php');
+		require_once($root . '/firebase.php');
+	}
+	
+?>
+
+
+<?php
 	$path = 'announcements';
 	$time = round(microtime(true)) . "000";
 	
@@ -22,7 +33,7 @@
 	}
 
 
-	$value = $firebase->get($path, array('orderBy' => '"timestamp"&endAt="$time"&limitToLast=5'));
+	$value = $firebase->get($path, array('orderBy' => '"timestamp"&endAt="$time"&limitToLast=10'));
 	$value = 'null';
 	if ($value != 'null') {
 		$value = str_replace("{", "", $value);
@@ -100,15 +111,24 @@
 	// }
 
 ?>
-		<!-- <script type="text/javascript">
-			
-		</script> -->
+		<script type="text/javascript">
+			<?php echo '
+					var announcementTimestamp = new Array(' . sizeof($announcement) . ');
+					var announcementSize = '. sizeof($announcement) .';
+			'; ?>
+		</script>
 		<?php 
 			$idCounter = sizeof($announcement) - 1;
 			// include('assets/php/fall2016/announcementOrder.php'); 
 			foreach ($announcement as $index) {
+				if(timePassed($index['timestamp']) == "-0" || timePassed($index['timestamp']) == 0 ){
 		?>
-		<div <?php echo "class=\"announcement-content " . strtolower($index['topic']) . "-side-color\" id=\"announcement-content-$idCounter\""; ?> >
+				<!-- color is set to green if new -->
+				<div <?php echo "class=\"announcement-content " . strtolower($index['topic']) . "-side-color\" style=\"background-color:rgba(22,56,22,0.2);\" id=\"announcement-content-$idCounter\""; ?> >
+		<?php }else{ ?> 
+				<!-- color is normal if not new -->
+				<div <?php echo "class=\"announcement-content " . strtolower($index['topic']) . "-side-color\" id=\"announcement-content-$idCounter\""; ?> >
+		<?php } ?>
 			<span class="announcement-topic"><?php echo ucwords(strtolower($index['topic'])); ?></span>
 			<span class="announcement-time"><?php 
 			if(timePassed($index['timestamp']) == "-0" || timePassed($index['timestamp']) == 0 ){
@@ -152,7 +172,7 @@
 		</div>
 
 		<script type="text/javascript">
-			var <?php echo "announcementTimestamp$idCounter"; ?> = <?php echo $index['timestamp']; ?> ;
+			<?php echo "announcementTimestamp[$idCounter]"; ?> = <?php echo $index['timestamp']; ?> ;
 		</script>
 
 		<?php

@@ -52,6 +52,9 @@ function navColorSelctor(){
 		if (bodyPos > schedulePos-2){
 			if (itsTime) {
 				$('#announcement-block').addClass('announcement-block-active');
+				preventScrollOf('.announcement-block-active', 'body');
+				preventEnterScroll('.announcement-content', 'body');
+				preventEnterScroll('.announcement-minimizer', 'body');
 			}else{
 				// $('#announcement-block').removeClass('announcement-block-active');
 			}
@@ -121,6 +124,9 @@ function navColorSelctor(){
 
 				if(itsTime){
 					$('#announcement-block').addClass('announcement-block-active');
+					preventScrollOf('.announcement-block-active', 'body');
+					preventEnterScroll('.announcement-content', 'body');
+					preventEnterScroll('.announcement-minimizer', 'body');
 				}
 				$('#directions-view').removeClass('directions-final');
 				$('.explore-title-fixed').css('display', 'none');
@@ -178,31 +184,9 @@ function navColorSelctor(){
 				return "rgba(28,30,51,1)";
 			}
 		}else{
-			// if (itsTime) {
-			// 	$('#info-block').addClass('transition');
-			// 	setTimeout(function(){
-			// 		$('#info-block').css('opacity', '1');
-			// 		$('#announcement-block').css('opacity', '1');
-			// 		setTimeout(function(){
-			// 			$('#info-block').removeClass('transition');
-			// 			$('#announcement-block').css('display', 'none');
-			// 		},200);
-			// 	},200);									
-			// }
-
-			// else{
-			// 	$('#announcement-block').css('opacity', '0');
-			// 	setTimeout(function(){
-			// 		$('#announcement-block').css('display', 'none');
-			// 		$('#info-block').addClass('transition');
-			// 		setTimeout(function(){
-			// 			$('#info-block').css('opacity', 1);
-			// 			setTimeout(function(){
-			// 				$('#info-block').removeClass('transition');
-			// 			},200);
-			// 		},200);
-			// 	},200);	
-			// }
+			removeMouseEvent('.announcement-block-active');
+			removeMouseEnter('.announcement-content');
+			removeMouseEnter('.announcement-minimizer');
 			$('#announcement-block').removeClass('announcement-block-active');
 			$('#directions-view').removeClass('directions-final');
 			$('.explore-title-fixed').css('display', 'none');
@@ -311,6 +295,7 @@ function scrollCatcher(){
 }
 
 function glanceClicked(){
+	scrollMeUp('.announcement-block', 200);
 	$('.announcement-block').css('height', "60px");
 	anClose=1;
 	$('#glance-view').css("color", "rgba(215,249,251,1)");
@@ -342,6 +327,7 @@ function glanceClicked(){
 }
 
 function streamClicked(){
+	scrollMeUp('.announcement-block', 200);
 	$('.announcement-block').css('height', "calc(100vh - 130px)");
 	anClose=0;
 	$('#stream-view').css("color", "rgba(215,249,251,1)");
@@ -455,43 +441,43 @@ function setHtmlHeight(){
 	}
 }
 
-function urlMover(){
-var currentUrl = window.location.href;
-var beginningUrl = "http://hackgsu.com/#/"
-var faq = beginningUrl + "faq";
-var schedule = beginningUrl + "schedule";
-var sponsors = beginningUrl + "sponsors";
-var gallery = beginningUrl + "gallery";
-var explore = beginningUrl + "explore";
-
-// var standardUrl = "http://hackgsu.com";
-	if (currentUrl == faq ) {
-		scrollTo("#faq");
-	}else if(currentUrl == schedule){
-		scrollTo("#schedule");
-	}else if(currentUrl == sponsors ){
-		scrollTo("#sponsors");
-	}else if(currentUrl == gallery){
-		scrollTo("#slideshow");
-	}else if(currentUrl == explore){
-		scrollTo("#explore");
-	}
+function preventEnterScroll(enter, target){
+	$(enter).bind("mouseenter", function(){
+		$(target).css('overflow', 'hidden');
+	});
 }
 
 function preventScrollOf(enter, target){
-	$(enter).mouseenter(function(){
-			$(target).css('overflow', 'hidden');
-		});
-		$(enter).mouseleave(function(){
-			$(target).css('overflow', 'auto');
-		});
+	$(enter).bind("mouseenter", function(){
+		$(target).css('overflow', 'hidden');
+	});
+	$(enter).bind("mouseleave", function(){
+		$(target).css('overflow', 'auto');
+	});
+}
+function removeMouseEnter(enter){
+	$(enter).unbind("mouseenter");
+}
+
+function removeMouseEvent(enter){
+	$(enter).unbind("mouseenter");
+	$(enter).unbind("mouseleave");
+}
+
+function undoBodyHidden(){
+	$('body').css('overflow', 'auto');
+}
+
+function scrollMeUp(scrollMe, time){
+	$(scrollMe).animate({
+		scrollTop: 0
+	}, time);
 }
 
 var previousTimestamp = null;
 var announcementsEmpty = false;
 function announcementLoader(){
 	$('#announcement-block').load("assets/php/fall2016/announcementOrder.php", function() {
-
 		$('.announcement-minimizer').click(function(){
 			if (anClose == 0) {
 				$('.announcement-block').css('height', "60px");
@@ -502,102 +488,26 @@ function announcementLoader(){
 			}		
 		});
 
-		// document.getElementById("announcement-block").addEventListener("mouseenter", function( event ){
-		// 	$('body').css('overflow', 'hidden');
-		// });
-		// document.getElementById("announcement-block").addEventListener("mouseexit", function( event ){
-		// 	$('body').css('overflow', 'auto');
-		// });
+		function newAnnouncementAlert(arraySize){
+			if (arraySize > 0) {
+				var index = arraySize - 1;
+				var aContent = '#announcement-content-' + index;
+				// console.log("array size is " + arraySize);
+				// console.log("index is " + index);
+				// console.log("aContent is " + aContent);
+				// console.log("previousTimestamp is " + previousTimestamp);
+				// console.log("announcementTimestamp is " + announcementTimestamp[index]);
+				// console.log("empty is " + announcementsEmpty);
 
-		preventScrollOf('.announcement-block-active', 'body');
-		// $('#announcement-block').mouseenter(function(){
-		// 	$('body').css('overflow', 'hidden');
-		// });
-		// $('#announcement-block').mouseleave(function(){
-		// 	$('body').css('overflow', 'auto');
-		// });
-
-		// console.log(previousTimestamp);
-		// console.log(announcementTimestamp4);
-		// previousNotification = $('#announcement-content-4').html();
-		try{
-			if ((previousTimestamp != announcementTimestamp4 && previousTimestamp != null ) || announcementsEmpty) {
-				announcementsEmpty = false;
-				// console.log("new");
-				setTimeout(function(){
-					$('.announcement-minimizer').css('background-color', 'rgba(255,22,0,0.2)');
-					if (anClose == 1) {
-						$('.announcement-block').css('height', (60 + $('#announcement-content-4').height() + 20) + "px");
-					}
-					setTimeout(function(){
-						$('.announcement-minimizer').css('background-color', 'rgba(0,0,0,0)');
-						setTimeout(function(){
-							$('.announcement-minimizer').css('background-color', 'rgba(255,22,0,0.2)');
-							setTimeout(function(){
-								$('.announcement-minimizer').css('background-color', 'rgba(0,0,0,0)');
-								setTimeout(function(){
-									$('.announcement-minimizer').css('background-color', 'rgba(255,22,0,0.2)');
-									setTimeout(function(){
-										$('.announcement-minimizer').css('background-color', 'rgba(0,0,0,0)');
-										if (anClose == 1) {
-											setTimeout(function(){
-												$('.announcement-block').css('height', "60px");
-											}, 1000);
-										}
-									}, 200);
-								}, 200);
-							}, 200);
-						}, 200);
-					}, 200);
-				}, 200);
-			}else{
-				// console.log("same");
-			}
-			previousTimestamp = announcementTimestamp4;
-		}catch(ReferenceError){
-			try{
-				if ((previousTimestamp != announcementTimestamp3 && previousTimestamp != null ) || announcementsEmpty) {
-					announcementsEmpty = false;
-					// console.log("new");
-					setTimeout(function(){
-						$('.announcement-minimizer').css('background-color', 'rgba(255,22,0,0.2)');
-						if (anClose == 1) {
-							$('.announcement-block').css('height', (60 + $('#announcement-content-3').height() + 20) + "px");
-						}
-						setTimeout(function(){
-							$('.announcement-minimizer').css('background-color', 'rgba(0,0,0,0)');
-							setTimeout(function(){
-								$('.announcement-minimizer').css('background-color', 'rgba(255,22,0,0.2)');
-								setTimeout(function(){
-									$('.announcement-minimizer').css('background-color', 'rgba(0,0,0,0)');
-									setTimeout(function(){
-										$('.announcement-minimizer').css('background-color', 'rgba(255,22,0,0.2)');
-										setTimeout(function(){
-											$('.announcement-minimizer').css('background-color', 'rgba(0,0,0,0)');
-											if (anClose == 1) {
-												setTimeout(function(){
-													$('.announcement-block').css('height', "60px");
-												}, 1000);
-											}
-										}, 200);
-									}, 200);
-								}, 200);
-							}, 200);
-						}, 200);
-					}, 200);
-				}else{
-					// console.log("same");
-				}
-				previousTimestamp = announcementTimestamp3;
-			}catch(ReferenceError){
 				try{
-					if ((previousTimestamp != announcementTimestamp2 && previousTimestamp != null ) || announcementsEmpty) {
+					if ((previousTimestamp != announcementTimestamp[index] && previousTimestamp != null ) || announcementsEmpty) {
 						announcementsEmpty = false;
 						// console.log("new");
 						setTimeout(function(){
 							$('.announcement-minimizer').css('background-color', 'rgba(255,22,0,0.2)');
+								scrollMeUp('.announcement-block', 200);
 							if (anClose == 1) {
-								$('.announcement-block').css('height', (60 + $('#announcement-content-2').height() + 20) + "px");
+								$('.announcement-block').css('height', (60 + $(aContent).height() + 20) + "px");	
 							}
 							setTimeout(function(){
 								$('.announcement-minimizer').css('background-color', 'rgba(0,0,0,0)');
@@ -623,87 +533,16 @@ function announcementLoader(){
 					}else{
 						// console.log("same");
 					}
-					previousTimestamp = announcementTimestamp2;
+					previousTimestamp = announcementTimestamp[index];
 				}catch(ReferenceError){
-					try{
-						if ((previousTimestamp != announcementTimestamp1 && previousTimestamp != null ) || announcementsEmpty) {
-							announcementsEmpty = false;
-							// console.log("new");
-							setTimeout(function(){
-								$('.announcement-minimizer').css('background-color', 'rgba(255,22,0,0.2)');
-								if (anClose == 1) {
-									$('.announcement-block').css('height', (60 + $('#announcement-content-1').height() + 20) + "px");
-								}
-								setTimeout(function(){
-									$('.announcement-minimizer').css('background-color', 'rgba(0,0,0,0)');
-									setTimeout(function(){
-										$('.announcement-minimizer').css('background-color', 'rgba(255,22,0,0.2)');
-										setTimeout(function(){
-											$('.announcement-minimizer').css('background-color', 'rgba(0,0,0,0)');
-											setTimeout(function(){
-												$('.announcement-minimizer').css('background-color', 'rgba(255,22,0,0.2)');
-												setTimeout(function(){
-													$('.announcement-minimizer').css('background-color', 'rgba(0,0,0,0)');
-													if (anClose == 1) {
-														setTimeout(function(){
-															$('.announcement-block').css('height', "60px");
-														}, 1000);
-													}
-												}, 200);
-											}, 200);
-										}, 200);
-									}, 200);
-								}, 200);
-							}, 200);
-						}else{
-							// console.log("same");
-						}
-						previousTimestamp = announcementTimestamp1;
-					}catch(ReferenceError){
-						try{
-							if ((previousTimestamp != announcementTimestamp0 && previousTimestamp != null ) || announcementsEmpty) {
-								announcementsEmpty = false;
-								// console.log("new");
-								setTimeout(function(){
-									$('.announcement-minimizer').css('background-color', 'rgba(255,22,0,0.2)');
-									if (anClose == 1) {
-										$('.announcement-block').css('height', (60 + $('#announcement-content-0').height() + 20) + "px");
-									}
-									setTimeout(function(){
-										$('.announcement-minimizer').css('background-color', 'rgba(0,0,0,0)');
-										setTimeout(function(){
-											$('.announcement-minimizer').css('background-color', 'rgba(255,22,0,0.2)');
-											setTimeout(function(){
-												$('.announcement-minimizer').css('background-color', 'rgba(0,0,0,0)');
-												setTimeout(function(){
-													$('.announcement-minimizer').css('background-color', 'rgba(255,22,0,0.2)');
-													setTimeout(function(){
-														$('.announcement-minimizer').css('background-color', 'rgba(0,0,0,0)');
-														if (anClose == 1) {
-															setTimeout(function(){
-																$('.announcement-block').css('height', "60px");
-															}, 1000);
-														}
-													}, 200);
-												}, 200);
-											}, 200);
-										}, 200);
-									}, 200);
-								}, 200);
-							}else{
-								// console.log("same");
-							}
-							previousTimestamp = announcementTimestamp0;
-						}catch(ReferenceError){
-							announcementsEmpty = true;
-							return;
-						}
-					}
+					newAnnouncementAlert(arraySize - 1);
 				}
-			}
+			}	
 		}
-		
-		
+
+		try{
+			newAnnouncementAlert(announcementSize);
+		}catch(ReferenceError){}
 	});
 
 	setTimeout(announcementLoader, 15000);
@@ -718,11 +557,12 @@ $(document).ready(function(){
 		$(".desktop-top-links-positioning").css("background-color","rgba(0,0,0,1)");
 	}else{
 		$(".desktop-top-links-positioning").css("background-color","rgba(0,0,0,0)");
-		announcementLoader();
 		// $('#explore-title').css('opacity', '0');
 		// $('.explore-title-fixed').css('display', 'block');
 		// $('.explore-title-fixed').css('top', (explorePos + 5));
 	}
+
+	announcementLoader();
 
 	if (itsTime) {
 		$('#info-block').css('display', 'none');
@@ -736,7 +576,6 @@ $(document).ready(function(){
 
 	window.onresize = resizeCatcher;
 	window.onscroll = scrollCatcher;
-	// window.onrefresh = urlMover;
 	
 		
 	// });
@@ -779,7 +618,6 @@ $(document).ready(function(){
 	    }, 1000);
 	});
 
-	// urlMover();
 
 	$("#view-text-wrapper").css("display", "block");
 
