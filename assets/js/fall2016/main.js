@@ -9,7 +9,7 @@ var sponsorsPos = $('#sponsors').offset().top;
 var explorePos = $('#explore').offset().top;
 var viewTextWrapperPos = $('#view-text-wrapper').offset().top;
 var itsTime = true; //////////// announcements
-var anClose = 0;
+var anClose = 1;
 
 
 // no scroll
@@ -50,14 +50,16 @@ function navColorSelctor(){
 
 	if (windowWidth > 756) {
 		if (bodyPos > schedulePos-2){
-			if (itsTime) {
-				$('#announcement-block').addClass('announcement-block-active');
-				preventScrollOf('.announcement-block-active', 'body');
-				preventEnterScroll('.announcement-content', 'body');
-				preventEnterScroll('.announcement-minimizer', 'body');
-			}else{
-				// $('#announcement-block').removeClass('announcement-block-active');
-			}
+			// if (itsTime) {
+			// 	$('#announcement-block').addClass('announcement-block-active');
+			// 	$('#announcement-block').addClass('announcement-block-tall');
+			// 	anClose = 0;
+			// 	preventScrollOf('.announcement-block-active', 'body');
+			// 	preventEnterScroll('.announcement-content', 'body');
+			// 	preventEnterScroll('.announcement-minimizer', 'body');
+			// }else{
+			// 	// $('#announcement-block').removeClass('announcement-block-active');
+			// }
 			if (bodyPos > eatSleepPos -2) {
 				if (bodyPos > faqPos-2) {
 					if (bodyPos > slideshowPos-2) {
@@ -122,12 +124,14 @@ function navColorSelctor(){
 				}
 			}else{ //bodyPos is in schedule
 
-				if(itsTime){
-					$('#announcement-block').addClass('announcement-block-active');
-					preventScrollOf('.announcement-block-active', 'body');
-					preventEnterScroll('.announcement-content', 'body');
-					preventEnterScroll('.announcement-minimizer', 'body');
-				}
+				// if(itsTime){
+				// 	$('#announcement-block').addClass('announcement-block-active');
+				// 	$('#announcement-block').addClass('announcement-block-tall');
+				// 	anClose = 0;
+				// 	preventScrollOf('.announcement-block-active', 'body');
+				// 	preventEnterScroll('.announcement-content', 'body');
+				// 	preventEnterScroll('.announcement-minimizer', 'body');
+				// }
 				$('#directions-view').removeClass('directions-final');
 				$('.explore-title-fixed').css('display', 'none');
 				$('#explore-title').css('opacity', '1');
@@ -184,10 +188,12 @@ function navColorSelctor(){
 				return "rgba(28,30,51,1)";
 			}
 		}else{
-			removeMouseEvent('.announcement-block-active');
-			removeMouseEnter('.announcement-content');
-			removeMouseEnter('.announcement-minimizer');
-			$('#announcement-block').removeClass('announcement-block-active');
+			// removeMouseEvent('.announcement-block-active');
+			// removeMouseEnter('.announcement-content');
+			// removeMouseEnter('.announcement-minimizer');
+			// $('#announcement-block').css('height', '60px');
+			// $('#announcement-block').addClass('announcement-block-active');
+			// $('#announcement-block').removeClass('announcement-block-tall');
 			$('#directions-view').removeClass('directions-final');
 			$('.explore-title-fixed').css('display', 'none');
 			$('#explore-title').css('opacity', '1');
@@ -296,7 +302,7 @@ function scrollCatcher(){
 
 function glanceClicked(){
 	scrollMeUp('.announcement-block', 200);
-	$('.announcement-block').css('height', "60px");
+	makeAnnouncementShort();
 	anClose=1;
 	$('#glance-view').css("color", "rgba(215,249,251,1)");
 	$('#glance-view-fixed').css("color", "rgba(215,249,251,1)");
@@ -328,7 +334,7 @@ function glanceClicked(){
 
 function streamClicked(){
 	scrollMeUp('.announcement-block', 200);
-	$('.announcement-block').css('height', "calc(100vh - 130px)");
+	makeAnnouncementTall();
 	anClose=0;
 	$('#stream-view').css("color", "rgba(215,249,251,1)");
 	$('#stream-view-fixed').css("color", "rgba(215,249,251,1)");
@@ -475,18 +481,25 @@ function scrollMeUp(scrollMe, time){
 }
 
 var previousTimestamp = null;
-var announcementsEmpty = false;
+var announcementsEmpty;
 function announcementLoader(){
 	$('#announcement-block').load("assets/php/fall2016/announcementOrder.php", function() {
+			preventScrollOf('.announcement-block-active', 'body');
+			preventEnterScroll('.announcement-content', 'body');
+			preventEnterScroll('.announcement-minimizer', 'body');
+
+
 		$('.announcement-minimizer').click(function(){
 			if (anClose == 0) {
-				$('.announcement-block').css('height', "60px");
+				makeAnnouncementShort();
 				anClose = 1;
 			}else{
-				$('.announcement-block').css('height', "calc(100vh - 130px)");
+				makeAnnouncementTall();
 				anClose = 0;
 			}		
 		});
+
+		// console.log("empty is " + announcementsEmpty);
 
 		function newAnnouncementAlert(arraySize){
 			if (arraySize > 0) {
@@ -507,7 +520,7 @@ function announcementLoader(){
 							$('.announcement-minimizer').css('background-color', 'rgba(255,22,0,0.2)');
 								scrollMeUp('.announcement-block', 200);
 							if (anClose == 1) {
-								$('.announcement-block').css('height', (60 + $(aContent).height() + 20) + "px");	
+								adjustAnnouncementHeight(aContent);
 							}
 							setTimeout(function(){
 								$('.announcement-minimizer').css('background-color', 'rgba(0,0,0,0)');
@@ -521,7 +534,7 @@ function announcementLoader(){
 												$('.announcement-minimizer').css('background-color', 'rgba(0,0,0,0)');
 												if (anClose == 1) {
 													setTimeout(function(){
-														$('.announcement-block').css('height', "60px");
+														makeAnnouncementShort();
 													}, 1000);
 												}
 											}, 200);
@@ -540,12 +553,29 @@ function announcementLoader(){
 			}	
 		}
 
-		try{
-			newAnnouncementAlert(announcementSize);
-		}catch(ReferenceError){}
+		if (announcementsEmpty == false) {
+			try{
+				newAnnouncementAlert(announcementSize);
+			}catch(ReferenceError){}
+		}
 	});
 
+	// console.log("called " + call + " times");
+	call +=1;
 	setTimeout(announcementLoader, 15000);
+}
+var call = 0;
+
+function makeAnnouncementTall(){
+	$('#announcement-block').css('height', 'calc(100vh - 130px');
+}
+
+function makeAnnouncementShort(){
+	$('#announcement-block').css('height', '60px');
+}
+
+function adjustAnnouncementHeight(changeTo){
+	$('#announcement-block').css('height', (60 + $(changeTo).height() + 20) + "px");	
 }
 
 ///////////////////////////////////////////////////////////////// DOCUMENT READY /////////////////////////////////////////////////////////////////

@@ -402,7 +402,7 @@
 		<?php include_once('assets/html/fall2016/directions-min.html'); ?>
 		<!-- <div class="cancel-directions-close" id="cancel-directions">Close</div> -->
 	</div>
-	<div class="announcement-block" id="announcement-block">
+	<div class="announcement-block announcement-block-active" id="announcement-block">
 		
 
 	</div>
