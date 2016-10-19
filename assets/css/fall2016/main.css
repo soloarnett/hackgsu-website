@@ -1047,19 +1047,22 @@ span{
 	display: block;
 	position: fixed;
 	bottom: 0;
-	padding: 20px 20px 20px 0px;
+	padding: 20px 0px 20px 0px;
 	right: 40px;
 	background-color: #ffffff;
-	height: calc(100vh - 130px);
+	
 	width: 260px;
 	z-index: 998;
 	/*border-top-left-radius: 5px;*/
 	/*border-top-right-radius: 5px;*/
 }
+.announcement-block{
+	height: calc(100vh - 130px);
+}
 
 .announcement-block-hidden{
 	overflow: hidden !important;
-	height: 60px !important;
+	height: 60px;
 }
 
 
@@ -1108,14 +1111,20 @@ span{
 	color: rgba(255,255,255,0.9);
 }*/
 
+
 .announcement-title{
 	position: relative;
 	float: left;
 	clear: both;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: calc(100% - 40px);
+	white-space: nowrap;
 	text-align: left;
 	margin-top: 5px;
 	margin-bottom: 10px;
 	padding-left: 20px;
+	padding-right: 20px;
 	color: rgba(0,0,0,0.8);
 	/*text-shadow: 1px -1px 2px #ffffff;*/
 	/*position: relative;*/
@@ -1124,6 +1133,7 @@ span{
 .announcement-body{
 	text-align: left;
 	padding-left: 20px;
+	padding-right: 20px;
 	margin: 0;
 	text-overflow: ellipsis;
 	width: calc(260px - 20px - 20px);
@@ -1134,9 +1144,25 @@ span{
 	/*float: left;*/
 }
 .announcement-header{
+	cursor: pointer;
 	text-align: center;
 	padding-bottom: 10px;
 }
+
+.announcement-minimizer{
+	-moz-transition: all .1s ease-in;
+    -o-transition: all .1s ease-in;
+    -webkit-transition: all .1s ease-in;
+    transition: all .1s ease-in;
+	cursor: pointer;
+	height: 100px;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 999;
+}
+
 .announcement-topic{
 	/*position: relative;
 	float: r
@@ -1145,7 +1171,7 @@ span{
 	margin-top: 10px;
 	position: relative;
 	float: right;
-	margin-right: 40px;
+	margin-right: 20px;
 	color: rgba(0,0,0,0.7);
 	font-size: 12px;
 }
@@ -1169,7 +1195,7 @@ span{
 }
 
 .tech-side-color:hover{
-	background-color: rgba(22,58,76,0.1);
+	background-color: rgba(22,58,76,0.2);
 }
 
 .food-side-color{
@@ -1177,7 +1203,7 @@ span{
 }
 
 .food-side-color:hover{
-	background-color: rgba(68,32,61,0.1);
+	background-color: rgba(68,32,61,0.2);
 }
 
 .general-side-color{
@@ -1185,7 +1211,7 @@ span{
 }
 
 .general-side-color:hover{
-	background-color: rgba(13,25,86,0.1);
+	background-color: rgba(13,25,86,0.2);
 }
 
 /*.tech-side-color>h4{

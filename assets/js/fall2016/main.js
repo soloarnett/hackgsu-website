@@ -311,7 +311,8 @@ function scrollCatcher(){
 }
 
 function glanceClicked(){
-	$('#announcement-block').addClass('announcement-block-hidden');
+	$('.announcement-block').css('height', "60px");
+	anClose=1;
 	$('#glance-view').css("color", "rgba(215,249,251,1)");
 	$('#glance-view-fixed').css("color", "rgba(215,249,251,1)");
 	$('#stream-view').css("color", "rgba(255,255,255,1)");
@@ -341,7 +342,8 @@ function glanceClicked(){
 }
 
 function streamClicked(){
-	$('#announcement-block').removeClass('announcement-block-hidden');
+	$('.announcement-block').css('height', "calc(100vh - 130px)");
+	anClose=0;
 	$('#stream-view').css("color", "rgba(215,249,251,1)");
 	$('#stream-view-fixed').css("color", "rgba(215,249,251,1)");
 	$('#glance-view').css("color", "rgba(255,255,255,1)");
@@ -475,22 +477,210 @@ var explore = beginningUrl + "explore";
 		scrollTo("#explore");
 	}
 }
-
+var previousTimestamp = null;
+var announcementsEmpty = false;
 function announcementLoader(){
 	$('#announcement-block').load("assets/php/fall2016/announcementOrder.php", function() {
 
-		$('#announcement-close').click(function(){
+		$('.announcement-minimizer').click(function(){
 			if (anClose == 0) {
-				$('#announcement-block').addClass('announcement-block-hidden');
+				$('.announcement-block').css('height', "60px");
 				anClose = 1;
 			}else{
-				$('#announcement-block').removeClass('announcement-block-hidden');
+				$('.announcement-block').css('height', "calc(100vh - 130px)");
 				anClose = 0;
 			}		
 		});
-			// console.log("ran");
-  			// alert( "Load was performed." );
+
+		// console.log(previousTimestamp);
+		// console.log(announcementTimestamp4);
+		// previousNotification = $('#announcement-content-4').html();
+		try{
+			if ((previousTimestamp != announcementTimestamp4 && previousTimestamp != null ) || announcementsEmpty) {
+				announcementsEmpty = false;
+				// console.log("new");
+				setTimeout(function(){
+					$('.announcement-minimizer').css('background-color', 'rgba(255,22,0,0.2)');
+					if (anClose == 1) {
+						$('.announcement-block').css('height', (60 + $('#announcement-content-4').height() + 20) + "px");
+					}
+					setTimeout(function(){
+						$('.announcement-minimizer').css('background-color', 'rgba(0,0,0,0)');
+						setTimeout(function(){
+							$('.announcement-minimizer').css('background-color', 'rgba(255,22,0,0.2)');
+							setTimeout(function(){
+								$('.announcement-minimizer').css('background-color', 'rgba(0,0,0,0)');
+								setTimeout(function(){
+									$('.announcement-minimizer').css('background-color', 'rgba(255,22,0,0.2)');
+									setTimeout(function(){
+										$('.announcement-minimizer').css('background-color', 'rgba(0,0,0,0)');
+										if (anClose == 1) {
+											setTimeout(function(){
+												$('.announcement-block').css('height', "60px");
+											}, 1000);
+										}
+									}, 200);
+								}, 200);
+							}, 200);
+						}, 200);
+					}, 200);
+				}, 200);
+			}else{
+				// console.log("same");
+			}
+			previousTimestamp = announcementTimestamp4;
+		}catch(ReferenceError){
+			try{
+				if ((previousTimestamp != announcementTimestamp3 && previousTimestamp != null ) || announcementsEmpty) {
+					announcementsEmpty = false;
+					// console.log("new");
+					setTimeout(function(){
+						$('.announcement-minimizer').css('background-color', 'rgba(255,22,0,0.2)');
+						if (anClose == 1) {
+							$('.announcement-block').css('height', (60 + $('#announcement-content-3').height() + 20) + "px");
+						}
+						setTimeout(function(){
+							$('.announcement-minimizer').css('background-color', 'rgba(0,0,0,0)');
+							setTimeout(function(){
+								$('.announcement-minimizer').css('background-color', 'rgba(255,22,0,0.2)');
+								setTimeout(function(){
+									$('.announcement-minimizer').css('background-color', 'rgba(0,0,0,0)');
+									setTimeout(function(){
+										$('.announcement-minimizer').css('background-color', 'rgba(255,22,0,0.2)');
+										setTimeout(function(){
+											$('.announcement-minimizer').css('background-color', 'rgba(0,0,0,0)');
+											if (anClose == 1) {
+												setTimeout(function(){
+													$('.announcement-block').css('height', "60px");
+												}, 1000);
+											}
+										}, 200);
+									}, 200);
+								}, 200);
+							}, 200);
+						}, 200);
+					}, 200);
+				}else{
+					// console.log("same");
+				}
+				previousTimestamp = announcementTimestamp3;
+			}catch(ReferenceError){
+				try{
+					if ((previousTimestamp != announcementTimestamp2 && previousTimestamp != null ) || announcementsEmpty) {
+						announcementsEmpty = false;
+						// console.log("new");
+						setTimeout(function(){
+							$('.announcement-minimizer').css('background-color', 'rgba(255,22,0,0.2)');
+							if (anClose == 1) {
+								$('.announcement-block').css('height', (60 + $('#announcement-content-2').height() + 20) + "px");
+							}
+							setTimeout(function(){
+								$('.announcement-minimizer').css('background-color', 'rgba(0,0,0,0)');
+								setTimeout(function(){
+									$('.announcement-minimizer').css('background-color', 'rgba(255,22,0,0.2)');
+									setTimeout(function(){
+										$('.announcement-minimizer').css('background-color', 'rgba(0,0,0,0)');
+										setTimeout(function(){
+											$('.announcement-minimizer').css('background-color', 'rgba(255,22,0,0.2)');
+											setTimeout(function(){
+												$('.announcement-minimizer').css('background-color', 'rgba(0,0,0,0)');
+												if (anClose == 1) {
+													setTimeout(function(){
+														$('.announcement-block').css('height', "60px");
+													}, 1000);
+												}
+											}, 200);
+										}, 200);
+									}, 200);
+								}, 200);
+							}, 200);
+						}, 200);
+					}else{
+						// console.log("same");
+					}
+					previousTimestamp = announcementTimestamp2;
+				}catch(ReferenceError){
+					try{
+						if ((previousTimestamp != announcementTimestamp1 && previousTimestamp != null ) || announcementsEmpty) {
+							announcementsEmpty = false;
+							// console.log("new");
+							setTimeout(function(){
+								$('.announcement-minimizer').css('background-color', 'rgba(255,22,0,0.2)');
+								if (anClose == 1) {
+									$('.announcement-block').css('height', (60 + $('#announcement-content-1').height() + 20) + "px");
+								}
+								setTimeout(function(){
+									$('.announcement-minimizer').css('background-color', 'rgba(0,0,0,0)');
+									setTimeout(function(){
+										$('.announcement-minimizer').css('background-color', 'rgba(255,22,0,0.2)');
+										setTimeout(function(){
+											$('.announcement-minimizer').css('background-color', 'rgba(0,0,0,0)');
+											setTimeout(function(){
+												$('.announcement-minimizer').css('background-color', 'rgba(255,22,0,0.2)');
+												setTimeout(function(){
+													$('.announcement-minimizer').css('background-color', 'rgba(0,0,0,0)');
+													if (anClose == 1) {
+														setTimeout(function(){
+															$('.announcement-block').css('height', "60px");
+														}, 1000);
+													}
+												}, 200);
+											}, 200);
+										}, 200);
+									}, 200);
+								}, 200);
+							}, 200);
+						}else{
+							// console.log("same");
+						}
+						previousTimestamp = announcementTimestamp1;
+					}catch(ReferenceError){
+						try{
+							if ((previousTimestamp != announcementTimestamp0 && previousTimestamp != null ) || announcementsEmpty) {
+								announcementsEmpty = false;
+								// console.log("new");
+								setTimeout(function(){
+									$('.announcement-minimizer').css('background-color', 'rgba(255,22,0,0.2)');
+									if (anClose == 1) {
+										$('.announcement-block').css('height', (60 + $('#announcement-content-0').height() + 20) + "px");
+									}
+									setTimeout(function(){
+										$('.announcement-minimizer').css('background-color', 'rgba(0,0,0,0)');
+										setTimeout(function(){
+											$('.announcement-minimizer').css('background-color', 'rgba(255,22,0,0.2)');
+											setTimeout(function(){
+												$('.announcement-minimizer').css('background-color', 'rgba(0,0,0,0)');
+												setTimeout(function(){
+													$('.announcement-minimizer').css('background-color', 'rgba(255,22,0,0.2)');
+													setTimeout(function(){
+														$('.announcement-minimizer').css('background-color', 'rgba(0,0,0,0)');
+														if (anClose == 1) {
+															setTimeout(function(){
+																$('.announcement-block').css('height', "60px");
+															}, 1000);
+														}
+													}, 200);
+												}, 200);
+											}, 200);
+										}, 200);
+									}, 200);
+								}, 200);
+							}else{
+								// console.log("same");
+							}
+							previousTimestamp = announcementTimestamp0;
+						}catch(ReferenceError){
+							announcementsEmpty = true;
+							return;
+						}
+					}
+				}
+			}
+		}
+		
+		
 	});
+
 	setTimeout(announcementLoader, 15000);
 }
 
