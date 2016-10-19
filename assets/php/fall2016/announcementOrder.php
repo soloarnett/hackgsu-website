@@ -37,9 +37,12 @@
 
 
 	$value = $firebase->get($path, array('orderBy' => '"timestamp"&endAt="$time"&limitToLast=10'));
-	if (isset($_SESSION['announcement']) && empty($_SESSION['announcement']) != false) {
+	$sessionAnnouncement = null;
+	if (isset($_SESSION['announcement']) && empty($_SESSION['announcement']) == false) {
 		$sessionAnnouncement = $_SESSION['announcement'];
 	}
+
+	// echo var_dump($sessionAnnouncement);
 	$value = 'null';
 	// echo var_dump($value);
 	if ($value != 'null' && $value != null && $value != 'NULL') {
@@ -187,7 +190,8 @@
 		<?php
 				$idCounter -= 1;
 		 	} 
-	}elseif (isset($sessionAnnouncement) && empty($sessionAnnouncement) != false) {
+		 	// ----------------------------------------------------------------------------- SECOND PASS --------------------------------------------
+	}elseif (isset($sessionAnnouncement) && empty($sessionAnnouncement) == false) {
 		$announcement = $sessionAnnouncement;
 		?>
 		<script type="text/javascript">

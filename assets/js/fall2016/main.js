@@ -560,7 +560,7 @@ function announcementLoader(){
 		}
 	});
 
-	// console.log("called " + call + " times");
+	console.log("called " + call + " times");
 	call +=1;
 	setTimeout(announcementLoader, 15000);
 }
