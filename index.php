@@ -45,6 +45,9 @@
 						<div class="position-relative float-left unselectable link nav-link  width-third" id="faq-link">
 							<a class="click-nav-link" href="#/faq"><span class="nav-link-text">FAQ</span></a>
 						</div>
+						<div class="position-relative float-left unselectable link nav-link width-third announcement-minimizer-2 announcements-link" id="announcements-link">
+							<span class="nav-link-text" id="announcement-link-text">Announcements</span>
+						</div>
 						<div class="position-relative float-left unselectable link nav-link width-third" id="sponsors-link">
 							<a class="click-nav-link" href="#/sponsors"><span class="nav-link-text">Sponsors</span></a>
 						</div>

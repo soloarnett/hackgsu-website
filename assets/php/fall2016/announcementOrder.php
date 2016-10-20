@@ -43,7 +43,7 @@
 	}
 
 	// echo var_dump($sessionAnnouncement);
-	$value = 'null';
+	// $value = 'null';
 	// echo var_dump($value);
 	if ($value != 'null' && $value != null && $value != 'NULL') {
 		$value = str_replace("{", "", $value);
