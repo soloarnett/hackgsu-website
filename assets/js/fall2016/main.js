@@ -521,13 +521,14 @@ function scrollMeUp(scrollMe, time){
 }
 
 function announcementMinimzer(){
+	scrollMeUp('.announcement-block', 200);
 	if (anClose == 0) {
 		
 		if (windowWidth < 756) {
 			makeAnnouncementShortMobile();
-			removeMouseEvent('.announcement-block-active');
-			removeMouseEnter('.announcement-content');
-			removeMouseEnter('.announcement-minimizer');
+			// removeMouseEvent('.announcement-block-active');
+			// removeMouseEnter('.announcement-content');
+			// removeMouseEnter('.announcement-minimizer');
 			$('body').css('overflow', 'auto');
 		}else{
 			makeAnnouncementShort();
@@ -537,9 +538,9 @@ function announcementMinimzer(){
 	}else{
 		if (windowWidth < 756) {
 			makeAnnouncementTallMobile();
-			preventScrollOf('.announcement-block-active', 'body');
-			preventEnterScroll('.announcement-content', 'body');
-			preventEnterScroll('.announcement-minimizer', 'body');
+			// preventScrollOf('.announcement-block-active', 'body');
+			// preventEnterScroll('.announcement-content', 'body');
+			// preventEnterScroll('.announcement-minimizer', 'body');
 			$('body').css('overflow', 'hidden');
 		}else{
 			makeAnnouncementTall();

@@ -1694,6 +1694,10 @@ span{
 	}
 
 	#announcements-link{
+		-moz-transition: height 999999999999s ease-in;
+	    -o-transition: height 999999999999s ease-in;
+	    -webkit-transition: height 999999999999s ease-in;
+	    transition: height 999999999999s ease-in;
 		top: auto;
 		left: auto;
 		display: block;
@@ -1713,10 +1717,18 @@ span{
 
 	.announcement-minimizer{
 		/*padding-bottom: 10px;*/
+		-moz-transition: height 999999999999s ease-in;
+	    -o-transition: height 999999999999s ease-in;
+	    -webkit-transition: height 999999999999s ease-in;
+	    transition: height 999999999999s ease-in;
 	}
 
 	.announcement-body{
 		width: calc(100% - 20px - 20px);
+		-moz-transition: height 999999999999s ease-in;
+	    -o-transition: height 999999999999s ease-in;
+	    -webkit-transition: height 999999999999s ease-in;
+	    transition: height 999999999999s ease-in;
 	}
 
 

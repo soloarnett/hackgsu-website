@@ -12,6 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/fall2016/main.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
 	<link rel="icon" href="assets/img/fall2016/favicon.ico">
+	<link rel="manifest" href="manifest/manifest.json">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<meta name="description" content="">
     <meta name="author" content="">
