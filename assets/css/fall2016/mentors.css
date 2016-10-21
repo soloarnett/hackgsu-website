@@ -1,0 +1,164 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,800';
+.open-sans{
+	font-family: 'Open Sans', sans-serif;
+}
+
+*{
+	font-family: 'Open Sans', sans-serif;
+}
+
+
+html{
+	/*width: 100vw;*/
+	/*height: 100vh;*/
+	/*overflow: hidden;*/
+}
+
+body{
+	background-color: #666666;
+	/*width: 100vw;*/
+	/*height: 100vh;*/
+	/*overflow: hidden;*/
+}
+
+#refresh{
+	position: absolute;
+	top: 3px;
+	color: #ffffff;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 20px;
+	font-weight: 800;
+
+}
+
+.mentors-container{
+	width: 95vw;
+	height: 95vh;
+	/*background-color: #ffffff;*/
+	/*box-shadow: -1px 2px 5px #888888;*/
+	/*-webkit-box-shadow: -1px 2px 5px #888888;*/
+	/*-moz-box-shadow: -1px 2px 5px #888888;*/
+	/*-o-box-shadow: -1px 2px 5px #888888;*/
+	/*border-radius: 5px;*/
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.title{
+	clear: both;
+	position: relative;
+	float: left;
+	color: rgba(0,0,0,0.8);
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.category{
+	position: relative;
+	float: left;
+	font-size: 24px;
+	font-weight: 800;
+}
+
+
+.request-card{
+	min-width: 500px;
+	clear: none;
+	/*display: inline;*/
+	background-color: #ffffff;
+	width: calc(50% - 60px);
+	margin: 10px;
+	padding: 20px;
+	position: relative;
+	height: 550px;
+	float: left;
+	/*clear: none;*/
+	overflow-x: hidden; 
+	box-shadow: -1px 2px 2px rgba(0,0,0,0.8);
+	-webkit-box-shadow: -1px 2px 2px rgba(0,0,0,0.8);
+	-moz-box-shadow: -1px 2px 2px rgba(0,0,0,0.8);
+	-o-box-shadow: -1px 2px 2px rgba(0,0,0,0.8);
+	/*white-space: nowrap;*/
+	/*border-radius: 5px;*/
+}
+
+.item{
+	clear: both;
+	/*display: inline;*/
+	width: calc(100% - 20px);
+	text-overflow: clip;
+	word-wrap: break-word;
+	position: relative;
+	float: left;
+	margin: 0;
+	padding: 0px 10px;
+	/*white-space: normal;*/
+}
+
+.textInput{
+	position: relative;
+	float: left;
+	width: calc(100%/2.5);
+	height: 30px;
+	padding: 5px 10px;
+	margin-left: 20px;
+	/*margin-left: 50%;*/
+}
+#accept{
+	width: 100%;
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	/*text-align: center;*/
+}
+
+.description{
+	height: 180px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-wrap: normal;
+}
+
+
+
+input[type=submit]{
+	display: block;
+	position: relative;
+	float: left;
+	clear: both;
+	margin: 20px 0px;
+	height: 100px !important;
+	/*padding: 10px;*/
+	width: 100px;
+	/*padding: 20px 0px;*/
+	margin-left: 50%;
+	transform: translateX(-50%);
+}
+
+.acceptedAlready{
+	position: absolute;
+	bottom: 30px;
+	left: 50%;
+	transform: translateX(-50%);
+	font-weight: 800;
+	font-size: 30px;
+	color:rgba(0,0,0,0.5);
+}
+
+.pending{
+	background-color: rgba(213,228,213,0.6);
+}
+
+.accepted{
+	background-color: rgba(67,67,67,0.4);
+}
+
+
+
+
+
+

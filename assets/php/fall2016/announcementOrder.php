@@ -101,6 +101,9 @@
 				$announcement[$i]['uniqueId'] = $allValues[$i][0]; 
 				$announcement[$i]['body'] = $allValues[$i][1]; 
 				// $announcement[$i]['userId'] = $allValues[$i][2]; 
+				//i had to build in a fix for this, found out after i made the fix that the removal
+				// 		of fromid caused null values to be passed through because the for loop before this one
+				// 		is looking for 6 values when the system only sends through 5. that's 6 being 0-6 so really 7 and 5 being 0-5 so really 6
 				$announcement[$i]['likes'] = $allValues[$i][2]; 
 				$announcement[$i]['timestamp'] = $allValues[$i][3];
 				$announcement[$i]['title'] = $allValues[$i][4]; 

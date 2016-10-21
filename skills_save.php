@@ -380,6 +380,6 @@ $dbname='hackgsu2';
              // $message = $message
              // echo $message;
          }else{
-         	header("Location: http://hackgsu.com"); 
+         	header("Location: http://hackgsu.com/"); 
          }
 ?>

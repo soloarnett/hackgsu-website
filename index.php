@@ -38,7 +38,7 @@
 				<div class="desktop-top-links-positioning mobile-top-links-positioning">
 					<div class="mobile-top-links-container">
 						<div class="position-relative float-left unselectable link nav-link width-third" id="register-link">
-							<a href="http://my.mlh.io/oauth/authorize?client_id=83b1262b912a0d252d2d5f44c9506e8beaba4a67035ebe8d498f8dacc685d284&redirect_uri=http%3A%2F%2Fwww.hackgsu.com%2Fskills.php&response_type=token" target="_blank" class="click-nav-link"><span class="nav-link-text">Register</span></a>
+							<a href="#" target="_blank" class="click-nav-link"><span class="nav-link-text">Register</span></a>
 						</div>
 						<div class="position-relative float-left unselectable link nav-link width-third" id="schedule-link">
 							<a class="click-nav-link" href="#/schedule"><span class="nav-link-text">Schedule</span></a>
