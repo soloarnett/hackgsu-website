@@ -26,17 +26,24 @@ label {
   height: 100vh;
   position: fixed;
   z-index: 0; }
+  .hackbot.isMobile {
+    width: 100vw; }
 
-#navigator:checked ~ label > div.navigator > .element.e1 {
-  transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  animation: e1-close .1s ease-out 0s forwards; }
+#navigator:checked ~ label > div.navigator {
+  /**
+  	The navigator is open at this moment. The animation below
+  	changes the open square into a closed 'X'
+  **/ }
+  #navigator:checked ~ label > div.navigator > .element:not(.isMobile).e1 {
+    transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    animation: e1-close .2s ease-out 0s forwards; }
 @keyframes e1-close {
   from {
-    top: 27px;
+    top: 0px;
     transform: rotate(0deg);
     -ms-transform: rotate(0deg);
     -webkit-transform: rotate(0deg);
@@ -49,13 +56,13 @@ label {
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
     -o-transform: rotate(45deg); } }
-#navigator:checked ~ label > div.navigator > .element.e2 {
-  transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
-  animation: e2-close .1s ease-out 0s forwards; }
+  #navigator:checked ~ label > div.navigator > .element:not(.isMobile).e2 {
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    animation: e2-close .2s ease-out .05s forwards; }
 @keyframes e2-close {
   from {
     left: -20px;
@@ -71,13 +78,13 @@ label {
     -webkit-transform: rotate(135deg);
     -moz-transform: rotate(135deg);
     -o-transform: rotate(135deg); } }
-#navigator:checked ~ label > div.navigator > .element.e3 {
-  transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
-  animation: e3-close .1s ease-out 0s forwards; }
+  #navigator:checked ~ label > div.navigator > .element:not(.isMobile).e3 {
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    animation: e3-close .2s ease-out .1s forwards; }
 @keyframes e3-close {
   from {
     right: -20px;
@@ -93,13 +100,13 @@ label {
     -webkit-transform: rotate(135deg);
     -moz-transform: rotate(135deg);
     -o-transform: rotate(135deg); } }
-#navigator:checked ~ label > div.navigator > .element.e4 {
-  transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  animation: e4-close .1s ease-out 0s forwards; }
+  #navigator:checked ~ label > div.navigator > .element:not(.isMobile).e4 {
+    transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    animation: e4-close .2s ease-out .15s forwards; }
 @keyframes e4-close {
   from {
     bottom: 0px;
@@ -115,14 +122,102 @@ label {
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
     -o-transform: rotate(45deg); } }
-#navigator:checked ~ label > div.navigator:hover > .element {
-  background-color: red; }
-
-#navigator:checked ~ section.page > section.welcome {
+  #navigator:checked ~ label > div.navigator > .element.isMobile.e1 {
+    transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    animation: e1-close-m .2s ease-out 0s forwards; }
+@keyframes e1-close-m {
+  from {
+    top: 10px;
+    transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg); }
+  to {
+    top: 29px;
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg); } }
+  #navigator:checked ~ label > div.navigator > .element.isMobile.e2 {
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    animation: e2-close-m .2s ease-out .05s forwards; }
+@keyframes e2-close-m {
+  from {
+    left: -10px;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg); }
+  to {
+    left: 10px;
+    transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg); } }
+  #navigator:checked ~ label > div.navigator > .element.isMobile.e3 {
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    animation: e3-close-m .2s ease-out .1s forwards; }
+@keyframes e3-close-m {
+  from {
+    right: -10px;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg); }
+  to {
+    right: 10px;
+    transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg); } }
+  #navigator:checked ~ label > div.navigator > .element.isMobile.e4 {
+    transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    animation: e4-close-m .2s ease-out .15s forwards; }
+@keyframes e4-close-m {
+  from {
+    bottom: 10px;
+    transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg); }
+  to {
+    bottom: 29px;
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg); } }
+#navigator:checked ~ section.page {
   width: calc(100vw - 400px); }
+  #navigator:checked ~ section.page.isMobile {
+    width: 0px; }
 
-#navigator:not(:checked) ~ label > div.navigator > .element.e1 {
+#navigator:not(:checked) ~ label > div.navigator > .element:not(.isMobile).e1 {
   animation: e1-start .1s ease-out .2s forwards;
+  top: 0px;
   transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   -webkit-transform: rotate(0deg);
@@ -133,7 +228,7 @@ label {
     top: 0px; }
   to {
     top: 10px; } }
-#navigator:not(:checked) ~ label > div.navigator > .element.e2 {
+#navigator:not(:checked) ~ label > div.navigator > .element:not(.isMobile).e2 {
   animation: e2-start .1s ease-out .2s forwards;
   transform: rotate(90deg);
   -ms-transform: rotate(90deg);
@@ -145,7 +240,7 @@ label {
     left: -20px; }
   to {
     left: -10px; } }
-#navigator:not(:checked) ~ label > div.navigator > .element.e3 {
+#navigator:not(:checked) ~ label > div.navigator > .element:not(.isMobile).e3 {
   animation: e3-start .1s ease-out .2s forwards;
   transform: rotate(90deg);
   -ms-transform: rotate(90deg);
@@ -157,7 +252,7 @@ label {
     right: -20px; }
   to {
     right: -10px; } }
-#navigator:not(:checked) ~ label > div.navigator > .element.e4 {
+#navigator:not(:checked) ~ label > div.navigator > .element:not(.isMobile).e4 {
   animation: e4-start .1s ease-out .2s forwards;
   transform: rotate(0deg);
   -ms-transform: rotate(0deg);
@@ -169,28 +264,120 @@ label {
     bottom: 0px; }
   to {
     bottom: 10px; } }
-#navigator:not(:checked) ~ label > div.navigator:hover > .element.e1 {
+#navigator:not(:checked) ~ label > div.navigator > .element.isMobile.e1 {
+  animation: e1-start-m .2s ease-out .2s forwards;
+  top: 29px;
+  transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg); }
+@keyframes e1-start-m {
+  from {
+    top: 29px;
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg); }
+  to {
+    top: 10px;
+    transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg); } }
+#navigator:not(:checked) ~ label > div.navigator > .element.isMobile.e2 {
+  animation: e2-start-m .2s ease-out .65s forwards;
+  left: 10px;
+  transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg); }
+@keyframes e2-start-m {
+  from {
+    left: 10px;
+    transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg); }
+  to {
+    left: -10px;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg); } }
+#navigator:not(:checked) ~ label > div.navigator > .element.isMobile.e3 {
+  animation: e3-start-m .2s ease-out .35s forwards;
+  right: 10px;
+  transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg); }
+@keyframes e3-start-m {
+  from {
+    right: 10px;
+    transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg); }
+  to {
+    right: -10px;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg); } }
+#navigator:not(:checked) ~ label > div.navigator > .element.isMobile.e4 {
+  animation: e4-start-m .2s ease-out .5s forwards;
+  bottom: 29px;
+  transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg); }
+@keyframes e4-start-m {
+  from {
+    bottom: 29px;
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg); }
+  to {
+    bottom: 10px;
+    transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg); } }
+#navigator:not(:checked) ~ label > div.navigator:hover > .element:not(.isMobile).e1 {
   animation: e1-hover .1s ease-out 0s forwards; }
 @keyframes e1-hover {
   from {
     top: 10px; }
   to {
     top: 0px; } }
-#navigator:not(:checked) ~ label > div.navigator:hover > .element.e2 {
+#navigator:not(:checked) ~ label > div.navigator:hover > .element:not(.isMobile).e2 {
   animation: e2-hover .1s ease-out 0s forwards; }
 @keyframes e2-hover {
   from {
     left: -10px; }
   to {
     left: -20px; } }
-#navigator:not(:checked) ~ label > div.navigator:hover > .element.e3 {
+#navigator:not(:checked) ~ label > div.navigator:hover > .element:not(.isMobile).e3 {
   animation: e3-hover .1s ease-out 0s forwards; }
 @keyframes e3-hover {
   from {
     right: -10px; }
   to {
     right: -20px; } }
-#navigator:not(:checked) ~ label > div.navigator:hover > .element.e4 {
+#navigator:not(:checked) ~ label > div.navigator:hover > .element:not(.isMobile).e4 {
   animation: e4-hover .1s ease-out 0s forwards; }
 @keyframes e4-hover {
   from {
@@ -205,38 +392,67 @@ label {
   height: 60px;
   cursor: pointer;
   z-index: 9999999; }
-  .navigator > .element {
+  .navigator > .element:not(.isMobile) {
     position: absolute;
     width: 40px;
     height: 2px;
     background-color: white; }
-    .navigator > .element.e1 {
+    .navigator > .element:not(.isMobile).e1 {
       top: 0px;
       left: 10px; }
-    .navigator > .element.e2 {
+    .navigator > .element:not(.isMobile).e2 {
       left: -20px;
       top: 29px; }
-    .navigator > .element.e3 {
+    .navigator > .element:not(.isMobile).e3 {
       right: -20px;
       top: 29px; }
-    .navigator > .element.e4 {
+    .navigator > .element:not(.isMobile).e4 {
       bottom: 0px;
       left: 10px; }
+  .navigator > .element.isMobile {
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    background-color: white; }
+    .navigator > .element.isMobile.e1 {
+      top: 10px;
+      left: 10px; }
+    .navigator > .element.isMobile.e2 {
+      left: -10px;
+      top: 29px; }
+    .navigator > .element.isMobile.e3 {
+      right: -10px;
+      top: 29px; }
+    .navigator > .element.isMobile.e4 {
+      bottom: 10px;
+      left: 10px; }
+  .navigator.isMobile {
+    outline: none;
+    text-decoration: none;
+    color: inherit;
+    -webkit-tap-highlight-color: transparent; }
+    .navigator.isMobile:visted {
+      outline: none;
+      text-decoration: none;
+      color: inherit;
+      -webkit-tap-highlight-color: transparent; }
 
 form {
   float: right; }
   form > .page {
     float: right;
-    clear: none; }
+    clear: none;
+    height: 100vh;
+    width: 100vw;
+    -moz-transition: width 0.2s ease;
+    -o-transition: width 0.2s ease;
+    -webkit-transition: width 0.2s ease;
+    transition: width 0.2s ease; }
     form > .page > .welcome {
-      height: 100vh;
-      width: 100vw;
+      height: 100%;
+      width: 100%;
       background-color: #161616;
-      overflow-x: hidden;
-      -moz-transition: width 0.2s ease;
-      -o-transition: width 0.2s ease;
-      -webkit-transition: width 0.2s ease;
-      transition: width 0.2s ease; }
+      overflow-x: hidden; }
       form > .page > .welcome > .container {
         float: left;
         height: auto;
@@ -255,8 +471,8 @@ form {
           animation: logo .5s ease-out .4s forwards;
           width: 20vw;
           height: 20vw;
-          max-width: 229px;
-          max-height: 229px;
+          max-width: 218px;
+          max-height: 218px;
           min-width: 115px;
           min-height: 115px;
           background-image: url("../../img/spring2017/logo-noText-trans.png");
@@ -275,6 +491,17 @@ form {
           padding-top: 30px;
           font-size: 2em;
           color: white;
+          font-weight: 300; }
+@keyframes title {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+        form > .page > .welcome > .container > .date {
+          opacity: 0;
+          animation: title .5s ease-out 0.9s forwards;
+          color: white;
+          font-size: 1em;
           font-weight: 300; }
 @keyframes title {
   from {
