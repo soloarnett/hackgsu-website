@@ -7,82 +7,82 @@
 */
 include('.dbconfig.inc');
 $dbname='hackgsu2';
-// $message = '
-// <!DOCTYPE html>
-// <html lang="en">
-// <head>
-//     <meta charset="utf-8">
-//     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-//     <meta name="viewport" content="width=device-width, initial-scale=1">
-//     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-//     <meta name="description" content="">
-//     <meta name="author" content="">
-//     <link rel="icon" href="http://www.gsu.edu/wp-content/themes/gsu-core/favicon.ico">
-//     <title>hackGSU / March 25-27 / Georgia State University</title>
+$message = '
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="http://www.gsu.edu/wp-content/themes/gsu-core/favicon.ico">
+    <title>hackGSU / March 25-27 / Georgia State University</title>
 
-//     <!-- Bootstrap core CSS -->
-//     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 
-//     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-//     <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
-//     <!-- Custom styles for this template -->
-//     <link href="assets/css/cover.css" rel="stylesheet">
-// 	<link rel="alternate" href="http://www.hackgsu.com/mobile" media="handheld">
-// 	<link rel="alternate" href="http://www.hackgsu.com/mobile" media="only screen and (max-width: 640px)">
-//     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-//     <!--[if lt IE 9]>
-//       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-//       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-//     <![endif]-->
+    <!-- Custom styles for this template -->
+    <link href="assets/css/cover.css" rel="stylesheet">
+	<link rel="alternate" href="http://www.hackgsu.com/mobile" media="handheld">
+	<link rel="alternate" href="http://www.hackgsu.com/mobile" media="only screen and (max-width: 640px)">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-//     <script src="https://www.google.com/recaptcha/api.js"></script>
-//   </head>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+  </head>
 
-// <body>
-//     <div class="site-wrapper">
+<body>
+    <div class="site-wrapper">
 
-//       <div class="site-wrapper-inner">
-// 		<br/><br/>
-//         <div class="cover-container">
-//         	<!-- MLH Badge-->
-// 			<a id="mlh-trust-badge" style="position:fixed;top:0;right:10px;max-width:100px;width:10%;min-width: 60px;display:block;z-index:10000" href="https://mlh.io/seasons/s2016/events?utm_source=s2016&utm_medium=TrustBadge&utm_campaign=s2016" target="_blank"><img src="https://s3.amazonaws.com/logged-assets/trust-badge/s2016.png" alt="MLH Official - Spring 2016" style="width:100%;" ></a>
-//           <div class="masthead clearfix" style="float:left">
-//             <div class="inner" style=>
-//               <div id="navigation" style="location: fixed; float:left; right:10px">
-// 					<nav >
-// 						<ul class="nav masthead-nav" >
-// 							<li ><a href="index.html#logo">Home</a></li>
-// 							<li><a href="index.html#faq">FAQ</a></li>
-// 							<li class="active"><a href="#">Registration Completed!!</a></li>
-// 							<!--
-// 							<li><a href="#location">Location</a></li>
-// 							<li><a href="#schedule">Schedule</a></li>
-// 							-->
-// 							<li><a href="index.html#sponsors">Sponsors</a></li>
-// 							<li><a href="https://twitter.com/HackGSU" target="_blank"><img width="100%" src="assets/img/twitter.png" alt="Follow us on Twitter!"></a></li>
-// 							<!--
-// 							<li><a href="https://www.facebook.com/events/936572959745025/" target="_blank"><img width="100%" src="assets/img/facebook.png" alt="Facebook Event"></a></li>
-// 							<li><a href="http://hackgsu-2016.devpost.com" target="_blank"><img width="100px" src="assets/img/devpost.svg" alt="Devpost"></a></li>
-// 							-->
-// 						</ul>
-// 					</nav>
-//               </div> <!--navigation-->
+      <div class="site-wrapper-inner">
+		<br/><br/>
+        <div class="cover-container">
+        	<!-- MLH Badge-->
+			<a id="mlh-trust-badge" style="position:fixed;top:0;right:10px;max-width:100px;width:10%;min-width: 60px;display:block;z-index:10000" href="https://mlh.io/seasons/s2016/events?utm_source=s2016&utm_medium=TrustBadge&utm_campaign=s2016" target="_blank"><img src="https://s3.amazonaws.com/logged-assets/trust-badge/s2016.png" alt="MLH Official - Spring 2016" style="width:100%;" ></a>
+          <div class="masthead clearfix" style="float:left">
+            <div class="inner" style=>
+              <div id="navigation" style="location: fixed; float:left; right:10px">
+					<nav >
+						<ul class="nav masthead-nav" >
+							<li ><a href="index.html#logo">Home</a></li>
+							<li><a href="index.html#faq">FAQ</a></li>
+							<li class="active"><a href="#">Registration Completed!!</a></li>
+							<!--
+							<li><a href="#location">Location</a></li>
+							<li><a href="#schedule">Schedule</a></li>
+							-->
+							<li><a href="index.html#sponsors">Sponsors</a></li>
+							<li><a href="https://twitter.com/HackGSU" target="_blank"><img width="100%" src="assets/img/twitter.png" alt="Follow us on Twitter!"></a></li>
+							<!--
+							<li><a href="https://www.facebook.com/events/936572959745025/" target="_blank"><img width="100%" src="assets/img/facebook.png" alt="Facebook Event"></a></li>
+							<li><a href="http://hackgsu-2016.devpost.com" target="_blank"><img width="100px" src="assets/img/devpost.svg" alt="Devpost"></a></li>
+							-->
+						</ul>
+					</nav>
+              </div> <!--navigation-->
 
-// 			  <!-- start:  content and jump points -->
-// 			  <div id="content" >
-// 				<div style="background-color:#1e9ad6" id="volunteer">
-// 				<font color="#000000">
-// 				<br/><br/><br/><br/>
-// 				<section id="volunteer_list">
-// 					<div class="inner" >
-// 					<br/><br/>
-// 					<h1 ><font face="monospace" color="#FFFFFF"> &#60;!-- hackGSU HACKERS --> </font></h1>
-// '
-// .   '   <h1>hackGSU Hacker Skills Evaluation Complete</h1>'
-// .   '   <br />'
-// .   '   <p>Thank you!!</p>  '
-// .   '   <br /><br />';
+			  <!-- start:  content and jump points -->
+			  <div id="content" >
+				<div style="background-color:#1e9ad6" id="volunteer">
+				<font color="#000000">
+				<br/><br/><br/><br/>
+				<section id="volunteer_list">
+					<div class="inner" >
+					<br/><br/>
+					<h1 ><font face="monospace" color="#FFFFFF"> &#60;!-- hackGSU HACKERS --> </font></h1>
+'
+.   '   <h1>hackGSU Hacker Skills Evaluation Complete</h1>'
+.   '   <br />'
+.   '   <p>Thank you!!</p>  '
+.   '   <br /><br />';
 
 //Form Passed Parameters
 	if(isset($_REQUEST['email_address'])){$p_email_address=$_REQUEST['email_address'];}else{$p_email_address='';}
@@ -364,22 +364,63 @@ $dbname='hackgsu2';
          $result = mysqli_query($con, $query);
          if ($result == false)
          {
-             // $error_message =
-             //     '<HTML><HEAD><TITLE>Error Message</TITLE></HEAD><BODY>'
-             // .   '   <h2>An error has occured.</h2>'
-             // .   '   <br />'
-             // .   '   <p>'
-             // .   '   We apologize for the inconvenience.  Please try again later.'
-             // .   '   <br />'
-             // .   '   <br />'
-             // .   '   </p>'
-             // .   '   <br />'
-             // .   '</BODY></HTML>'
-             // ;
-             // echo $error_message;
-             // $message = $message
-             // echo $message;
-         }else{
-         	header("Location: http://hackgsu.com/"); 
+             $error_message =
+                 '<HTML><HEAD><TITLE>Error Message</TITLE></HEAD><BODY>'
+             .   '   <h2>An error has occured.</h2>'
+             .   '   <br />'
+             .   '   <p>'
+             .   '   We apologize for the inconvenience.  Please try again later.'
+             .   '   <br />'
+             .   '   <br />'
+             .   '   </p>'
+             .   '   <br />'
+             .   '</BODY></HTML>'
+             ;
+             echo $error_message;
          }
+
+  $message = $message
+. '				</div>  <!-- partners div  -->
+
+
+			    <div style="background:#000000" id="sponsors">
+				  <br/><br/><br/><br/>
+				  <h1 id="sponsor" style="color:#1e9ad6">  Have a question not answered on our <a href="index.html#faq">FAQ?</a>  </h1>
+				  <p>
+					<font color="#CCCCCC" size="+1"><b> Please email us: <a href="mailto:hackathon@cs.gsu.edu?Subject=hackGSU2016-Skills%20Inquiry">hackathon@cs.gsu.edu</a> </b>
+
+				  </p>
+				  <p> <font size="-1">Hosted by the Georgia State University Computer Science Department ACM and IEEE student organizations</font></p>
+				  </font>
+				  <br/><br/><br/><br/>
+			    </div>
+				<!-- end:  content and jump points -->
+				<div class="mastfoot">
+					<p style="color:#ccc"> &copy;2016 HackGSU. All Rights Reserved
+					<a href="https://twitter.com/HackGSU"><img src="assets/img/twitter.png" alt="Follow us on Twitter!"></a>
+                    <a href="https://www.facebook.com/events/936572959745025/"><img src="assets/img/facebook.png" alt="Facebook Event"></a>
+                    </p>
+				</div><!--mastfoot-->
+			  </div><!--content-->
+			</div> <!--iiner-->
+
+		   </div> <!--masthead clearfix -->
+        </div> <!--cover-container-->
+       </div> <!--site-wrapper-inner-->
+    </div> <!--site-wrapper-->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="assets/js/vendor/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
+';
+  echo $message;
+  header('Location: http://hackgsu.com'); 
+
 ?>

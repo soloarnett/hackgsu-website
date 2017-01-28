@@ -1,0 +1,1 @@
+[16-Oct-2016 21:42:41 UTC] PHP Fatal error:  Call to undefined function http_redirect() in /home/frankencluster/public_html/hackgsu.com/skills_save.php on line 424

@@ -1,15 +1,23 @@
+<?php 
+	require_once('vendor/autoload.php');
+	require_once('firebase.php');
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>hackGSU / October 21-23 / Georgia State University</title>
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/fall2016/main.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
-	<link rel="icon" href="images/favicon.ico">
+	<link rel="icon" href="assets/img/fall2016/favicon.ico">
+	<link rel="manifest" href="manifest/manifest.json">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<meta name="description" content="">
     <meta name="author" content="">
 </head>
-<body class="overflow-auto">
+<body  class="overflow-auto">
 
 	<div id="wrapper">
 		<!-- welcome -->
@@ -23,20 +31,23 @@
 				
 			</div>
 			<div class="position-absolute position-absolute-top width-full-screen height-full-screen" id="back-image"></div>
-				<!-- <img class="width-full invisible" src="images/top-image-sizer.png"> -->
+				<!-- <img class="width-full invisible" src="assets/img/fall2016/top-image-sizer.png"> -->
 				
 			<!-- </div> -->
 			<div class="width-full-screen height-full zindex-top position-absolute position-absolute-top">
 				<div class="desktop-top-links-positioning mobile-top-links-positioning">
 					<div class="mobile-top-links-container">
 						<div class="position-relative float-left unselectable link nav-link width-third" id="register-link">
-							<a href="http://my.mlh.io/oauth/authorize?client_id=83b1262b912a0d252d2d5f44c9506e8beaba4a67035ebe8d498f8dacc685d284&redirect_uri=http%3A%2F%2Fwww.hackgsu.com%2Fskills.php&response_type=token" class="click-nav-link"><span class="nav-link-text">Register</span></a>
+							<a href="#" target="_blank" class="click-nav-link"><span class="nav-link-text">Register</span></a>
 						</div>
 						<div class="position-relative float-left unselectable link nav-link width-third" id="schedule-link">
 							<a class="click-nav-link" href="#/schedule"><span class="nav-link-text">Schedule</span></a>
 						</div>
 						<div class="position-relative float-left unselectable link nav-link  width-third" id="faq-link">
 							<a class="click-nav-link" href="#/faq"><span class="nav-link-text">FAQ</span></a>
+						</div>
+						<div class="position-relative float-left unselectable link nav-link width-third announcement-minimizer-2 announcements-link" id="announcements-link">
+							<span class="nav-link-text" id="announcement-link-text">Announcements</span>
 						</div>
 						<div class="position-relative float-left unselectable link nav-link width-third" id="sponsors-link">
 							<a class="click-nav-link" href="#/sponsors"><span class="nav-link-text">Sponsors</span></a>
@@ -45,10 +56,10 @@
 							<a class="click-nav-link" href="#/gallery"><span class="nav-link-text">Gallery</span></a>
 						</div>
 						<div class="position-relative float-left unselectable link nav-link width-third" id="explore-link">
-							<a class="click-nav-link" href="#/explore"><span class="nav-link-text">About</span></a>
+							<a class="click-nav-link" href="#/explore"><span class="nav-link-text">Explore</span></a>
 						</div>
 						<div class="position-relative float-left unselectable link nav-link width-third" id="slack-link">
-							<a class="click-nav-link" href="http://hackgsu-fall16.devpost.com"><span class="nav-link-text">Devpost</span></a>
+							<a class="click-nav-link" href="http://hackgsu-fall16.devpost.com" target="_blank"><span class="nav-link-text">Devpost</span></a>
 						</div>
 					</div>
 				</div>
@@ -61,8 +72,8 @@
 			<div class="height-full ad-avoider position-relative float-left" id="schedule-container">
 				<h1 class=" no-cursor title-font-size skinny-font sky-text bump-top-left title-placement mobile-center-h1 mobile-padding-vertical-bump" id="schedule-title">Schedule</h1>
 				<div class="center-text" id="view-text-wrapper">
-					<span class="position-relative float-left schedule-view" id="stream-view">Stream view</span>
-					<span class="position-relative float-left schedule-view" id="glance-view">At a glance view</span>
+					<span class="position-relative float-left schedule-view unselectable" id="stream-view">Stream view</span>
+					<span class="position-relative float-left schedule-view unselectable" id="glance-view">At a glance view</span>
 				</div>
 				
 				<div class="schedule-wrapper" id="schedule-wrapper">
@@ -99,17 +110,17 @@
 							<div class="agenda-object" id="">
 								<span class="agenda-time " id="">8:30pm</span>
 								<div class="agenda-trackball"></div>
-								<span class="agenda-text">Development<br>Workshop A</span>
+								<span class="agenda-text">Workshop A: CTFs and Pen Testing<br>by Justin Massey</span>
 							</div>
 							<div class="agenda-object" id="">
 								<span class="agenda-time " id="">9:30pm</span>
 								<div class="agenda-trackball"></div>
-								<span class="agenda-text">Development<br>Workshop B</span>
+								<span class="agenda-text">Workshop B: Getting Started with<br>HTML and JavaScript<br>by Gene Chorba and Solomon Arnett</span>
 							</div>
 							<div class="agenda-object" id="">
 								<span class="agenda-time " id="">10:30pm</span>
 								<div class="agenda-trackball"></div>
-								<span class="agenda-text">Development<br>Workshop C</span>
+								<span class="agenda-text">Workshop C: Getting Started with iOS<br>by Harsha Goli</span>
 							</div>
 							<div class="agenda-object" id="">
 								<span class="agenda-time " id="">12am</span>
@@ -130,7 +141,7 @@
 							<div class="agenda-object" id="">
 								<span class="agenda-time " id="">11am</span>
 								<div class="agenda-trackball"></div>
-								<span class="agenda-text">Development<br>Workshop D</span>
+								<span class="agenda-text">Workshop D: Building your First Android App<br>by Gene Chorba and Josh King</span>
 							</div>
 							<div class="agenda-object" id="">
 								<span class="agenda-time " id="">1pm</span>
@@ -140,17 +151,17 @@
 							<div class="agenda-object" id="">
 								<span class="agenda-time " id="">1:30pm</span>
 								<div class="agenda-trackball"></div>
-								<span class="agenda-text">TBD</span>
+								<span class="agenda-text">Surprise</span>
 							</div>
 							<div class="agenda-object" id="">
 								<span class="agenda-time " id="">2pm</span>
 								<div class="agenda-trackball"></div>
-								<span class="agenda-text">Development<br>Workshop E</span>
+								<span class="agenda-text">Workshop E: Getting most out of your Project<br>(Submissions, Presentations, and <br>After the Hackaton)by Bernie Marger</span>
 							</div>
 							<div class="agenda-object" id="">
 								<span class="agenda-time " id="">3pm</span>
 								<div class="agenda-trackball"></div>
-								<span class="agenda-text">TBD</span>
+								<span class="agenda-text">Surprise</span>
 							</div>
 							<div class="agenda-object" id="">
 								<span class="agenda-time " id="">6pm</span>
@@ -165,7 +176,7 @@
 							<div class="agenda-object" id="">
 								<span class="agenda-time " id="">12am</span>
 								<div class="agenda-trackball"></div>
-								<span class="agenda-text">Saturday Midnight<br>Madness</span>
+								<span class="agenda-text">Saturday Midnight Madness<br>GE Digital Challenge</span>
 							</div>
 						</div>
 					</div>
@@ -222,7 +233,7 @@
 		</div>
 
 		<!-- little faq -->
-		<div class="height-auto width-full-screen berry-back position-relative float-left" id="bottom">
+		<div class="height-auto width-full-screen berry-back position-relative float-left" id="faq">
 			<div class="height-full ad-avoider position-relative float-left">
 				<h1 class=" no-cursor title-font-size skinny-font sky-text bump-top-left title-placement mobile-center-h1 mobile-padding-vertical-bump" id="faq-title">FAQ</h1>
 				<div class="faq-container position-relative float-left height-full width-full">
@@ -297,13 +308,14 @@
 		<!-- slideshow image -->
 		<div class="height-full-screen width-full-screen mobile-cover-full-image position-relative float-left overflow-auto" id="slideshow-container">
 			<div class="desktop-slideshow-image" id="desktop-slideshow-image"></div>
+			<h1 class="sky-text skinny-font gallery-text">Gallery</h1>
 			<div class="height-full-screen position-relative float-left" id="slideshow">
 				<div class="arrow-image" id="arrow-image-left">
-					<img class="slideshow-image-placement" id="slideshow-right" src="images/slideshow/arrows/right.png">
+					<img class="slideshow-image-placement" id="slideshow-right" src="assets/img/fall2016/slideshow/arrows/right.png">
 					<span class="slideshow-start-text" id="slideshow-start-text-left">swipe<br>left</span>
 				</div>
 				<div class="arrow-image" id="arrow-image-right">
-					<img class="slideshow-image-placement" id="slideshow-left" src="images/slideshow/arrows/left.png">
+					<img class="slideshow-image-placement" id="slideshow-left" src="assets/img/fall2016/slideshow/arrows/left.png">
 					<span class="slideshow-start-text" id="slideshow-start-text-right">swipe<br>right</span>
 				</div>
 				<div class="mobile-cover-full-image position-relative float-left slideshow-image" id="petit-image">
@@ -327,22 +339,48 @@
 				<div class="position-relative float-left clear-both" id="sponsors-image">
 					
 				</div>
+				<div class="position-relative float-left clear-both" id="mobile-sponsors-image">
+					
+				</div>
 			</div>
 
 		</div>
 
 		<!-- mobile bottom image -->
-		<div class="height-full-screen width-full-screen position-relative float-left overflow-hidden background-black" id="explore">
+		<div class="height-auto width-full-screen position-relative float-left overflow-hidden background-black" id="explore">
 			<div class="height-auto position-relative float-left clear-both ad-avoider">
 				<h1 class="no-cursor title-font-size skinny-font sky-text bump-top-left title-placement mobile-center-h1 mobile-padding-vertical-bump" id="explore-title">Explore</h1>
 				<div class="left-vw">
 					<h2 class="sky-text skinny-font">Apps</h2>
+						<div class="app-links">
+							<a class="ios-link" href="https://itunes.apple.com/us/app/hackgsu/id1167284597?mt=8">
+								<img alt="Get it on the App Store" src="assets/img/fall2016/iosappstore.png">
+							</a>
+							<a class="android-link" href='https://play.google.com/store/apps/details?id=com.hackgsu.fall2016.android&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='assets/img/fall2016/playstore.png'/></a>
+						</div>
+						
+						
+
+					<!-- <p class="font-white">The Official hackGSU iOS and Android Apps are coming to your pocket soon! Stay tuned...</p> -->
+					<h2 class="sky-text skinny-font explore-item">Where's the event?</h2>
+					<span class="sky-text link-no-decoration explore-item" id="directions"><a class="link-no-decoration" href="directions">Directions</a></span>
+					<p class="font-white explore-item">60 Luckie Street NW<br>Atlanta, GA 30303<br>404-413-2500</p>
+					<iframe class="gsu-map explore-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3317.17076070515!2d-84.39147184929088!3d33.756252980592805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f503871aed7f0b%3A0x7739c4923f8b8ca0!2sAderhold+Learning+Center!5e0!3m2!1sen!2sus!4v1476630093428" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+					<h2 class="sky-text skinny-font explore-item">Stay in the know</h2>
+					<div class="explore-item">
+						<a href="https://www.facebook.com/groups/hackgsu/" target="_blank"><img class="position-relative float-left" src="assets/img/fall2016/facebook.png"></a>
+						<a href="https://twitter.com/hackgsu" target="_blank"><img class="position-relative float-left" src="assets/img/fall2016/twitter.png"></a>
+					</div>
 				</div>
+
 			</div>
+
 			<!-- <div class="width-full height-full background-rose position-absolute zindex-3 opacity-50" id="bottom-image-cover"></div>
 			<div class="position-relative float-left mobile-cover-full-image" id="city-gif"></div>
 			<div class="position-relative float-left mobile-cover-full-image" id="bottom-image"></div> -->
-
+			<div class="no-cursor no-link-color skinny-font position-absolute bottom-middle negative-margin" id="shameless-plug">
+			Created by&nbsp;<a class="no-link-color zindex-top link skinny-font" target="_blank" href="https://linkedin.com/in/solomonarnett">Solomon Arnett</a>&nbsp;and&nbsp;<a class="no-link-color zindex-top link skinny-font" target="_blank" href="https://www.linkedin.com/in/sri-rajasekaran">Sri Rajasekaran</a>
+			</div>
 		</div>
 		
 		<div id="mobile-spacer"></div>
@@ -355,17 +393,38 @@
 			<!-- <div class="width-full height-full blur-50 position-absolute position-absolute-top"></div> -->
 			<h3 class="link">Georgia State University</h3>
 			<h1 class="no-cursor ">10 . 21 . 16</h1>
-			<a href="http://my.mlh.io/oauth/authorize?client_id=83b1262b912a0d252d2d5f44c9506e8beaba4a67035ebe8d498f8dacc685d284&redirect_uri=http%3A%2F%2Fwww.hackgsu.com%2Fskills.php&response_type=token" class="click-nav-link"><div class="open-sans position-inline-inner-middle rsvp-button" id="rsvp-button">REGISTER</div></a>
+			<a target="_blank" href="http://my.mlh.io/oauth/authorize?client_id=83b1262b912a0d252d2d5f44c9506e8beaba4a67035ebe8d498f8dacc685d284&redirect_uri=http%3A%2F%2Fwww.hackgsu.com%2Fskills.php&response_type=token" class="click-nav-link"><div class="open-sans position-inline-inner-middle rsvp-button" id="rsvp-button">REGISTER</div></a>
 			
 		</div>
 	</div>
+
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ JS ONLY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	
 	<div class="explore-title-fixed" id="explore-title-fixed">
 		<h1 class="sky-text skinny-font title-font-size bump-top-left title-placement">Explore</h1>
 	</div>
+	<div class="schedule-title-fixed" id="schedule-title-fixed">
+		<h1 class="sky-text skinny-font title-font-size bump-top-left title-placement">Schedule</h1>
+	</div>
+	<div class="view-text-wrapper-script" id="view-text-wrapper-fixed">
+		<span class="position-relative float-left schedule-view no-transition unselectable" id="stream-view-fixed">Stream view</span>
+		<span class="position-relative float-left schedule-view no-transition unselectable" id="glance-view-fixed">At a glance view</span>
+	</div>
+	<div class="directions-initial transition-3" id="directions-view">
+		<h1 class="cancel-directions-x" id="cancel-directions">close</h1>
+		<?php include_once('assets/html/fall2016/directions-min.html'); ?>
+		<!-- <div class="cancel-directions-close" id="cancel-directions">Close</div> -->
+	</div>
+	<div class="announcement-block announcement-block-active" id="announcement-block">
+		
+
+	</div>
+
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ END JS ONLY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 	
 	<!-- <script type="text/javascript">$(function(){var $w = $(window),$background = $('#background');if ((/Android|iPhone|iPad|iPod|BlackBerry/i).test(navigator.userAgent || navigator.vendor || window.opera)){$background.css({'top': 'auto', 'bottom': 0});$w.resize(sizeBackground);sizeBackground();}function sizeBackground(){$background.height(screen.height);}});
 	</script> -->
-	<script type="text/javascript" src="scripts/main.js"></script>
+	<script type="text/javascript" src="assets/js/fall2016/main.js"></script>
 </body>
 </html>
