@@ -1,0 +1,442 @@
+@import 'variables';
+
+
+body{
+
+	//{ ** ATTRIBUTES
+		background-color: $color-black;
+		margin: 0;
+		height: auto;
+		width: auto;
+	//} ** END ATTRIBUTES
+	
+}
+
+*{
+	position: relative;
+	z-index: 1;
+}
+
+input[type=checkbox] {
+   position: absolute;
+   top: -9999px;
+   left: -9999px;
+}
+
+label{
+	z-index: 999999;
+}
+
+.hackbot{
+
+	//{ ** ATTRIBUTES
+		width: 400px;
+		background-color: black;
+		height: 100vh;
+		position: fixed;
+		z-index: 0;
+	//} ** END ATTRIBUTES
+	
+}
+
+#navigator:checked ~ label > div.navigator{
+	>.element{
+		&.e1{
+
+			transform: rotate(0deg);
+			-ms-transform: rotate(0deg);
+			-webkit-transform: rotate(0deg);
+			-moz-transform: rotate(0deg);
+			-o-transform: rotate(0deg);
+
+			@keyframes e1-close{
+				from{
+					top: 27px;
+					transform: rotate(0deg);
+					-ms-transform: rotate(0deg);
+					-webkit-transform: rotate(0deg);
+					-moz-transform: rotate(0deg);
+					-o-transform: rotate(0deg);
+				}
+				to{
+					top: 29px;
+					transform: rotate(45deg);
+					-ms-transform: rotate(45deg);
+					-webkit-transform: rotate(45deg);
+					-moz-transform: rotate(45deg);
+					-o-transform: rotate(45deg);
+				}
+			}
+			animation: e1-close .1s ease-out 0s forwards;
+		}
+		&.e2{
+
+			transform: rotate(90deg);
+			-ms-transform: rotate(90deg);
+			-webkit-transform: rotate(90deg);
+			-moz-transform: rotate(90deg);
+			-o-transform: rotate(90deg);
+
+			@keyframes e2-close{
+				from{
+					left: -20px;
+					transform: rotate(90deg);
+					-ms-transform: rotate(90deg);
+					-webkit-transform: rotate(90deg);
+					-moz-transform: rotate(90deg);
+					-o-transform: rotate(90deg);
+				}
+				to{
+					left: 10px;
+					transform: rotate(135deg);
+					-ms-transform: rotate(135deg);
+					-webkit-transform: rotate(135deg);
+					-moz-transform: rotate(135deg);
+					-o-transform: rotate(135deg);
+				}
+			}
+			animation: e2-close .1s ease-out 0s forwards;
+		}
+		&.e3{
+
+			transform: rotate(90deg);
+			-ms-transform: rotate(90deg);
+			-webkit-transform: rotate(90deg);
+			-moz-transform: rotate(90deg);
+			-o-transform: rotate(90deg);
+
+			@keyframes e3-close{
+				from{
+					right: -20px;
+					transform: rotate(90deg);
+					-ms-transform: rotate(90deg);
+					-webkit-transform: rotate(90deg);
+					-moz-transform: rotate(90deg);
+					-o-transform: rotate(90deg);
+				}
+				to{
+					right: 10px;
+					transform: rotate(135deg);
+					-ms-transform: rotate(135deg);
+					-webkit-transform: rotate(135deg);
+					-moz-transform: rotate(135deg);
+					-o-transform: rotate(135deg);
+				}
+			}
+			animation: e3-close .1s ease-out 0s forwards;
+		}
+		&.e4{
+
+			transform: rotate(0deg);
+			-ms-transform: rotate(0deg);
+			-webkit-transform: rotate(0deg);
+			-moz-transform: rotate(0deg);
+			-o-transform: rotate(0deg);
+
+			@keyframes e4-close{
+				from{
+					bottom: 0px;
+					transform: rotate(0deg);
+					-ms-transform: rotate(0deg);
+					-webkit-transform: rotate(0deg);
+					-moz-transform: rotate(0deg);
+					-o-transform: rotate(0deg);
+				}
+				to{
+					bottom: 29px;
+					transform: rotate(45deg);
+					-ms-transform: rotate(45deg);
+					-webkit-transform: rotate(45deg);
+					-moz-transform: rotate(45deg);
+					-o-transform: rotate(45deg);
+				}
+			}
+			animation: e4-close .1s ease-out 0s forwards;
+		}
+	}
+
+	&:hover{
+		>.element{
+			background-color: red;
+		}
+	}
+}
+
+#navigator:checked ~ section.page > section.welcome{
+	width: calc(100vw - 400px);
+}
+
+#navigator:not(:checked) ~ label > div.navigator{
+	>.element{
+		&.e1{
+			@keyframes e1-start{
+				from{
+					top: 0px;
+				}
+				to{
+					top: 10px;
+				}
+			}
+			animation: e1-start .1s ease-out .2s forwards;
+
+			transform: rotate(0deg);
+			-ms-transform: rotate(0deg);
+			-webkit-transform: rotate(0deg);
+			-moz-transform: rotate(0deg);
+			-o-transform: rotate(0deg);
+		}
+		&.e2{
+			@keyframes e2-start{
+				from{
+					left: -20px;
+				}
+				to{
+					left: -10px;
+				}
+			}
+			animation: e2-start .1s ease-out .2s forwards;
+
+			transform: rotate(90deg);
+			-ms-transform: rotate(90deg);
+			-webkit-transform: rotate(90deg);
+			-moz-transform: rotate(90deg);
+			-o-transform: rotate(90deg);
+		}
+		&.e3{
+			@keyframes e3-start{
+				from{
+					right: -20px;
+				}
+				to{
+					right: -10px;
+				}
+			}
+			animation: e3-start .1s ease-out .2s forwards;
+
+			transform: rotate(90deg);
+			-ms-transform: rotate(90deg);
+			-webkit-transform: rotate(90deg);
+			-moz-transform: rotate(90deg);
+			-o-transform: rotate(90deg);
+		}
+		&.e4{
+			@keyframes e4-start{
+				from{
+					bottom: 0px;
+				}
+				to{
+					bottom: 10px;
+				}
+			}
+			animation: e4-start .1s ease-out .2s forwards;
+
+			transform: rotate(0deg);
+			-ms-transform: rotate(0deg);
+			-webkit-transform: rotate(0deg);
+			-moz-transform: rotate(0deg);
+			-o-transform: rotate(0deg);
+		}
+	}
+	&:hover{
+		>.element{
+			&.e1{
+				@keyframes e1-hover{
+					from{
+						top: 10px;
+					}
+					to{
+						top: 0px;
+					}
+				}
+				animation: e1-hover .1s ease-out 0s forwards;
+			}
+			&.e2{
+				@keyframes e2-hover{
+					from{
+						left: -10px;
+					}
+					to{
+						left: -20px;
+					}
+				}
+				animation: e2-hover .1s ease-out 0s forwards;
+			}
+			&.e3{
+				@keyframes e3-hover{
+					from{
+						right: -10px;
+					}
+					to{
+						right: -20px;
+					}
+				}
+				animation: e3-hover .1s ease-out 0s forwards;
+			}
+			&.e4{
+				@keyframes e4-hover{
+					from{
+						bottom: 10px;
+					}
+					to{
+						bottom: 0px;
+					}
+				}
+				animation: e4-hover .1s ease-out 0s forwards;
+			}
+		}
+	}
+
+}
+
+.navigator{
+
+	//{ ** ATTRIBUTES
+		position: fixed;
+		left: 20px;
+		top: 20px;
+		width: 60px;
+		height: 60px;
+		cursor: pointer;
+		z-index: 9999999;
+
+	//} ** END ATTRIBUTES
+	
+	>.element{
+		position: absolute;
+		width: 40px;
+		height: 2px;
+		background-color: white;
+
+		&.e1{
+			
+			top: 0px;
+			left: 10px;
+		}
+		&.e2{
+
+			left: -20px;
+			top: 29px;
+		}
+		&.e3{
+
+			right: -20px;
+			top: 29px;
+
+		}
+		&.e4{
+
+			bottom: 0px;
+			left: 10px;
+			
+		}
+	}
+}
+
+
+
+form{
+
+	//{ ** ATTRIBUTES
+		float: right;
+	//} ** END ATTRIBUTES
+	
+	>.page{
+
+	//{ ** ATTRIBUTES
+		float: right;
+		clear: none;   
+	//} ** END ATTRIBUTES
+
+		>.welcome{
+
+			//{ ** ATTRIBUTES
+				height: 100vh;
+				width: 100vw;
+				background-color: $color-black;
+				overflow-x: hidden;
+			//} ** END ATTRIBUTES
+
+
+			//{ ** INCLUDES
+				@include quickTransition(width);
+			//} ** END INCLUDES
+			
+			
+
+
+			>.container{
+						
+				//{ ** ATTRIBUTES
+					float: left;
+					height: auto;
+					width: auto;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+				//} ** END ATTRIBUTES
+				>*{
+					float: left;
+					clear: left;
+					left: 50%;
+					transform: translateX(-50%);
+				}		
+				>.logo{
+
+					opacity: 0;
+					margin-top: 20px;
+
+					@keyframes logo{
+						from{
+							margin-top: 20px;
+							opacity: 0;
+						}
+						to{
+							margin-top: 0px;
+							opacity: 1;
+						}
+					}
+
+					animation: logo .5s ease-out .4s forwards;
+
+					//{ ** ATTRIBUTES
+						width: 20vw;
+						height: 20vw;
+						max-width: 229px;
+						max-height: 229px;
+						min-width: 115px;
+						min-height: 115px;
+						background-image: url('../../img/spring2017/logo-noText-trans.png');
+						background-size: contain;
+						background-repeat: no-repeat;
+						
+						
+						
+					//} ** END ATTRIBUTES
+					
+				}
+				>.title{
+
+					opacity: 0;
+
+					@keyframes title{
+						from{
+							opacity: 0;
+						}
+						to{
+							opacity: 1;
+						}
+					}
+
+					animation: title .5s ease-out .9s forwards;
+					//{ ** ATTRIBUTES
+						padding-top: 30px;
+						font-size: 2em;
+						color: white;
+						font-weight: 300;
+					//} ** END ATTRIBUTES
+					
+				}
+			}
+		}
+	}
+}

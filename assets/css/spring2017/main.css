@@ -1,0 +1,285 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,400i,900");
+* {
+  font-family: "Lato", sans-serif; }
+
+body {
+  background-color: #161616;
+  margin: 0;
+  height: auto;
+  width: auto; }
+
+* {
+  position: relative;
+  z-index: 1; }
+
+input[type=checkbox] {
+  position: absolute;
+  top: -9999px;
+  left: -9999px; }
+
+label {
+  z-index: 999999; }
+
+.hackbot {
+  width: 400px;
+  background-color: black;
+  height: 100vh;
+  position: fixed;
+  z-index: 0; }
+
+#navigator:checked ~ label > div.navigator > .element.e1 {
+  transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  animation: e1-close .1s ease-out 0s forwards; }
+@keyframes e1-close {
+  from {
+    top: 27px;
+    transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg); }
+  to {
+    top: 29px;
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg); } }
+#navigator:checked ~ label > div.navigator > .element.e2 {
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  animation: e2-close .1s ease-out 0s forwards; }
+@keyframes e2-close {
+  from {
+    left: -20px;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg); }
+  to {
+    left: 10px;
+    transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg); } }
+#navigator:checked ~ label > div.navigator > .element.e3 {
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  animation: e3-close .1s ease-out 0s forwards; }
+@keyframes e3-close {
+  from {
+    right: -20px;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg); }
+  to {
+    right: 10px;
+    transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg); } }
+#navigator:checked ~ label > div.navigator > .element.e4 {
+  transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  animation: e4-close .1s ease-out 0s forwards; }
+@keyframes e4-close {
+  from {
+    bottom: 0px;
+    transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg); }
+  to {
+    bottom: 29px;
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg); } }
+#navigator:checked ~ label > div.navigator:hover > .element {
+  background-color: red; }
+
+#navigator:checked ~ section.page > section.welcome {
+  width: calc(100vw - 400px); }
+
+#navigator:not(:checked) ~ label > div.navigator > .element.e1 {
+  animation: e1-start .1s ease-out .2s forwards;
+  transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg); }
+@keyframes e1-start {
+  from {
+    top: 0px; }
+  to {
+    top: 10px; } }
+#navigator:not(:checked) ~ label > div.navigator > .element.e2 {
+  animation: e2-start .1s ease-out .2s forwards;
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg); }
+@keyframes e2-start {
+  from {
+    left: -20px; }
+  to {
+    left: -10px; } }
+#navigator:not(:checked) ~ label > div.navigator > .element.e3 {
+  animation: e3-start .1s ease-out .2s forwards;
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg); }
+@keyframes e3-start {
+  from {
+    right: -20px; }
+  to {
+    right: -10px; } }
+#navigator:not(:checked) ~ label > div.navigator > .element.e4 {
+  animation: e4-start .1s ease-out .2s forwards;
+  transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg); }
+@keyframes e4-start {
+  from {
+    bottom: 0px; }
+  to {
+    bottom: 10px; } }
+#navigator:not(:checked) ~ label > div.navigator:hover > .element.e1 {
+  animation: e1-hover .1s ease-out 0s forwards; }
+@keyframes e1-hover {
+  from {
+    top: 10px; }
+  to {
+    top: 0px; } }
+#navigator:not(:checked) ~ label > div.navigator:hover > .element.e2 {
+  animation: e2-hover .1s ease-out 0s forwards; }
+@keyframes e2-hover {
+  from {
+    left: -10px; }
+  to {
+    left: -20px; } }
+#navigator:not(:checked) ~ label > div.navigator:hover > .element.e3 {
+  animation: e3-hover .1s ease-out 0s forwards; }
+@keyframes e3-hover {
+  from {
+    right: -10px; }
+  to {
+    right: -20px; } }
+#navigator:not(:checked) ~ label > div.navigator:hover > .element.e4 {
+  animation: e4-hover .1s ease-out 0s forwards; }
+@keyframes e4-hover {
+  from {
+    bottom: 10px; }
+  to {
+    bottom: 0px; } }
+.navigator {
+  position: fixed;
+  left: 20px;
+  top: 20px;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  z-index: 9999999; }
+  .navigator > .element {
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    background-color: white; }
+    .navigator > .element.e1 {
+      top: 0px;
+      left: 10px; }
+    .navigator > .element.e2 {
+      left: -20px;
+      top: 29px; }
+    .navigator > .element.e3 {
+      right: -20px;
+      top: 29px; }
+    .navigator > .element.e4 {
+      bottom: 0px;
+      left: 10px; }
+
+form {
+  float: right; }
+  form > .page {
+    float: right;
+    clear: none; }
+    form > .page > .welcome {
+      height: 100vh;
+      width: 100vw;
+      background-color: #161616;
+      overflow-x: hidden;
+      -moz-transition: width 0.2s ease;
+      -o-transition: width 0.2s ease;
+      -webkit-transition: width 0.2s ease;
+      transition: width 0.2s ease; }
+      form > .page > .welcome > .container {
+        float: left;
+        height: auto;
+        width: auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); }
+        form > .page > .welcome > .container > * {
+          float: left;
+          clear: left;
+          left: 50%;
+          transform: translateX(-50%); }
+        form > .page > .welcome > .container > .logo {
+          opacity: 0;
+          margin-top: 20px;
+          animation: logo .5s ease-out .4s forwards;
+          width: 20vw;
+          height: 20vw;
+          max-width: 229px;
+          max-height: 229px;
+          min-width: 115px;
+          min-height: 115px;
+          background-image: url("../../img/spring2017/logo-noText-trans.png");
+          background-size: contain;
+          background-repeat: no-repeat; }
+@keyframes logo {
+  from {
+    margin-top: 20px;
+    opacity: 0; }
+  to {
+    margin-top: 0px;
+    opacity: 1; } }
+        form > .page > .welcome > .container > .title {
+          opacity: 0;
+          animation: title .5s ease-out .9s forwards;
+          padding-top: 30px;
+          font-size: 2em;
+          color: white;
+          font-weight: 300; }
+@keyframes title {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+/*# sourceMappingURL=main.css.map */
