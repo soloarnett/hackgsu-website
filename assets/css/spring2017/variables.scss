@@ -16,6 +16,7 @@ $color-black: #161616;
     -moz-transition: $attribute .2s ease;
     -o-transition: $attribute .2s ease;
     -webkit-transition: $attribute .2s ease;
+    -ms-transition: $attribute .2s ease;
     transition: $attribute .2s ease;
 }
 
@@ -23,6 +24,7 @@ $color-black: #161616;
     -moz-transition: $attribute .2s ease-out;
     -o-transition: $attribute .2s ease-out;
     -webkit-transition: $attribute .2s ease-out;
+    -ms-transition: $attribute .2s ease-out;
     transition: $attribute .2s ease-out;
 }
 
@@ -30,6 +32,7 @@ $color-black: #161616;
     -moz-transition: $attribute .2s ease-in;
     -o-transition: $attribute .2s ease-in;
     -webkit-transition: $attribute .2s ease-in;
+    -ms-transition: $attribute .2s ease-in;
     transition: $attribute .2s ease-in;
 }
 
@@ -37,6 +40,7 @@ $color-black: #161616;
     -moz-transition: $attribute $time ease-out;
     -o-transition: $attribute $time ease-out;
     -webkit-transition: $attribute $time ease-out;
+    -ms-transition: $attribute $time ease-out;
     transition: $attribute $time ease-out; 
     -webkit-transition-delay: $delay;
     transition-delay: $delay;
@@ -46,6 +50,7 @@ $color-black: #161616;
     -moz-transition: initial;
     -o-transition: initial;
     -webkit-transition: initial;
+    -ms-transition: initial;
     transition: initial;
 }
 

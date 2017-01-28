@@ -32,7 +32,8 @@ label{
 	//{ ** ATTRIBUTES
 		width: 400px;
 		background-color: black;
-		height: 100vh;
+		min-height: 100vh;
+		height: auto;
 		position: fixed;
 		z-index: 0;
 	//} ** END ATTRIBUTES
@@ -632,7 +633,8 @@ form{
 	//{ ** ATTRIBUTES
 		float: right;
 		clear: none;
-		height: 100vh;
+		min-height: 100vh;
+		height: auto;
 		width: 100vw;   
 	//} ** END ATTRIBUTES
 
@@ -643,10 +645,11 @@ form{
 		>.welcome{
 
 			//{ ** ATTRIBUTES
-				height: 100%;
+				height: 100vh;
 				width: 100%;
 				background-color: $color-black;
 				overflow-x: hidden;
+				float: left;
 			//} ** END ATTRIBUTES
 
 
