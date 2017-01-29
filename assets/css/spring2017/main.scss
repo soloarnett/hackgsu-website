@@ -37,6 +37,49 @@ label{
 		position: fixed;
 		z-index: 0;
 	//} ** END ATTRIBUTES
+	
+	>.nav-links.isMobile{
+
+		//{ ** ATTRIBUTES
+			bottom: 0;
+			right: 0;
+			position: absolute;
+			max-width: calc(107px * 2);
+		//} ** END ATTRIBUTES
+		
+		>.modified-link{
+
+			//{ ** ATTRIBUTES
+				float: right;
+				width: auto;
+				height: auto;
+				// clear: bot
+				text-align: center;
+			//} ** END ATTRIBUTES
+
+			//{ ** INCLUDES
+				@include noDecoration();
+			//} ** END INCLUDES
+			
+			>.link{
+				color: white;
+				font-weight: 300;
+				font-size: 1em;
+				padding: 10px;
+				min-width: 63px;
+				margin: 5px 10px;
+				float: left;
+				border-color: white;
+				border-radius: 5px;
+				border-style: solid;
+				border-width: 2px;
+			}
+		}
+	}
+	>.nav-links:not(.isMobile){
+		display: none;
+	}
+
 	&.isMobile{
 		width: 100vw;
 	}

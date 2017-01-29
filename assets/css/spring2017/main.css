@@ -27,6 +27,39 @@ label {
   height: auto;
   position: fixed;
   z-index: 0; }
+  .hackbot > .nav-links.isMobile {
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    max-width: calc(107px * 2); }
+    .hackbot > .nav-links.isMobile > .modified-link {
+      float: right;
+      width: auto;
+      height: auto;
+      text-align: center;
+      outline: none;
+      text-decoration: none;
+      color: inherit;
+      -webkit-tap-highlight-color: transparent; }
+      .hackbot > .nav-links.isMobile > .modified-link:visted {
+        outline: none;
+        text-decoration: none;
+        color: inherit;
+        -webkit-tap-highlight-color: transparent; }
+      .hackbot > .nav-links.isMobile > .modified-link > .link {
+        color: white;
+        font-weight: 300;
+        font-size: 1em;
+        padding: 10px;
+        min-width: 63px;
+        margin: 5px 10px;
+        float: left;
+        border-color: white;
+        border-radius: 5px;
+        border-style: solid;
+        border-width: 2px; }
+  .hackbot > .nav-links:not(.isMobile) {
+    display: none; }
   .hackbot.isMobile {
     width: 100vw; }
 
