@@ -28,7 +28,7 @@ label {
   position: fixed;
   z-index: 0; }
   .hackbot > .nav-links.isMobile {
-    bottom: 0;
+    bottom: 20px;
     right: 0;
     position: absolute;
     max-width: calc(107px * 2); }
