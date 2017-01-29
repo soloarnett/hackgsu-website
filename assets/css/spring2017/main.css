@@ -215,6 +215,12 @@ label {
   width: calc(100vw - 400px); }
   #navigator:checked ~ section.page.isMobile {
     width: 0px; }
+  #navigator:checked ~ section.page > .welcome > .container:not(.isMobile) {
+    top: 30%; }
+  #navigator:checked ~ section.page > .welcome > .nav-links:not(.isMobile) > .modified-link {
+    clear: both;
+    left: 50%;
+    transform: translateX(-50%); }
 
 #navigator:not(:checked) ~ label > div.navigator > .element:not(.isMobile).e1 {
   animation: e1-start .1s ease-out .2s forwards;
@@ -428,6 +434,8 @@ label {
       bottom: 10px;
       left: 10px; }
   .navigator.isMobile {
+    top: initial;
+    bottom: 20px;
     outline: none;
     text-decoration: none;
     color: inherit;
@@ -463,7 +471,12 @@ form {
         width: auto;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%); }
+        transform: translate(-50%, -50%);
+        -moz-transition: top 0.2s ease;
+        -o-transition: top 0.2s ease;
+        -webkit-transition: top 0.2s ease;
+        -ms-transition: top 0.2s ease;
+        transition: top 0.2s ease; }
         form > .page > .welcome > .container > * {
           float: left;
           clear: left;
@@ -491,7 +504,7 @@ form {
     opacity: 1; } }
         form > .page > .welcome > .container > .title {
           opacity: 0;
-          animation: title .5s ease-out .9s forwards;
+          animation: title .4s ease-out .9s forwards;
           padding-top: 30px;
           font-size: 2em;
           color: white;
@@ -512,5 +525,80 @@ form {
     opacity: 0; }
   to {
     opacity: 1; } }
+      form > .page > .welcome > .nav-links:not(.isMobile) {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%); }
+        form > .page > .welcome > .nav-links:not(.isMobile) > .modified-link {
+          float: left;
+          width: auto;
+          height: auto;
+          text-align: center;
+          bottom: -10px;
+          opacity: 0;
+          outline: none;
+          text-decoration: none;
+          color: inherit;
+          -webkit-tap-highlight-color: transparent;
+          -moz-transition: all 0.2s ease;
+          -o-transition: all 0.2s ease;
+          -webkit-transition: all 0.2s ease;
+          -ms-transition: all 0.2s ease;
+          transition: all 0.2s ease; }
+          form > .page > .welcome > .nav-links:not(.isMobile) > .modified-link:visted {
+            outline: none;
+            text-decoration: none;
+            color: inherit;
+            -webkit-tap-highlight-color: transparent; }
+          form > .page > .welcome > .nav-links:not(.isMobile) > .modified-link.schedule {
+            animation: schedule-start .4s ease-out .2s forwards; }
+@keyframes schedule-start {
+  from {
+    bottom: -10px;
+    opacity: 0; }
+  to {
+    bottom: 0px;
+    opacity: 1; } }
+          form > .page > .welcome > .nav-links:not(.isMobile) > .modified-link.faq {
+            animation: faq-start .4s ease-out .2s forwards; }
+@keyframes faq-start {
+  from {
+    bottom: -10px;
+    opacity: 0; }
+  to {
+    bottom: 0px;
+    opacity: 1; } }
+          form > .page > .welcome > .nav-links:not(.isMobile) > .modified-link.sponsors {
+            animation: sponsors-start .4s ease-out .2s forwards; }
+@keyframes sponsors-start {
+  from {
+    bottom: -10px;
+    opacity: 0; }
+  to {
+    bottom: 0px;
+    opacity: 1; } }
+          form > .page > .welcome > .nav-links:not(.isMobile) > .modified-link > .link {
+            color: white;
+            font-weight: 300;
+            font-size: 1em;
+            padding: 20px;
+            margin: 10px;
+            float: left;
+            border-color: white;
+            border-radius: 5px;
+            border-style: solid;
+            border-width: 2px; }
+@keyframes link-highlight {
+  from {
+    background-color: initial;
+    color: white; }
+  to {
+    background-color: white;
+    color: black; } }
+          form > .page > .welcome > .nav-links:not(.isMobile) > .modified-link:hover span {
+            animation: link-highlight .2s ease-out 0s forwards; }
+      form > .page > .welcome > .nav-links.isMobile {
+        display: none; }
 
 /*# sourceMappingURL=main.css.map */

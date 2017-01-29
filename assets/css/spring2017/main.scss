@@ -299,6 +299,22 @@ label{
 	&.isMobile{
 		width: 0px;
 	}
+
+	>.welcome{
+		>.container:not(.isMobile){
+			top: 30%;
+		}
+		>.nav-links:not(.isMobile){
+			>.modified-link{
+
+				//{ ** ATTRIBUTES
+					clear: both;
+					left: 50%;
+					transform: translateX(-50%);
+				//} ** END ATTRIBUTES
+			}
+		}
+	}
 }
 
 #navigator:not(:checked) ~ label > div.navigator{
@@ -613,6 +629,13 @@ label{
 	}
 	&.isMobile{
 
+
+		//{ ** ATTRIBUTES
+			top: initial;
+			bottom: 20px;
+		//} ** END ATTRIBUTES
+		
+
 		//{ ** INCLUDES
 			@include noDecoration();
 		//} ** END INCLUDES
@@ -652,12 +675,6 @@ form{
 				float: left;
 			//} ** END ATTRIBUTES
 
-
-			
-			
-			
-
-
 			>.container{
 						
 				//{ ** ATTRIBUTES
@@ -668,6 +685,12 @@ form{
 					left: 50%;
 					transform: translate(-50%, -50%);
 				//} ** END ATTRIBUTES
+
+
+				//{ ** INCLUDES
+					@include quickTransition(top);
+				//} ** END INCLUDES
+				
 				>*{
 					float: left;
 					clear: left;
@@ -721,7 +744,7 @@ form{
 						}
 					}
 
-					animation: title .5s ease-out .9s forwards;
+					animation: title .4s ease-out .9s forwards;
 					//{ ** ATTRIBUTES
 						padding-top: 30px;
 						font-size: 2em;
@@ -752,6 +775,112 @@ form{
 					//} ** END ATTRIBUTES
 					
 				}
+			}
+			>.nav-links:not(.isMobile){
+
+				//{ ** ATTRIBUTES
+					position: absolute;
+					bottom: 20px;
+					left: 50%;
+					transform: translateX(-50%);
+				//} ** END ATTRIBUTES
+				
+				>.modified-link{
+
+					//{ ** ATTRIBUTES
+						float: left;
+						width: auto;
+						height: auto;
+						text-align: center;
+						bottom: -10px;
+						opacity: 0;
+						
+					//} ** END ATTRIBUTES
+					
+
+					//{ ** INCLUDES
+						@include noDecoration();
+						@include quickTransition(all);
+					//} ** END INCLUDES
+					&.schedule{
+						@keyframes schedule-start{
+							from{
+								bottom: -10px;
+								opacity: 0;
+							}
+							to{
+								bottom: 0px;
+								opacity: 1;
+							}
+						}
+						animation: schedule-start .4s ease-out .2s forwards;
+					}
+					&.faq{
+						@keyframes faq-start{
+							from{
+								bottom: -10px;
+								opacity: 0;
+							}
+							to{
+								bottom: 0px;
+								opacity: 1;
+							}
+						}
+						animation: faq-start .4s ease-out .2s forwards;
+					}
+					&.sponsors{
+						@keyframes sponsors-start{
+							from{
+								bottom: -10px;
+								opacity: 0;
+							}
+							to{
+								bottom: 0px;
+								opacity: 1;
+							}
+						}
+						animation: sponsors-start .4s ease-out .2s forwards;
+					}
+					>.link{
+
+						//{ ** ATTRIBUTES
+							color: white;
+							font-weight: 300;
+							font-size: 1em;
+							padding: 20px;
+							margin: 10px;
+							float: left;
+							border-color: white;
+							border-radius: 5px;
+							border-style: solid;
+							border-width: 2px; 
+							// opacity: 0;  
+						//} ** END ATTRIBUTES
+						   
+					}
+
+					&:hover{
+						// >.link{
+							@keyframes link-highlight{
+								from{
+									background-color: initial;
+									color: white;
+								}
+								to{
+									background-color: white;
+									color: black;
+								}
+							}
+							span{
+								animation: link-highlight .2s ease-out 0s forwards;
+							}
+						// }
+					}
+					
+				}
+			}
+			>.nav-links.isMobile{
+				display: none;
 			}
 		}
 	}
