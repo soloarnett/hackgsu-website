@@ -50,7 +50,7 @@ label{
 		>.modified-link, >noscript>.modified-link{
 
 			//{ ** ATTRIBUTES
-				float: right;
+				float: left;
 				width: auto;
 				height: auto;
 				// clear: bot
@@ -713,10 +713,17 @@ label{
 		//{ ** INCLUDES
 			@include fullHeight();
 		//} ** END INCLUDES
-		
 		width: 100%;
 		overflow-x: hidden;
 		float: left;
+		&:not(.isMobile){
+			margin-bottom: 50vh;
+		}
+	}
+
+	&.hackbot-open{
+		height: 100vh;
+		overflow: hidden;
 	}
 
 	>.welcome{

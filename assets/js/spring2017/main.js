@@ -12,7 +12,6 @@ function resizeFunction(){
 		DESCRIPTION:	runs a set of operations when the browser window is resized
 	*/
 	
-	displayNavLinksMobile();
 	windowHeight = window.innerHeight;
 	windowWidth = window.innerWidth;
 	schedulePos = $('#schedule').offset().top;
@@ -80,7 +79,7 @@ function displayNavLinksMobile(){
 	*/
 	
 	
-	$(".hackbot>.nav-links.isMobile>.modified-link>label>.link").css("display", "block");
+	$(".hackbot>.nav-links>.modified-link>label>.link").css("display", "block");
 }
 
 function labelClicked(label){
@@ -107,10 +106,12 @@ function navigatorClicked() {
 
 		// return to the bodyPrevPos location
 		console.log(bodyPrevPos);
+		$('.page').removeClass('hackbot-open');
 		scrollToValue(bodyPrevPos, 200);
 
 	}else{
 		// navigator has been clicked to open the drawer
+		$('.page:not(.hackbot-open)').addClass('hackbot-open');
 		navigatorClickCounter = true;
 
 		// log the body location
@@ -146,6 +147,7 @@ function onLoad(){
 	*/
 	
 	resizeFunction();
+	displayNavLinksMobile();
 	window.onresize = resizeFunction;
 	window.onscroll = scrollFunction;
 	$('body').on('scroll', scrollFunction);

@@ -33,7 +33,7 @@ label {
     position: absolute;
     max-width: calc(107px * 2); }
     .hackbot > .nav-links.isMobile > .modified-link, .hackbot > .nav-links.isMobile > noscript > .modified-link {
-      float: right;
+      float: left;
       width: auto;
       height: auto;
       text-align: center;
@@ -496,6 +496,9 @@ label {
   -webkit-transition: width 0.2s ease;
   -ms-transition: width 0.2s ease;
   transition: width 0.2s ease; }
+  .page.hackbot-open {
+    height: 100vh;
+    overflow: hidden; }
   .page > .welcome {
     height: 100vh;
     width: 100%;
@@ -508,6 +511,8 @@ label {
       -webkit-transition: height 999999999999s ease-in !important;
       transition: height 999999999999s ease-in !important;
       -ms-transition: height 999999999999s ease-in !important; }
+    .page > .welcome:not(.isMobile) {
+      margin-bottom: 50vh; }
     .page > .welcome > .container {
       float: left;
       height: auto;
@@ -655,5 +660,7 @@ label {
       -webkit-transition: height 999999999999s ease-in !important;
       transition: height 999999999999s ease-in !important;
       -ms-transition: height 999999999999s ease-in !important; }
+    .page > .schedule:not(.isMobile) {
+      margin-bottom: 50vh; }
 
 /*# sourceMappingURL=main.css.map */
