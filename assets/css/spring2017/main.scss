@@ -30,7 +30,7 @@ label{
 .hackbot{
 
 	//{ ** ATTRIBUTES
-		width: 400px;
+		width: calc(100vw - 400px);
 		background-color: black;
 		min-height: 100vh;
 		height: auto;
@@ -339,7 +339,7 @@ label{
 #navigator:checked ~ section.page{
 			
 	//{ ** ATTRIBUTES
-		width: calc(100vw - 400px);
+		width: 400px;
 	//} ** END ATTRIBUTES
 	
 	&.isMobile{
@@ -358,6 +358,10 @@ label{
 					left: 50%;
 					transform: translateX(-50%);
 				//} ** END ATTRIBUTES
+				>.link{
+					width: 70px;
+					max-width: 70px;
+				}
 			}
 		}
 	}
@@ -696,7 +700,8 @@ label{
 		clear: none;
 		min-height: 100vh;
 		height: auto;
-		width: 100vw;   
+		width: 100vw;
+		background-color: $color-black;   
 	//} ** END ATTRIBUTES
 
 	//{ ** INCLUDES
@@ -704,9 +709,12 @@ label{
 	//} ** END INCLUDES	
 
 	@mixin page-properties-default(){
-		height: 100vh;
+				
+		//{ ** INCLUDES
+			@include fullHeight();
+		//} ** END INCLUDES
+		
 		width: 100%;
-		background-color: $color-black;
 		overflow-x: hidden;
 		float: left;
 	}

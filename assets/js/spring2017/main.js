@@ -12,7 +12,7 @@ function resizeFunction(){
 		DESCRIPTION:	runs a set of operations when the browser window is resized
 	*/
 	
-	
+	displayNavLinksMobile();
 	windowHeight = window.innerHeight;
 	windowWidth = window.innerWidth;
 	schedulePos = $('#schedule').offset().top;
@@ -146,7 +146,6 @@ function onLoad(){
 	*/
 	
 	resizeFunction();
-	displayNavLinksMobile();
 	window.onresize = resizeFunction;
 	window.onscroll = scrollFunction;
 	$('body').on('scroll', scrollFunction);

@@ -21,7 +21,7 @@ label {
   z-index: 999999; }
 
 .hackbot {
-  width: 400px;
+  width: calc(100vw - 400px);
   background-color: black;
   min-height: 100vh;
   height: auto;
@@ -247,7 +247,7 @@ label {
     -moz-transform: rotate(45deg);
     -o-transform: rotate(45deg); } }
 #navigator:checked ~ section.page {
-  width: calc(100vw - 400px); }
+  width: 400px; }
   #navigator:checked ~ section.page.isMobile {
     width: 0px; }
   #navigator:checked ~ section.page > .welcome > .container:not(.isMobile) {
@@ -256,6 +256,9 @@ label {
     clear: both;
     left: 50%;
     transform: translateX(-50%); }
+    #navigator:checked ~ section.page > .welcome > .nav-links:not(.isMobile) > .modified-link > .link {
+      width: 70px;
+      max-width: 70px; }
 
 #navigator:not(:checked) ~ label > div.navigator > .element:not(.isMobile).e1 {
   animation: e1-start .1s ease-out .2s forwards;
@@ -487,6 +490,7 @@ label {
   min-height: 100vh;
   height: auto;
   width: 100vw;
+  background-color: #161616;
   -moz-transition: width 0.2s ease;
   -o-transition: width 0.2s ease;
   -webkit-transition: width 0.2s ease;
@@ -495,9 +499,15 @@ label {
   .page > .welcome {
     height: 100vh;
     width: 100%;
-    background-color: #161616;
     overflow-x: hidden;
     float: left; }
+    .page > .welcome.isMobile {
+      height: calc(100vh + 60px);
+      -moz-transition: height 999999999999s ease-in !important;
+      -o-transition: height 999999999999s ease-in !important;
+      -webkit-transition: height 999999999999s ease-in !important;
+      transition: height 999999999999s ease-in !important;
+      -ms-transition: height 999999999999s ease-in !important; }
     .page > .welcome > .container {
       float: left;
       height: auto;
@@ -636,8 +646,14 @@ label {
   .page > .schedule {
     height: 100vh;
     width: 100%;
-    background-color: #161616;
     overflow-x: hidden;
     float: left; }
+    .page > .schedule.isMobile {
+      height: calc(100vh + 60px);
+      -moz-transition: height 999999999999s ease-in !important;
+      -o-transition: height 999999999999s ease-in !important;
+      -webkit-transition: height 999999999999s ease-in !important;
+      transition: height 999999999999s ease-in !important;
+      -ms-transition: height 999999999999s ease-in !important; }
 
 /*# sourceMappingURL=main.css.map */

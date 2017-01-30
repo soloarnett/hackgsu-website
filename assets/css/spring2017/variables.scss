@@ -54,6 +54,14 @@ $color-black: #161616;
     transition: initial;
 }
 
+@mixin freezeHeight(){
+	-moz-transition: height 999999999999s ease-in !important;
+    -o-transition: height 999999999999s ease-in !important;
+    -webkit-transition: height 999999999999s ease-in !important;
+    transition: height 999999999999s ease-in !important;
+    -ms-transition: height 999999999999s ease-in !important;
+}
+
 @mixin noDecoration(){
     &:visted{
         outline: none;
@@ -93,5 +101,13 @@ $color-black: #161616;
 	-o-user-select: initial;
 	user-select: initial;
     cursor: initial;
+}
+
+@mixin fullHeight{
+	height: 100vh;
+	&.isMobile{
+		height: calc(100vh + 60px);
+		@include freezeHeight();
+	}
 }
 /////////////////////////////////////////// END MIXINS ///////////////////////////////////////////
