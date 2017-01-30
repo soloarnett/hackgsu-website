@@ -29,10 +29,10 @@ label {
   z-index: 0; }
   .hackbot > .nav-links.isMobile {
     bottom: 20px;
-    right: 0;
+    right: 20px;
     position: absolute;
     max-width: calc(107px * 2); }
-    .hackbot > .nav-links.isMobile > .modified-link {
+    .hackbot > .nav-links.isMobile > .modified-link, .hackbot > .nav-links.isMobile > noscript > .modified-link {
       float: right;
       width: auto;
       height: auto;
@@ -41,23 +41,25 @@ label {
       text-decoration: none;
       color: inherit;
       -webkit-tap-highlight-color: transparent; }
-      .hackbot > .nav-links.isMobile > .modified-link:visted {
+      .hackbot > .nav-links.isMobile > .modified-link:visted, .hackbot > .nav-links.isMobile > noscript > .modified-link:visted {
         outline: none;
         text-decoration: none;
         color: inherit;
         -webkit-tap-highlight-color: transparent; }
-      .hackbot > .nav-links.isMobile > .modified-link > .link {
+      .hackbot > .nav-links.isMobile > .modified-link > label > .link, .hackbot > .nav-links.isMobile > .modified-link > .link, .hackbot > .nav-links.isMobile > noscript > .modified-link > label > .link, .hackbot > .nav-links.isMobile > noscript > .modified-link > .link {
         color: white;
         font-weight: 300;
         font-size: 1em;
         padding: 10px;
-        min-width: 63px;
+        width: 63px;
         margin: 5px 10px;
         float: left;
         border-color: white;
         border-radius: 5px;
         border-style: solid;
         border-width: 2px; }
+      .hackbot > .nav-links.isMobile > .modified-link > label > .link, .hackbot > .nav-links.isMobile > noscript > .modified-link > label > .link {
+        display: none; }
   .hackbot > .nav-links:not(.isMobile) {
     display: none; }
   .hackbot.isMobile {
@@ -479,55 +481,53 @@ label {
       color: inherit;
       -webkit-tap-highlight-color: transparent; }
 
-form {
-  float: right; }
-  form > .page {
-    float: right;
-    clear: none;
-    min-height: 100vh;
-    height: auto;
-    width: 100vw;
-    -moz-transition: width 0.2s ease;
-    -o-transition: width 0.2s ease;
-    -webkit-transition: width 0.2s ease;
-    -ms-transition: width 0.2s ease;
-    transition: width 0.2s ease; }
-    form > .page > .welcome {
-      height: 100vh;
-      width: 100%;
-      background-color: #161616;
-      overflow-x: hidden;
-      float: left; }
-      form > .page > .welcome > .container {
+.page {
+  float: right;
+  clear: none;
+  min-height: 100vh;
+  height: auto;
+  width: 100vw;
+  -moz-transition: width 0.2s ease;
+  -o-transition: width 0.2s ease;
+  -webkit-transition: width 0.2s ease;
+  -ms-transition: width 0.2s ease;
+  transition: width 0.2s ease; }
+  .page > .welcome {
+    height: 100vh;
+    width: 100%;
+    background-color: #161616;
+    overflow-x: hidden;
+    float: left; }
+    .page > .welcome > .container {
+      float: left;
+      height: auto;
+      width: auto;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -moz-transition: top 0.2s ease;
+      -o-transition: top 0.2s ease;
+      -webkit-transition: top 0.2s ease;
+      -ms-transition: top 0.2s ease;
+      transition: top 0.2s ease; }
+      .page > .welcome > .container > * {
         float: left;
-        height: auto;
-        width: auto;
-        top: 50%;
+        clear: left;
         left: 50%;
-        transform: translate(-50%, -50%);
-        -moz-transition: top 0.2s ease;
-        -o-transition: top 0.2s ease;
-        -webkit-transition: top 0.2s ease;
-        -ms-transition: top 0.2s ease;
-        transition: top 0.2s ease; }
-        form > .page > .welcome > .container > * {
-          float: left;
-          clear: left;
-          left: 50%;
-          transform: translateX(-50%); }
-        form > .page > .welcome > .container > .logo {
-          opacity: 0;
-          margin-top: 20px;
-          animation: logo .5s ease-out .4s forwards;
-          width: 20vw;
-          height: 20vw;
-          max-width: 218px;
-          max-height: 218px;
-          min-width: 115px;
-          min-height: 115px;
-          background-image: url("../../img/spring2017/logo-noText-trans.png");
-          background-size: contain;
-          background-repeat: no-repeat; }
+        transform: translateX(-50%); }
+      .page > .welcome > .container > .logo {
+        opacity: 0;
+        margin-top: 20px;
+        animation: logo .5s ease-out .4s forwards;
+        width: 20vw;
+        height: 20vw;
+        max-width: 218px;
+        max-height: 218px;
+        min-width: 115px;
+        min-height: 115px;
+        background-image: url("../../img/spring2017/logo-noText-trans.png");
+        background-size: contain;
+        background-repeat: no-repeat; }
 @keyframes logo {
   from {
     margin-top: 20px;
@@ -535,57 +535,57 @@ form {
   to {
     margin-top: 0px;
     opacity: 1; } }
-        form > .page > .welcome > .container > .title {
-          opacity: 0;
-          animation: title .4s ease-out .9s forwards;
-          padding-top: 30px;
-          font-size: 2em;
-          color: white;
-          font-weight: 300; }
+      .page > .welcome > .container > .title {
+        opacity: 0;
+        animation: title .4s ease-out .9s forwards;
+        padding-top: 30px;
+        font-size: 2em;
+        color: white;
+        font-weight: 300; }
 @keyframes title {
   from {
     opacity: 0; }
   to {
     opacity: 1; } }
-        form > .page > .welcome > .container > .date {
-          opacity: 0;
-          animation: title .5s ease-out 0.9s forwards;
-          color: white;
-          font-size: 1em;
-          font-weight: 300; }
+      .page > .welcome > .container > .date {
+        opacity: 0;
+        animation: title .5s ease-out 0.9s forwards;
+        color: white;
+        font-size: 1em;
+        font-weight: 300; }
 @keyframes title {
   from {
     opacity: 0; }
   to {
     opacity: 1; } }
-      form > .page > .welcome > .nav-links:not(.isMobile) {
-        position: absolute;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%); }
-        form > .page > .welcome > .nav-links:not(.isMobile) > .modified-link {
-          float: left;
-          width: auto;
-          height: auto;
-          text-align: center;
-          bottom: -10px;
-          opacity: 0;
+    .page > .welcome > .nav-links:not(.isMobile) {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%); }
+      .page > .welcome > .nav-links:not(.isMobile) > .modified-link {
+        float: left;
+        width: auto;
+        height: auto;
+        text-align: center;
+        bottom: -10px;
+        opacity: 0;
+        outline: none;
+        text-decoration: none;
+        color: inherit;
+        -webkit-tap-highlight-color: transparent;
+        -moz-transition: all 0.2s ease;
+        -o-transition: all 0.2s ease;
+        -webkit-transition: all 0.2s ease;
+        -ms-transition: all 0.2s ease;
+        transition: all 0.2s ease; }
+        .page > .welcome > .nav-links:not(.isMobile) > .modified-link:visted {
           outline: none;
           text-decoration: none;
           color: inherit;
-          -webkit-tap-highlight-color: transparent;
-          -moz-transition: all 0.2s ease;
-          -o-transition: all 0.2s ease;
-          -webkit-transition: all 0.2s ease;
-          -ms-transition: all 0.2s ease;
-          transition: all 0.2s ease; }
-          form > .page > .welcome > .nav-links:not(.isMobile) > .modified-link:visted {
-            outline: none;
-            text-decoration: none;
-            color: inherit;
-            -webkit-tap-highlight-color: transparent; }
-          form > .page > .welcome > .nav-links:not(.isMobile) > .modified-link.schedule {
-            animation: schedule-start .4s ease-out .2s forwards; }
+          -webkit-tap-highlight-color: transparent; }
+        .page > .welcome > .nav-links:not(.isMobile) > .modified-link.schedule {
+          animation: schedule-start .4s ease-out .2s forwards; }
 @keyframes schedule-start {
   from {
     bottom: -10px;
@@ -593,8 +593,8 @@ form {
   to {
     bottom: 0px;
     opacity: 1; } }
-          form > .page > .welcome > .nav-links:not(.isMobile) > .modified-link.faq {
-            animation: faq-start .4s ease-out .2s forwards; }
+        .page > .welcome > .nav-links:not(.isMobile) > .modified-link.faq {
+          animation: faq-start .4s ease-out .2s forwards; }
 @keyframes faq-start {
   from {
     bottom: -10px;
@@ -602,8 +602,8 @@ form {
   to {
     bottom: 0px;
     opacity: 1; } }
-          form > .page > .welcome > .nav-links:not(.isMobile) > .modified-link.sponsors {
-            animation: sponsors-start .4s ease-out .2s forwards; }
+        .page > .welcome > .nav-links:not(.isMobile) > .modified-link.sponsors {
+          animation: sponsors-start .4s ease-out .2s forwards; }
 @keyframes sponsors-start {
   from {
     bottom: -10px;
@@ -611,17 +611,17 @@ form {
   to {
     bottom: 0px;
     opacity: 1; } }
-          form > .page > .welcome > .nav-links:not(.isMobile) > .modified-link > .link {
-            color: white;
-            font-weight: 300;
-            font-size: 1em;
-            padding: 20px;
-            margin: 10px;
-            float: left;
-            border-color: white;
-            border-radius: 5px;
-            border-style: solid;
-            border-width: 2px; }
+        .page > .welcome > .nav-links:not(.isMobile) > .modified-link > .link {
+          color: white;
+          font-weight: 300;
+          font-size: 1em;
+          padding: 20px;
+          margin: 10px;
+          float: left;
+          border-color: white;
+          border-radius: 5px;
+          border-style: solid;
+          border-width: 2px; }
 @keyframes link-highlight {
   from {
     background-color: initial;
@@ -629,9 +629,15 @@ form {
   to {
     background-color: white;
     color: black; } }
-          form > .page > .welcome > .nav-links:not(.isMobile) > .modified-link:hover span {
-            animation: link-highlight .2s ease-out 0s forwards; }
-      form > .page > .welcome > .nav-links.isMobile {
-        display: none; }
+        .page > .welcome > .nav-links:not(.isMobile) > .modified-link:hover span {
+          animation: link-highlight .2s ease-out 0s forwards; }
+    .page > .welcome > .nav-links.isMobile {
+      display: none; }
+  .page > .schedule {
+    height: 100vh;
+    width: 100%;
+    background-color: #161616;
+    overflow-x: hidden;
+    float: left; }
 
 /*# sourceMappingURL=main.css.map */

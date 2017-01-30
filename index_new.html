@@ -12,19 +12,12 @@
 </head>
 <body>
 	<!-- php include navigation here -->
-	
-	<section class="hackbot">
-		<section class="nav-links">
-			<a class="modified-link schedule" href="#schedule"><span class="link">Schedule</span></a>
-			<a class="modified-link faq" href="#faq"><span class="link">FAQ</span></a>
-			<a class="modified-link sponsors" href="#sponsors"><span class="link">Sponsors</span></a>
-			<a class="modified-link devpost" href="#devpost"><span class="link">Devpost</span></a>
-		</section>
-	</section>
-	
 	<form action="">
+
+	
+	
 		<input type="checkbox" name="navigation" id="navigator">
-		<label for="navigator">
+		<label for="navigator" id="navigator">
 			<div class="navigator">
 				<div class="element e1"></div>
 				<div class="element e2"></div>
@@ -32,8 +25,38 @@
 				<div class="element e4"></div>
 			</div>
 		</label>
+		<section class="hackbot">
+			<section class="nav-links">
+				<noscript>
+					<a class="modified-link schedule" href="#schedule"><span class="link">Schedule</span></a>
+					<a class="modified-link faq" href="#faq"><span class="link">FAQ</span></a>
+					<a class="modified-link sponsors" href="#sponsors"><span class="link">Sponsors</span></a>
+					<a class="modified-link devpost" href="#devpost"><span class="link">Devpost</span></a>
+				</noscript>
+					<a class="modified-link schedule" href="#schedule">
+						<label for="navigator">
+							<span class="link">Schedule</span>
+						</label>
+					</a>
+					<a class="modified-link faq" href="#faq">
+						<label for="navigator">
+							<span class="link">FAQ</span>
+						</label>
+					</a>
+					<a class="modified-link sponsors" href="#sponsors">
+						<label for="navigator">
+							<span class="link">Sponsors</span>
+						</label>
+					</a>
+					<a class="modified-link devpost" target="_blank" href="#devpost">
+						<!-- <label for="navigator"> -->
+							<span class="link">Devpost</span>
+						<!-- </label> -->
+					</a>
+			</section>
+		</section>
 		<section class="page">
-			<section class="welcome">
+			<section class="welcome" id="welcome">
 				<section class="container">
 					<div class="logo"></div>
 					<span class="title">
@@ -46,6 +69,9 @@
 					<a class="modified-link faq" href="#faq"><span class="link">Frequent Questions</span></a>
 					<a class="modified-link sponsors" href="#sponsors"><span class="link">Sponsors</span></a>
 				</section>
+			</section>
+			<section class="schedule" id="schedule">
+				
 			</section>
 		</section>
 	</form>

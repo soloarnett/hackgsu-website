@@ -42,12 +42,12 @@ label{
 
 		//{ ** ATTRIBUTES
 			bottom: 20px;
-			right: 0;
+			right: 20px;
 			position: absolute;
 			max-width: calc(107px * 2);
 		//} ** END ATTRIBUTES
 		
-		>.modified-link{
+		>.modified-link, >noscript>.modified-link{
 
 			//{ ** ATTRIBUTES
 				float: right;
@@ -61,18 +61,21 @@ label{
 				@include noDecoration();
 			//} ** END INCLUDES
 			
-			>.link{
+			>label>.link, >.link{
 				color: white;
 				font-weight: 300;
 				font-size: 1em;
 				padding: 10px;
-				min-width: 63px;
+				width: 63px;
 				margin: 5px 10px;
 				float: left;
 				border-color: white;
 				border-radius: 5px;
 				border-style: solid;
 				border-width: 2px;
+			}
+			>label>.link{
+				display: none;
 			}
 		}
 	}
@@ -686,15 +689,7 @@ label{
 	}
 }
 
-
-
-form{
-
-	//{ ** ATTRIBUTES
-		float: right;
-	//} ** END ATTRIBUTES
-	
-	>.page{
+.page{
 
 	//{ ** ATTRIBUTES
 		float: right;
@@ -708,223 +703,237 @@ form{
 		@include quickTransition(width);
 	//} ** END INCLUDES	
 
-		>.welcome{
+	@mixin page-properties-default(){
+		height: 100vh;
+		width: 100%;
+		background-color: $color-black;
+		overflow-x: hidden;
+		float: left;
+	}
 
+	>.welcome{
+
+
+		//{ ** INCLUDES
+			@include page-properties-default();
+		//} ** END INCLUDES
+		
+
+		>.container{
+					
 			//{ ** ATTRIBUTES
-				height: 100vh;
-				width: 100%;
-				background-color: $color-black;
-				overflow-x: hidden;
 				float: left;
+				height: auto;
+				width: auto;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
 			//} ** END ATTRIBUTES
 
-			>.container{
-						
-				//{ ** ATTRIBUTES
-					float: left;
-					height: auto;
-					width: auto;
-					top: 50%;
-					left: 50%;
-					transform: translate(-50%, -50%);
-				//} ** END ATTRIBUTES
 
+			//{ ** INCLUDES
+				@include quickTransition(top);
+			//} ** END INCLUDES
+			
+			>*{
+				float: left;
+				clear: left;
+				left: 50%;
+				transform: translateX(-50%);
+			}		
+			>.logo{
 
-				//{ ** INCLUDES
-					@include quickTransition(top);
-				//} ** END INCLUDES
-				
-				>*{
-					float: left;
-					clear: left;
-					left: 50%;
-					transform: translateX(-50%);
-				}		
-				>.logo{
+				opacity: 0;
+				margin-top: 20px;
 
-					opacity: 0;
-					margin-top: 20px;
-
-					@keyframes logo{
-						from{
-							margin-top: 20px;
-							opacity: 0;
-						}
-						to{
-							margin-top: 0px;
-							opacity: 1;
-						}
-					}
-
-					animation: logo .5s ease-out .4s forwards;
-
-					//{ ** ATTRIBUTES
-						width: 20vw;
-						height: 20vw;
-						max-width: 218px;
-						max-height: 218px;
-						min-width: 115px;
-						min-height: 115px;
-						background-image: url('../../img/spring2017/logo-noText-trans.png');
-						background-size: contain;
-						background-repeat: no-repeat;
-						
-						
-						
-					//} ** END ATTRIBUTES
-					
-				}
-				>.title{
-
-					opacity: 0;
-
-					@keyframes title{
-						from{
-							opacity: 0;
-						}
-						to{
-							opacity: 1;
-						}
-					}
-
-					animation: title .4s ease-out .9s forwards;
-					//{ ** ATTRIBUTES
-						padding-top: 30px;
-						font-size: 2em;
-						color: white;
-						font-weight: 300;
-					//} ** END ATTRIBUTES
-					
-				}
-
-				>.date{
-					opacity: 0;
-
-					@keyframes title{
-						from{
-							opacity: 0;
-						}
-						to{
-							opacity: 1;
-						}
-					}
-
-					animation: title .5s ease-out 0.9s forwards;
-
-					//{ ** ATTRIBUTES
-						color: white;
-						font-size: 1em;
-						font-weight: 300;
-					//} ** END ATTRIBUTES
-					
-				}
-			}
-			>.nav-links:not(.isMobile){
-
-				//{ ** ATTRIBUTES
-					position: absolute;
-					bottom: 20px;
-					left: 50%;
-					transform: translateX(-50%);
-				//} ** END ATTRIBUTES
-				
-				>.modified-link{
-
-					//{ ** ATTRIBUTES
-						float: left;
-						width: auto;
-						height: auto;
-						text-align: center;
-						bottom: -10px;
+				@keyframes logo{
+					from{
+						margin-top: 20px;
 						opacity: 0;
-						
-					//} ** END ATTRIBUTES
-					
-
-					//{ ** INCLUDES
-						@include noDecoration();
-						@include quickTransition(all);
-					//} ** END INCLUDES
-					&.schedule{
-						@keyframes schedule-start{
-							from{
-								bottom: -10px;
-								opacity: 0;
-							}
-							to{
-								bottom: 0px;
-								opacity: 1;
-							}
-						}
-						animation: schedule-start .4s ease-out .2s forwards;
 					}
-					&.faq{
-						@keyframes faq-start{
-							from{
-								bottom: -10px;
-								opacity: 0;
-							}
-							to{
-								bottom: 0px;
-								opacity: 1;
-							}
-						}
-						animation: faq-start .4s ease-out .2s forwards;
+					to{
+						margin-top: 0px;
+						opacity: 1;
 					}
-					&.sponsors{
-						@keyframes sponsors-start{
-							from{
-								bottom: -10px;
-								opacity: 0;
-							}
-							to{
-								bottom: 0px;
-								opacity: 1;
-							}
-						}
-						animation: sponsors-start .4s ease-out .2s forwards;
-					}
-					>.link{
-
-						//{ ** ATTRIBUTES
-							color: white;
-							font-weight: 300;
-							font-size: 1em;
-							padding: 20px;
-							margin: 10px;
-							float: left;
-							border-color: white;
-							border-radius: 5px;
-							border-style: solid;
-							border-width: 2px; 
-							// opacity: 0;  
-						//} ** END ATTRIBUTES
-						   
-					}
-
-					&:hover{
-						// >.link{
-							@keyframes link-highlight{
-								from{
-									background-color: initial;
-									color: white;
-								}
-								to{
-									background-color: white;
-									color: black;
-								}
-							}
-							span{
-								animation: link-highlight .2s ease-out 0s forwards;
-							}
-						// }
-					}
-					
 				}
+
+				animation: logo .5s ease-out .4s forwards;
+
+				//{ ** ATTRIBUTES
+					width: 20vw;
+					height: 20vw;
+					max-width: 218px;
+					max-height: 218px;
+					min-width: 115px;
+					min-height: 115px;
+					background-image: url('../../img/spring2017/logo-noText-trans.png');
+					background-size: contain;
+					background-repeat: no-repeat;
+					
+					
+					
+				//} ** END ATTRIBUTES
+				
 			}
-			>.nav-links.isMobile{
-				display: none;
+			>.title{
+
+				opacity: 0;
+
+				@keyframes title{
+					from{
+						opacity: 0;
+					}
+					to{
+						opacity: 1;
+					}
+				}
+
+				animation: title .4s ease-out .9s forwards;
+				//{ ** ATTRIBUTES
+					padding-top: 30px;
+					font-size: 2em;
+					color: white;
+					font-weight: 300;
+				//} ** END ATTRIBUTES
+				
+			}
+
+			>.date{
+				opacity: 0;
+
+				@keyframes title{
+					from{
+						opacity: 0;
+					}
+					to{
+						opacity: 1;
+					}
+				}
+
+				animation: title .5s ease-out 0.9s forwards;
+
+				//{ ** ATTRIBUTES
+					color: white;
+					font-size: 1em;
+					font-weight: 300;
+				//} ** END ATTRIBUTES
+				
 			}
 		}
+		>.nav-links:not(.isMobile){
+
+			//{ ** ATTRIBUTES
+				position: absolute;
+				bottom: 20px;
+				left: 50%;
+				transform: translateX(-50%);
+			//} ** END ATTRIBUTES
+			
+			>.modified-link{
+
+				//{ ** ATTRIBUTES
+					float: left;
+					width: auto;
+					height: auto;
+					text-align: center;
+					bottom: -10px;
+					opacity: 0;
+					
+				//} ** END ATTRIBUTES
+				
+
+				//{ ** INCLUDES
+					@include noDecoration();
+					@include quickTransition(all);
+				//} ** END INCLUDES
+				&.schedule{
+					@keyframes schedule-start{
+						from{
+							bottom: -10px;
+							opacity: 0;
+						}
+						to{
+							bottom: 0px;
+							opacity: 1;
+						}
+					}
+					animation: schedule-start .4s ease-out .2s forwards;
+				}
+				&.faq{
+					@keyframes faq-start{
+						from{
+							bottom: -10px;
+							opacity: 0;
+						}
+						to{
+							bottom: 0px;
+							opacity: 1;
+						}
+					}
+					animation: faq-start .4s ease-out .2s forwards;
+				}
+				&.sponsors{
+					@keyframes sponsors-start{
+						from{
+							bottom: -10px;
+							opacity: 0;
+						}
+						to{
+							bottom: 0px;
+							opacity: 1;
+						}
+					}
+					animation: sponsors-start .4s ease-out .2s forwards;
+				}
+				>.link{
+
+					//{ ** ATTRIBUTES
+						color: white;
+						font-weight: 300;
+						font-size: 1em;
+						padding: 20px;
+						margin: 10px;
+						float: left;
+						border-color: white;
+						border-radius: 5px;
+						border-style: solid;
+						border-width: 2px; 
+						// opacity: 0;  
+					//} ** END ATTRIBUTES
+					   
+				}
+
+				&:hover{
+					// >.link{
+						@keyframes link-highlight{
+							from{
+								background-color: initial;
+								color: white;
+							}
+							to{
+								background-color: white;
+								color: black;
+							}
+						}
+						span{
+							animation: link-highlight .2s ease-out 0s forwards;
+						}
+					// }
+				}
+				
+			}
+		}
+		>.nav-links.isMobile{
+			display: none;
+		}
+	}
+	>.schedule{
+
+				
+		//{ ** INCLUDES
+			@include page-properties-default();
+		//} ** END INCLUDES
+		
+		
 	}
 }
