@@ -17,6 +17,11 @@ input[type=checkbox] {
   top: -9999px;
   left: -9999px; }
 
+input[type=radio] {
+  position: absolute;
+  top: -9999px;
+  left: -9999px; }
+
 label {
   z-index: 999999; }
 
@@ -70,6 +75,13 @@ label {
   	The navigator is open at this moment. The animation below
   	changes the open square into a closed 'X'
   **/ }
+  #navigator:checked ~ label > div.navigator > .darken {
+    animation: darken-close .2s ease-out 0s forwards; }
+@keyframes darken-close {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
   #navigator:checked ~ label > div.navigator > .element:not(.isMobile).e1 {
     transform: rotate(0deg);
     -ms-transform: rotate(0deg);
@@ -260,6 +272,13 @@ label {
       width: 70px;
       max-width: 70px; }
 
+#navigator:not(:checked) ~ label > div.navigator > .darken {
+  animation: darken-start .4s ease-out .6s forwards; }
+@keyframes darken-start {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 #navigator:not(:checked) ~ label > div.navigator > .element:not(.isMobile).e1 {
   animation: e1-start .1s ease-out .2s forwards;
   top: 0px;
@@ -437,11 +456,22 @@ label {
   height: 60px;
   cursor: pointer;
   z-index: 9999999; }
+  .navigator > .darken {
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 40px;
+    width: 40px;
+    transform: translate(-50%, -50%); }
   .navigator > .element:not(.isMobile) {
     position: absolute;
     width: 40px;
     height: 2px;
-    background-color: white; }
+    background-color: white;
+    z-index: 2; }
     .navigator > .element:not(.isMobile).e1 {
       top: 0px;
       left: 10px; }
@@ -489,7 +519,7 @@ label {
   clear: none;
   min-height: 100vh;
   height: auto;
-  width: 100vw;
+  width: 100%;
   background-color: #161616;
   -moz-transition: width 0.2s ease;
   -o-transition: width 0.2s ease;
@@ -500,21 +530,23 @@ label {
     height: 100vh;
     overflow: hidden; }
   .page > .welcome {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     overflow-x: hidden;
-    float: left; }
+    float: left;
+    margin-bottom: 40vh; }
     .page > .welcome.isMobile {
-      height: calc(100vh + 60px);
+      min-height: calc(100vh + 60px);
       -moz-transition: height 999999999999s ease-in !important;
       -o-transition: height 999999999999s ease-in !important;
       -webkit-transition: height 999999999999s ease-in !important;
       transition: height 999999999999s ease-in !important;
       -ms-transition: height 999999999999s ease-in !important; }
-    .page > .welcome:not(.isMobile) {
-      margin-bottom: 50vh; }
+    .page > .welcome.isMobile {
+      margin-bottom: 10vh; }
     .page > .welcome > .container {
       float: left;
+      position: absolute;
       height: auto;
       width: auto;
       top: 50%;
@@ -575,7 +607,7 @@ label {
     opacity: 1; } }
     .page > .welcome > .nav-links:not(.isMobile) {
       position: absolute;
-      bottom: 20px;
+      bottom: 80px;
       left: 50%;
       transform: translateX(-50%); }
       .page > .welcome > .nav-links:not(.isMobile) > .modified-link {
@@ -630,7 +662,7 @@ label {
           color: white;
           font-weight: 300;
           font-size: 1em;
-          padding: 20px;
+          padding: 10px 20px;
           margin: 10px;
           float: left;
           border-color: white;
@@ -649,18 +681,83 @@ label {
     .page > .welcome > .nav-links.isMobile {
       display: none; }
   .page > .schedule {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     overflow-x: hidden;
-    float: left; }
+    float: left;
+    margin-bottom: 40vh; }
     .page > .schedule.isMobile {
-      height: calc(100vh + 60px);
+      min-height: calc(100vh + 60px);
       -moz-transition: height 999999999999s ease-in !important;
       -o-transition: height 999999999999s ease-in !important;
       -webkit-transition: height 999999999999s ease-in !important;
       transition: height 999999999999s ease-in !important;
       -ms-transition: height 999999999999s ease-in !important; }
-    .page > .schedule:not(.isMobile) {
-      margin-bottom: 50vh; }
+    .page > .schedule.isMobile {
+      margin-bottom: 10vh; }
+  .page > .faq {
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    float: left;
+    margin-bottom: 40vh; }
+    .page > .faq.isMobile {
+      min-height: calc(100vh + 60px);
+      -moz-transition: height 999999999999s ease-in !important;
+      -o-transition: height 999999999999s ease-in !important;
+      -webkit-transition: height 999999999999s ease-in !important;
+      transition: height 999999999999s ease-in !important;
+      -ms-transition: height 999999999999s ease-in !important; }
+    .page > .faq.isMobile {
+      margin-bottom: 10vh; }
+    .page > .faq > label > .item {
+      height: 50px;
+      border-style: solid;
+      border-radius: 5px;
+      border-width: 2px;
+      border-color: white;
+      width: 40%;
+      margin: 0 5%;
+      padding: 1%;
+      float: left;
+      color: white;
+      margin-bottom: 40px;
+      font-weight: 300;
+      overflow: hidden; }
+      .page > .faq > label > .item.isMobile {
+        width: 86%; }
+      .page > .faq > label > .item.left:not(.isMobile) {
+        clear: left;
+        margin-right: 2.5%; }
+      .page > .faq > label > .item.right:not(.isMobile) {
+        clear: right;
+        margin-left: 2.5%; }
+      .page > .faq > label > .item > .title {
+        width: 100%;
+        min-height: 50px;
+        max-height: 50px;
+        cursor: pointer;
+        font-size: 1em; }
+        .page > .faq > label > .item > .title > div {
+          position: absolute;
+          width: 100%;
+          text-align: center;
+          top: 50%;
+          transform: translateY(-50%); }
+        .page > .faq > label > .item > .title.isMobile {
+          -webkit-user-select: none;
+          /* Chrome/Safari */
+          -moz-user-select: none;
+          /* Firefox */
+          -ms-user-select: none;
+          /* IE10+ */
+          /* Rules below not implemented in browsers yet */
+          -o-user-select: none;
+          user-select: none;
+          cursor: default; }
+      .page > .faq > label > .item > .content {
+        display: none; }
+      .page > .faq > label > .item > .modified {
+        display: none; }
 
 /*# sourceMappingURL=main.css.map */

@@ -7,7 +7,9 @@ $font-global: 'Lato', sans-serif;
 
 /////////////////////////////////////////// COLORS ///////////////////////////////////////////
 
-$color-black: #161616;
+$color-black: rgba(22,22,22,1);
+$color-black-50: rgba(22,22,22,0.5);
+$color-blue: #0039A6;
 /////////////////////////////////////////// END COLORS ///////////////////////////////////////////
 
 /////////////////////////////////////////// MIXINS ///////////////////////////////////////////
@@ -104,9 +106,9 @@ $color-black: #161616;
 }
 
 @mixin fullHeight{
-	height: 100vh;
+	min-height: 100vh;
 	&.isMobile{
-		height: calc(100vh + 60px);
+		min-height: calc(100vh + 60px);
 		@include freezeHeight();
 	}
 }

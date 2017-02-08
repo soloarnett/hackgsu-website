@@ -107,11 +107,30 @@ function navigatorClicked() {
 		// return to the bodyPrevPos location
 		console.log(bodyPrevPos);
 		$('.page').removeClass('hackbot-open');
-		scrollToValue(bodyPrevPos, 200);
 
+		if (bodyPrevPos > windowHeight) {
+			setTimeout(function(){
+				$('.page > *').animate({
+					opacity: 0
+				}, 200);
+				setTimeout(function(){
+					scrollToValue(bodyPrevPos, 0);
+					setTimeout(function(){
+						$('.page > *').animate({
+							opacity: 1
+						}, 200);
+					},100);
+				},200);
+			},200);
+		}else{
+			$('.page.isMobile > *').css('opacity', 1);
+			scrollToValue(bodyPrevPos, 200);
+
+		}
 	}else{
 		// navigator has been clicked to open the drawer
 		$('.page:not(.hackbot-open)').addClass('hackbot-open');
+		$('.page.isMobile > *').css('opacity', 0);
 		navigatorClickCounter = true;
 
 		// log the body location

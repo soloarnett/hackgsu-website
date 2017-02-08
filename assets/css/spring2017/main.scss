@@ -22,10 +22,16 @@ input[type=checkbox] {
    top: -9999px;
    left: -9999px;
 }
+input[type=radio] {
+   position: absolute;
+   top: -9999px;
+   left: -9999px;
+}
 
 label{
 	z-index: 999999;
 }
+
 
 .hackbot{
 
@@ -98,6 +104,17 @@ label{
 		**/
 	//} ** END DESCRIPTION
 	
+	>.darken{
+		@keyframes darken-close{
+			from{
+				opacity: 1;
+			}
+			to{
+				opacity: 0;
+			}
+		}
+		animation: darken-close .2s ease-out 0s forwards;
+	}
 	
 	>.element:not(.isMobile){
 		&.e1{
@@ -368,6 +385,19 @@ label{
 }
 
 #navigator:not(:checked) ~ label > div.navigator{
+
+	>.darken{
+		@keyframes darken-start{
+			from{
+				opacity: 0;
+			}
+			to{
+				opacity: 1;
+			}
+		}
+		animation: darken-start .4s ease-out .6s forwards;
+	}
+
 	>.element:not(.isMobile){
 		&.e1{
 			@keyframes e1-start{
@@ -618,12 +648,23 @@ label{
 		z-index: 9999999;
 
 	//} ** END ATTRIBUTES
-	
+	>.darken{
+		background-color: rgba(0,0,0,0.7);
+		z-index: 1;
+		opacity: 0;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		height: 40px;
+		width: 40px;
+		transform: translate(-50%, -50%);
+	}
 	>.element:not(.isMobile){
 		position: absolute;
 		width: 40px;
 		height: 2px;
 		background-color: white;
+		z-index: 2;
 
 		&.e1{
 			
@@ -700,7 +741,7 @@ label{
 		clear: none;
 		min-height: 100vh;
 		height: auto;
-		width: 100vw;
+		width: 100%;
 		background-color: $color-black;   
 	//} ** END ATTRIBUTES
 
@@ -716,9 +757,11 @@ label{
 		width: 100%;
 		overflow-x: hidden;
 		float: left;
-		&:not(.isMobile){
-			margin-bottom: 50vh;
+		margin-bottom: 40vh;
+		&.isMobile{
+			margin-bottom: 10vh;
 		}
+
 	}
 
 	&.hackbot-open{
@@ -738,6 +781,7 @@ label{
 					
 			//{ ** ATTRIBUTES
 				float: left;
+				position: absolute;
 				height: auto;
 				width: auto;
 				top: 50%;
@@ -839,7 +883,7 @@ label{
 
 			//{ ** ATTRIBUTES
 				position: absolute;
-				bottom: 20px;
+				bottom: 80px;
 				left: 50%;
 				transform: translateX(-50%);
 			//} ** END ATTRIBUTES
@@ -906,7 +950,7 @@ label{
 						color: white;
 						font-weight: 300;
 						font-size: 1em;
-						padding: 20px;
+						padding:  10px 20px;
 						margin: 10px;
 						float: left;
 						border-color: white;
@@ -951,4 +995,76 @@ label{
 		
 		
 	}
+
+	>.faq{
+
+		//{ ** INCLUDES
+			@include page-properties-default();
+		//} ** END INCLUDES
+		
+		>label>.item{
+			height: 50px;
+			border-style: solid;
+			border-radius: 5px;
+			border-width: 2px;
+			border-color: white;
+			width: 40%;
+			margin: 0 5%;
+			padding: 1%;
+			float: left;
+			color: white;
+			margin-bottom: 40px;
+			font-weight: 300;
+			overflow: hidden;
+		
+			&.isMobile{
+				width: 86%;
+			}
+
+			&.left:not(.isMobile){
+				clear: left;
+				margin-right: 2.5%;
+			}
+
+			&.right:not(.isMobile){
+				clear: right;
+				margin-left: 2.5%;
+			}
+
+			>.title{
+				width: 100%;
+				min-height: 50px;
+				max-height: 50px;
+				cursor: pointer;
+				font-size: 1em;
+				>div{
+					position: absolute;
+					width: 100%;
+					text-align: center;
+					top: 50%;
+					transform: translateY(-50%);
+				}
+
+				&.isMobile{
+
+					//{ ** INCLUDES
+						@include notSelectable();
+					//} ** END INCLUDES
+					
+				}
+
+			}
+
+			>.content{
+				display: none;
+			}
+			>.modified{
+				display: none;
+			}
+
+
+		}
+		
+	}
 }
+
