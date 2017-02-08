@@ -695,6 +695,28 @@ label {
       -ms-transition: height 999999999999s ease-in !important; }
     .page > .schedule.isMobile {
       margin-bottom: 10vh; }
+    .page > .schedule > .upcoming {
+      -webkit-user-select: none;
+      /* Chrome/Safari */
+      -moz-user-select: none;
+      /* Firefox */
+      -ms-user-select: none;
+      /* IE10+ */
+      /* Rules below not implemented in browsers yet */
+      -o-user-select: none;
+      user-select: none;
+      cursor: default;
+      font-size: 2em;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-weight: 300;
+      float: left;
+      margin-top: 10vh;
+      margin-bottom: 30vh; }
+      .page > .schedule > .upcoming.isMobile {
+        font-size: 1.5em;
+        margin-bottom: 20vh; }
   .page > .faq {
     min-height: 100vh;
     width: 100%;
@@ -710,20 +732,42 @@ label {
       -ms-transition: height 999999999999s ease-in !important; }
     .page > .faq.isMobile {
       margin-bottom: 10vh; }
+    .page > .faq > .faq-title {
+      -webkit-user-select: none;
+      /* Chrome/Safari */
+      -moz-user-select: none;
+      /* Firefox */
+      -ms-user-select: none;
+      /* IE10+ */
+      /* Rules below not implemented in browsers yet */
+      -o-user-select: none;
+      user-select: none;
+      cursor: default;
+      font-size: 2em;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-weight: 300;
+      float: left;
+      margin-top: 10vh;
+      margin-bottom: 30vh; }
+      .page > .faq > .faq-title.isMobile {
+        font-size: 1.5em;
+        margin-bottom: 20vh; }
     .page > .faq > label > .item {
-      height: 50px;
+      height: 100px;
       border-style: solid;
-      border-radius: 5px;
       border-width: 2px;
       border-color: white;
       width: 40%;
       margin: 0 5%;
-      padding: 1%;
+      padding-right: 1%;
       float: left;
       color: white;
       margin-bottom: 40px;
       font-weight: 300;
-      overflow: hidden; }
+      overflow: hidden;
+      cursor: pointer; }
       .page > .faq > label > .item.isMobile {
         width: 86%; }
       .page > .faq > label > .item.left:not(.isMobile) {
@@ -732,12 +776,38 @@ label {
       .page > .faq > label > .item.right:not(.isMobile) {
         clear: right;
         margin-left: 2.5%; }
+      .page > .faq > label > .item > .arrow {
+        width: 100px;
+        float: left;
+        background-color: rgba(255, 255, 255, 0.6);
+        height: 100px; }
+        .page > .faq > label > .item > .arrow > .element {
+          background-color: #161616;
+          width: 30px;
+          height: 10px;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%); }
+          .page > .faq > label > .item > .arrow > .element.e1 {
+            transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            left: 27.5%; }
+          .page > .faq > label > .item > .arrow > .element.e2 {
+            transform: rotate(135deg);
+            -ms-transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+            -moz-transform: rotate(135deg);
+            -o-transform: rotate(135deg);
+            right: 27.5%; }
       .page > .faq > label > .item > .title {
-        width: 100%;
-        min-height: 50px;
-        max-height: 50px;
-        cursor: pointer;
-        font-size: 1em; }
+        width: calc(97% - 100px);
+        float: left;
+        height: 100px;
+        margin-left: 3%;
+        font-size: 20px; }
         .page > .faq > label > .item > .title > div {
           position: absolute;
           width: 100%;
@@ -756,8 +826,98 @@ label {
           user-select: none;
           cursor: default; }
       .page > .faq > label > .item > .content {
-        display: none; }
+        float: left;
+        width: 100%;
+        padding: 20px 5px;
+        border-top: solid 1px #161616;
+        text-align: center; }
       .page > .faq > label > .item > .modified {
         display: none; }
+@keyframes faq-item-open {
+  0% {
+    height: 100px;
+    background-color: #161616;
+    color: white;
+    overflow: hidden;
+    cursor: pointer; }
+  99% {
+    overflow: hidden;
+    cursor: pointer; }
+  100% {
+    height: 400px;
+    background-color: white;
+    color: black;
+    overflow: auto;
+    cursor: default; } }
+@keyframes faq-e1-open {
+  from {
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg); }
+  to {
+    transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg); } }
+@keyframes faq-e2-open {
+  from {
+    transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg); }
+  to {
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg); } }
+@keyframes faq-item-close {
+  0% {
+    height: 400px;
+    background-color: white;
+    color: black;
+    overflow: auto;
+    cursor: default; }
+  1% {
+    overflow: hidden;
+    cursor: pointer; }
+  30% {
+    height: 100px; }
+  50% {
+    background-color: white;
+    color: black; }
+  100% {
+    background-color: #161616;
+    color: white; } }
+@keyframes faq-e1-close {
+  from {
+    transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg); }
+  to {
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg); } }
+@keyframes faq-e2-close {
+  from {
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg); }
+  to {
+    transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg); } }
 
 /*# sourceMappingURL=main.css.map */

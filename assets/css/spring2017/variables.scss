@@ -56,6 +56,14 @@ $color-blue: #0039A6;
     transition: initial;
 }
 
+@mixin rotate($value){
+    transform: rotate($value + deg);
+    -ms-transform: rotate($value + deg);
+    -webkit-transform: rotate($value + deg);
+    -moz-transform: rotate($value + deg);
+    -o-transform: rotate($value + deg);
+}
+
 @mixin freezeHeight(){
 	-moz-transition: height 999999999999s ease-in !important;
     -o-transition: height 999999999999s ease-in !important;

@@ -1,12 +1,13 @@
 <?php 
 	include_once("assets/php/spring2017/functions.php");
+	include_once("assets/php/spring2017/strings.php");
 
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>HackGSU / March 2017 / Georgia State University</title>
+	<title><?php string_title(); ?></title>
 	<link rel="stylesheet" type="text/css" href="assets/css/spring2017/main.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
 	<link rel="icon" href="assets/img/spring2017/favicon.ico">
@@ -16,7 +17,6 @@
     <meta name="author" content="">
 </head>
 <body>
-	<!-- php include navigation here -->
 	<form action="">
 
 	
@@ -66,9 +66,9 @@
 				<section class="container">
 					<div class="logo"></div>
 					<span class="title">
-						H&nbsp;&nbsp;A&nbsp;&nbsp;C&nbsp;&nbsp;K&nbsp;&nbsp;<font style="font-weight: 400">G&nbsp;&nbsp;S&nbsp;U</font>
+						<?php string_hackgsu(); ?>
 					</span>
-					<span class="date">0&nbsp;3&nbsp;.&nbsp;3&nbsp;1&nbsp;.&nbsp;1&nbsp;7</span>
+					<span class="date"><?php string_date(); ?></span>
 				</section>
 				<section class="nav-links">
 					<a class="modified-link schedule" href="#schedule"><span class="link">Schedule</span></a>
@@ -77,55 +77,10 @@
 				</section>
 			</section>
 			<section class="schedule" id="schedule">
-				<div></div>
+				<span class="upcoming">Upcoming Events</span>
 			</section>
 			<section class="faq" id="faq">
-			<form action="">
-
-	
-	
-				
-				<?php 
-
-					$faq = new faq;
-					$result = $faq -> selectAll();
-					$count = 0;
-					$label_count=1;
-					foreach ($result as $key => $subject) {
-						// var_dump($value);
-						$title = $subject["title"];
-						$content = $subject["content"];
-						$modified = $subject["date_modified"];
-
-				?>
-					
-
-					<input class="faq-navigator" type="radio" name="faq-navigation" id=<?php echo 'faq-navigator-' . $label_count; ?>>
-					<label class=<?php echo 'faq-id-' . $label_count; ?> for=<?php echo 'faq-navigator-' . $label_count; ?> >
-
-						<div 
-							<?php 	
-								if ($count > 0) { 
-									echo 'class="item right"'; 
-									$count = 0; 
-								}else{ 
-									echo 'class="item left"';
-									$count += 1;
-								}
-							?>
-						>
-							<div class="title"><div><?php echo "$title";?></div></div>
-							<span class="content"><?php echo "$content";?></span>
-							<span class="modified"><?php echo "$modified";?></span>
-						</div>
-					</label>
-				<?php
-						$label_count +=1;
-					}
-
-			 	?>
-			 	
-			</form>
+				<?php include_once("assets/php/spring2017/faq-include.php"); ?>
 			</section>
 		</section>
 	</form>
