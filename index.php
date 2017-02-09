@@ -82,6 +82,12 @@
 			<section class="faq" id="faq">
 				<?php include_once("assets/php/spring2017/faq-include.php"); ?>
 			</section>
+			<section class="sponsors" id="sponsors">
+				<span class="sponsors-title">Our Sponsors</span>
+			</section>
+			<section class="about" id="about">
+				<span class="about-title">About Us</span>
+			</section>
 		</section>
 	</form>
 

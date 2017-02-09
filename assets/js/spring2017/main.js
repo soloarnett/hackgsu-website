@@ -105,8 +105,11 @@ function navigatorClicked() {
 		navigatorClickCounter = false;
 
 		// return to the bodyPrevPos location
-		console.log(bodyPrevPos);
-		$('.page').removeClass('hackbot-open');
+		// console.log(bodyPrevPos);
+		setTimeout(function(){
+			$('.page').removeClass('hackbot-open');
+		},200);
+		
 
 		if (bodyPrevPos > windowHeight) {
 			setTimeout(function(){
@@ -124,7 +127,9 @@ function navigatorClicked() {
 			},200);
 		}else{
 			$('.page.isMobile > *').css('opacity', 1);
-			scrollToValue(bodyPrevPos, 200);
+			setTimeout(function(){
+				scrollToValue(bodyPrevPos, 200);
+			},200);
 
 		}
 	}else{
@@ -152,11 +157,25 @@ function scrollTo(elem, time){
 	}, time);
 }
 
+function scrollToMinus(elem, time, minus){
+	$('body').animate({
+		scrollTop: $(elem).offset().top + 1 - minus
+	}, time, "swing");
+}
+
 function scrollToValue(location, time){
 	$('body').animate({
 		scrollTop: location
 	}, time);
 }
+
+function faqKeyframeChanger(count, height){
+	var text = '@keyframes faq-item-open{ 0%{ height: 100px;background-color: $color-black;color: white;overflow: hidden;cursor: pointer;}99%{overflow: hidden;cursor: pointer;}100%{height: ' + height + 'px;background-color: white;color: black;overflow: auto;cursor: default;}}';
+	var id = '#keyframe-changer-' + count;
+	// $(id).inner(text);
+}
+
+faqKeyframeChanger(8, 200);
 
 function onLoad(){
 	/*
