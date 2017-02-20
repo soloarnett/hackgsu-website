@@ -2,6 +2,9 @@
 * {
   font-family: "Lato", sans-serif; }
 
+html {
+  opacity: 0; }
+
 body {
   background-color: #161616;
   margin: 0;
@@ -36,12 +39,13 @@ label {
 #hackbot_search {
   position: fixed;
   z-index: 2;
-  width: calc(100vw - 500px);
-  left: 100px;
-  height: 100vh;
-  border: none;
   visibility: hidden;
-  opacity: 0; }
+  opacity: 0;
+  border: none; }
+  #hackbot_search:not(.isMobile) {
+    width: calc(100vw - 500px);
+    left: 100px;
+    height: 100vh; }
   #hackbot_search.isMobile {
     width: 100%;
     left: 0;
@@ -299,6 +303,8 @@ label {
     #navigator:checked ~ section.page > .welcome > .nav-links:not(.isMobile) > .modified-link > .link {
       width: 70px;
       max-width: 70px; }
+  #navigator:checked ~ section.page > .welcome > .nav-links.isMobile > .modified-link {
+    display: none; }
 
 #navigator:not(:checked) ~ label > div.navigator > .darken {
   animation: darken-start .4s ease-out .6s forwards; }
@@ -659,7 +665,7 @@ label {
           text-decoration: none;
           color: inherit;
           -webkit-tap-highlight-color: transparent; }
-        .page > .welcome > .nav-links:not(.isMobile) > .modified-link:not(.isMobile).schedule {
+        .page > .welcome > .nav-links:not(.isMobile) > .modified-link:not(.isMobile).schedule:not(.isMobile) {
           animation: schedule-start .4s ease-out .2s forwards; }
 @keyframes schedule-start {
   from {
@@ -668,7 +674,7 @@ label {
   to {
     bottom: 0px;
     opacity: 1; } }
-        .page > .welcome > .nav-links:not(.isMobile) > .modified-link:not(.isMobile).faq {
+        .page > .welcome > .nav-links:not(.isMobile) > .modified-link:not(.isMobile).faq:not(.isMobile) {
           animation: faq-start .4s ease-out .2s forwards; }
 @keyframes faq-start {
   from {
@@ -677,7 +683,7 @@ label {
   to {
     bottom: 0px;
     opacity: 1; } }
-        .page > .welcome > .nav-links:not(.isMobile) > .modified-link:not(.isMobile).sponsors {
+        .page > .welcome > .nav-links:not(.isMobile) > .modified-link:not(.isMobile).sponsors:not(.isMobile) {
           animation: sponsors-start .4s ease-out .2s forwards; }
 @keyframes sponsors-start {
   from {

@@ -1,5 +1,8 @@
 @import 'variables';
 
+html{
+	opacity: 0;
+}
 
 body{
 
@@ -54,13 +57,15 @@ iframe{
 
 	position: fixed;
 	z-index: 2;
-	width: calc(100vw - 500px);
-	left: 100px;
-	height: 100vh;
-	border: none;
 	visibility: hidden;
 	opacity: 0;
+	border: none;
 	// background-color: black;
+	&:not(.isMobile){
+		width: calc(100vw - 500px);
+		left: 100px;
+		height: 100vh;
+	}
 	&.isMobile{
 		width: 100%;
 		left: 0;
@@ -327,6 +332,11 @@ iframe{
 					width: 70px;
 					max-width: 70px;
 				}
+			}
+		}
+		>.nav-links.isMobile{
+			>.modified-link{
+				display: none;
 			}
 		}
 	}
@@ -873,7 +883,7 @@ iframe{
 					@include noDecoration();
 					@include quickTransition(all);
 				//} ** END INCLUDES
-				&.schedule{
+				&.schedule:not(.isMobile){
 					@keyframes schedule-start{
 						from{
 							bottom: -10px;
@@ -886,7 +896,7 @@ iframe{
 					}
 					animation: schedule-start .4s ease-out .2s forwards;
 				}
-				&.faq{
+				&.faq:not(.isMobile){
 					@keyframes faq-start{
 						from{
 							bottom: -10px;
@@ -899,7 +909,7 @@ iframe{
 					}
 					animation: faq-start .4s ease-out .2s forwards;
 				}
-				&.sponsors{
+				&.sponsors:not(.isMobile){
 					@keyframes sponsors-start{
 						from{
 							bottom: -10px;

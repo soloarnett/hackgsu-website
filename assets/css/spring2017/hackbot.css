@@ -38,7 +38,7 @@ body {
     height: 20px;
     margin: 0;
     width: calc(100% - 80px);
-    border: 0;
+    border: none;
     padding: 10px;
     font-size: 20px;
     outline: none;
@@ -256,6 +256,21 @@ body {
     .quick_links.isMobile > .label {
       width: 100%;
       text-align: center; }
+    .quick_links.isMobile > .link {
+      clear: both;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-left: initial;
+      -webkit-user-select: none;
+      /* Chrome/Safari */
+      -moz-user-select: none;
+      /* Firefox */
+      -ms-user-select: none;
+      /* IE10+ */
+      /* Rules below not implemented in browsers yet */
+      -o-user-select: none;
+      user-select: none;
+      cursor: default; }
 @media (min-width: 450px) and (min-height: 685px) {
   .quick_links:not(.isMobile) {
     position: absolute;
@@ -278,8 +293,7 @@ body {
     float: left;
     clear: none;
     padding: 10px;
-    border: solid 2px white;
-    border-radius: 5px;
+    border-bottom: solid 2px white;
     margin-left: 10px;
     margin-bottom: 10px;
     color: white;

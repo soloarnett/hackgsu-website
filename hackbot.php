@@ -10,7 +10,7 @@
 	$search_text = $_POST['search_text'];
 
 
-	$placeholder = "";
+	$placeholder = "start here";
 	$result = "";
 
 	if (isset($search_text) && empty($search_text) === false) {
@@ -42,7 +42,7 @@
 <body>
 	<form id="" action="" method="post">
 		<div class="search_box">
-			<input id="search_text" type="text" name="search_text" value=<?php echo "\"$placeholder\""; ?>>
+			<input id="search_text" type="text" name="search_text" placeholder=<?php echo "\"$placeholder\""; ?>>
 			<input id="hackbot_submit" type="submit" name="submit" value="">
 		</div>
 	</form>

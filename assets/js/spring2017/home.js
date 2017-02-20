@@ -134,6 +134,33 @@ function navigatorClicked() {
 	
 }
 
+function link_clicked(link){
+	link = '#' + link;
+	if ($('.page').hasClass('hackbot-open')) {
+		bodyPrevPos = $(link).offset().top - 20;
+		$('#navigator').trigger('click');
+	}else{
+		scrollToMinus(link, 200, 20);
+	}
+}
+
+function modifiedLinks(){
+	$('.modified-link.schedule').click(function(e){
+		e.preventDefault();
+		link_clicked('schedule');
+	});
+
+	$('.modified-link.faq').click(function(e){
+		e.preventDefault();
+		link_clicked('faq');
+	});
+
+	$('.modified-link.sponsors').click(function(e){
+		e.preventDefault();
+		link_clicked('sponsors');
+	});
+}
+
 function onLoad(){
 	/*
 		FUNCTION NAME:	onLoad
@@ -142,13 +169,21 @@ function onLoad(){
 	*/
 	
 	resizeFunction();
+	modifiedLinks();
 	displayNavLinksMobile();
 	window.onresize = resizeFunction;
 	window.onscroll = scrollFunction;
 	$('body').on('scroll', scrollFunction);
+	
 	$('#navigator').click(function(){
 		navigatorClicked();
 	});
+
+	setTimeout(function(){
+		$('html').animate({
+			opacity: 1
+		}, 200);
+	}, 400);
 	
 }
 
