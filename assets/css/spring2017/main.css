@@ -7,6 +7,14 @@ body {
   margin: 0;
   height: auto;
   width: auto; }
+  body.isMobile {
+    height: 100vh;
+    overflow-y: auto;
+    -moz-transition: height 999999999999s ease-in !important;
+    -o-transition: height 999999999999s ease-in !important;
+    -webkit-transition: height 999999999999s ease-in !important;
+    transition: height 999999999999s ease-in !important;
+    -ms-transition: height 999999999999s ease-in !important; }
 
 * {
   position: relative;
@@ -25,6 +33,21 @@ input[type=radio] {
 label {
   z-index: 999999; }
 
+#hackbot_search {
+  position: fixed;
+  z-index: 2;
+  width: calc(100vw - 500px);
+  left: 100px;
+  height: 100vh;
+  border: none;
+  visibility: hidden;
+  opacity: 0; }
+  #hackbot_search.isMobile {
+    width: 100%;
+    left: 0;
+    height: calc(100vh - 150px);
+    border-bottom: solid 1px white; }
+
 .hackbot {
   width: calc(100vw - 400px);
   background-color: black;
@@ -32,6 +55,9 @@ label {
   height: auto;
   position: fixed;
   z-index: 0; }
+  .hackbot > .hackbot_search {
+    position: relative;
+    float: left; }
   .hackbot > .nav-links.isMobile {
     bottom: 20px;
     right: 20px;

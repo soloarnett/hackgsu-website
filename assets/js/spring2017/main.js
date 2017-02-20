@@ -1,35 +1,7 @@
-var windowHeight = window.innerHeight;
-var windowWidth = window.innerWidth;
-var bodyPos = $('body').scrollTop();
-var schedulePos = $('#schedule').offset().top;
-var bodyPrevPos = 0;
-var navigatorClickCounter = false;
 
-function resizeFunction(){
-	/*
-		FUNCTION NAME:	resizeFuntion
-		PARAMETERS:		none
-		DESCRIPTION:	runs a set of operations when the browser window is resized
-	*/
-	
-	windowHeight = window.innerHeight;
-	windowWidth = window.innerWidth;
-	schedulePos = $('#schedule').offset().top;
+function resize(){
 	makeMobile();
-	scrollFunction();
-}
-
-function scrollFunction(){
-	/*
-		FUNCTION NAME:	scrollFunction
-		PARAMETERS:		none
-		DESCRIPTION:	runs a set of operations when the browser window is scrolled
-	*/
-	if (!navigatorClickCounter) {
-		bodyPrevPos = $('body').scrollTop();
-	}
-	bodyPos = $('body').scrollTop();
-	
+	// console.log('working');
 }
 
 
@@ -71,79 +43,7 @@ function makeMobile(){
 	}
 }
 
-function displayNavLinksMobile(){
-	/*
-		FUNCTION NAME:	displayNavLinksMobile
-		PARAMETERS:		none
-		DESCRIPTION:	displays the mobile nav links that are hidden by default due to <noscript>
-	*/
-	
-	
-	$(".hackbot>.nav-links>.modified-link>label>.link").css("display", "block");
-}
 
-function labelClicked(label){
-	/*
-		FUNCTION NAME:	labelClicked
-		PARAMETERS:		label
-		DESCRIPTION:	when a label is clicked, this function will log the users current position and return to it when the close label is clicked
-	*/
-	
-
-	
-}
-
-function navigatorClicked() {
-	/*
-		FUNCTION NAME:	navigatorClicked
-		PARAMETERS:		none
-		DESCRIPTION:	function that runs when the #navigator label has been clicked
-	*/
-
-	if (navigatorClickCounter) {
-		// navigator has been clicked to close the drawer
-		navigatorClickCounter = false;
-
-		// return to the bodyPrevPos location
-		// console.log(bodyPrevPos);
-		setTimeout(function(){
-			$('.page').removeClass('hackbot-open');
-		},200);
-		
-
-		if (bodyPrevPos > windowHeight) {
-			setTimeout(function(){
-				$('.page > *').animate({
-					opacity: 0
-				}, 200);
-				setTimeout(function(){
-					scrollToValue(bodyPrevPos, 0);
-					setTimeout(function(){
-						$('.page > *').animate({
-							opacity: 1
-						}, 200);
-					},100);
-				},200);
-			},200);
-		}else{
-			$('.page.isMobile > *').css('opacity', 1);
-			setTimeout(function(){
-				scrollToValue(bodyPrevPos, 200);
-			},200);
-
-		}
-	}else{
-		// navigator has been clicked to open the drawer
-		$('.page:not(.hackbot-open)').addClass('hackbot-open');
-		$('.page.isMobile > *').css('opacity', 0);
-		navigatorClickCounter = true;
-
-		// log the body location
-		// bodyPrevPos = $('body').scrollTop();
-	}
-	
-	
-}
 
 function scrollMeUp(scrollMe, time){
 	$(scrollMe).animate({
@@ -169,36 +69,22 @@ function scrollToValue(location, time){
 	}, time);
 }
 
-function faqKeyframeChanger(count, height){
-	var text = '@keyframes faq-item-open{ 0%{ height: 100px;background-color: $color-black;color: white;overflow: hidden;cursor: pointer;}99%{overflow: hidden;cursor: pointer;}100%{height: ' + height + 'px;background-color: white;color: black;overflow: auto;cursor: default;}}';
-	var id = '#keyframe-changer-' + count;
-	// $(id).inner(text);
-}
+// function faqKeyframeChanger(count, height){
+// 	var text = '@keyframes faq-item-open{ 0%{ height: 100px;background-color: $color-black;color: white;overflow: hidden;cursor: pointer;}99%{overflow: hidden;cursor: pointer;}100%{height: ' + height + 'px;background-color: white;color: black;overflow: auto;cursor: default;}}';
+// 	var id = '#keyframe-changer-' + count;
+// 	// $(id).inner(text);
+// }
 
-faqKeyframeChanger(8, 200);
+// faqKeyframeChanger(8, 200);
 
-function onLoad(){
-	/*
-		FUNCTION NAME:	onLoad
-		PARAMETERS:		none
-		DESCRIPTION:	all of the functions that need to be run when the page is loaded, includes bindings
-	*/
-	
-	resizeFunction();
-	displayNavLinksMobile();
-	window.onresize = resizeFunction;
-	window.onscroll = scrollFunction;
-	$('body').on('scroll', scrollFunction);
-	$('#navigator').click(function(){
-		navigatorClicked();
-	});
-	
-}
+
 
 
 
 
 
 $(document).ready(function(){
-	onLoad();
+	// onLoad();
+	// window.onresize = resize;
+	makeMobile();
 });

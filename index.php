@@ -1,4 +1,5 @@
-<?php 
+<?php
+	session_start();
 	include_once("assets/php/spring2017/functions.php");
 	include_once("assets/php/spring2017/strings.php");
 
@@ -17,9 +18,13 @@
     <meta name="author" content="">
 </head>
 <body>
-	<form action="">
-
+	<iframe id="hackbot_search" src="hackbot.php">
+		
+	</iframe>
 	
+
+	<form class="full_form" action="">
+
 	
 		<input type="checkbox" name="navigation" id="navigator">
 		<label for="navigator" id="navigator">
@@ -32,6 +37,7 @@
 			</div>
 		</label>
 		<section class="hackbot">
+	
 			<section class="nav-links">
 				<noscript>
 					<a class="modified-link schedule" href="#schedule"><span class="link">Schedule</span></a>
@@ -91,7 +97,7 @@
 		</section>
 	</form>
 
-	
+<script type="text/javascript" src="assets/js/spring2017/home.js"></script>
 <script type="text/javascript" src="assets/js/spring2017/main.js"></script>
 </body>
 </html>

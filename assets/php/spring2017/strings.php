@@ -2,7 +2,7 @@
 
 
 	function string_hackgsu(){
-		echo "H&nbsp;&nbsp;A&nbsp;&nbsp;C&nbsp;&nbsp;K&nbsp;&nbsp;<font style=\"font-weight: 400\">G&nbsp;&nbsp;S&nbsp;U</font>";
+		echo "H&nbsp;&nbsp;A&nbsp;&nbsp;C&nbsp;&nbsp;K&nbsp;&nbsp;<font style=\"font-weight: 400\">G&nbsp;&nbsp;S&nbsp;&nbsp;U</font>";
 	}
 
 	function string_date(){

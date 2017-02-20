@@ -32,6 +32,36 @@
 			
 		}
 
+		public function selectWhere($where){
+			/*
+				FUNCTION NAME:	selectWhere
+				PARAMETERS:		none
+				DESCRIPTION:	will select all faq post that match multiple where conditions
+			*/
+			
+			
+			$db = new Db;
+
+			$rows = $db -> select("SELECT * FROM `faq` WHERE $where");
+
+			return $rows;
+		}
+
+		public function selectById($id){
+			/*
+				FUNCTION NAME:	selectById
+				PARAMETERS:		none
+				DESCRIPTION:	will select 1 post that matches the given id
+			*/
+			
+			
+			$db = new Db;
+
+			$rows = $db -> select("SELECT * FROM `faq` WHERE id='$id'");
+
+			return $rows;
+		}
+
 	}
 
 
