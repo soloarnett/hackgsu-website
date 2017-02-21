@@ -18,9 +18,11 @@
     <meta name="author" content="">
 </head>
 <body>
-	<iframe id="hackbot_search" src="hackbot.php">
-		
-	</iframe>
+
+	<div id="hackbot_search">
+		<iframe src="hackbot.php"></iframe>
+	</div>
+	
 	
 
 	<form class="full_form" action="">
@@ -35,6 +37,7 @@
 				<div class="element e3"></div>
 				<div class="element e4"></div>
 			</div>
+			<div class="searchAnything">Search HackGSU</div>
 		</label>
 		<section class="hackbot">
 	

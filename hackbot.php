@@ -10,7 +10,7 @@
 	$search_text = $_POST['search_text'];
 
 
-	$placeholder = "start here";
+	$placeholder = "search here";
 	$result = "";
 
 	if (isset($search_text) && empty($search_text) === false) {

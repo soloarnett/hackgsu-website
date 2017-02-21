@@ -4,20 +4,17 @@
 
 html {
   opacity: 0; }
+  html.isMobile {
+    height: 100%; }
+
+.full_form {
+  float: right; }
 
 body {
   background-color: #161616;
   margin: 0;
   height: auto;
   width: auto; }
-  body.isMobile {
-    height: 100vh;
-    overflow-y: auto;
-    -moz-transition: height 999999999999s ease-in !important;
-    -o-transition: height 999999999999s ease-in !important;
-    -webkit-transition: height 999999999999s ease-in !important;
-    transition: height 999999999999s ease-in !important;
-    -ms-transition: height 999999999999s ease-in !important; }
 
 * {
   position: relative;
@@ -38,19 +35,25 @@ label {
 
 #hackbot_search {
   position: fixed;
-  z-index: 2;
+  z-index: 0;
   visibility: hidden;
   opacity: 0;
-  border: none; }
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; }
+  #hackbot_search > iframe {
+    height: 100%;
+    width: 100%;
+    border: none; }
   #hackbot_search:not(.isMobile) {
     width: calc(100vw - 500px);
     left: 100px;
     height: 100vh; }
   #hackbot_search.isMobile {
     width: 100%;
+    top: 0;
     left: 0;
-    height: calc(100vh - 150px);
-    border-bottom: solid 1px white; }
+    border-bottom: solid 1px white;
+    height: calc(100% - 150px); }
 
 .hackbot {
   width: calc(100vw - 400px);
@@ -58,7 +61,8 @@ label {
   min-height: 100vh;
   height: auto;
   position: fixed;
-  z-index: 0; }
+  z-index: 0;
+  left: 0; }
   .hackbot > .hackbot_search {
     position: relative;
     float: left; }
@@ -98,7 +102,8 @@ label {
   .hackbot > .nav-links:not(.isMobile) {
     display: none; }
   .hackbot.isMobile {
-    width: 100vw; }
+    width: 100vw;
+    min-height: 100%; }
 
 #navigator:checked ~ label > div.navigator {
   /**
@@ -293,7 +298,8 @@ label {
   height: 100vh;
   overflow: hidden; }
   #navigator:checked ~ section.page.isMobile {
-    width: 0px; }
+    width: 0px;
+    height: 100%; }
   #navigator:checked ~ section.page > .welcome > .container:not(.isMobile) {
     top: 30%; }
   #navigator:checked ~ section.page > .welcome > .nav-links:not(.isMobile) > .modified-link {
@@ -482,6 +488,38 @@ label {
     bottom: 10px; }
   to {
     bottom: 0px; } }
+.searchAnything {
+  position: fixed;
+  left: 90px;
+  top: 20px;
+  height: 60px;
+  cursor: pointer;
+  z-index: 9999999;
+  font-weight: 300;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 60px;
+  font-size: 1em;
+  color: white;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  transition: all 0.2s ease; }
+  .searchAnything.isMobile {
+    top: initial;
+    bottom: 20px;
+    outline: none;
+    text-decoration: none;
+    color: inherit;
+    -webkit-tap-highlight-color: transparent;
+    color: white; }
+    .searchAnything.isMobile:visted {
+      outline: none;
+      text-decoration: none;
+      color: inherit;
+      -webkit-tap-highlight-color: transparent; }
+
 .navigator {
   position: fixed;
   left: 20px;
@@ -560,9 +598,13 @@ label {
   -webkit-transition: width 0.2s ease;
   -ms-transition: width 0.2s ease;
   transition: width 0.2s ease; }
+  .page.isMobile {
+    height: 100%; }
   .page.hackbot-open {
     height: 100vh;
     overflow: hidden; }
+    .page.hackbot-open.isMobile {
+      height: 100%; }
   .page > .welcome {
     min-height: 100vh;
     width: 100%;
@@ -577,7 +619,7 @@ label {
       transition: height 999999999999s ease-in !important;
       -ms-transition: height 999999999999s ease-in !important; }
     .page > .welcome.isMobile {
-      margin-bottom: 10vh; }
+      margin-bottom: 10%; }
     .page > .welcome > .container {
       float: left;
       position: absolute;
@@ -728,7 +770,7 @@ label {
       transition: height 999999999999s ease-in !important;
       -ms-transition: height 999999999999s ease-in !important; }
     .page > .schedule.isMobile {
-      margin-bottom: 10vh; }
+      margin-bottom: 10%; }
     .page > .schedule > .upcoming {
       -webkit-user-select: none;
       /* Chrome/Safari */
@@ -767,7 +809,7 @@ label {
       transition: height 999999999999s ease-in !important;
       -ms-transition: height 999999999999s ease-in !important; }
     .page > .faq.isMobile {
-      margin-bottom: 10vh; }
+      margin-bottom: 10%; }
     .page > .faq > .faq-title {
       -webkit-user-select: none;
       /* Chrome/Safari */
@@ -967,7 +1009,7 @@ label {
       transition: height 999999999999s ease-in !important;
       -ms-transition: height 999999999999s ease-in !important; }
     .page > .sponsors.isMobile {
-      margin-bottom: 10vh; }
+      margin-bottom: 10%; }
     .page > .sponsors > .sponsors-title {
       -webkit-user-select: none;
       /* Chrome/Safari */
@@ -1004,7 +1046,7 @@ label {
       transition: height 999999999999s ease-in !important;
       -ms-transition: height 999999999999s ease-in !important; }
     .page > .about.isMobile {
-      margin-bottom: 10vh; }
+      margin-bottom: 10%; }
     .page > .about > .about-title {
       -webkit-user-select: none;
       /* Chrome/Safari */

@@ -32,6 +32,13 @@ function scrollFunction(){
 		bodyPrevPos = $('body').scrollTop();
 	}
 	bodyPos = $('body').scrollTop();
+	if (bodyPos > 190) {
+		$('.searchAnything').css('opacity', 0);
+	}else{
+		if ($('.page').hasClass('hackbot-open')==false) {
+			$('.searchAnything').css('opacity', 1);
+		}
+	}
 	
 }
 
@@ -59,18 +66,27 @@ function labelClicked(label){
 
 function displaySearch(state){
 	if (state == 1) {
+		$('.searchAnything').css('opacity', 0);
 		setTimeout(function(){
+			
+			$('.nav-links').css('opacity', 1);
 			$('#hackbot_search').css('visibility', 'visible');
+			$('#hackbot_search').css('z-index', 2);
 			$('#hackbot_search').animate({
 				opacity: 1
 			}, 200);
 		},200);
 	}else{
+		if (bodyPos < 190) {
+			$('.searchAnything').css('opacity', 1);
+		}
+		$('.nav-links').css('opacity', 0);
 		$('#hackbot_search').animate({
 			opacity: 0
 		}, 100);
 		setTimeout(function(){
 			$('#hackbot_search').css('visibility', 'hidden');
+			$('#hackbot_search').css('z-index', 0);
 		},200);
 	}
 }
@@ -124,6 +140,7 @@ function navigatorClicked() {
 		
 		// navigator has been clicked to open the drawer
 		$('.page:not(.hackbot-open)').addClass('hackbot-open');
+
 		$('.page.isMobile > *').css('opacity', 0);
 		navigatorClickCounter = true;
 

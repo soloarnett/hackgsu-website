@@ -2,6 +2,13 @@
 
 html{
 	opacity: 0;
+	&.isMobile{
+		height: 100%;
+	}
+}
+
+.full_form{
+	float: right;
 }
 
 body{
@@ -13,11 +20,11 @@ body{
 		width: auto;
 	//} ** END ATTRIBUTES
 	&.isMobile{
-		height: 100vh;
-		overflow-y: auto;
+		// height: 100vh;
+		// overflow-y: auto;
 
 		//{ ** INCLUDES
-			@include freezeHeight();
+			// @include freezeHeight();
 		//} ** END INCLUDES
 		
 	}
@@ -35,6 +42,7 @@ input[type=checkbox] {
    position: relative;
    float: left;
    display: none;
+   // visibility: hidden;
 }
 input[type=radio] {
 	// position: absolute;
@@ -42,6 +50,7 @@ input[type=radio] {
 	// left: -9999px;
    position: relative;
    float: left;
+   // visibility: hidden;
    display: none;
 }
 
@@ -49,18 +58,24 @@ label{
 	z-index: 999999;
 }
 
-iframe{
-	// background-color: black;
-}
 
 #hackbot_search{
 
 	position: fixed;
-	z-index: 2;
+	z-index: 0;
 	visibility: hidden;
 	opacity: 0;
-	border: none;
+	
+	overflow-y: auto;
+	-webkit-overflow-scrolling:touch;
 	// background-color: black;
+
+	>iframe{
+		height: 100%;
+		width: 100%;
+		border: none;
+	}
+
 	&:not(.isMobile){
 		width: calc(100vw - 500px);
 		left: 100px;
@@ -68,10 +83,14 @@ iframe{
 	}
 	&.isMobile{
 		width: 100%;
+		top: 0;
 		left: 0;
-		height: calc(100vh - 150px);
 		border-bottom: solid 1px white;
+		// height: calc(100vh - 150px);
+		height: calc(100% - 150px);
+		
 	}
+	
 }
 
 
@@ -84,6 +103,7 @@ iframe{
 		height: auto;
 		position: fixed;
 		z-index: 0;
+		left: 0;
 	//} ** END ATTRIBUTES
 
 	>.hackbot_search{
@@ -138,9 +158,11 @@ iframe{
 
 	&.isMobile{
 		width: 100vw;
+		min-height: 100%;
 	}
 	
 }
+
 
 #navigator:checked ~ label > div.navigator{
 
@@ -314,6 +336,7 @@ iframe{
 	
 	&.isMobile{
 		width: 0px;
+		height: 100%;
 	}
 
 	>.welcome{
@@ -594,6 +617,40 @@ iframe{
 
 }
 
+.searchAnything{
+	position: fixed;
+	left: 90px;
+	top: 20px;
+	// width: 60px;
+	height: 60px;
+	cursor: pointer;
+	z-index: 9999999;
+	// opacity: 0;
+	font-weight: 300;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 60px;
+	font-size: 1em;
+	color: white;
+
+	//{ ** INCLUDES
+		@include quickTransition(all);
+	//} ** END INCLUDES
+	
+	&.isMobile{
+		//{ ** ATTRIBUTES
+			top: initial;
+			bottom: 20px;
+		//} ** END ATTRIBUTES
+		
+
+		//{ ** INCLUDES
+			@include noDecoration();
+		//} ** END INCLUDES
+		color: white;
+	}
+}
+
 .navigator{
 
 	//{ ** ATTRIBUTES
@@ -707,6 +764,10 @@ iframe{
 		@include quickTransition(width);
 	//} ** END INCLUDES	
 
+	&.isMobile{
+		height: 100%;
+	}
+
 	@mixin page-properties-default(){
 				
 		//{ ** INCLUDES
@@ -717,7 +778,7 @@ iframe{
 		float: left;
 		margin-bottom: 40vh;
 		&.isMobile{
-			margin-bottom: 10vh;
+			margin-bottom: 10%;
 		}
 
 	}
@@ -745,6 +806,9 @@ iframe{
 	&.hackbot-open{
 		height: 100vh;
 		overflow: hidden;
+		&.isMobile{
+			height: 100%;
+		}
 	}
 
 	>.welcome{
