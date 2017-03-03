@@ -47,7 +47,8 @@ input:-moz-placeholder {
   background-color: white;
   min-width: 200px;
   opacity: 0;
-  animation: showSearch .2s ease-out .3s forwards; }
+  overflow: hidden;
+  animation: showSearch .3s ease-out .8s forwards; }
   .search_box.isMobile {
     top: 20px;
     width: calc(100% - 40px);
@@ -254,7 +255,7 @@ input:-moz-placeholder {
     color: white;
     float: right;
     clear: right;
-    width: 100%;
+    width: calc(100% - 40px);
     padding: 10px 20px; }
     .more_results > .more_form > label > .faq > .title {
       font-weight: 300;
@@ -281,6 +282,7 @@ input:-moz-placeholder {
       width: 100%;
       text-align: center; }
     .more_results.isMobile > .more_form > label > .faq {
+      width: 100%;
       padding: 10px 0px;
       text-align: center; }
     .more_results.isMobile > .more_form > * {
@@ -325,7 +327,18 @@ input:-moz-placeholder {
       /* Rules below not implemented in browsers yet */
       -o-user-select: none;
       user-select: none;
-      cursor: default; }
+      cursor: default;
+      outline: none;
+      text-decoration: none;
+      color: inherit;
+      -webkit-tap-highlight-color: transparent;
+      cursor: pointer;
+      color: white; }
+      .quick_links.isMobile > .link:visted {
+        outline: none;
+        text-decoration: none;
+        color: inherit;
+        -webkit-tap-highlight-color: transparent; }
   .quick_links.bottom:not(.isMobile) {
     position: absolute;
     bottom: 0;
