@@ -22,7 +22,7 @@
 
 					<script type="text/javascript">
 						function faqKeyframeChanger(count, height){
-							var text = "@keyframes" + <?php echo '" faq-item-open-' . $label_count . '"'; ?> + " {0% {height:100px;background-color: #161616;color: white;overflow: hidden;cursor: pointer; }99% {overflow: hidden;cursor: pointer; }100% {height:" + height + "px;background-color: white;color: black;overflow: auto;cursor: default; } }@keyframes" + <?php echo '" faq-item-close-' . $label_count . '"'; ?> + " {0% {height: 400px;background-color: white;color: black;overflow: auto;cursor: default; }1% {overflow: hidden;cursor: pointer; }30% {height: 100px; }50% {background-color: white;color: black; }100% {background-color: #161616;color: white; } }";
+							var text = "@keyframes" + <?php echo '" faq-item-open-' . $label_count . '"'; ?> + " {0% {height:100px;background-color: #161616;color: white;overflow: hidden;cursor: pointer; }99% {overflow: hidden;cursor: pointer; }100% {height:" + height + "px;background-color: white;color: black;overflow: auto;cursor: pointer; } }@keyframes" + <?php echo '" faq-item-close-' . $label_count . '"'; ?> + " {0% {height: 400px;background-color: white;color: black;overflow: auto;cursor: pointer; }1% {overflow: hidden;cursor: pointer; }30% {height: 100px; }50% {background-color: white;color: black; }100% {background-color: #161616;color: white; } }";
 							// var id = '#keyframe-changer-' + count;
 							// $(id).text(text);
 							// console.log(id + ": " + text);
@@ -67,7 +67,7 @@
 
 					
 
-					<input class="faq-navigator" type="radio" name="faq-navigation" id=<?php echo 'faq-navigator-' . $label_count; ?>>
+					<input class="faq-navigator" type="checkbox" name="faq-navigation" id=<?php echo 'faq-navigator-' . $label_count; ?>>
 					<label class=<?php echo 'faq-id-' . $label_count; ?> for=<?php echo 'faq-navigator-' . $label_count; ?> >
 
 						<div 
@@ -104,6 +104,12 @@
 			 			$(document).ready(function(){
 							$(<?php echo '"label.faq-id-' . $label_count . '"'; ?>).click(function(){
 								faqInView(<?php echo "$label_count";?>);
+							});
+
+							$(".page > .faq > .faq-navigator:not(:checked)").click(function(e){
+								
+								$(this).siblings().removeAttr('checked');
+								
 							});
 						});
 

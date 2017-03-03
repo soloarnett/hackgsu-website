@@ -1,19 +1,25 @@
 <?php 
 
 	session_start();
+	$more_clicked = 0;
+	$more_link_id = null;
+	if (isset($_GET['more_link']) && empty($_GET['more_link']) == false) {
+		$more_clicked = 1;
+		$more_link_id = $_GET['more_link'];
+	}
 
 	
 	include_once("assets/php/spring2017/strings.php");
 	include_once("assets/php/spring2017/hackbot-display.php");
 
 
-	$search_text = $_POST['search_text'];
+	$search_text = $_GET['search_text'];
 
 
-	$placeholder = "search here";
+	$placeholder = "Search HackGSU";
 	$result = "";
 
-	if (isset($search_text) && empty($search_text) === false) {
+	if (isset($search_text) && empty($search_text) === false && $more_clicked != 1) {
 		$placeholder = $search_text;
 
 		$ev = new everything;
@@ -22,7 +28,13 @@
 
 		// echo "<script type=\"text/javascript\">console.log('result is " . $result[0]['type'] . "')</script>";
 
-	}else{
+	}elseif ($more_clicked == 1 && isset($more_link_id) && empty($more_link_id) == false) {
+		$placeholder = "Search for more";
+
+		$ev = new everything;
+
+		$result = $ev -> selectById($more_link_id);
+	}{
 		// $result = "";
 	}
 
@@ -40,7 +52,7 @@
 	<title>hackbot</title>
 </head>
 <body>
-	<form id="" action="" method="post">
+	<form id="" action="" method="get">
 		<div class="search_box">
 			<input id="search_text" type="text" name="search_text" placeholder=<?php echo "\"$placeholder\""; ?>>
 			<input id="hackbot_submit" type="submit" name="submit" value="">
@@ -69,7 +81,16 @@
 							$counter ++;
 							continue;
 						}else{
-							hackbot_display($more);
+							?>
+							<form class="more_form" action="" method="get">
+								<input id=<?php $str = "more_link"; $str .= $more['id']; echo "'". $str. "'"; ?> type="submit" name="more_link" value=<?php echo "'" . $more['id'] . "'"; ?>>
+								<label for=<?php echo "'$str'"; ?>>
+									<?php
+									hackbot_display($more);
+									?>
+								</label>	
+							</form>
+							<?php
 						}
 						$counter ++;
 					}
@@ -101,6 +122,11 @@
 		}else{
 			echo "<script type=\"text/javascript\">$('.quick_links:not(.bottom)').addClass('bottom');</script>";
 		}
+		// if (isset($search_text) && empty($search_text) === false) {
+			// echo "<script type=\"text/javascript\">$('.quick_links').removeClass('bottom');</script>";
+		// }else{
+			// echo "<script type=\"text/javascript\">$('.quick_links:not(.bottom)').addClass('bottom');</script>";
+		// }
 	?>
 	
 <script type="text/javascript" src="assets/js/spring2017/main.js"></script>

@@ -36,7 +36,7 @@ function makeMobile(){
 	*/
 	
 	
-	if (isAndroid() || isApple()) {
+	if (isAndroid() || isApple() || $('html').hasClass('frameMobile')) {
 		$("*:not(.isMobile)").addClass("isMobile");
 	}else{
 		$("*.isMobile").removeClass("isMobile");

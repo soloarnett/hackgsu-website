@@ -71,6 +71,11 @@ $color-link: #82ddf0;
     -webkit-transition: height 999999999999s ease-in !important;
     transition: height 999999999999s ease-in !important;
     -ms-transition: height 999999999999s ease-in !important;
+    -moz-transition: margin 999999999999s ease-in !important;
+    -o-transition: margin 999999999999s ease-in !important;
+    -webkit-transition: margin 999999999999s ease-in !important;
+    transition: margin 999999999999s ease-in !important;
+    -ms-transition: margin 999999999999s ease-in !important;
 }
 
 @mixin noDecoration(){

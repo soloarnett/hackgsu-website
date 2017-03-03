@@ -93,6 +93,20 @@
 			return $rows;
 		}
 
+		public function selectById($id){
+			/*
+				FUNCTION NAME:	selectById
+				PARAMETERS:		id
+				DESCRIPTION:	searches the everything table for a specific id and returns the result
+			*/
+			
+			$db = new Db;
+			
+			$rows = $db -> select("SELECT * FROM `everything` WHERE id=$id");
+			
+			return $rows;
+		}
+
 	}
 
 

@@ -66,6 +66,28 @@ label {
   .hackbot > .hackbot_search {
     position: relative;
     float: left; }
+  .hackbot > .search_decoy {
+    position: fixed;
+    top: 30px;
+    left: 100px;
+    width: calc(100% - 540px);
+    height: 40px;
+    background-color: white;
+    min-width: 200px; }
+    .hackbot > .search_decoy.isMobile {
+      width: calc(100% - 60px);
+      left: 50%;
+      transform: translateX(-50%); }
+    .hackbot > .search_decoy > .arrow_decoy {
+      position: relative;
+      float: right;
+      width: 40px;
+      height: 20px;
+      margin: 10px;
+      background-image: url("../../img/spring2017/arrow.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center; }
   .hackbot > .nav-links.isMobile {
     bottom: 20px;
     right: 20px;
@@ -506,6 +528,8 @@ label {
   -webkit-transition: all 0.2s ease;
   -ms-transition: all 0.2s ease;
   transition: all 0.2s ease; }
+  .searchAnything:not(.isMobile) {
+    left: 110px; }
   .searchAnything.isMobile {
     top: initial;
     bottom: 20px;
@@ -617,7 +641,12 @@ label {
       -o-transition: height 999999999999s ease-in !important;
       -webkit-transition: height 999999999999s ease-in !important;
       transition: height 999999999999s ease-in !important;
-      -ms-transition: height 999999999999s ease-in !important; }
+      -ms-transition: height 999999999999s ease-in !important;
+      -moz-transition: margin 999999999999s ease-in !important;
+      -o-transition: margin 999999999999s ease-in !important;
+      -webkit-transition: margin 999999999999s ease-in !important;
+      transition: margin 999999999999s ease-in !important;
+      -ms-transition: margin 999999999999s ease-in !important; }
     .page > .welcome.isMobile {
       margin-bottom: 10%; }
     .page > .welcome > .container {
@@ -633,6 +662,8 @@ label {
       -webkit-transition: top 0.2s ease;
       -ms-transition: top 0.2s ease;
       transition: top 0.2s ease; }
+      .page > .welcome > .container.isMobile {
+        top: 40%; }
       .page > .welcome > .container > * {
         float: left;
         clear: left;
@@ -768,7 +799,12 @@ label {
       -o-transition: height 999999999999s ease-in !important;
       -webkit-transition: height 999999999999s ease-in !important;
       transition: height 999999999999s ease-in !important;
-      -ms-transition: height 999999999999s ease-in !important; }
+      -ms-transition: height 999999999999s ease-in !important;
+      -moz-transition: margin 999999999999s ease-in !important;
+      -o-transition: margin 999999999999s ease-in !important;
+      -webkit-transition: margin 999999999999s ease-in !important;
+      transition: margin 999999999999s ease-in !important;
+      -ms-transition: margin 999999999999s ease-in !important; }
     .page > .schedule.isMobile {
       margin-bottom: 10%; }
     .page > .schedule > .upcoming {
@@ -807,7 +843,12 @@ label {
       -o-transition: height 999999999999s ease-in !important;
       -webkit-transition: height 999999999999s ease-in !important;
       transition: height 999999999999s ease-in !important;
-      -ms-transition: height 999999999999s ease-in !important; }
+      -ms-transition: height 999999999999s ease-in !important;
+      -moz-transition: margin 999999999999s ease-in !important;
+      -o-transition: margin 999999999999s ease-in !important;
+      -webkit-transition: margin 999999999999s ease-in !important;
+      transition: margin 999999999999s ease-in !important;
+      -ms-transition: margin 999999999999s ease-in !important; }
     .page > .faq.isMobile {
       margin-bottom: 10%; }
     .page > .faq > .faq-title {
@@ -841,13 +882,53 @@ label {
       margin: 0 5%;
       padding-right: 1%;
       float: left;
-      color: white;
       margin-bottom: 40px;
       font-weight: 300;
       overflow: hidden;
-      cursor: pointer; }
+      -webkit-user-select: none;
+      /* Chrome/Safari */
+      -moz-user-select: none;
+      /* Firefox */
+      -ms-user-select: none;
+      /* IE10+ */
+      /* Rules below not implemented in browsers yet */
+      -o-user-select: none;
+      user-select: none;
+      cursor: default;
+      outline: none;
+      text-decoration: none;
+      color: inherit;
+      -webkit-tap-highlight-color: transparent;
+      cursor: pointer;
+      color: white; }
+      .page > .faq > label > .item:visted {
+        outline: none;
+        text-decoration: none;
+        color: inherit;
+        -webkit-tap-highlight-color: transparent; }
       .page > .faq > label > .item.isMobile {
         width: 86%; }
+        .page > .faq > label > .item.isMobile > *:not(.content) {
+          -webkit-user-select: none;
+          /* Chrome/Safari */
+          -moz-user-select: none;
+          /* Firefox */
+          -ms-user-select: none;
+          /* IE10+ */
+          /* Rules below not implemented in browsers yet */
+          -o-user-select: none;
+          user-select: none;
+          cursor: default;
+          outline: none;
+          text-decoration: none;
+          color: inherit;
+          -webkit-tap-highlight-color: transparent;
+          cursor: pointer; }
+          .page > .faq > label > .item.isMobile > *:not(.content):visted {
+            outline: none;
+            text-decoration: none;
+            color: inherit;
+            -webkit-tap-highlight-color: transparent; }
       .page > .faq > label > .item.left:not(.isMobile) {
         clear: left;
         margin-right: 2.5%; }
@@ -914,7 +995,8 @@ label {
           /* Rules below not implemented in browsers yet */
           -o-user-select: none;
           user-select: none;
-          cursor: default; }
+          cursor: default;
+          cursor: pointer; }
       .page > .faq > label > .item > .content {
         float: left;
         width: calc(100% - 40px);
@@ -1007,7 +1089,12 @@ label {
       -o-transition: height 999999999999s ease-in !important;
       -webkit-transition: height 999999999999s ease-in !important;
       transition: height 999999999999s ease-in !important;
-      -ms-transition: height 999999999999s ease-in !important; }
+      -ms-transition: height 999999999999s ease-in !important;
+      -moz-transition: margin 999999999999s ease-in !important;
+      -o-transition: margin 999999999999s ease-in !important;
+      -webkit-transition: margin 999999999999s ease-in !important;
+      transition: margin 999999999999s ease-in !important;
+      -ms-transition: margin 999999999999s ease-in !important; }
     .page > .sponsors.isMobile {
       margin-bottom: 10%; }
     .page > .sponsors > .sponsors-title {
@@ -1044,7 +1131,12 @@ label {
       -o-transition: height 999999999999s ease-in !important;
       -webkit-transition: height 999999999999s ease-in !important;
       transition: height 999999999999s ease-in !important;
-      -ms-transition: height 999999999999s ease-in !important; }
+      -ms-transition: height 999999999999s ease-in !important;
+      -moz-transition: margin 999999999999s ease-in !important;
+      -o-transition: margin 999999999999s ease-in !important;
+      -webkit-transition: margin 999999999999s ease-in !important;
+      transition: margin 999999999999s ease-in !important;
+      -ms-transition: margin 999999999999s ease-in !important; }
     .page > .about.isMobile {
       margin-bottom: 10%; }
     .page > .about > .about-title {

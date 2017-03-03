@@ -19,9 +19,25 @@ body {
   text-align: center;
   font-size: 4em; }
   .welcome.isMobile {
-    width: 100%;
-    margin-top: 110px;
-    font-size: 3em; }
+    width: calc(100% - 20px);
+    margin-top: 100px;
+    font-size: 3em;
+    padding: 0px 10px;
+    display: none; }
+
+::-webkit-input-placeholder {
+  font-weight: 300; }
+
+::-moz-placeholder {
+  font-weight: 300; }
+
+/* firefox 19+ */
+:-ms-input-placeholder {
+  font-weight: 300; }
+
+/* ie */
+input:-moz-placeholder {
+  font-weight: 300; }
 
 .search_box {
   position: absolute;
@@ -29,11 +45,21 @@ body {
   width: calc(100% - 40px);
   height: 40px;
   background-color: white;
-  min-width: 200px; }
+  min-width: 200px;
+  opacity: 0;
+  animation: showSearch .2s ease-out .3s forwards; }
   .search_box.isMobile {
-    width: calc(100% - 60px);
+    top: 20px;
+    width: calc(100% - 40px);
     left: 50%;
-    transform: translateX(-50%); }
+    transform: translateX(-50%);
+    height: 60px;
+    border-radius: 2px; }
+@keyframes showSearch {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
   .search_box > #search_text {
     position: relative;
     float: left;
@@ -43,6 +69,8 @@ body {
     border: none;
     padding: 10px;
     font-size: 20px;
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    overflow: hidden;
     outline: none;
     text-decoration: none;
     color: inherit;
@@ -52,6 +80,12 @@ body {
       text-decoration: none;
       color: inherit;
       -webkit-tap-highlight-color: transparent; }
+    .search_box > #search_text.isMobile {
+      height: 40px;
+      font-size: 20px;
+      line-height: 40px;
+      vertical-align: middle;
+      border-radius: 2px; }
   .search_box > #hackbot_submit {
     outline: none;
     text-decoration: none;
@@ -63,7 +97,7 @@ body {
     margin: 10px;
     padding: 0;
     width: 40px;
-    background-image: url("../../img/spring2017/arrow.png");
+    background-image: url("../../img/spring2017/magnify.png");
     background-size: contain;
     background-color: white;
     background-repeat: no-repeat;
@@ -75,6 +109,9 @@ body {
       text-decoration: none;
       color: inherit;
       -webkit-tap-highlight-color: transparent; }
+    .search_box > #hackbot_submit.isMobile {
+      height: 30px;
+      margin: 15px 10px; }
 
 .top_result {
   display: block;
@@ -207,18 +244,24 @@ body {
     color: white;
     float: right;
     clear: right; }
-  .more_results > .faq {
+    .more_results > .none.isMobile {
+      float: left;
+      left: 50%;
+      transform: translateX(-50%); }
+  .more_results > .more_form > input[type="submit"] {
+    display: none; }
+  .more_results > .more_form > label > .faq {
     color: white;
     float: right;
     clear: right;
     width: 100%;
     padding: 10px 20px; }
-    .more_results > .faq > .title {
+    .more_results > .more_form > label > .faq > .title {
       font-weight: 300;
       font-size: 1em;
       margin-bottom: 0px;
       cursor: pointer; }
-    .more_results > .faq > .content {
+    .more_results > .more_form > label > .faq > .content {
       display: none; }
   .more_results.isMobile {
     width: 90%;
@@ -237,9 +280,19 @@ body {
       clear: left;
       width: 100%;
       text-align: center; }
-    .more_results.isMobile > .faq {
+    .more_results.isMobile > .more_form > label > .faq {
       padding: 10px 0px;
       text-align: center; }
+    .more_results.isMobile > .more_form > * {
+      outline: none;
+      text-decoration: none;
+      color: inherit;
+      -webkit-tap-highlight-color: transparent; }
+      .more_results.isMobile > .more_form > *:visted {
+        outline: none;
+        text-decoration: none;
+        color: inherit;
+        -webkit-tap-highlight-color: transparent; }
 
 .quick_links {
   position: relative;
@@ -253,7 +306,7 @@ body {
   margin-bottom: 20px;
   animation: quickLinks 0.5s ease-out .9s forwards; }
   .quick_links.isMobile {
-    margin-top: 40px;
+    margin-top: 120px;
     width: 100%; }
     .quick_links.isMobile > .label {
       width: 100%;
@@ -273,13 +326,11 @@ body {
       -o-user-select: none;
       user-select: none;
       cursor: default; }
-@media (min-width: 450px) and (min-height: 685px) {
-  .quick_links:not(.isMobile) {
+  .quick_links.bottom:not(.isMobile) {
     position: absolute;
     bottom: 0;
     float: initial;
-    clear: initial; } }
-
+    clear: initial; }
 @keyframes quickLinks {
   from {
     opacity: 0; }

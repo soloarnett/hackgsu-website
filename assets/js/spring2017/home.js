@@ -17,10 +17,37 @@ function resizeFunction(){
 	windowHeight = window.innerHeight;
 	windowWidth = window.innerWidth;
 	schedulePos = $('#schedule').offset().top;
+	if (windowWidth < 830) {
+		$("html:not(.isMobile)").addClass("frameMobile");
+		$("#iframe_search").contents().find("html:not(.isMobile").addClass("frameMobile");
+	}else{
+		$("html.frameMobile").removeClass("frameMobile");
+		$("#iframe_search").contents().find("html.frameMobile").removeClass("frameMobile");
+		if ($('.page').hasClass('hackbot-open') == false) {
+			$('.page:not(.isMobile) > *').css('opacity', 1);
+		}
+	}
 	makeMobile();
+	
 	scrollFunction();
 	// console.log('working');
 }
+
+// function makeMobile(){
+	
+// 		FUNCTION NAME:	makeMobile
+// 		PARAMETERS:		none
+// 		DESCRIPTION:	adds mobile class to each html tag if the page is running on a mobile device
+	
+	
+	
+// 	if (isAndroid() || isApple() || windowWidth < 630) {
+// 		$("*:not(.isMobile)").addClass("isMobile");
+// 	}else{
+// 		$("*.isMobile").removeClass("isMobile");
+// 	}
+// }
+
 
 function scrollFunction(){
 	/*
@@ -69,7 +96,7 @@ function displaySearch(state){
 		$('.searchAnything').css('opacity', 0);
 		setTimeout(function(){
 			
-			$('.nav-links').css('opacity', 1);
+			$('.nav-links.isMobile').css('opacity', 1);
 			$('#hackbot_search').css('visibility', 'visible');
 			$('#hackbot_search').css('z-index', 2);
 			$('#hackbot_search').animate({
@@ -80,7 +107,7 @@ function displaySearch(state){
 		if (bodyPos < 190) {
 			$('.searchAnything').css('opacity', 1);
 		}
-		$('.nav-links').css('opacity', 0);
+		$('.nav-links.isMobile').css('opacity', 0);
 		$('#hackbot_search').animate({
 			opacity: 0
 		}, 100);
@@ -127,12 +154,13 @@ function navigatorClicked() {
 				},200);
 			},200);
 		}else{
-			$('.page.isMobile > *').css('opacity', 1);
+			$('.page > *').css('opacity', 1);
 			setTimeout(function(){
 				scrollToValue(bodyPrevPos, 200);
 			},200);
 
 		}
+		// $('.page.isMobile > *').css('opacity', 1);
 	}else{
 
 		displaySearch(1);

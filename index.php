@@ -20,7 +20,7 @@
 <body>
 
 	<div id="hackbot_search">
-		<iframe src="hackbot.php"></iframe>
+		<iframe id="iframe_search" src="hackbot.php"></iframe>
 	</div>
 	
 	
@@ -40,6 +40,10 @@
 			<div class="searchAnything">Search HackGSU</div>
 		</label>
 		<section class="hackbot">
+
+		<!-- 	<div class="search_decoy">
+				<div class="arrow_decoy"></div>
+			</div> -->
 	
 			<section class="nav-links">
 				<noscript>
