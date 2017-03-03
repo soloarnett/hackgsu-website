@@ -6,6 +6,8 @@ var bodyPrevPos = 0;
 var navigatorClickCounter = false;
 
 var schedulePos = $('#schedule').offset().top;
+var faqPos = $('#faq').offset().top;
+var sponsorsPos = $('#sponsors').offset().top;
 
 function resizeFunction(){
 	/*
@@ -17,6 +19,8 @@ function resizeFunction(){
 	windowHeight = window.innerHeight;
 	windowWidth = window.innerWidth;
 	schedulePos = $('#schedule').offset().top;
+	faqPos = $('#faq').offset().top;
+	sponsorsPos = $('#sponsors').offset().top;
 	if (windowWidth < 830) {
 		$("html:not(.isMobile)").addClass("frameMobile");
 		$("#iframe_search").contents().find("html:not(.isMobile)").addClass("frameMobile");
@@ -66,8 +70,12 @@ function scrollFunction(){
 	bodyPos = $('body').scrollTop();
 	if (bodyPos > 190) {
 		$('.searchAnything').css('opacity', 0);
+		// setTimeout(function(){
+			$('.searchAnything').css('visibility', 'hidden');
+		// }, 200);
 	}else{
 		if ($('.page').hasClass('hackbot-open')==false) {
+			$('.searchAnything').css('visibility', 'visible');
 			$('.searchAnything').css('opacity', 1);
 		}
 	}
@@ -100,7 +108,7 @@ function displaySearch(state){
 	if (state == 1) {
 		$('.searchAnything').css('opacity', 0);
 		setTimeout(function(){
-			
+			$('.searchAnything').css('visibility', 'hidden');
 			$('.hackbot>.nav-links.isMobile').css('opacity', 1);
 			$('#hackbot_search').css('visibility', 'visible');
 			$('#hackbot_search').css('z-index', 2);
@@ -110,6 +118,7 @@ function displaySearch(state){
 		},200);
 	}else{
 		if (bodyPos < 190) {
+			$('.searchAnything').css('visibility', 'visible');
 			$('.searchAnything').css('opacity', 1);
 		}
 		$('.hackbot>.nav-links.isMobile').css('opacity', 0);
@@ -186,9 +195,30 @@ function navigatorClicked() {
 
 function link_clicked(link){
 	link = '#' + link;
+	// console.log(link);
 	if ($('.page').hasClass('hackbot-open')) {
 		bodyPrevPos = $(link).offset().top - 20;
+		// console.log(bodyPrevPos);
+		// console.log(navigatorClickCounter);
 		$('#navigator').trigger('click');
+	}else{
+		scrollToMinus(link, 200, 20);
+	}
+}
+
+function modified_link_clicked(link, open){
+	link = '#' + link;
+	if ($('.page').hasClass('hackbot-open')) {
+		if ($('.page').hasClass('isMobile')) {
+			bodyPrevPos = open;
+			$('#navigator').trigger('click');
+			setTimeout(function(){
+				scrollToMinus(link, 200, 20);
+			}, 100);
+		}else{
+			bodyPrevPos = $(link).offset().top - 20;
+			$('#navigator').trigger('click');
+		}
 	}else{
 		scrollToMinus(link, 200, 20);
 	}
@@ -197,18 +227,25 @@ function link_clicked(link){
 function modifiedLinks(){
 	$('.modified-link.schedule').click(function(e){
 		e.preventDefault();
-		link_clicked('schedule');
+		// link_clicked('schedule');
+		modified_link_clicked('schedule', schedulePos);
 	});
 
 	$('.modified-link.faq').click(function(e){
 		e.preventDefault();
-		link_clicked('faq');
+		// link_clicked('faq');
+		modified_link_clicked('faq',faqPos);
 	});
 
 	$('.modified-link.sponsors').click(function(e){
 		e.preventDefault();
-		link_clicked('sponsors');
+		// link_clicked('sponsors');
+		modified_link_clicked('sponsors', sponsorsPos);
 	});
+
+	// $('.link.schedule').click(function(){
+	// 	link_clicked('schedule');
+	// });
 }
 
 function onLoad(){

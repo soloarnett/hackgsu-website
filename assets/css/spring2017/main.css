@@ -71,28 +71,6 @@ label {
   .hackbot > .hackbot_search {
     position: relative;
     float: left; }
-  .hackbot > .search_decoy {
-    position: fixed;
-    top: 30px;
-    left: 100px;
-    width: calc(100% - 540px);
-    height: 40px;
-    background-color: white;
-    min-width: 200px; }
-    .hackbot > .search_decoy.isMobile {
-      width: calc(100% - 60px);
-      left: 50%;
-      transform: translateX(-50%); }
-    .hackbot > .search_decoy > .arrow_decoy {
-      position: relative;
-      float: right;
-      width: 40px;
-      height: 20px;
-      margin: 10px;
-      background-image: url("../../img/spring2017/arrow.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center; }
   .hackbot > .nav-links.isMobile {
     bottom: 20px;
     right: 20px;
@@ -327,16 +305,14 @@ label {
   #navigator:checked ~ section.page.isMobile {
     width: 0px;
     height: 100%; }
-  #navigator:checked ~ section.page > .welcome > .container:not(.isMobile) {
-    top: 30%; }
-  #navigator:checked ~ section.page > .welcome > .nav-links:not(.isMobile) > .modified-link {
+  #navigator:checked ~ section.page > .welcome > .container:not(.isMobile) > .nav-links:not(.isMobile) > .modified-link {
     clear: both;
     left: 50%;
     transform: translateX(-50%); }
-    #navigator:checked ~ section.page > .welcome > .nav-links:not(.isMobile) > .modified-link > .link {
+    #navigator:checked ~ section.page > .welcome > .container:not(.isMobile) > .nav-links:not(.isMobile) > .modified-link > .link {
       width: 70px;
       max-width: 70px; }
-  #navigator:checked ~ section.page > .welcome > .nav-links.isMobile > .modified-link {
+  #navigator:checked ~ section.page > .welcome > .container:not(.isMobile) > .nav-links.isMobile > .modified-link {
     display: none; }
 
 #navigator:not(:checked) ~ label > div.navigator > .darken {
@@ -608,7 +584,8 @@ label {
     outline: none;
     text-decoration: none;
     color: inherit;
-    -webkit-tap-highlight-color: transparent; }
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer; }
     .navigator.isMobile:visted {
       outline: none;
       text-decoration: none;
@@ -674,6 +651,83 @@ label {
         clear: left;
         left: 50%;
         transform: translateX(-50%); }
+      .page > .welcome > .container > .nav-links:not(.isMobile) {
+        position: relative;
+        clear: both;
+        float: left;
+        margin-top: 60px;
+        left: 50%;
+        transform: translateX(-50%); }
+        .page > .welcome > .container > .nav-links:not(.isMobile) > .modified-link:not(.isMobile) {
+          float: left;
+          width: auto;
+          height: auto;
+          text-align: center;
+          bottom: -10px;
+          opacity: 0;
+          outline: none;
+          text-decoration: none;
+          color: inherit;
+          -webkit-tap-highlight-color: transparent;
+          -moz-transition: all 0.2s ease;
+          -o-transition: all 0.2s ease;
+          -webkit-transition: all 0.2s ease;
+          -ms-transition: all 0.2s ease;
+          transition: all 0.2s ease; }
+          .page > .welcome > .container > .nav-links:not(.isMobile) > .modified-link:not(.isMobile):visted {
+            outline: none;
+            text-decoration: none;
+            color: inherit;
+            -webkit-tap-highlight-color: transparent; }
+          .page > .welcome > .container > .nav-links:not(.isMobile) > .modified-link:not(.isMobile).schedule:not(.isMobile) {
+            animation: schedule-start .4s ease-out .2s forwards; }
+@keyframes schedule-start {
+  from {
+    bottom: -10px;
+    opacity: 0; }
+  to {
+    bottom: 0px;
+    opacity: 1; } }
+          .page > .welcome > .container > .nav-links:not(.isMobile) > .modified-link:not(.isMobile).faq:not(.isMobile) {
+            animation: faq-start .4s ease-out .2s forwards; }
+@keyframes faq-start {
+  from {
+    bottom: -10px;
+    opacity: 0; }
+  to {
+    bottom: 0px;
+    opacity: 1; } }
+          .page > .welcome > .container > .nav-links:not(.isMobile) > .modified-link:not(.isMobile).sponsors:not(.isMobile) {
+            animation: sponsors-start .4s ease-out .2s forwards; }
+@keyframes sponsors-start {
+  from {
+    bottom: -10px;
+    opacity: 0; }
+  to {
+    bottom: 0px;
+    opacity: 1; } }
+          .page > .welcome > .container > .nav-links:not(.isMobile) > .modified-link:not(.isMobile) > .link {
+            color: white;
+            font-weight: 300;
+            font-size: 1em;
+            padding: 10px 20px;
+            margin: 10px;
+            float: left;
+            border-color: white;
+            border-radius: 5px;
+            border-style: solid;
+            border-width: 2px; }
+@keyframes link-highlight {
+  from {
+    background-color: initial;
+    color: white; }
+  to {
+    background-color: white;
+    color: black; } }
+          .page > .welcome > .container > .nav-links:not(.isMobile) > .modified-link:not(.isMobile):hover span {
+            animation: link-highlight .2s ease-out 0s forwards; }
+      .page > .welcome > .container > .nav-links.isMobile {
+        display: none; }
       .page > .welcome > .container > .logo {
         opacity: 0;
         margin-top: 20px;
@@ -717,81 +771,6 @@ label {
     opacity: 0; }
   to {
     opacity: 1; } }
-    .page > .welcome > .nav-links:not(.isMobile) {
-      position: absolute;
-      bottom: 80px;
-      left: 50%;
-      transform: translateX(-50%); }
-      .page > .welcome > .nav-links:not(.isMobile) > .modified-link:not(.isMobile) {
-        float: left;
-        width: auto;
-        height: auto;
-        text-align: center;
-        bottom: -10px;
-        opacity: 0;
-        outline: none;
-        text-decoration: none;
-        color: inherit;
-        -webkit-tap-highlight-color: transparent;
-        -moz-transition: all 0.2s ease;
-        -o-transition: all 0.2s ease;
-        -webkit-transition: all 0.2s ease;
-        -ms-transition: all 0.2s ease;
-        transition: all 0.2s ease; }
-        .page > .welcome > .nav-links:not(.isMobile) > .modified-link:not(.isMobile):visted {
-          outline: none;
-          text-decoration: none;
-          color: inherit;
-          -webkit-tap-highlight-color: transparent; }
-        .page > .welcome > .nav-links:not(.isMobile) > .modified-link:not(.isMobile).schedule:not(.isMobile) {
-          animation: schedule-start .4s ease-out .2s forwards; }
-@keyframes schedule-start {
-  from {
-    bottom: -10px;
-    opacity: 0; }
-  to {
-    bottom: 0px;
-    opacity: 1; } }
-        .page > .welcome > .nav-links:not(.isMobile) > .modified-link:not(.isMobile).faq:not(.isMobile) {
-          animation: faq-start .4s ease-out .2s forwards; }
-@keyframes faq-start {
-  from {
-    bottom: -10px;
-    opacity: 0; }
-  to {
-    bottom: 0px;
-    opacity: 1; } }
-        .page > .welcome > .nav-links:not(.isMobile) > .modified-link:not(.isMobile).sponsors:not(.isMobile) {
-          animation: sponsors-start .4s ease-out .2s forwards; }
-@keyframes sponsors-start {
-  from {
-    bottom: -10px;
-    opacity: 0; }
-  to {
-    bottom: 0px;
-    opacity: 1; } }
-        .page > .welcome > .nav-links:not(.isMobile) > .modified-link:not(.isMobile) > .link {
-          color: white;
-          font-weight: 300;
-          font-size: 1em;
-          padding: 10px 20px;
-          margin: 10px;
-          float: left;
-          border-color: white;
-          border-radius: 5px;
-          border-style: solid;
-          border-width: 2px; }
-@keyframes link-highlight {
-  from {
-    background-color: initial;
-    color: white; }
-  to {
-    background-color: white;
-    color: black; } }
-        .page > .welcome > .nav-links:not(.isMobile) > .modified-link:not(.isMobile):hover span {
-          animation: link-highlight .2s ease-out 0s forwards; }
-    .page > .welcome > .nav-links.isMobile {
-      display: none; }
   .page > .schedule {
     min-height: 100vh;
     width: 100%;

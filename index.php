@@ -53,23 +53,23 @@
 					<!-- <a class="modified-link devpost" href="#devpost"><span class="link">Devpost</span></a> -->
 				</noscript>
 					<a class="modified-link schedule" href="#schedule">
-						<label for="navigator">
-							<span class="link">Schedule</span>
-						</label>
+						<!-- <label for="navigator"> -->
+							<span class="link schedule">Schedule</span>
+						<!-- </label> -->
 					</a>
 					<a class="modified-link faq" href="#faq">
-						<label for="navigator">
-							<span class="link">FAQ</span>
-						</label>
+						<!-- <label for="navigator"> -->
+							<span class="link faq">FAQ</span>
+						<!-- </label> -->
 					</a>
 					<a class="modified-link sponsors" href="#sponsors">
-						<label for="navigator">
-							<span class="link">Sponsors</span>
-						</label>
+						<!-- <label for="navigator"> -->
+							<span class="link sponsors">Sponsors</span>
+						<!-- </label> -->
 					</a>
 					<a class="modified-link devpost" target="_blank" href="#devpost">
 						<!-- <label for="navigator"> -->
-							<span class="link">Devpost</span>
+							<span class="link devpost">Devpost</span>
 						<!-- </label> -->
 					</a>
 			</section>
@@ -82,11 +82,11 @@
 						<?php string_hackgsu(); ?>
 					</span>
 					<span class="date"><?php string_date(); ?></span>
-				</section>
-				<section class="nav-links">
-					<a class="modified-link schedule" href="#schedule"><span class="link">Schedule</span></a>
-					<a class="modified-link faq" href="#faq"><span class="link">Frequent Questions</span></a>
-					<a class="modified-link sponsors" href="#sponsors"><span class="link">Sponsors</span></a>
+					<section class="nav-links">
+						<a class="modified-link schedule" href="#schedule"><span class="link">Schedule</span></a>
+						<a class="modified-link faq" href="#faq"><span class="link">Frequent Questions</span></a>
+						<a class="modified-link sponsors" href="#sponsors"><span class="link">Sponsors</span></a>
+					</section>
 				</section>
 			</section>
 			<section class="schedule" id="schedule">
