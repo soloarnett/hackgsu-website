@@ -93,7 +93,7 @@
 				
 			</section>
 			<section class="faq" id="faq">
-				<?php include_once("assets/php/spring2017/faq-include.php"); ?>
+				
 			</section>
 			<section class="sponsors" id="sponsors">
 				<span class="sponsors-title">Our Sponsors</span>

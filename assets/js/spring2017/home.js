@@ -39,6 +39,16 @@ function resizeFunction(){
 	makeMobile();
 	
 	scrollFunction();
+
+	if ($('#faq').hasClass('isMobile')) {
+		$.ajax({url: "assets/php/spring2017/faq-include-mobile.php", success: function(result){
+		    $("#faq").html(result);
+		}});
+	}else{
+		$.ajax({url: "assets/php/spring2017/faq-include2.php", success: function(result){
+		    $("#faq").html(result);
+		}});
+	}
 	// console.log('working');
 }
 

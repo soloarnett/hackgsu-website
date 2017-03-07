@@ -1360,6 +1360,7 @@ label{
 	>.faq{
 
 
+
 		&:not(.isMobile){
 			min-width: 770px;
 		}
@@ -1376,6 +1377,59 @@ label{
 			
 
 		}
+
+		>table{
+			position: relative;
+			float: left;
+			clear: both;
+			padding: 20px;
+			left: 50%;
+			transform: translateX(-50%);
+			tbody{
+				tr{
+					td{
+						color: white;
+						text-align: center;
+						padding: 40px;
+
+						&.isMobile{
+							padding: 20px;
+						}
+						div{
+							position: relative;
+							float: left;
+							width: calc(100% - 40px);
+							height: 100%;
+							background-color: white;
+							color: black;
+							border-radius: 2px;
+							padding: 20px;
+
+							&.blue{
+								border-bottom: solid 4px $color-blue-dark;
+							}
+
+							&.red{
+								border-bottom: solid 4px $color-red;
+							}
+
+							//{ ** INCLUDES
+								@include notSelectable();
+								@include card();
+							//} ** END INCLUDES
+
+							cursor: pointer;
+							
+						}
+					}
+				}
+			}
+		}
+
+
+
+
+
 		>label>.item{
 			height: 100px;
 			border-style: solid;
@@ -1501,29 +1555,6 @@ label{
 
 
 		}
-
-		// @keyframes faq-item-open{
-		// 	0%{
-		// 		height: 100px;
-		// 		background-color: $color-black;
-		// 		color: white;
-		// 		overflow: hidden;
-		// 		cursor: pointer;
-
-				
-		// 	}
-		// 	99%{
-		// 		overflow: hidden;
-		// 		cursor: pointer;
-		// 	}
-		// 	100%{
-		// 		height: 400px;
-		// 		background-color: white;
-		// 		color: black;
-		// 		overflow: auto;
-		// 		cursor: default;
-		// 	}
-		// }
 		@keyframes faq-e1-open{
 			from{
 				@include rotate(45);
@@ -1558,33 +1589,7 @@ label{
 				border-right-color: rgba(255,255,255,0);
 			}
 		}
-		// @keyframes faq-item-close{
-		// 	0%{
-		// 		height: 400px;
-		// 		background-color: white;
-		// 		color: black;
-		// 		overflow: auto;
-		// 		cursor: default;
-		// 	}
-		// 	1%{
-		// 		overflow: hidden;
-		// 		cursor: pointer;
-		// 	}
-		// 	30%{
-		// 		height: 100px;
-				
-		// 	}
-
-		// 	50%{
-		// 		background-color: white;
-		// 		color: black;
-		// 	}
-		// 	100%{
-		// 		background-color: $color-black;
-		// 		color: white;
-				
-		// 	}
-		// }
+		
 		@keyframes faq-e1-close{
 			from{
 				@include rotate(135);
