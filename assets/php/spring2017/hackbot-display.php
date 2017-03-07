@@ -10,6 +10,12 @@
 			case 'event':
 				hackbot_event($dataId);
 				break;
+			case 'food':
+				hackbot_event($dataId);
+				break;
+			case 'featured':
+				hackbot_event($dataId);
+				break;
 			case 'faq':
 				hackbot_faq($dataId);
 				break;
@@ -23,7 +29,33 @@
 
 
 	function hackbot_event($id){
-
+		$events = new events;
+		$result = $events -> nextEvent();
+		if (empty($result) == false) {
+			?>
+			<div class="event">
+				<table>
+					<tbody>
+						<tr>
+							<td class="time">
+								<?php echo getTime($result[0]['date']);  ?>
+							</td>
+							<td class="title">
+								<?php echo $result[0]['title']; ?>
+							</td>
+						</tr>
+						<tr>
+							<td class="location" colspan="2">
+								<?php echo "Location: " . $result[0]['location']; ?>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<?php
+		}else{
+			// return false;
+		}
 	}
 
 	function hackbot_faq($id){

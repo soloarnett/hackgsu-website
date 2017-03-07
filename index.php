@@ -90,7 +90,7 @@
 				</section>
 			</section>
 			<section class="schedule" id="schedule">
-				<span class="upcoming">Upcoming Events</span>
+				
 			</section>
 			<section class="faq" id="faq">
 				<?php include_once("assets/php/spring2017/faq-include.php"); ?>

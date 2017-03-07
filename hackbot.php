@@ -3,9 +3,15 @@
 	session_start();
 	$more_clicked = 0;
 	$more_link_id = null;
+	$quick_link_clicked = 0;
+	
 	if (isset($_GET['more_link']) && empty($_GET['more_link']) == false) {
 		$more_clicked = 1;
 		$more_link_id = $_GET['more_link'];
+	}
+
+	if (isset($_GET['quick']) && empty($_GET['quick']) == false) {
+		$quick_link_clicked = $_GET['quick'];
 	}
 
 	
@@ -19,7 +25,7 @@
 	$placeholder = "Search HackGSU";
 	$result = "";
 
-	if (isset($search_text) && empty($search_text) === false && $more_clicked != 1) {
+	if (isset($search_text) && empty($search_text) === false && $more_clicked != 1 && $quick_link_clicked < 1) {
 		$placeholder = $search_text;
 
 		$ev = new everything;
@@ -34,8 +40,34 @@
 		$ev = new everything;
 
 		$result = $ev -> selectById($more_link_id);
-	}{
-		// $result = "";
+	}elseif ($quick_link_clicked > 0 && isset($quick_link_clicked) && empty($quick_link_clicked) == false) {
+		switch ($quick_link_clicked) {
+			case '1':
+				# code...
+				break;
+			
+			case '2':
+				$events = new events;
+				$result = $events -> nextEvent();
+				break;
+
+			case '3':
+				$events = new events;
+				$result = $events -> nextFood();
+				break;
+
+			case '4':
+				# code...
+				break;
+
+			case '5':
+				# code...
+				break;
+			
+			default:
+				# code...
+				break;
+		}
 	}
 
 
@@ -109,11 +141,28 @@
 		?>
 		<div class="quick_links">
 			<div class="label">Quick Links</div>
-			<div class="link">Request a Mentor</div>
-			<div class="link">Next event?</div>
-			<div class="link">When's food?</div>
-			<div class="link">Travel Reimbursement</div>
-			<div class="link">Am I registered?</div>
+			<form action="" method="get">
+				<input id="quick_mentor" type="submit" name="quick" value="1">
+				<label for="quick_mentor">
+					<div class="link">Request a Mentor</div>
+				</label>
+				<input id="quick_next" type="submit" name="quick" value="2">
+				<label for="quick_next">
+					<div class="link">Next Event</div>
+				</label>
+				<input id="quick_food" type="submit" name="quick" value="3">
+				<label for="quick_food">
+					<div class="link">When's food?</div>
+				</label>
+				<input id="quick_travel" type="submit" name="quick" value="4">
+				<label for="quick_travel">
+					<div class="link">Travel Reimbursement</div>
+				</label>
+				<input id="quick_registered" type="submit" name="quick" value="5">
+				<label for="quick_registered">
+					<div class="link">Am I registered?</div>
+				</label>
+			</form>
 		</div>
 	<?php
 

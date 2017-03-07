@@ -1066,11 +1066,292 @@ label{
 
 		>.upcoming{
 
-					
 			//{ ** INCLUDES
 				@include page-title-default();
 			//} ** END INCLUDES
+
+			&:not(.isMobile), &.isMobile{
+				//{ ** ATTRIBUTES
+					margin-bottom: 40px;
+				//} ** END ATTRIBUTES
+			}
 			
+			
+		}
+		>.upcoming_container{
+
+			//{ ** ATTRIBUTES
+				position: relative;
+				float: left;
+				clear: both;
+				left: 50%;
+				transform: translateX(-50%);
+			//} ** END ATTRIBUTES
+
+			&:not(.isMobile){
+				margin-bottom: 10vh;
+			}
+
+			&.isMobile{
+				margin-bottom: 80px;
+			}
+			
+			>table{
+				>tbody{
+					tr{
+						td{
+							padding: 10px 20px;
+
+							&.time{
+								text-align: right;
+								border-right: solid 1px white;
+								min-width: 70px;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		>.food_container{
+
+			//{ ** ATTRIBUTES
+				position: relative;
+				float: left;
+				clear: left;
+				left: 10vw;
+				max-width: 40vw;
+			//} ** END ATTRIBUTES
+			
+			&.isMobile{
+				max-width: 80vw;
+				left: 50%;
+				transform: translateX(-50%);
+				float: left;
+				clear: both;
+				margin-bottom: 80px;
+			}
+
+			>.food{
+				font-size: 1.5em;
+				color: white;
+				font-weight: 300;
+				position: relative;
+				float: left;
+				left: 50%;
+				transform: translateX(-50%);
+				margin-bottom: 40px;
+			}
+
+			>.food_schedule{
+				>.events{
+					>table{
+						position: relative;
+						float: left;
+						clear: both;
+						padding: 20px;
+						background-color: $color-red;
+						border-radius: 2px;
+
+						//{ ** INCLUDES
+							@include relativeMiddle();
+							@include card();
+						//} ** END INCLUDES
+
+						>*{
+							@include notSelectable();
+						}
+						
+						>tbody{
+							tr{
+								th{
+									text-align: right;
+									color: white;
+									font-weight: 300;
+									font-size: 0.8em;
+								}
+								td{
+									padding: 10px 20px;
+									color: white;
+									
+									&.time{
+										text-align: right;
+										border-right: solid 1px white;
+										min-width: 70px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		>.featured_container{
+			position: relative;
+			float: right;
+			clear: none;
+			right: 10vw;
+			max-width: 40vw;
+
+			&.isMobile{
+				max-width: 80vw;
+				left: 50%;
+				transform: translateX(-50%);
+				float: left;
+				clear: both;
+			}
+
+
+
+			>.featured{
+				font-size: 1.5em;
+				color: white;
+				font-weight: 300;
+				position: relative;
+				float: left;
+				left: 50%;
+				transform: translateX(-50%);
+				margin-bottom: 40px;
+			}
+
+			>.featured_schedule{
+				>.events{
+					>table{
+						position: relative;
+						float: left;
+						clear: both;
+						padding: 20px;
+						background-color: $color-blue-dark;
+						border-radius: 2px;
+
+						//{ ** INCLUDES
+							@include relativeMiddle();
+							@include card();
+						//} ** END INCLUDES
+
+						>*{
+							@include notSelectable();
+						}
+						
+						>tbody{
+							tr{
+								th{
+									text-align: right;
+									color: white;
+									font-weight: 300;
+									font-size: 0.8em;
+								}
+								td{
+									padding: 10px 20px;
+									color: white;
+									
+									&.time{
+										text-align: right;
+										border-right: solid 1px white;
+										min-width: 70px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		>.all_container{
+			width: 90vw;
+			overflow-x: auto;
+			position: relative;
+			float: left;
+			clear: both;
+			margin-top: 80px;
+
+
+			//{ ** INCLUDES
+				@include relativeMiddle();
+			//} ** END INCLUDES
+			
+
+			>.all_title{
+				font-weight: 300;
+				font-size: 2em;
+				color: white;
+
+				//{ ** INCLUDES
+					@include relativeMiddle();
+				//} ** END INCLUDES
+				
+			}
+
+			>.all_events{
+					position: relative;
+					float: left;
+					clear: both;
+					margin-top: 40px;
+					// min-width: 1400px;
+
+					//{ ** INCLUDES
+						@include relativeMiddle();
+					//} ** END INCLUDES
+					
+				>.day{
+					position: relative;
+					float: left;
+					clear:none;
+					>table{
+						position: relative;
+						float: left;
+						clear: none;
+						padding: 20px;
+						>tbody{
+							tr{
+								th{
+									font-weight: 300;
+									font-size: 0.8em;
+									text-align: center;
+									color: white;
+									padding-bottom: 40px;
+								}
+								td{
+									padding: 10px 20px;
+									color: white;
+
+									&.time{
+										text-align: right;
+										// border-right: solid 1px white;
+										min-width: 70px;
+										border-right: solid 2px white;
+										&.white{
+											border-right-color: white;
+										}
+										&.blue{
+											border-right-color: $color-blue-dark;
+										}
+										&.red{
+											border-right-color: $color-red;
+										}
+									}
+
+									&.title{
+										font-weight: 300;
+										font-size: 1.2em;
+									}
+
+									&.description{
+										font-size: 0.9em;
+									}
+
+									&.location{
+										font-size: 0.7em;
+									}
+								}
+							}
+						}
+					}
+				}
+
+			}
 		}
 		
 		

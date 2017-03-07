@@ -813,6 +813,230 @@ label {
       .page > .schedule > .upcoming.isMobile {
         font-size: 1.5em;
         margin-bottom: 20vh; }
+      .page > .schedule > .upcoming:not(.isMobile), .page > .schedule > .upcoming.isMobile {
+        margin-bottom: 40px; }
+    .page > .schedule > .upcoming_container {
+      position: relative;
+      float: left;
+      clear: both;
+      left: 50%;
+      transform: translateX(-50%); }
+      .page > .schedule > .upcoming_container:not(.isMobile) {
+        margin-bottom: 10vh; }
+      .page > .schedule > .upcoming_container.isMobile {
+        margin-bottom: 80px; }
+      .page > .schedule > .upcoming_container > table > tbody tr td {
+        padding: 10px 20px; }
+        .page > .schedule > .upcoming_container > table > tbody tr td.time {
+          text-align: right;
+          border-right: solid 1px white;
+          min-width: 70px; }
+    .page > .schedule > .food_container {
+      position: relative;
+      float: left;
+      clear: left;
+      left: 10vw;
+      max-width: 40vw; }
+      .page > .schedule > .food_container.isMobile {
+        max-width: 80vw;
+        left: 50%;
+        transform: translateX(-50%);
+        float: left;
+        clear: both;
+        margin-bottom: 80px; }
+      .page > .schedule > .food_container > .food {
+        font-size: 1.5em;
+        color: white;
+        font-weight: 300;
+        position: relative;
+        float: left;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: 40px; }
+      .page > .schedule > .food_container > .food_schedule > .events > table {
+        position: relative;
+        float: left;
+        clear: both;
+        padding: 20px;
+        background-color: #700a0a;
+        border-radius: 2px;
+        position: relative;
+        float: left;
+        left: 50%;
+        transform: translateX(-50%);
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        -o-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        -ms-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        -moz-transition: box-shadow 0.2s ease;
+        -o-transition: box-shadow 0.2s ease;
+        -webkit-transition: box-shadow 0.2s ease;
+        -ms-transition: box-shadow 0.2s ease;
+        transition: box-shadow 0.2s ease; }
+        .page > .schedule > .food_container > .food_schedule > .events > table:not(.isMobile):hover {
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          -moz-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          -o-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          -ms-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
+        .page > .schedule > .food_container > .food_schedule > .events > table > * {
+          -webkit-user-select: none;
+          /* Chrome/Safari */
+          -moz-user-select: none;
+          /* Firefox */
+          -ms-user-select: none;
+          /* IE10+ */
+          /* Rules below not implemented in browsers yet */
+          -o-user-select: none;
+          user-select: none;
+          cursor: default; }
+        .page > .schedule > .food_container > .food_schedule > .events > table > tbody tr th {
+          text-align: right;
+          color: white;
+          font-weight: 300;
+          font-size: 0.8em; }
+        .page > .schedule > .food_container > .food_schedule > .events > table > tbody tr td {
+          padding: 10px 20px;
+          color: white; }
+          .page > .schedule > .food_container > .food_schedule > .events > table > tbody tr td.time {
+            text-align: right;
+            border-right: solid 1px white;
+            min-width: 70px; }
+    .page > .schedule > .featured_container {
+      position: relative;
+      float: right;
+      clear: none;
+      right: 10vw;
+      max-width: 40vw; }
+      .page > .schedule > .featured_container.isMobile {
+        max-width: 80vw;
+        left: 50%;
+        transform: translateX(-50%);
+        float: left;
+        clear: both; }
+      .page > .schedule > .featured_container > .featured {
+        font-size: 1.5em;
+        color: white;
+        font-weight: 300;
+        position: relative;
+        float: left;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: 40px; }
+      .page > .schedule > .featured_container > .featured_schedule > .events > table {
+        position: relative;
+        float: left;
+        clear: both;
+        padding: 20px;
+        background-color: #0a2070;
+        border-radius: 2px;
+        position: relative;
+        float: left;
+        left: 50%;
+        transform: translateX(-50%);
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        -o-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        -ms-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        -moz-transition: box-shadow 0.2s ease;
+        -o-transition: box-shadow 0.2s ease;
+        -webkit-transition: box-shadow 0.2s ease;
+        -ms-transition: box-shadow 0.2s ease;
+        transition: box-shadow 0.2s ease; }
+        .page > .schedule > .featured_container > .featured_schedule > .events > table:not(.isMobile):hover {
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          -moz-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          -o-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          -ms-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
+        .page > .schedule > .featured_container > .featured_schedule > .events > table > * {
+          -webkit-user-select: none;
+          /* Chrome/Safari */
+          -moz-user-select: none;
+          /* Firefox */
+          -ms-user-select: none;
+          /* IE10+ */
+          /* Rules below not implemented in browsers yet */
+          -o-user-select: none;
+          user-select: none;
+          cursor: default; }
+        .page > .schedule > .featured_container > .featured_schedule > .events > table > tbody tr th {
+          text-align: right;
+          color: white;
+          font-weight: 300;
+          font-size: 0.8em; }
+        .page > .schedule > .featured_container > .featured_schedule > .events > table > tbody tr td {
+          padding: 10px 20px;
+          color: white; }
+          .page > .schedule > .featured_container > .featured_schedule > .events > table > tbody tr td.time {
+            text-align: right;
+            border-right: solid 1px white;
+            min-width: 70px; }
+    .page > .schedule > .all_container {
+      width: 90vw;
+      overflow-x: auto;
+      position: relative;
+      float: left;
+      clear: both;
+      margin-top: 80px;
+      position: relative;
+      float: left;
+      left: 50%;
+      transform: translateX(-50%); }
+      .page > .schedule > .all_container > .all_title {
+        font-weight: 300;
+        font-size: 2em;
+        color: white;
+        position: relative;
+        float: left;
+        left: 50%;
+        transform: translateX(-50%); }
+      .page > .schedule > .all_container > .all_events {
+        position: relative;
+        float: left;
+        clear: both;
+        margin-top: 40px;
+        position: relative;
+        float: left;
+        left: 50%;
+        transform: translateX(-50%); }
+        .page > .schedule > .all_container > .all_events > .day {
+          position: relative;
+          float: left;
+          clear: none; }
+          .page > .schedule > .all_container > .all_events > .day > table {
+            position: relative;
+            float: left;
+            clear: none;
+            padding: 20px; }
+            .page > .schedule > .all_container > .all_events > .day > table > tbody tr th {
+              font-weight: 300;
+              font-size: 0.8em;
+              text-align: center;
+              color: white;
+              padding-bottom: 40px; }
+            .page > .schedule > .all_container > .all_events > .day > table > tbody tr td {
+              padding: 10px 20px;
+              color: white; }
+              .page > .schedule > .all_container > .all_events > .day > table > tbody tr td.time {
+                text-align: right;
+                min-width: 70px;
+                border-right: solid 2px white; }
+                .page > .schedule > .all_container > .all_events > .day > table > tbody tr td.time.white {
+                  border-right-color: white; }
+                .page > .schedule > .all_container > .all_events > .day > table > tbody tr td.time.blue {
+                  border-right-color: #0a2070; }
+                .page > .schedule > .all_container > .all_events > .day > table > tbody tr td.time.red {
+                  border-right-color: #700a0a; }
+              .page > .schedule > .all_container > .all_events > .day > table > tbody tr td.title {
+                font-weight: 300;
+                font-size: 1.2em; }
+              .page > .schedule > .all_container > .all_events > .day > table > tbody tr td.description {
+                font-size: 0.9em; }
+              .page > .schedule > .all_container > .all_events > .day > table > tbody tr td.location {
+                font-size: 0.7em; }
   .page > .faq {
     min-height: 100vh;
     width: 100%;

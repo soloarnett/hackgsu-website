@@ -10,7 +10,9 @@ $font-global: 'Lato', sans-serif;
 $color-black: rgba(22,22,22,1);
 $color-black-50: rgba(22,22,22,0.5);
 $color-blue: #0039A6;
+$color-blue-dark: #0a2070;
 $color-link: #82ddf0;
+$color-red: #700a0a;
 /////////////////////////////////////////// END COLORS ///////////////////////////////////////////
 
 /////////////////////////////////////////// MIXINS ///////////////////////////////////////////
@@ -125,5 +127,28 @@ $color-link: #82ddf0;
 		min-height: calc(100vh + 60px);
 		@include freezeHeight();
 	}
+}
+
+@mixin relativeMiddle(){
+    position: relative;
+    float: left;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@mixin card(){
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    -o-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    -ms-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    @include quickTransition(box-shadow);
+    &:not(.isMobile):hover{
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        -webkit-box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        -moz-box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        -o-box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        -ms-box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    }
 }
 /////////////////////////////////////////// END MIXINS ///////////////////////////////////////////

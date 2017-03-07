@@ -214,7 +214,7 @@ function modified_link_clicked(link, open){
 			$('#navigator').trigger('click');
 			setTimeout(function(){
 				scrollToMinus(link, 200, 20);
-			}, 100);
+			}, 200);
 		}else{
 			bodyPrevPos = $(link).offset().top - 20;
 			$('#navigator').trigger('click');
@@ -248,6 +248,51 @@ function modifiedLinks(){
 	// });
 }
 
+function timeOuts(){
+
+	/////////////////////////////////////////// SCHEDULE REFRESH ///////////////////////////////////////////
+	// every 5 min
+	
+	
+	$.ajax({url: "assets/php/spring2017/schedule-include.php", success: function(result){
+	    $("#schedule").html(result);
+	}});
+	setTimeout(function(){
+		if ($("#schedule").hasClass('isMobile')) {
+			$("#schedule>*").addClass("isMobile");
+		}
+	},200);
+	
+	setInterval(function(){
+		$("#schedule").animate({
+				opacity: 0
+		}, 200);
+
+		$("#schedule").css('min-height', $("#schedule").height() + "px");
+		setTimeout(function(){
+			$.ajax({url: "assets/php/spring2017/schedule-include.php", success: function(result){
+		        $("#schedule").html(result);
+		    }});
+		    setTimeout(function(){
+		    	if ($("#schedule").hasClass('isMobile')) {
+					$("#schedule>*").addClass("isMobile");
+				}
+
+				setTimeout(function(){
+					$("#schedule").animate({
+						opacity: 1
+					}, 200);
+				},400);
+		    },200);
+		},200);
+	}, 300000);
+
+	/////////////////////////////////////////// END SCHEDULE REFRESH ///////////////////////////////////////////
+	
+	
+
+}
+
 function onLoad(){
 	/*
 		FUNCTION NAME:	onLoad
@@ -266,11 +311,7 @@ function onLoad(){
 		navigatorClicked();
 	});
 
-	// setTimeout(function(){
-	// 	$('html').animate({
-	// 		opacity: 1
-	// 	}, 200);
-	// }, 400);
+	timeOuts();
 	
 }
 
