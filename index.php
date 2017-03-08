@@ -18,7 +18,15 @@
     <meta name="author" content="">
 </head>
 <body>
-
+	<table class="fixed_bar">
+		<tbody>
+			<tr>
+				<td class="blue"></td>
+				<td class="red"></td>
+				
+			</tr>
+		</tbody>
+	</table>
 	<div id="hackbot_search">
 		<iframe id="iframe_search" src="hackbot.php"></iframe>
 	</div>

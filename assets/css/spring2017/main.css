@@ -15,6 +15,22 @@ html {
 .full_form {
   float: right; }
 
+.fixed_bar {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 20px;
+  z-index: 9;
+  background-color: #161616; }
+  .fixed_bar.isMobile {
+    height: 10px; }
+  .fixed_bar > tbody tr td {
+    height: 100%; }
+  .fixed_bar > tbody tr .blue {
+    background-color: #0a2070; }
+  .fixed_bar > tbody tr .red {
+    background-color: #700a0a; }
+
 body {
   background-color: #161616;
   margin: 0;
@@ -858,7 +874,7 @@ label {
         float: left;
         clear: both;
         padding: 20px;
-        background-color: #700a0a;
+        background-color: #0a2070;
         border-radius: 2px;
         position: relative;
         float: left;
@@ -929,7 +945,7 @@ label {
         float: left;
         clear: both;
         padding: 20px;
-        background-color: #0a2070;
+        background-color: #700a0a;
         border-radius: 2px;
         position: relative;
         float: left;

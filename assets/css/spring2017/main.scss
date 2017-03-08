@@ -21,6 +21,38 @@ html{
 	float: right;
 }
 
+.fixed_bar{
+	position: fixed;
+	bottom: 0;
+	width: 100vw;
+	height: 20px;
+	z-index: 9;
+	background-color: $color-black;
+
+	&.isMobile{
+		height: 10px;
+	}
+	>tbody{
+		tr{
+			td{
+				// border-top: solid 1px white;
+				height: 100%;
+				// position: relative;
+				// float: left;
+				// width: 50%;
+			}
+			.blue{
+
+				background-color: $color-blue-dark;
+			}
+
+			.red{
+				background-color: $color-red;
+			}
+		}
+	}
+}
+
 body{
 
 	//{ ** ATTRIBUTES
@@ -1150,7 +1182,7 @@ label{
 						float: left;
 						clear: both;
 						padding: 20px;
-						background-color: $color-red;
+						background-color: $color-blue-dark;
 						border-radius: 2px;
 
 						//{ ** INCLUDES
@@ -1222,7 +1254,7 @@ label{
 						float: left;
 						clear: both;
 						padding: 20px;
-						background-color: $color-blue-dark;
+						background-color: $color-red;
 						border-radius: 2px;
 
 						//{ ** INCLUDES
