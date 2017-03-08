@@ -25,24 +25,19 @@ html{
 	position: fixed;
 	bottom: 0;
 	width: 100vw;
-	height: 20px;
+	min-height: 20px;
 	z-index: 9;
 	background-color: $color-black;
 
 	&.isMobile{
-		height: 10px;
+		min-height: 10px;
 	}
 	>tbody{
 		tr{
 			td{
-				// border-top: solid 1px white;
 				height: 100%;
-				// position: relative;
-				// float: left;
-				// width: 50%;
 			}
 			.blue{
-
 				background-color: $color-blue-dark;
 			}
 
@@ -1406,11 +1401,37 @@ label{
 			//{ ** INCLUDES
 				@include page-title-default();
 			//} ** END INCLUDES
-			
+			z-index: 10;
 
 		}
 
-		>table{
+		.half{
+			position: absolute;
+			bottom: 0;
+			height: 100%;
+			width: 100%;
+			tbody{
+				tr{
+					td{
+
+					}
+					.blue{
+						border-left: solid 20px $color-blue-dark;
+						border-top: solid 20px $color-blue-dark;
+						// border-bottom: solid 20px $color-blue-dark;
+					}
+
+					.red{
+						border-right: solid 20px $color-red;
+						border-top: solid 20px $color-red;
+						// border-bottom: solid 20px $color-red;
+					}
+				}
+			}
+		}
+
+
+		>table:not(.half){
 			position: relative;
 			float: left;
 			clear: both;
@@ -1420,6 +1441,7 @@ label{
 			tbody{
 				tr{
 					td{
+						width: 355px;
 						color: white;
 						text-align: center;
 						padding: 40px;
@@ -1432,22 +1454,23 @@ label{
 							float: left;
 							width: calc(100% - 40px);
 							height: 100%;
-							background-color: white;
-							color: black;
-							border-radius: 2px;
+							// background-color: white;
+							color: white;
+							border: solid 1px white;
+							border-radius: 5px;
 							padding: 20px;
 
 							&.blue{
-								border-bottom: solid 4px $color-blue-dark;
+								// border-bottom: solid 4px $color-blue-dark;
 							}
 
 							&.red{
-								border-bottom: solid 4px $color-red;
+								// border-bottom: solid 4px $color-red;
 							}
 
 							//{ ** INCLUDES
 								@include notSelectable();
-								@include card();
+								// @include card();
 							//} ** END INCLUDES
 
 							cursor: pointer;

@@ -19,11 +19,11 @@ html {
   position: fixed;
   bottom: 0;
   width: 100vw;
-  height: 20px;
+  min-height: 20px;
   z-index: 9;
   background-color: #161616; }
   .fixed_bar.isMobile {
-    height: 10px; }
+    min-height: 10px; }
   .fixed_bar > tbody tr td {
     height: 100%; }
   .fixed_bar > tbody tr .blue {
@@ -1093,31 +1093,44 @@ label {
       font-weight: 300;
       float: left;
       margin-top: 10vh;
-      margin-bottom: 30vh; }
+      margin-bottom: 30vh;
+      z-index: 10; }
       .page > .faq > .faq-title.isMobile {
         font-size: 1.5em;
         margin-bottom: 20vh; }
-    .page > .faq > table {
+    .page > .faq .half {
+      position: absolute;
+      bottom: 0;
+      height: 100%;
+      width: 100%; }
+      .page > .faq .half tbody tr .blue {
+        border-left: solid 20px #0a2070;
+        border-top: solid 20px #0a2070; }
+      .page > .faq .half tbody tr .red {
+        border-right: solid 20px #700a0a;
+        border-top: solid 20px #700a0a; }
+    .page > .faq > table:not(.half) {
       position: relative;
       float: left;
       clear: both;
       padding: 20px;
       left: 50%;
       transform: translateX(-50%); }
-      .page > .faq > table tbody tr td {
+      .page > .faq > table:not(.half) tbody tr td {
+        width: 355px;
         color: white;
         text-align: center;
         padding: 40px; }
-        .page > .faq > table tbody tr td.isMobile {
+        .page > .faq > table:not(.half) tbody tr td.isMobile {
           padding: 20px; }
-        .page > .faq > table tbody tr td div {
+        .page > .faq > table:not(.half) tbody tr td div {
           position: relative;
           float: left;
           width: calc(100% - 40px);
           height: 100%;
-          background-color: white;
-          color: black;
-          border-radius: 2px;
+          color: white;
+          border: solid 1px white;
+          border-radius: 5px;
           padding: 20px;
           -webkit-user-select: none;
           /* Chrome/Safari */
@@ -1129,27 +1142,7 @@ label {
           -o-user-select: none;
           user-select: none;
           cursor: default;
-          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-          -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-          -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-          -o-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-          -ms-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-          -moz-transition: box-shadow 0.2s ease;
-          -o-transition: box-shadow 0.2s ease;
-          -webkit-transition: box-shadow 0.2s ease;
-          -ms-transition: box-shadow 0.2s ease;
-          transition: box-shadow 0.2s ease;
           cursor: pointer; }
-          .page > .faq > table tbody tr td div.blue {
-            border-bottom: solid 4px #0a2070; }
-          .page > .faq > table tbody tr td div.red {
-            border-bottom: solid 4px #700a0a; }
-          .page > .faq > table tbody tr td div:not(.isMobile):hover {
-            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-            -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-            -moz-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-            -o-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-            -ms-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
     .page > .faq > label > .item {
       height: 100px;
       border-style: solid;

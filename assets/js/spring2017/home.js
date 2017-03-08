@@ -9,6 +9,8 @@ var schedulePos = $('#schedule').offset().top;
 var faqPos = $('#faq').offset().top;
 var sponsorsPos = $('#sponsors').offset().top;
 
+var fixed_bar_count = 0;
+
 function resizeFunction(){
 	/*
 		FUNCTION NAME:	resizeFuntion
@@ -21,6 +23,7 @@ function resizeFunction(){
 	schedulePos = $('#schedule').offset().top;
 	faqPos = $('#faq').offset().top;
 	sponsorsPos = $('#sponsors').offset().top;
+	
 	if (windowWidth < 830) {
 		$("html:not(.isMobile)").addClass("frameMobile");
 		$("#iframe_search").contents().find("html:not(.isMobile)").addClass("frameMobile");
@@ -157,6 +160,9 @@ function navigatorClicked() {
 		// console.log(bodyPrevPos);
 		setTimeout(function(){
 			$('.page').removeClass('hackbot-open');
+			$('.fixed_bar').animate({
+				opacity: 1
+			}, 200);
 		},200);
 		
 		displaySearch(0);
@@ -192,6 +198,9 @@ function navigatorClicked() {
 		
 		// navigator has been clicked to open the drawer
 		$('.page:not(.hackbot-open)').addClass('hackbot-open');
+		$('.fixed_bar').animate({
+				opacity: 0
+			}, 200);
 
 		$('.page.isMobile > *').css('opacity', 0);
 		navigatorClickCounter = true;
