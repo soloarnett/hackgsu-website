@@ -84,6 +84,9 @@
 		</section>
 		<section class="page">
 			<section class="welcome" id="welcome">
+				<div class="z-index-top" id="mlh">
+					<a id="mlh-trust-badge" style="display:block;max-width:100px;min-width:60px;position:absolute;right:25px;top:0;width:10%;z-index:10000" href="https://mlh.io/seasons/na-2017/events?utm_source=na-2017&utm_medium=TrustBadge&utm_campaign=na-2017&utm_content=white" target="_blank"><img src="https://s3.amazonaws.com/logged-assets/trust-badge/2017/white.svg" alt="Major League Hacking 2017 Hackathon Season" style="width:100%"></a>
+				</div>
 				<section class="container">
 					<div class="logo"></div>
 					<span class="title">
@@ -105,9 +108,10 @@
 			</section>
 			<section class="sponsors" id="sponsors">
 				<span class="sponsors-title">Our Sponsors</span>
+				<div class="sponsors-img"></div>
 			</section>
-			<section class="about" id="about">
-				<span class="about-title">About Us</span>
+			<section class="explore" id="explore">
+				<span class="explore-title">Explore</span>
 			</section>
 		</section>
 	</form>

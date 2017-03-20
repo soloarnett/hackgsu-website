@@ -11,7 +11,8 @@
 			
 			$db = new Db;
 
-			$rows = $db -> select("SELECT `hackbot_type`, `title`, `content`, `date_modified`, `date_posted` FROM `faq`");
+			// $rows = $db -> select("SELECT `hackbot_type`, `title`, `content`, `date_modified`, `date_posted` FROM `faq`");
+			$rows = $db -> select("SELECT * FROM `faq`");
 
 			return $rows;
 			

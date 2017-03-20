@@ -13,6 +13,7 @@
 		$count = 0;
 		$label_count=1;
 		foreach ($result as $key => $subject) {
+			$id = $subject["id"];
 			$title = $subject["title"];
 			$content = $subject["content"];
 			$modified = $subject["date_modified"];
@@ -22,7 +23,7 @@
 			
 		?>
 				<tr class="isMobile">
-					<td class="isMobile"><div class="isMobile blue">
+					<td class="faq-item isMobile" <?php echo "id=\"$id\"" ?>><div class="isMobile blue">
 						<?php echo "$title"; ?>
 					</div></td>
 				</tr>
@@ -32,7 +33,7 @@
 				?>
 
 				<tr class="isMobile">
-					<td class="isMobile"><div class="isMobile red">
+					<td class="faq-item isMobile" <?php echo "id=\"$id\"" ?>><div class="isMobile red">
 						<?php echo "$title"; ?>
 					</div></td>
 				</tr>

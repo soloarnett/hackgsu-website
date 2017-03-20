@@ -4,33 +4,41 @@
 
 	include_once("assets/php/spring2017/functions.php");
 
-	function hackbot_display($data){
-		$dataId = $data['typeid'];
-		switch ($data['type']) {
+	function hackbot_display($data, $const){
+		switch ($const) {
+			case 'everything':
+				$dataId = $data['typeid'];
+				switch ($data['type']) {
+					case 'event':
+						hackbot_event($dataId);
+						break;
+					case 'faq':
+						hackbot_faq($dataId);
+						break;
+					
+					default:
+						hackbot_plain($dataId);
+						break;
+				}
+				break;
 			case 'event':
-				hackbot_event($dataId);
-				break;
-			case 'food':
-				hackbot_event($dataId);
-				break;
-			case 'featured':
-				hackbot_event($dataId);
+				hackbot_event($data['id']);
 				break;
 			case 'faq':
-				hackbot_faq($dataId);
+				hackbot_faq($data['id']);
 				break;
-			
 			default:
-				hackbot_plain($dataId);
+				# code...
 				break;
 		}
+		
 	}
 
 
 
 	function hackbot_event($id){
 		$events = new events;
-		$result = $events -> nextEvent();
+		$result = $events -> selectById($id);
 		if (empty($result) == false) {
 			?>
 			<div class="event">
@@ -55,6 +63,7 @@
 			<?php
 		}else{
 			// return false;
+			echo "<script type=\"text/javascript\">console.log('no event')</script>";
 		}
 	}
 

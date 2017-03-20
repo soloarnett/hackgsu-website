@@ -241,6 +241,9 @@ input:-moz-placeholder {
           border-right: solid 1px white;
           font-size: 1.7em;
           font-weight: 300; }
+          .top_result > .event > table tbody tr td.time.isMobile {
+            min-width: 153px;
+            text-align: center; }
 
 .more_results {
   display: block;
@@ -286,6 +289,26 @@ input:-moz-placeholder {
       cursor: pointer; }
     .more_results > .more_form > label > .faq > .content {
       display: none; }
+  .more_results > .more_form > label > .event {
+    color: white;
+    float: right;
+    clear: right;
+    width: calc(100% - 40px);
+    padding: 10px 20px; }
+    .more_results > .more_form > label > .event table {
+      position: relative;
+      float: right; }
+      .more_results > .more_form > label > .event table.isMobile {
+        float: left;
+        left: 50%;
+        transform: translateX(-50%); }
+      .more_results > .more_form > label > .event table tbody .time {
+        padding: 0px 10px;
+        cursor: pointer; }
+      .more_results > .more_form > label > .event table tbody .title {
+        cursor: pointer; }
+      .more_results > .more_form > label > .event table tbody .location {
+        display: none; }
   .more_results.isMobile {
     width: 90%;
     left: 50%;
@@ -418,6 +441,10 @@ input:-moz-placeholder {
     margin-bottom: 40px;
     margin-top: 170px;
     animation: showMoreResultSmall 0.5s ease-out .7s forwards; }
+    .more_results:not(.isMobile) > .none {
+      float: left;
+      left: 50%;
+      transform: translateX(-50%); }
     .more_results:not(.isMobile) > .label {
       float: left;
       clear: left;
@@ -432,5 +459,10 @@ input:-moz-placeholder {
         clear: left;
         width: 100%;
         text-align: center; } }
+@media (max-height: 525px) {
+  .quick_links.bottom:not(.isMobile) {
+    position: relative;
+    float: left;
+    margin-top: 20px; } }
 
 /*# sourceMappingURL=hackbot.css.map */

@@ -15,11 +15,18 @@ html {
 .full_form {
   float: right; }
 
+#mlh {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 999;
+  height: 100px; }
+
 .fixed_bar {
   position: fixed;
   bottom: 0;
   width: 100vw;
-  min-height: 20px;
+  min-height: 10px;
   z-index: 9;
   background-color: #161616; }
   .fixed_bar.isMobile {
@@ -59,8 +66,10 @@ label {
   z-index: 0;
   visibility: hidden;
   opacity: 0;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch; }
+  overflow-y: hidden; }
+  #hackbot_search.isIOS {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch; }
   #hackbot_search > iframe {
     height: 100%;
     width: 100%;
@@ -1001,6 +1010,8 @@ label {
       float: left;
       left: 50%;
       transform: translateX(-50%); }
+      .page > .schedule > .all_container:not(.isMobile) .all_events .day {
+        max-width: 33%; }
       .page > .schedule > .all_container > .all_title {
         font-weight: 300;
         font-size: 2em;
@@ -1128,6 +1139,7 @@ label {
           float: left;
           width: calc(100% - 40px);
           height: 100%;
+          background-color: transparent;
           color: white;
           border: solid 1px white;
           border-radius: 5px;
@@ -1143,211 +1155,19 @@ label {
           user-select: none;
           cursor: default;
           cursor: pointer; }
-    .page > .faq > label > .item {
-      height: 100px;
-      border-style: solid;
-      border-width: 2px;
-      border-color: white;
-      width: 40%;
-      margin: 0 5%;
-      padding-right: 1%;
-      float: left;
-      margin-bottom: 40px;
-      font-weight: 300;
-      overflow: hidden;
-      -webkit-user-select: none;
-      /* Chrome/Safari */
-      -moz-user-select: none;
-      /* Firefox */
-      -ms-user-select: none;
-      /* IE10+ */
-      /* Rules below not implemented in browsers yet */
-      -o-user-select: none;
-      user-select: none;
-      cursor: default;
-      outline: none;
-      text-decoration: none;
-      color: inherit;
-      -webkit-tap-highlight-color: transparent;
-      cursor: pointer;
-      color: white; }
-      .page > .faq > label > .item:visted {
-        outline: none;
-        text-decoration: none;
-        color: inherit;
-        -webkit-tap-highlight-color: transparent; }
-      .page > .faq > label > .item.isMobile {
-        width: 86%; }
-        .page > .faq > label > .item.isMobile > *:not(.content) {
-          -webkit-user-select: none;
-          /* Chrome/Safari */
-          -moz-user-select: none;
-          /* Firefox */
-          -ms-user-select: none;
-          /* IE10+ */
-          /* Rules below not implemented in browsers yet */
-          -o-user-select: none;
-          user-select: none;
-          cursor: default;
-          outline: none;
-          text-decoration: none;
-          color: inherit;
-          -webkit-tap-highlight-color: transparent;
-          cursor: pointer; }
-          .page > .faq > label > .item.isMobile > *:not(.content):visted {
+          .page > .faq > table:not(.half) tbody tr td div.isMobile {
             outline: none;
             text-decoration: none;
             color: inherit;
             -webkit-tap-highlight-color: transparent; }
-      .page > .faq > label > .item.left:not(.isMobile) {
-        clear: left;
-        margin-right: 2.5%; }
-      .page > .faq > label > .item.right:not(.isMobile) {
-        clear: right;
-        margin-left: 2.5%; }
-      .page > .faq > label > .item > .arrow {
-        width: 100px;
-        float: left;
-        background-color: rgba(255, 255, 255, 0.6);
-        border-right: solid 1px rgba(255, 255, 255, 0);
-        height: 100px; }
-        .page > .faq > label > .item > .arrow > .element {
-          background-color: #161616;
-          width: 30px;
-          height: 10px;
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%); }
-          .page > .faq > label > .item > .arrow > .element.e1 {
-            transform: rotate(45deg);
-            -ms-transform: rotate(45deg);
-            -webkit-transform: rotate(45deg);
-            -moz-transform: rotate(45deg);
-            -o-transform: rotate(45deg);
-            left: 27.5%; }
-          .page > .faq > label > .item > .arrow > .element.e2 {
-            transform: rotate(135deg);
-            -ms-transform: rotate(135deg);
-            -webkit-transform: rotate(135deg);
-            -moz-transform: rotate(135deg);
-            -o-transform: rotate(135deg);
-            right: 27.5%; }
-      .page > .faq > label > .item > .title {
-        -webkit-user-select: none;
-        /* Chrome/Safari */
-        -moz-user-select: none;
-        /* Firefox */
-        -ms-user-select: none;
-        /* IE10+ */
-        /* Rules below not implemented in browsers yet */
-        -o-user-select: none;
-        user-select: none;
-        cursor: default;
-        width: calc(97% - 101px);
-        float: left;
-        height: 100px;
-        margin-left: 3%;
-        font-size: 18px;
-        cursor: pointer; }
-        .page > .faq > label > .item > .title > div {
-          position: absolute;
-          width: 100%;
-          text-align: center;
-          top: 50%;
-          transform: translateY(-50%); }
-        .page > .faq > label > .item > .title.isMobile {
-          -webkit-user-select: none;
-          /* Chrome/Safari */
-          -moz-user-select: none;
-          /* Firefox */
-          -ms-user-select: none;
-          /* IE10+ */
-          /* Rules below not implemented in browsers yet */
-          -o-user-select: none;
-          user-select: none;
-          cursor: default;
-          cursor: pointer; }
-      .page > .faq > label > .item > .content {
-        float: left;
-        width: calc(100% - 40px);
-        padding: 20px 20px;
-        border-top: solid 1px #161616;
-        text-align: center;
-        font-size: 14px;
-        -webkit-user-select: none;
-        /* Chrome/Safari */
-        -moz-user-select: none;
-        /* Firefox */
-        -ms-user-select: none;
-        /* IE10+ */
-        /* Rules below not implemented in browsers yet */
-        -o-user-select: none;
-        user-select: none;
-        cursor: default; }
-      .page > .faq > label > .item > .modified {
-        display: none; }
-@keyframes faq-e1-open {
-  from {
-    transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -o-transform: rotate(45deg); }
-  to {
-    transform: rotate(135deg);
-    -ms-transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
-    -moz-transform: rotate(135deg);
-    -o-transform: rotate(135deg); } }
-@keyframes faq-e2-open {
-  from {
-    transform: rotate(135deg);
-    -ms-transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
-    -moz-transform: rotate(135deg);
-    -o-transform: rotate(135deg); }
-  to {
-    transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -o-transform: rotate(45deg); } }
-@keyframes faq-arrow-open {
-  from {
-    border-right-color: rgba(255, 255, 255, 0); }
-  to {
-    border-right-color: #161616; } }
-@keyframes faq-arrow-close {
-  from {
-    border-right-color: #161616; }
-  to {
-    border-right-color: rgba(255, 255, 255, 0); } }
-@keyframes faq-e1-close {
-  from {
-    transform: rotate(135deg);
-    -ms-transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
-    -moz-transform: rotate(135deg);
-    -o-transform: rotate(135deg); }
-  to {
-    transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -o-transform: rotate(45deg); } }
-@keyframes faq-e2-close {
-  from {
-    transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -o-transform: rotate(45deg); }
-  to {
-    transform: rotate(135deg);
-    -ms-transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
-    -moz-transform: rotate(135deg);
-    -o-transform: rotate(135deg); } }
+            .page > .faq > table:not(.half) tbody tr td div.isMobile:visted {
+              outline: none;
+              text-decoration: none;
+              color: inherit;
+              -webkit-tap-highlight-color: transparent; }
+          .page > .faq > table:not(.half) tbody tr td div:not(.isMobile):hover {
+            background: white;
+            color: black; }
   .page > .sponsors {
     min-height: 100vh;
     width: 100%;
@@ -1390,13 +1210,33 @@ label {
       .page > .sponsors > .sponsors-title.isMobile {
         font-size: 1.5em;
         margin-bottom: 20vh; }
-  .page > .about {
+    .page > .sponsors > .sponsors-img {
+      position: relative;
+      float: left;
+      clear: both;
+      width: 100%;
+      height: 100vh;
+      background-image: url("../../img/spring2017/sponsors.png");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      -moz-transition: height 999999999999s ease-in !important;
+      -o-transition: height 999999999999s ease-in !important;
+      -webkit-transition: height 999999999999s ease-in !important;
+      transition: height 999999999999s ease-in !important;
+      -ms-transition: height 999999999999s ease-in !important;
+      -moz-transition: margin 999999999999s ease-in !important;
+      -o-transition: margin 999999999999s ease-in !important;
+      -webkit-transition: margin 999999999999s ease-in !important;
+      transition: margin 999999999999s ease-in !important;
+      -ms-transition: margin 999999999999s ease-in !important; }
+  .page > .explore {
     min-height: 100vh;
     width: 100%;
     overflow-x: hidden;
     float: left;
     margin-bottom: 40vh; }
-    .page > .about.isMobile {
+    .page > .explore.isMobile {
       min-height: calc(100vh + 60px);
       -moz-transition: height 999999999999s ease-in !important;
       -o-transition: height 999999999999s ease-in !important;
@@ -1408,9 +1248,9 @@ label {
       -webkit-transition: margin 999999999999s ease-in !important;
       transition: margin 999999999999s ease-in !important;
       -ms-transition: margin 999999999999s ease-in !important; }
-    .page > .about.isMobile {
+    .page > .explore.isMobile {
       margin-bottom: 10%; }
-    .page > .about > .about-title {
+    .page > .explore > .explore-title {
       -webkit-user-select: none;
       /* Chrome/Safari */
       -moz-user-select: none;
@@ -1429,7 +1269,7 @@ label {
       float: left;
       margin-top: 10vh;
       margin-bottom: 30vh; }
-      .page > .about > .about-title.isMobile {
+      .page > .explore > .explore-title.isMobile {
         font-size: 1.5em;
         margin-bottom: 20vh; }
 

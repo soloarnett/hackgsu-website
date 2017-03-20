@@ -38,9 +38,13 @@ function makeMobile(){
 	
 	if (isAndroid() || isApple() || $('html').hasClass('frameMobile')) {
 		$("*:not(.isMobile)").addClass("isMobile");
+		if (isApple()) {
+			$("*:not(.isIOS)").addClass("isIOS");
+		}
 		return true;
 	}else{
 		$("*.isMobile").removeClass("isMobile");
+		$("*.isIOS").removeClass("isIOS");
 		return false;
 	}
 }

@@ -3,11 +3,19 @@
 	session_start();
 	$more_clicked = 0;
 	$more_link_id = null;
+	$faq_clicked = 0;
+	$faq_link_id = null;
 	$quick_link_clicked = 0;
+	$const = 'everything';
 	
 	if (isset($_GET['more_link']) && empty($_GET['more_link']) == false) {
 		$more_clicked = 1;
 		$more_link_id = $_GET['more_link'];
+	}
+
+	if (isset($_GET['faq']) && empty($_GET['faq']) == false) {
+		$faq_clicked = 1;
+		$faq_link_id = $_GET['faq'];
 	}
 
 	if (isset($_GET['quick']) && empty($_GET['quick']) == false) {
@@ -25,7 +33,7 @@
 	$placeholder = "Search HackGSU";
 	$result = "";
 
-	if (isset($search_text) && empty($search_text) === false && $more_clicked != 1 && $quick_link_clicked < 1) {
+	if (isset($search_text) && empty($search_text) === false && $more_clicked != 1 && $faq_clicked != 1 && $quick_link_clicked < 1) {
 		$placeholder = $search_text;
 
 		$ev = new everything;
@@ -40,6 +48,11 @@
 		$ev = new everything;
 
 		$result = $ev -> selectById($more_link_id);
+	}elseif ($faq_clicked == 1 && isset($faq_link_id) && empty($faq_link_id) == false) {
+		$placeholder = "Search for more";
+		$faq = new faq;
+		$result = $faq -> selectById($faq_link_id);
+		$const = 'faq';
 	}elseif ($quick_link_clicked > 0 && isset($quick_link_clicked) && empty($quick_link_clicked) == false) {
 		switch ($quick_link_clicked) {
 			case '1':
@@ -49,19 +62,26 @@
 			case '2':
 				$events = new events;
 				$result = $events -> nextEvent();
+				$const = 'event';
+				// echo "<script type=\"text/javascript\">console.log('". $result[0]['title'] ."');</script>";
 				break;
 
 			case '3':
 				$events = new events;
 				$result = $events -> nextFood();
+				$const = 'event';
+				// echo "<script type=\"text/javascript\">console.log('". $result[0]['title'] ."');</script>";
 				break;
 
 			case '4':
-				# code...
+				$ev = new everything;
+				$result = $ev -> selectFromTagsLimited('travel reimbursement');
 				break;
 
 			case '5':
-				# code...
+				$faq = new faq;
+				$result = $faq -> selectById(7);
+				$const = 'faq';
 				break;
 			
 			default:
@@ -95,7 +115,11 @@
 	?>
 			<div class="top_result">
 				<div class="label">Top Result</div>
-				<?php hackbot_display($result[0]); ?>
+				<?php 
+					hackbot_display($result[0], $const); 
+					// echo "<script type=\"text/javascript\">console.log('". $result[0]['id'] ."');</script>";
+				?>
+
 			</div>
 			<div class="more_results">
 				<div class="label">More Results</div>
@@ -118,7 +142,7 @@
 								<input id=<?php $str = "more_link"; $str .= $more['id']; echo "'". $str. "'"; ?> type="submit" name="more_link" value=<?php echo "'" . $more['id'] . "'"; ?>>
 								<label for=<?php echo "'$str'"; ?>>
 									<?php
-									hackbot_display($more);
+									hackbot_display($more, $const);
 									?>
 								</label>	
 							</form>

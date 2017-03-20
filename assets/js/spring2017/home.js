@@ -52,6 +52,9 @@ function resizeFunction(){
 		    $("#faq").html(result);
 		}});
 	}
+	setTimeout(function(){
+		faqClicked();
+	}, 50);
 	// console.log('working');
 }
 
@@ -267,6 +270,18 @@ function modifiedLinks(){
 	// });
 }
 
+function faqClicked(){
+	$('.faq-item').click(function(event){
+		faqLoader($(this).attr('id'));
+	});
+}
+
+function faqLoader(id){
+	var str = "<iframe id=\"iframe_search\" src=\"hackbot.php?faq=" + id + "\"></iframe>";
+	$('#hackbot_search').html(str);
+	$('#navigator').trigger('click');
+}
+
 function timeOuts(){
 
 	/////////////////////////////////////////// SCHEDULE REFRESH ///////////////////////////////////////////
@@ -307,8 +322,7 @@ function timeOuts(){
 	}, 300000);
 
 	/////////////////////////////////////////// END SCHEDULE REFRESH ///////////////////////////////////////////
-	
-	
+		
 
 }
 
@@ -325,10 +339,11 @@ function onLoad(){
 	window.onresize = resizeFunction;
 	window.onscroll = scrollFunction;
 	$('body').on('scroll', scrollFunction);
-	
 	$('#navigator').click(function(){
 		navigatorClicked();
 	});
+
+	
 
 	timeOuts();
 	
