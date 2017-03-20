@@ -47,14 +47,18 @@ function resizeFunction(){
 		$.ajax({url: "assets/php/spring2017/faq-include-mobile.php", success: function(result){
 		    $("#faq").html(result);
 		}});
+		setTimeout(function(){
+			faqClicked();
+		}, 1000);
 	}else{
 		$.ajax({url: "assets/php/spring2017/faq-include2.php", success: function(result){
 		    $("#faq").html(result);
 		}});
+		setTimeout(function(){
+			faqClicked();
+		}, 1000);
 	}
-	setTimeout(function(){
-		faqClicked();
-	}, 200);
+	
 	// console.log('working');
 }
 

@@ -74,8 +74,9 @@
 				break;
 
 			case '4':
-				$ev = new everything;
-				$result = $ev -> selectFromTagsLimited('travel reimbursement');
+				$faq = new faq;
+				$result = $faq -> selectById(12);
+				$const = 'faq';
 				break;
 
 			case '5':
