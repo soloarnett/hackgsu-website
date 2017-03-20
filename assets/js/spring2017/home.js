@@ -54,7 +54,7 @@ function resizeFunction(){
 	}
 	setTimeout(function(){
 		faqClicked();
-	}, 50);
+	}, 200);
 	// console.log('working');
 }
 
