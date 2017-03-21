@@ -26,7 +26,7 @@
 			
 			$db = new Db;
 
-			$rows = $db -> select("SELECT `$select` FROM `everything` WHERE $where'='$value");
+			$rows = $db -> select("SELECT LOWER(`$select`) FROM `everything` WHERE $where'='LOWER($value)");
 
 			return $rows;
 			
