@@ -1367,7 +1367,7 @@ label{
 			&:not(.isMobile){
 				.all_events{
 					.day{
-						max-width: 33%;
+						// max-width: 33%;
 					}
 				}
 			}
@@ -1651,7 +1651,7 @@ label{
 				border-radius: 2px;
 				position: relative;
 				float: left;
-				background-image: url("../../img/spring2017/slack_image.JPG");
+				background-image: url("../../img/spring2017/slack_image_sm.jpg");
 				background-position: center;
 				background-size: cover;
 				background-repeat: no-repeat;
@@ -1720,5 +1720,16 @@ label{
 		}
 
 	}
+}
+
+@media (min-width: 830px){
+
+	.page>.schedule>.all_container>.all_events>.day{
+		max-width: 33%;
+	}
+	.page>.explore>.frame>#slack{
+		background-image: url("../../img/spring2017/slack_image.JPG");
+	}
+
 }
 

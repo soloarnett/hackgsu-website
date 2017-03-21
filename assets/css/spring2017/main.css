@@ -1051,8 +1051,6 @@ label {
       float: left;
       left: 50%;
       transform: translateX(-50%); }
-      .page > .schedule > .all_container:not(.isMobile) .all_events .day {
-        max-width: 33%; }
       .page > .schedule > .all_container > .all_title {
         font-weight: 300;
         font-size: 2em;
@@ -1342,7 +1340,7 @@ label {
         border-radius: 2px;
         position: relative;
         float: left;
-        background-image: url("../../img/spring2017/slack_image.JPG");
+        background-image: url("../../img/spring2017/slack_image_sm.jpg");
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
@@ -1390,5 +1388,11 @@ label {
     transform: translateX(-50%);
     float: left;
     clear: both; } }
+@media (min-width: 830px) {
+  .page > .schedule > .all_container > .all_events > .day {
+    max-width: 33%; }
+
+  .page > .explore > .frame > #slack {
+    background-image: url("../../img/spring2017/slack_image.JPG"); } }
 
 /*# sourceMappingURL=main.css.map */
