@@ -17,6 +17,27 @@ html{
 	animation: htmlLoad .2s ease-out 1.1s forwards;
 }
 
+.register{
+
+	//{ ** INCLUDES
+		@include noDecoration();
+		@include notSelectable();
+	//} ** END INCLUDES
+			
+	//{ ** ATTRIBUTES
+		cursor: pointer;
+		position: absolute;
+		float: left;
+		top: 40px;
+		font-weight: 300;
+		left: 50%;
+		transform: translateX(-50%);
+		color: white;
+
+	//} ** END ATTRIBUTES
+	
+}
+
 .full_form{
 	float: right;
 }
@@ -115,6 +136,13 @@ label{
 	&.isIOS{
 		overflow-y: scroll;
 		-webkit-overflow-scrolling: touch;
+		/////////////////////////////////////////// bug fix ///////////////////////////////////////////
+		display: none;
+		/////////////////////////////////////////// bug fix ///////////////////////////////////////////
+		
+		
+		
+		
 	}
 	
 	// background-color: black;
@@ -160,8 +188,33 @@ label{
 		float: left;
 	}
 
+	/////////////////////////////////////////// bug fix ///////////////////////////////////////////
+	
+	.ios{
+		display: none;
+	}
+	
+	&.isIOS{
+		// display: none;
+		.ios{
+			display: block;
+			width: calc(100% - 40px);
+			height: auto;
+			position: relative;
+			float: left;
+			padding: 20px;
+			color: white;
+			text-align: center;
+		}
+		
+		// margin-top: 40px;
+		// padding: 20px;
+	}
+
+	/////////////////////////////////////////// bug fix ///////////////////////////////////////////
 	
 	
+
 	>.nav-links.isMobile{
 
 		//{ ** ATTRIBUTES

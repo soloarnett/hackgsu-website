@@ -1,0 +1,51 @@
+/*FONT*/
+
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,800';
+.open-sans{
+	font-family: 'Open Sans', sans-serif;
+}
+
+*{
+	font-family: 'Open Sans', sans-serif !important;
+}
+
+
+#directions-nav{
+	background-color: #000000;
+	position: fixed;
+	width: 100vw;
+	height: 60px;
+	top: 0;
+	left: 0;
+}
+
+.directions-nav-link{
+	color: #ffffff;
+	position: absolute;
+	text-decoration: none;
+	height: 60px !important;
+	width: 100% !important;
+	z-index: 999;
+
+}
+
+.directions-nav-link:visited{
+	color: #ffffff;
+	text-decoration: none;
+	height: 60px !important;
+}
+
+.directions-nav-text{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 10px;
+	font-size: 20px;
+	font-weight: 800;
+}
+
+@media(max-width: 755px){
+	.g-map{
+		width: 70%;
+	}
+}

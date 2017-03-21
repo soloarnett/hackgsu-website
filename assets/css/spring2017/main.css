@@ -12,6 +12,35 @@ html {
     opacity: 0; }
   to {
     opacity: 1; } }
+.register {
+  outline: none;
+  text-decoration: none;
+  color: inherit;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  /* Chrome/Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE10+ */
+  /* Rules below not implemented in browsers yet */
+  -o-user-select: none;
+  user-select: none;
+  cursor: default;
+  cursor: pointer;
+  position: absolute;
+  float: left;
+  top: 40px;
+  font-weight: 300;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white; }
+  .register:visted {
+    outline: none;
+    text-decoration: none;
+    color: inherit;
+    -webkit-tap-highlight-color: transparent; }
+
 .full_form {
   float: right; }
 
@@ -69,7 +98,8 @@ label {
   overflow-y: hidden; }
   #hackbot_search.isIOS {
     overflow-y: scroll;
-    -webkit-overflow-scrolling: touch; }
+    -webkit-overflow-scrolling: touch;
+    display: none; }
   #hackbot_search > iframe {
     height: 100%;
     width: 100%;
@@ -96,6 +126,17 @@ label {
   .hackbot > .hackbot_search {
     position: relative;
     float: left; }
+  .hackbot .ios {
+    display: none; }
+  .hackbot.isIOS .ios {
+    display: block;
+    width: calc(100% - 40px);
+    height: auto;
+    position: relative;
+    float: left;
+    padding: 20px;
+    color: white;
+    text-align: center; }
   .hackbot > .nav-links.isMobile {
     bottom: 20px;
     right: 20px;

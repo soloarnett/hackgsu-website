@@ -40,6 +40,8 @@ function makeMobile(){
 		$("*:not(.isMobile)").addClass("isMobile");
 		if (isApple()) {
 			$("*:not(.isIOS)").addClass("isIOS");
+		}else{
+			$("*.isIOS").removeClass("isIOS");
 		}
 		return true;
 	}else{
