@@ -113,6 +113,7 @@
 			</section>
 			<section class="explore" id="explore">
 				<span class="explore-title">Explore</span>
+				<?php include_once("assets/php/spring2017/explore-include.php") ?>
 			</section>
 		</section>
 	</form>

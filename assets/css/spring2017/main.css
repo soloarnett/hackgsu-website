@@ -1313,6 +1313,66 @@ label {
       .page > .explore > .explore-title.isMobile {
         font-size: 1.5em;
         margin-bottom: 20vh; }
+    .page > .explore .label {
+      position: relative;
+      float: left;
+      clear: both;
+      font-size: calc(12px + 0.5vw);
+      color: white;
+      font-weight: 300;
+      left: 50%;
+      transform: translateX(-50%); }
+    .page > .explore .frame {
+      position: relative;
+      float: left;
+      padding: 40px;
+      width: calc(100% - 80px);
+      clear: left;
+      left: 50%;
+      transform: translateX(-50%); }
+      .page > .explore .frame:not(.isMobile) {
+        max-width: 50vw; }
+      .page > .explore .frame iframe {
+        border-radius: 2px;
+        width: 100%;
+        border: none; }
+      .page > .explore .frame.frame2 iframe {
+        background-color: white; }
+      .page > .explore .frame #slack {
+        border-radius: 2px;
+        position: relative;
+        float: left;
+        background-image: url("../../img/spring2017/slack_image.JPG");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        min-height: 300px;
+        overflow: hidden; }
+        .page > .explore .frame #slack a {
+          position: absolute;
+          bottom: 20px;
+          right: 20px; }
+        .page > .explore .frame #slack .slack_button {
+          position: relative;
+          float: left;
+          width: 100px;
+          height: 30px;
+          background-image: url("../../img/spring2017/slack_button.svg");
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+          cursor: pointer;
+          -moz-transition: height 999999999999s ease-in !important;
+          -o-transition: height 999999999999s ease-in !important;
+          -webkit-transition: height 999999999999s ease-in !important;
+          transition: height 999999999999s ease-in !important;
+          -ms-transition: height 999999999999s ease-in !important;
+          -moz-transition: margin 999999999999s ease-in !important;
+          -o-transition: margin 999999999999s ease-in !important;
+          -webkit-transition: margin 999999999999s ease-in !important;
+          transition: margin 999999999999s ease-in !important;
+          -ms-transition: margin 999999999999s ease-in !important; }
 
 @media (max-width: 830px) {
   .page > .schedule .upcoming_container {
