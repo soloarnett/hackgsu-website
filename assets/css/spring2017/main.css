@@ -1314,4 +1314,21 @@ label {
         font-size: 1.5em;
         margin-bottom: 20vh; }
 
+@media (max-width: 830px) {
+  .page > .schedule .upcoming_container {
+    margin-bottom: 80px; }
+  .page > .schedule .food_container {
+    max-width: 80vw;
+    left: 50%;
+    transform: translateX(-50%);
+    float: left;
+    clear: both;
+    margin-bottom: 80px; }
+  .page > .schedule .featured_container {
+    max-width: 80vw;
+    left: 50%;
+    transform: translateX(-50%);
+    float: left;
+    clear: both; } }
+
 /*# sourceMappingURL=main.css.map */

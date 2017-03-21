@@ -1612,3 +1612,30 @@ label{
 	}
 }
 
+/////////////////////////////////////////// mobile fallback ///////////////////////////////////////////
+
+
+@media (max-width: 830px){
+	.page>.schedule{
+		.upcoming_container{
+			margin-bottom: 80px;
+		}
+		.food_container{
+			max-width: 80vw;
+			left: 50%;
+			transform: translateX(-50%);
+			float: left;
+			clear: both;
+			margin-bottom: 80px;
+		}
+		.featured_container{
+			max-width: 80vw;
+			left: 50%;
+			transform: translateX(-50%);
+			float: left;
+			clear: both;
+		}
+
+	}
+}
+
