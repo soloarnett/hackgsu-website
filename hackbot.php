@@ -170,10 +170,10 @@
 		<div class="quick_links">
 			<div class="label">Quick Links</div>
 			<form action="" method="get">
-				<input id="quick_mentor" type="submit" name="quick" value="1">
+				<!-- <input id="quick_mentor" type="submit" name="quick" value="1">
 				<label for="quick_mentor">
 					<div class="link">Request a Mentor</div>
-				</label>
+				</label> -->
 				<input id="quick_next" type="submit" name="quick" value="2">
 				<label for="quick_next">
 					<div class="link">Next Event</div>
