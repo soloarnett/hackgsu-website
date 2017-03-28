@@ -897,6 +897,21 @@ label {
           text-align: right;
           border-right: solid 1px white;
           min-width: 70px; }
+    .page > .schedule > .food_container, .page > .schedule > .featured_container {
+      width: 480px;
+      float: left; }
+      .page > .schedule > .food_container > .schedule, .page > .schedule > .featured_container > .schedule {
+        width: 100%;
+        height: 100%;
+        float: left; }
+        .page > .schedule > .food_container > .schedule > .events, .page > .schedule > .featured_container > .schedule > .events {
+          width: 100%;
+          height: 100%;
+          float: left; }
+          .page > .schedule > .food_container > .schedule > .events > table, .page > .schedule > .featured_container > .schedule > .events > table {
+            width: calc(100% - 40px);
+            height: calc(100% - 40px);
+            float: left; }
     .page > .schedule > .food_container {
       position: relative;
       float: left;
@@ -1051,6 +1066,15 @@ label {
       float: left;
       left: 50%;
       transform: translateX(-50%); }
+      .page > .schedule > .all_container.isMobile .all_events {
+        width: 100%; }
+        .page > .schedule > .all_container.isMobile .all_events .day {
+          width: 100%; }
+          .page > .schedule > .all_container.isMobile .all_events .day > table {
+            width: 100%; }
+            .page > .schedule > .all_container.isMobile .all_events .day > table tr:not(.title) {
+              float: left;
+              clear: left; }
       .page > .schedule > .all_container > .all_title {
         font-weight: 300;
         font-size: 2em;
@@ -1327,15 +1351,21 @@ label {
       width: calc(100% - 80px);
       clear: left;
       left: 50%;
-      transform: translateX(-50%); }
+      transform: translateX(-50%);
+      text-align: center;
+      color: white; }
       .page > .explore .frame:not(.isMobile) {
         max-width: 50vw; }
       .page > .explore .frame iframe {
         border-radius: 2px;
         width: 100%;
         border: none; }
-      .page > .explore .frame.frame2 iframe {
-        background-color: white; }
+      .page > .explore .frame.frame1 {
+        min-height: 300px; }
+      .page > .explore .frame.frame2 {
+        min-height: 300px; }
+        .page > .explore .frame.frame2 iframe {
+          background-color: white; }
       .page > .explore .frame #slack {
         border-radius: 2px;
         position: relative;

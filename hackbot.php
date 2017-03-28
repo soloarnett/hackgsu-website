@@ -56,7 +56,9 @@
 	}elseif ($quick_link_clicked > 0 && isset($quick_link_clicked) && empty($quick_link_clicked) == false) {
 		switch ($quick_link_clicked) {
 			case '1':
-				# code...
+				$faq = new faq;
+				$result = $faq -> selectById(16);
+				$const = 'faq';
 				break;
 			
 			case '2':
@@ -174,6 +176,10 @@
 				<label for="quick_mentor">
 					<div class="link">Request a Mentor</div>
 				</label> -->
+				<input id="quick_parking" type="submit" name="quick" value="1">
+				<label for="quick_parking">
+					<div class="link">Parking</div>
+				</label>
 				<input id="quick_next" type="submit" name="quick" value="2">
 				<label for="quick_next">
 					<div class="link">Next Event</div>

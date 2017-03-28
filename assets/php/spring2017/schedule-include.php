@@ -36,7 +36,7 @@
 
 <div class="food_container">
 	<span class="food">When's Food?</span>
-	<div class="food_schedule">
+	<div class="food_schedule schedule">
 		<div class="events">
 			<!-- <span class="title">Upcoming</span> -->
 			<table>
@@ -103,7 +103,7 @@
 
 <div class="featured_container">
 	<span class="featured">Featured</span>
-	<div class="featured_schedule">
+	<div class="featured_schedule schedule">
 		<div class="events">
 			<table>
 				<tbody>
@@ -153,7 +153,7 @@
 		<div class="day day1">
 			<table>
 				<tbody>
-					<tr>
+					<tr class="title">
 						<th class="date" colspan="2">March 31st</th>
 					</tr>
 					<?php 
@@ -203,7 +203,7 @@
 		<div class="day day2">
 			<table>
 				<tbody>
-					<tr>
+					<tr class="title">
 						<th class="date" colspan="3">April 1st</th>
 					</tr>
 					<?php 
@@ -253,7 +253,7 @@
 		<div class="day day3">
 			<table>
 				<tbody>
-					<tr>
+					<tr class="title">
 						<th class="date" colspan="3">April 2nd</th>
 					</tr>
 					<?php 

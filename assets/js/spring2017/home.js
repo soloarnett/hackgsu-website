@@ -8,12 +8,14 @@ var navigatorClickCounter = false;
 var schedulePos = $('#schedule').offset().top;
 var faqPos = $('#faq').offset().top;
 var sponsorsPos = $('#sponsors').offset().top;
+var explorePos = $('#explore').offset().top;
 
 var fixed_bar_count = 0;
+var exploreCount = 0;
 
 function resizeFunction(){
 	/*
-		FUNCTION NAME:	resizeFuntion
+		FUNCTION NAME:	resizeFunction
 		PARAMETERS:		none
 		DESCRIPTION:	runs a set of operations when the browser window is resized
 	*/
@@ -23,6 +25,7 @@ function resizeFunction(){
 	schedulePos = $('#schedule').offset().top;
 	faqPos = $('#faq').offset().top;
 	sponsorsPos = $('#sponsors').offset().top;
+	explorePos = $('#explore').offset().top;
 	
 	if (windowWidth < 830) {
 		$("html:not(.isMobile)").addClass("frameMobile");
@@ -44,19 +47,23 @@ function resizeFunction(){
 	scrollFunction();
 
 	if ($('#faq').hasClass('isMobile')) {
-		$.ajax({url: "assets/php/spring2017/faq-include-mobile.php", success: function(result){
-		    $("#faq").html(result);
-		}});
-		setTimeout(function(){
-			faqClicked();
-		}, 1000);
+		// if ($('#faq >*').hasClass('isMobile') == false) {
+			$.ajax({url: "assets/php/spring2017/faq-include-mobile.php", success: function(result){
+			    $("#faq").html(result);
+			}});
+			setTimeout(function(){
+				faqClicked();
+			}, 1000);
+		// }	
 	}else{
-		$.ajax({url: "assets/php/spring2017/faq-include2.php", success: function(result){
-		    $("#faq").html(result);
-		}});
-		setTimeout(function(){
-			faqClicked();
-		}, 1000);
+		// if ($('#faq >*').hasClass('isMobile')) {
+			$.ajax({url: "assets/php/spring2017/faq-include2.php", success: function(result){
+			    $("#faq").html(result);
+			}});
+			setTimeout(function(){
+				faqClicked();
+			}, 1000);
+		// }
 	}
 	
 	// console.log('working');
@@ -99,6 +106,19 @@ function scrollFunction(){
 			$('.searchAnything').css('opacity', 1);
 		}
 	}
+
+	if ((exploreCount == 0) && (bodyPos > explorePos)) {
+		setTimeout(function(){
+			$('.page >#explore >.frame0').html(frame0String);
+			$('.page >#explore >.frame1').html(frame1String);
+			$('.page >#explore >.frame2').html(frame2String);
+		}, 400);
+		
+		exploreCount += 1;
+		// console.log('success');
+	}
+
+
 	
 }
 
@@ -316,6 +336,8 @@ function timeOuts(){
 					$("#schedule>*").addClass("isMobile");
 				}
 
+				resizeFunction();
+
 				setTimeout(function(){
 					$("#schedule").animate({
 						opacity: 1
@@ -326,6 +348,12 @@ function timeOuts(){
 	}, 300000);
 
 	/////////////////////////////////////////// END SCHEDULE REFRESH ///////////////////////////////////////////
+
+	/////////////////////////////////////////// explore timeout ///////////////////////////////////////////
+	
+	setTimeout(function(){
+		explorePos = $('#explore').offset().top - 300;
+	}, 1000);
 		
 
 }
@@ -346,9 +374,6 @@ function onLoad(){
 	$('#navigator').click(function(){
 		navigatorClicked();
 	});
-
-	
-
 	timeOuts();
 	
 }

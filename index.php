@@ -118,7 +118,7 @@
 		</section>
 	</form>
 
-<script type="text/javascript" src="assets/js/spring2017/home.js"></script>
-<script type="text/javascript" src="assets/js/spring2017/main.js"></script>
+	<script type="text/javascript" src="assets/js/spring2017/home.js"></script>
+	<script type="text/javascript" src="assets/js/spring2017/main.js"></script>
 </body>
 </html>

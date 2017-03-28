@@ -1205,6 +1205,39 @@ label{
 			}
 		}
 
+		>.food_container, >.featured_container{
+
+			//{ ** ATTRIBUTES
+				width: 480px;
+				float: left;
+			//} ** END ATTRIBUTES
+
+			>.schedule{
+				//{ ** ATTRIBUTES
+				width: 100%;
+				height: 100%;
+				float: left;
+			//} ** END ATTRIBUTES
+
+				>.events{
+					//{ ** ATTRIBUTES
+						width: 100%;
+						height: 100%;
+						float: left;
+					//} ** END ATTRIBUTES
+
+					>table{
+						//{ ** ATTRIBUTES
+							width: calc(100% - 40px);
+							height: calc(100% - 40px);
+							float: left;
+						//} ** END ATTRIBUTES
+					}
+				}
+			}
+			
+		}
+
 		>.food_container{
 
 			//{ ** ATTRIBUTES
@@ -1364,10 +1397,23 @@ label{
 				@include relativeMiddle();
 			//} ** END INCLUDES
 			
-			&:not(.isMobile){
+			&.isMobile{
 				.all_events{
+
+					//{ ** ATTRIBUTES
+						width: 100%;
+					//} ** END ATTRIBUTES
+					
 					.day{
-						// max-width: 33%;
+						width: 100%;
+
+						>table{
+							width: 100%;
+							tr:not(.title){
+								float: left;
+								clear: left;
+							}
+						}
 					}
 				}
 			}
@@ -1630,6 +1676,8 @@ label{
 			clear: left;
 			left: 50%;
 			transform: translateX(-50%);
+			text-align: center;
+			color: white;
 
 			&:not(.isMobile){
 				max-width: 50vw;
@@ -1640,8 +1688,17 @@ label{
 				border: none;
 			}
 
-
+			&.frame1{
+				min-height: 300px;
+				// min-width: 500px;
+			}
 			&.frame2{
+
+				//{ ** ATTRIBUTES
+					min-height: 300px;
+					// min-width: 500px;
+				//} ** END ATTRIBUTES
+				
 				iframe{
 					background-color: white;
 				}
