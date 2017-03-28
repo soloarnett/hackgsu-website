@@ -14,6 +14,7 @@
 	<link rel="icon" href="assets/img/spring2017/favicon.ico">
 	<!-- <link rel="manifest" href="manifest/manifest.json"> -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<meta name="theme-color" content="#161616">
 	<meta name="description" content="">
     <meta name="author" content="">
 </head>
