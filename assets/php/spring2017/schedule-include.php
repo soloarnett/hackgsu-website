@@ -141,8 +141,20 @@
 
 <?php 
 
-	$colors = ['white', 'blue', 'white', 'red'];
-	$count = 0;
+	function colorSelector($type){
+		switch ($type) {
+			case 'food':
+				return 'blue';
+				break;
+			case 'featured':
+				return 'red';
+				break;
+			
+			default:
+				return 'white';
+				break;
+		}
+	}
 
 
 ?>
@@ -167,31 +179,29 @@
 							<?php
 						}else{
 							foreach ($result as $key => $event) {
-								if ($count > 3) {
-									$count = 0;
-								}
-
+								
+								$type = $event['type'];
 								$title = $event['title'];
 								$time = getTime($event['date']);
 								$description = $event['description'];
 								$location = $event['location'];
-
+								echo "<script type=\"text/javascript\">console.log('color is " . colorSelector($type) . "');</script>";
+								echo "<script type=\"text/javascript\">console.log('type is $type');</script>";
 								?>
 									<tr>
-										<td class=<?php echo "\"time $colors[$count]\""; ?>><?php echo "$time"; ?></td>
+										<td class=<?php echo "\"time " . colorSelector($type) . "\""; ?>><?php echo "$time"; ?></td>
+
 										<td class="title"><?php echo "$title"; ?></td>
 									</tr>
 									<tr>
-										<td class=<?php echo "\"time $colors[$count]\""; ?>></td>
+										<td class=<?php echo "\"time " . colorSelector($type) . "\""; ?>></td>
 										<td class="description"><?php echo "$description"; ?></td>
 									</tr>
 									<tr>
-										<td class=<?php echo "\"time $colors[$count]\""; ?>></td>
+										<td class=<?php echo "\"time " . colorSelector($type) . "\""; ?>></td>
 										<td class="location"><?php echo "Location: $location"; ?></td>
 									</tr>
 								<?php
-
-								$count += 1;
 							}
 						}
 
@@ -217,10 +227,7 @@
 							<?php
 						}else{
 							foreach ($result as $key => $event) {
-								if ($count > 3) {
-									$count = 0;
-								}
-
+								$type = $event['type'];
 								$title = $event['title'];
 								$time = getTime($event['date']);
 								$description = $event['description'];
@@ -228,20 +235,19 @@
 
 								?>
 									<tr>
-										<td class=<?php echo "\"time $colors[$count]\""; ?>><?php echo "$time"; ?></td>
+										<td class=<?php echo "\"time " . colorSelector($type) . "\""; ?>><?php echo "$time"; ?></td>
 										<td class="title"><?php echo "$title"; ?></td>
 									</tr>
 									<tr>
-										<td class=<?php echo "\"time $colors[$count]\""; ?>></td>
+										<td class=<?php echo "\"time " . colorSelector($type) . "\""; ?>></td>
 										<td class="description"><?php echo "$description"; ?></td>
 									</tr>
 									<tr>
-										<td class=<?php echo "\"time $colors[$count]\""; ?>></td>
+										<td class=<?php echo "\"time " . colorSelector($type) . "\""; ?>></td>
 										<td class="location"><?php echo "Location: $location"; ?></td>
 									</tr>
 								<?php
 
-								$count += 1;
 							}
 						}
 
@@ -267,10 +273,7 @@
 							<?php
 						}else{
 							foreach ($result as $key => $event) {
-								if ($count > 3) {
-									$count = 0;
-								}
-
+								$type = $event['type'];
 								$title = $event['title'];
 								$time = getTime($event['date']);
 								$description = $event['description'];
@@ -278,20 +281,18 @@
 
 								?>
 									<tr>
-										<td class=<?php echo "\"time $colors[$count]\""; ?>><?php echo "$time"; ?></td>
+										<td class=<?php echo "\"time " . colorSelector($type) . "\""; ?>><?php echo "$time"; ?></td>
 										<td class="title"><?php echo "$title"; ?></td>
 									</tr>
 									<tr>
-										<td class=<?php echo "\"time $colors[$count]\""; ?>></td>
+										<td class=<?php echo "\"time " . colorSelector($type) . "\""; ?>></td>
 										<td class="description"><?php echo "$description"; ?></td>
 									</tr>
 									<tr>
-										<td class=<?php echo "\"time $colors[$count]\""; ?>></td>
+										<td class=<?php echo "\"time " . colorSelector($type) . "\""; ?>></td>
 										<td class="location"><?php echo "Location: $location"; ?></td>
 									</tr>
 								<?php
-
-								$count += 1;
 							}
 						}
 
