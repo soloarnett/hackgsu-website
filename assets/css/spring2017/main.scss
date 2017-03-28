@@ -1585,8 +1585,9 @@ label{
 			float: left;
 			clear: both;
 			width: 100%;
+			// max-width: 2000px;
 			height: 100vh;
-			background-image: url("../../img/spring2017/sponsors.png");
+			background-image: url("../../img/spring2017/sponsors-sm.png");
 			background-position: center;
 			background-size: contain;
 			background-repeat: no-repeat;
@@ -1729,6 +1730,10 @@ label{
 	}
 	.page>.explore>.frame>#slack{
 		background-image: url("../../img/spring2017/slack_image.JPG");
+	}
+	.page>.sponsors>.sponsors-img{
+		height: 200vh;
+		background-image: url("../../img/spring2017/sponsors.png");
 	}
 
 }
