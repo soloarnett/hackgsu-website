@@ -54,16 +54,23 @@
 			$tagArray = array_map('trim', explode(' ', $tags));
 			$strToSearch = "";
 			if (sizeof($tagArray) > 1) {
+				// echo "<script type=\"text/javascript\">console.log('size of tag array is " . sizeof($tagArray) . "')</script>";
 				for ($i=0; $i < sizeof($tagArray); $i++) {
 					$strToSearch .= "*" . trim($tagArray[$i]);
-					if ($i < (sizeof(tagArray))) {
-						$strToSearch .= "*,";
-					}
+					// echo "<script type=\"text/javascript\">console.log('i is " . $i . "')</script>";
+					// if ($i++ < sizeof(tagArray)) {
+						$strToSearch .= "* ";
+						// echo "<script type=\"text/javascript\">console.log('comma added')</script>";
+					// }else{
+					// 	$strToSearch .= "*";
+					// }
 				}
+				$strToSearch = substr($strToSearch, 0, (strlen($strToSearch) - 1));
 			}else{
 				$strToSearch = "*" . $tags . "*";
-				// echo "<script type=\"text/javascript\">console.log('strToSearch is " . $strToSearch . "')</script>";
+				
 			} 
+			// echo "<script type=\"text/javascript\">console.log('strToSearch is " . $strToSearch . "')</script>";
 			
 			$db = new Db;
 			$rows = $db -> select("SELECT * FROM `everything` WHERE MATCH(tags) AGAINST ('".$strToSearch."' IN BOOLEAN MODE)");

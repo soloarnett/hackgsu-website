@@ -495,7 +495,9 @@ input:-moz-placeholder { font-weight: 300; }
 					animation: link-color .2s ease-out 0s forwards;
 					
 				}
-
+			}
+			&.devpostLabel.isMobile{
+				display: none;
 			}
 		}
 	}

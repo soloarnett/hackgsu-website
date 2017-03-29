@@ -76,7 +76,7 @@
 							<span class="link sponsors">Sponsors</span>
 						<!-- </label> -->
 					</a>
-					<a class="modified-link devpost" target="_blank" href="#devpost">
+					<a class="modified-link devpost" target="_blank" href="https://hackgsu-spring-2017.devpost.com/?ref_content=default&ref_feature=challenge&ref_medium=discover">
 						<!-- <label for="navigator"> -->
 							<span class="link devpost">Devpost</span>
 						<!-- </label> -->

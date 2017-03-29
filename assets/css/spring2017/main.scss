@@ -888,7 +888,7 @@ label{
 		float: left;
 		margin-bottom: 40vh;
 		&.isMobile{
-			margin-bottom: 10%;
+			margin-bottom: 40vh;
 		}
 
 	}
@@ -906,10 +906,10 @@ label{
 		font-weight: 300;
 		float: left;
 		margin-top: 10vh;
-		margin-bottom: 30vh;
+		margin-bottom: 50vh;
 		&.isMobile{
 			font-size: 1.5em;
-			margin-bottom: 20vh;
+			margin-bottom: 50vh;
 		}
 	}
 
@@ -927,6 +927,11 @@ label{
 		//{ ** INCLUDES
 			@include page-properties-default();
 		//} ** END INCLUDES
+
+		//{ ** ATTRIBUTES
+			margin-bottom: 0px;
+		//} ** END ATTRIBUTES
+		
 		
 
 		>.container{
@@ -1789,7 +1794,7 @@ label{
 		background-image: url("../../img/spring2017/slack_image.JPG");
 	}
 	.page>.sponsors>.sponsors-img{
-		height: 200vh;
+		height: 100vh;
 		background-image: url("../../img/spring2017/sponsors.png");
 	}
 

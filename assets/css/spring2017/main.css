@@ -682,7 +682,8 @@ label {
     width: 100%;
     overflow-x: hidden;
     float: left;
-    margin-bottom: 40vh; }
+    margin-bottom: 40vh;
+    margin-bottom: 0px; }
     .page > .welcome.isMobile {
       min-height: calc(100vh + 60px);
       -moz-transition: height 999999999999s ease-in !important;
@@ -696,7 +697,7 @@ label {
       transition: margin 999999999999s ease-in !important;
       -ms-transition: margin 999999999999s ease-in !important; }
     .page > .welcome.isMobile {
-      margin-bottom: 10%; }
+      margin-bottom: 40vh; }
     .page > .welcome > .container {
       float: left;
       position: absolute;
@@ -856,7 +857,7 @@ label {
       transition: margin 999999999999s ease-in !important;
       -ms-transition: margin 999999999999s ease-in !important; }
     .page > .schedule.isMobile {
-      margin-bottom: 10%; }
+      margin-bottom: 40vh; }
     .page > .schedule > .upcoming {
       -webkit-user-select: none;
       /* Chrome/Safari */
@@ -875,10 +876,10 @@ label {
       font-weight: 300;
       float: left;
       margin-top: 10vh;
-      margin-bottom: 30vh; }
+      margin-bottom: 50vh; }
       .page > .schedule > .upcoming.isMobile {
         font-size: 1.5em;
-        margin-bottom: 20vh; }
+        margin-bottom: 50vh; }
       .page > .schedule > .upcoming:not(.isMobile), .page > .schedule > .upcoming.isMobile {
         margin-bottom: 40px; }
     .page > .schedule > .upcoming_container {
@@ -1148,7 +1149,7 @@ label {
       transition: margin 999999999999s ease-in !important;
       -ms-transition: margin 999999999999s ease-in !important; }
     .page > .faq.isMobile {
-      margin-bottom: 10%; }
+      margin-bottom: 40vh; }
     .page > .faq > .faq-title {
       -webkit-user-select: none;
       /* Chrome/Safari */
@@ -1167,11 +1168,11 @@ label {
       font-weight: 300;
       float: left;
       margin-top: 10vh;
-      margin-bottom: 30vh;
+      margin-bottom: 50vh;
       z-index: 10; }
       .page > .faq > .faq-title.isMobile {
         font-size: 1.5em;
-        margin-bottom: 20vh; }
+        margin-bottom: 50vh; }
     .page > .faq .half {
       position: absolute;
       bottom: 0;
@@ -1250,7 +1251,7 @@ label {
       transition: margin 999999999999s ease-in !important;
       -ms-transition: margin 999999999999s ease-in !important; }
     .page > .sponsors.isMobile {
-      margin-bottom: 10%; }
+      margin-bottom: 40vh; }
     .page > .sponsors > .sponsors-title {
       -webkit-user-select: none;
       /* Chrome/Safari */
@@ -1269,10 +1270,10 @@ label {
       font-weight: 300;
       float: left;
       margin-top: 10vh;
-      margin-bottom: 30vh; }
+      margin-bottom: 50vh; }
       .page > .sponsors > .sponsors-title.isMobile {
         font-size: 1.5em;
-        margin-bottom: 20vh; }
+        margin-bottom: 50vh; }
     .page > .sponsors > .sponsors-img {
       position: relative;
       float: left;
@@ -1312,7 +1313,7 @@ label {
       transition: margin 999999999999s ease-in !important;
       -ms-transition: margin 999999999999s ease-in !important; }
     .page > .explore.isMobile {
-      margin-bottom: 10%; }
+      margin-bottom: 40vh; }
     .page > .explore > .explore-title {
       -webkit-user-select: none;
       /* Chrome/Safari */
@@ -1331,10 +1332,10 @@ label {
       font-weight: 300;
       float: left;
       margin-top: 10vh;
-      margin-bottom: 30vh; }
+      margin-bottom: 50vh; }
       .page > .explore > .explore-title.isMobile {
         font-size: 1.5em;
-        margin-bottom: 20vh; }
+        margin-bottom: 50vh; }
     .page > .explore .label {
       position: relative;
       float: left;
@@ -1426,7 +1427,7 @@ label {
     background-image: url("../../img/spring2017/slack_image.JPG"); }
 
   .page > .sponsors > .sponsors-img {
-    height: 200vh;
+    height: 100vh;
     background-image: url("../../img/spring2017/sponsors.png"); } }
 
 /*# sourceMappingURL=main.css.map */

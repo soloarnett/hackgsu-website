@@ -374,6 +374,8 @@ input:-moz-placeholder {
   to {
     color: black;
     background-color: white; } }
+  .quick_links > form > label.devpostLabel.isMobile {
+    display: none; }
   .quick_links.isMobile {
     margin-top: 120px;
     width: 100%; }

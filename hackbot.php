@@ -196,6 +196,15 @@
 				<label for="quick_registered">
 					<div class="link">Am I registered?</div>
 				</label>
+				<input id="quick_devpost" type="submit" name="quick" value="5">
+				<label class="devpostLabel" for="quick_devpost">
+					<a class="link devpost" style="text-decoration: none" target="_blank" href="https://hackgsu-spring-2017.devpost.com/?ref_content=default&ref_feature=challenge&ref_medium=discover">
+						<!-- <label for="navigator"> -->
+							<span class="link devpost">Devpost</span>
+						<!-- </label> -->
+					</a>
+				</label>
+				
 			</form>
 		</div>
 	<?php
