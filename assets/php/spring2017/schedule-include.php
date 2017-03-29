@@ -185,8 +185,6 @@
 								$time = getTime($event['date']);
 								$description = $event['description'];
 								$location = $event['location'];
-								echo "<script type=\"text/javascript\">console.log('color is " . colorSelector($type) . "');</script>";
-								echo "<script type=\"text/javascript\">console.log('type is $type');</script>";
 								?>
 									<tr>
 										<td class=<?php echo "\"time " . colorSelector($type) . "\""; ?>><?php echo "$time"; ?></td>
