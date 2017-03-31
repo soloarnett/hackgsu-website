@@ -49,7 +49,7 @@
 			<div class="searchAnything">Search HackGSU</div>
 		</label>
 		<section class="hackbot">
-			<span class="ios">We are experiencing issues with iOS devices. This feature will be available soon.</span>
+			<span class="ios">We are experiencing issues with iOS devices. This feature will be available soon.<br><br><a href="hackbot.php" target="_blank">Click here</a> to continue anyway.</span>
 		<!-- 	<div class="search_decoy">
 				<div class="arrow_decoy"></div>
 			</div> -->

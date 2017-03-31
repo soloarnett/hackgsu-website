@@ -9,6 +9,9 @@ body{
 	margin: 0;
 	// min-height: 100vh;
 	// min-width: 660px;
+	&.isIOS{
+		background-color: black;
+	}
 }
 
 .welcome{
@@ -299,7 +302,147 @@ input:-moz-placeholder { font-weight: 300; }
 			}
 		}
 	}
-}
+
+	>.mrequest{
+		opacity: 0;
+		margin-top: 70px;
+		animation: showResult 0.5s ease-out .6s forwards;
+		//{ ** INCLUDES
+			@include relativeMiddle();
+		//} ** END INCLUDES
+				
+		//{ ** ATTRIBUTES
+			width: 100%;
+		//} ** END ATTRIBUTES
+		
+
+		form{
+			position: relative;
+			float: left;
+			width: 100%;
+			*{
+				position: relative;
+				float: left;
+				clear: left;
+			}
+			label{
+				&:not(#submitLabel){
+					font-weight: 300;
+				}
+				&:not(#checkbox-label){
+					margin-top: 20px; 
+					margin-bottom: 10px;
+				}
+
+				&#submitLabel{
+					// font-weight: 900;
+					font-size: 1.2em;
+					cursor: pointer;
+					padding: 10px;
+					//{ ** INCLUDES
+						@include relativeMiddle();
+					//} ** END INCLUDES
+					
+				}
+
+				//{ ** INCLUDES
+					@include notSelectable();
+					color: white;
+				//} ** END INCLUDES
+				
+			}
+
+			.roomin, .near{
+				display: none;
+			}
+			#checkbox-label{
+				clear: none;
+				margin-left: 5px;
+			}
+			input[type=checkbox]#roomyn{
+				&:checked ~ .roomin{
+					display: block;
+				}
+				&:not(:checked) ~ .near{
+					display: block;
+				}
+			}
+
+			input:not(.checkbox), textarea{
+				background-color: black;
+				color: white;
+				border: solid 2px white;
+				border-radius: 2px;
+				width: calc(100% - 46px);
+				margin-bottom: 10px;
+				padding: 20px;
+				font-size: calc(12px + 0.5vw);
+
+				//{ ** INCLUDES
+					@include noDecoration();
+					color: white;
+				//} ** END INCLUDES
+				
+			}
+			::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+				color: white;
+			}
+			::-moz-placeholder { /* Firefox 19+ */
+				color: white;
+			}
+			:-ms-input-placeholder { /* IE 10+ */
+				color: white;
+			}
+			:-moz-placeholder { /* Firefox 18- */
+				color: white;
+			}
+			input[type=submit]{
+				display: none;
+			}
+		}
+	}
+	>.mrequest_status{
+
+		//{ ** ATTRIBUTES
+			opacity: 0;
+			color: white;
+			// background-color: white;
+			margin-top: 70px;
+			position: relative;
+			float: left;
+			clear: left;
+			padding: 20px;
+			left: 50%;
+			transform: translateX(-50%);
+			border-radius: 5px;
+			border: solid 2px white;
+			animation: showResult 0.5s ease-out .6s forwards;
+		//} ** END ATTRIBUTES
+
+
+		//{ ** INCLUDES
+			@include card();
+		//} ** END INCLUDES
+		
+		>table{
+			position: relative;
+			float: left;
+			width: 100%;
+			text-align: center;
+			margin-bottom: 20px;
+			>tbody{
+				>tr{
+					>th{
+						padding-bottom: 10px;
+					}
+				}
+			}
+		}
+	}
+	.mcolor{
+		color: $color-link;
+	}
+}	
 
 .more_results{
 	display: block;

@@ -5,6 +5,7 @@
 	include_once("classes/faq.php");
 	include_once("classes/events.php");
 	include_once("classes/everything.php");
+	include_once("classes/mentors.php");
 	// phpinfo();
 
 

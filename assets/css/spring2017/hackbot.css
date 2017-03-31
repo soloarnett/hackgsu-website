@@ -7,6 +7,8 @@ html {
 
 body {
   margin: 0; }
+  body.isIOS {
+    background-color: black; }
 
 .welcome {
   position: relative;
@@ -244,6 +246,129 @@ input:-moz-placeholder {
           .top_result > .event > table tbody tr td.time.isMobile {
             min-width: 153px;
             text-align: center; }
+  .top_result > .mrequest {
+    opacity: 0;
+    margin-top: 70px;
+    animation: showResult 0.5s ease-out .6s forwards;
+    position: relative;
+    float: left;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%; }
+    .top_result > .mrequest form {
+      position: relative;
+      float: left;
+      width: 100%; }
+      .top_result > .mrequest form * {
+        position: relative;
+        float: left;
+        clear: left; }
+      .top_result > .mrequest form label {
+        -webkit-user-select: none;
+        /* Chrome/Safari */
+        -moz-user-select: none;
+        /* Firefox */
+        -ms-user-select: none;
+        /* IE10+ */
+        /* Rules below not implemented in browsers yet */
+        -o-user-select: none;
+        user-select: none;
+        cursor: default;
+        color: white; }
+        .top_result > .mrequest form label:not(#submitLabel) {
+          font-weight: 300; }
+        .top_result > .mrequest form label:not(#checkbox-label) {
+          margin-top: 20px;
+          margin-bottom: 10px; }
+        .top_result > .mrequest form label#submitLabel {
+          font-size: 1.2em;
+          cursor: pointer;
+          padding: 10px;
+          position: relative;
+          float: left;
+          left: 50%;
+          transform: translateX(-50%); }
+      .top_result > .mrequest form .roomin, .top_result > .mrequest form .near {
+        display: none; }
+      .top_result > .mrequest form #checkbox-label {
+        clear: none;
+        margin-left: 5px; }
+      .top_result > .mrequest form input[type=checkbox]#roomyn:checked ~ .roomin {
+        display: block; }
+      .top_result > .mrequest form input[type=checkbox]#roomyn:not(:checked) ~ .near {
+        display: block; }
+      .top_result > .mrequest form input:not(.checkbox), .top_result > .mrequest form textarea {
+        background-color: black;
+        color: white;
+        border: solid 2px white;
+        border-radius: 2px;
+        width: calc(100% - 46px);
+        margin-bottom: 10px;
+        padding: 20px;
+        font-size: calc(12px + 0.5vw);
+        outline: none;
+        text-decoration: none;
+        color: inherit;
+        -webkit-tap-highlight-color: transparent;
+        color: white; }
+        .top_result > .mrequest form input:not(.checkbox):visted, .top_result > .mrequest form textarea:visted {
+          outline: none;
+          text-decoration: none;
+          color: inherit;
+          -webkit-tap-highlight-color: transparent; }
+      .top_result > .mrequest form ::-webkit-input-placeholder {
+        /* Chrome/Opera/Safari */
+        color: white; }
+      .top_result > .mrequest form ::-moz-placeholder {
+        /* Firefox 19+ */
+        color: white; }
+      .top_result > .mrequest form :-ms-input-placeholder {
+        /* IE 10+ */
+        color: white; }
+      .top_result > .mrequest form :-moz-placeholder {
+        /* Firefox 18- */
+        color: white; }
+      .top_result > .mrequest form input[type=submit] {
+        display: none; }
+  .top_result > .mrequest_status {
+    opacity: 0;
+    color: white;
+    margin-top: 70px;
+    position: relative;
+    float: left;
+    clear: left;
+    padding: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    border: solid 2px white;
+    animation: showResult 0.5s ease-out .6s forwards;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    -o-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    -ms-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    -moz-transition: box-shadow 0.2s ease;
+    -o-transition: box-shadow 0.2s ease;
+    -webkit-transition: box-shadow 0.2s ease;
+    -ms-transition: box-shadow 0.2s ease;
+    transition: box-shadow 0.2s ease; }
+    .top_result > .mrequest_status:not(.isMobile):hover {
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+      -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+      -moz-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+      -o-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+      -ms-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
+    .top_result > .mrequest_status > table {
+      position: relative;
+      float: left;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px; }
+      .top_result > .mrequest_status > table > tbody > tr > th {
+        padding-bottom: 10px; }
+  .top_result .mcolor {
+    color: #82ddf0; }
 
 .more_results {
   display: block;
