@@ -98,7 +98,7 @@
 			$to = "$email";
 			// echo "<script type=\"text/javascript\">console.log(\"Email is " . $email . "\");</script>";
 			$subject = "You've been assigned to ". $studentInfo[0]['student_name'];
-			$txt = "This message is to inform you that you've been assigned to help a student with the following issue(s):\"". $studentInfo[0]['description'] .".\"" You can locate this student on Floor " . $studentInfo[0]['floor'] . ", ";
+			$txt = "This message is to inform you that you've been assigned to help a student with the following issue(s):". $studentInfo[0]['description'] .". You can locate this student on Floor " . $studentInfo[0]['floor'] . ", ";
 			if (empty($studentInfo[0]['room'])) {
 				$txt .= "near Room " . $studentInfo[0]['nearest_room'];
 			}else{
