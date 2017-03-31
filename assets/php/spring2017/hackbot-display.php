@@ -108,7 +108,7 @@
 					<label for="roomNum" class="roomin">What room are you in?</label>
 					<input type="number" name="roomNum" placeholder="000" id="roomNum" class="roomin">
 					<label for="nearestRoom" class="near">What room are you near?</label>
-					<input type="number" name="nearestRoom" placeholder="000" class="near">
+					<input type="number" name="nearestRoom" value="000" class="near">
 					<input type="text" name="shirt" placeholder="Shirt color?">
 					<input type="submit" name="mrequestSubmit" id="mrequestSubmit">
 					<label for="mrequestSubmit" value="submit" id="submitLabel">Submit Request</label>
