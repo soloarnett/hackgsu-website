@@ -8,7 +8,7 @@
 	<span class="label">Join us on Slack</span>
 	<div class="frame" >
 		<div id="slack">
-			<a href="http://hackgsu.slack.com" target="_blank"><div class="slack_button"></div></a>
+			<a href="http://goo.gl/vwbxXE" target="_blank"><div class="slack_button"></div></a>
 		</div>
 	</div>
 	<span class="label">We are excited to welcome participants from all over!</span>

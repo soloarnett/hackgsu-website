@@ -44,7 +44,7 @@
 			$result = $db -> select("
 				SELECT mentors.mentor_name
 				FROM mentors
-				INNER JOIN mentor_requests ON mentor_requests.mentor_id = mentors.id
+				INNER JOIN mentor_requests ON mentor_requests.mentor_id = mentors.mentor_id
 				WHERE mentor_requests.id = '".$id."'
 				LIMIT 1
 			");
@@ -65,7 +65,7 @@
 
 			if (empty($id)) {
 				// echo "<script type=\"text/javascript\">console.log('". empty($id)."');</script>";
-				$result = $db -> select("SELECT id, mentor_id, email FROM mentors WHERE status = 'available' LIMIT 1");
+				$result = $db -> select("SELECT id, mentor_id, email FROM mentors WHERE status = 'available' ORDER BY timestamp ASC LIMIT 1");
 				foreach ($result as $value) {
 					$id = $value['id'];
 				}
@@ -124,14 +124,14 @@
 			// echo "<script type=\"text/javascript\">console.log('".$requestid ."')</script>";
 			// echo "<script type=\"text/javascript\">console.log('".$email ."')</script>";
 			$result = $db -> select("SELECT 'true' FROM mentors
-				INNER JOIN mentor_requests ON mentor_requests.mentor_id = mentors.id
+				INNER JOIN mentor_requests ON mentor_requests.mentor_id = mentors.mentor_id
 				WHERE mentor_requests.id = '".$requestid."' && mentors.email = '".$email."'");
 			// foreach ($result as $value) {
 				// $result = $value['true'];
 			// }
 			// echo "<script type=\"text/javascript\">console.log('".$result[0]['true'] ."')</script>";
 			if (empty($result[0]['true']) == false) {
-				$result = $db -> query("UPDATE `mentors` SET `status`='available'WHERE email = '".$email."'");
+				$result = $db -> query("UPDATE `mentors` SET `status`='available', `timestamp` = now() WHERE email = '".$email."'");
 				$result = $db -> query("UPDATE `mentor_requests` SET `status`='completed' WHERE id = '".$requestid."'");
 				$this -> assignMentorAfterFree();
 			}
