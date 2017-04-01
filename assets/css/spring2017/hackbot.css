@@ -7,7 +7,7 @@ html {
 
 body {
   margin: 0; }
-  body.isIOS {
+  body.isMobile {
     background-color: black; }
 
 .welcome {

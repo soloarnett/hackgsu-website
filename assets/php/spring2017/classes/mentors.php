@@ -105,7 +105,7 @@
 				$txt .= "Room " . $studentInfo[0]['room'];
 			}
 
-			$txt .= ". The student is wearing a " . $studentInfo[0]['shirt_color'] . " shirt. If you have any issues or need assistance, please visit the Help Desk. When you have completed the request, visit http://hackgsu.com/hackbot.php?hackbot.php?search_text=mentor" . $studentInfo[0]['id'] . "&submit= and click Complete Request.";
+			$txt .= ". The student is wearing a " . $studentInfo[0]['shirt_color'] . " shirt. If you have any issues or need assistance, please visit the Help Desk. When you have completed the request, visit http://hackgsu.com/hackbot.php?search_text=mentor" . $studentInfo[0]['id'] . "&submit= and click Complete Request.";
 			$headers = "From: noreply@hackgsu.com";
 
 			// echo "<script type=\"text/javascript\">console.log(\"Email is " . $txt . "\");</script>";
