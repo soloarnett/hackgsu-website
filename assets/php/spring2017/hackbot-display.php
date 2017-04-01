@@ -155,6 +155,9 @@
 							case 'cancelled':
 								# code...
 								break;
+							case 'closed':
+								$message = "All mentors have gone for the day. If you need assistance, please visit the volunteer desk on the ground floor. They'd be happy to help you there.";
+								break;
 							
 							default:
 								# code...
