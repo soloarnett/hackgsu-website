@@ -105,7 +105,7 @@
 				$txt .= "Room " . $studentInfo[0]['room'];
 			}
 
-			$txt .= ". The student is wearing a " . $studentInfo[0]['shirt_color'] . " shirt. If you have any issues or need assistance, please visit the Help Desk.";
+			$txt .= ". The student is wearing a " . $studentInfo[0]['shirt_color'] . " shirt. If you have any issues or need assistance, please visit the Help Desk. When you have completed the request, visit http://hackgsu.com/hackbot.php?hackbot.php?search_text=mentor" . $studentInfo[0]['id'] . "&submit= and click Complete Request.";
 			$headers = "From: noreply@hackgsu.com";
 
 			// echo "<script type=\"text/javascript\">console.log(\"Email is " . $txt . "\");</script>";
@@ -117,6 +117,33 @@
 			$db = new Db;
 			$result = $db -> select("SELECT * FROM mentor_requests WHERE id = '".$id."'");
 			return $result;
+		}
+
+		public function validateEmailByRequest($requestid, $email){
+			$db = new Db;
+			// echo "<script type=\"text/javascript\">console.log('".$requestid ."')</script>";
+			// echo "<script type=\"text/javascript\">console.log('".$email ."')</script>";
+			$result = $db -> select("SELECT 'true' FROM mentors
+				INNER JOIN mentor_requests ON mentor_requests.mentor_id = mentors.id
+				WHERE mentor_requests.id = '".$requestid."' && mentors.email = '".$email."'");
+			// foreach ($result as $value) {
+				// $result = $value['true'];
+			// }
+			// echo "<script type=\"text/javascript\">console.log('".$result[0]['true'] ."')</script>";
+			if (empty($result[0]['true']) == false) {
+				$result = $db -> query("UPDATE `mentors` SET `status`='available'WHERE email = '".$email."'");
+				$result = $db -> query("UPDATE `mentor_requests` SET `status`='completed' WHERE id = '".$requestid."'");
+				$this -> assignMentorAfterFree();
+			}
+		}
+
+		public function assignMentorAfterFree(){
+			$db = new Db;
+			$result = $db -> select("SELECT id FROM `mentor_requests` WHERE status='waiting' ORDER BY timestamp ASC LIMIT 1");
+			// echo "<script type=\"text/javascript\">console.log('".$result[0]['id'] ."')</script>";
+			if (empty($result[0]['id']) == false) {
+				$mentorAssign = $this -> assignMentor($result[0]['id']);
+			}
 		}
 	}
 

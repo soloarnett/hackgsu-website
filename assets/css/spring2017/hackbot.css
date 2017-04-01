@@ -360,6 +360,7 @@ input:-moz-placeholder {
       -o-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
       -ms-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
     .top_result > .mrequest_status > table {
+      color: white !important;
       position: relative;
       float: left;
       width: 100%;
@@ -367,6 +368,89 @@ input:-moz-placeholder {
       margin-bottom: 20px; }
       .top_result > .mrequest_status > table > tbody > tr > th {
         padding-bottom: 10px; }
+    .top_result > .mrequest_status > .message {
+      position: relative;
+      float: left;
+      width: 100%;
+      clear: both; }
+    .top_result > .mrequest_status > .completeButton {
+      display: block;
+      position: relative;
+      float: left;
+      left: 50%;
+      transform: translateX(-50%);
+      -webkit-user-select: none;
+      /* Chrome/Safari */
+      -moz-user-select: none;
+      /* Firefox */
+      -ms-user-select: none;
+      /* IE10+ */
+      /* Rules below not implemented in browsers yet */
+      -o-user-select: none;
+      user-select: none;
+      cursor: default;
+      outline: none;
+      text-decoration: none;
+      color: inherit;
+      -webkit-tap-highlight-color: transparent;
+      -moz-transition: all 0.2s ease;
+      -o-transition: all 0.2s ease;
+      -webkit-transition: all 0.2s ease;
+      -ms-transition: all 0.2s ease;
+      transition: all 0.2s ease;
+      position: relative;
+      float: left;
+      margin-top: 10px;
+      clear: both;
+      padding: 10px;
+      border: solid 2px white;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer; }
+      .top_result > .mrequest_status > .completeButton:visted {
+        outline: none;
+        text-decoration: none;
+        color: inherit;
+        -webkit-tap-highlight-color: transparent; }
+      .top_result > .mrequest_status > .completeButton:not(.isMobile):hover {
+        background-color: white;
+        color: black; }
+    .top_result > .mrequest_status > #completeButtonForm {
+      margin-top: 10px;
+      border-top: 1px solid white;
+      display: none;
+      position: relative;
+      float: left;
+      clear: both; }
+      .top_result > .mrequest_status > #completeButtonForm > * {
+        position: relative;
+        float: left;
+        clear: both; }
+      .top_result > .mrequest_status > #completeButtonForm input[type=email] {
+        margin-top: 20px;
+        height: 30px;
+        line-height: 30px;
+        padding: 10px;
+        font-size: calc(12px + 0.5vw); }
+      .top_result > .mrequest_status > #completeButtonForm > #completeSubmit {
+        display: none; }
+      .top_result > .mrequest_status > #completeButtonForm > label > div {
+        @inlude noDecoration();
+        -webkit-user-select: none;
+        /* Chrome/Safari */
+        -moz-user-select: none;
+        /* Firefox */
+        -ms-user-select: none;
+        /* IE10+ */
+        /* Rules below not implemented in browsers yet */
+        -o-user-select: none;
+        user-select: none;
+        cursor: default;
+        margin-top: 10px;
+        cursor: pointer; }
+      .top_result > .mrequest_status > #completeButtonForm span {
+        color: #82ddf0;
+        margin-top: 20px; }
   .top_result .mcolor {
     color: #82ddf0; }
 

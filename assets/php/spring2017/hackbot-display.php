@@ -149,8 +149,8 @@
 								$mentor = $mentor -> getMentorNameById($result[0]['id']);
 								$message = $mentor . " will be with you shortly<br><br>Check your request anytime by searching \"<font class=\"mcolor\">MENTOR" . $result[0]['id'] . "</font>\" in the search box above.";
 								break;
-							case 'complete':
-								# code...
+							case 'completed':
+								$message = "This message has been marked \"completed\". If you think this is an error, please visit the volunteer booth.";
 								break;
 							case 'cancelled':
 								# code...
@@ -187,6 +187,30 @@
 						</tbody>
 					</table>
 					<span class="message"><?php echo $message; ?></span>
+					<?php if ($result[0]['status'] == 'accepted') {
+						# code...
+					?>
+						<div class="completeButton">Complete Request</div>
+						<form id="completeButtonForm" action="hackbot.php" method="POST">
+							<input type="hidden" name="completeRequestid" <?php echo "value=\"MENTOR".$result[0]['id']."\""; ?> >
+							<input type="email" name="completeEmail" placeholder="Enter Mentor Email">
+							<input type="submit" name="completeSubmit" value="submit" id="completeSubmit">
+							<label for="completeSubmit">
+								<div class="completeSubmitButton">Complete Request</div>
+							</label>
+							<span>If you were returned to this page after submission, you may have entered the wrong email.<br><br>Enter the email address that you used to register as a mentor. If you have any other questions, contact Solo at the volunteer desk.</span>
+						</form>
+						<script type="text/javascript">
+							$(document).ready(function(){
+								$('.completeButton').click(function(){
+									$('.completeButton').css('display', 'none');
+									$('#completeButtonForm').css('display', 'block');
+								});
+							});
+						</script>
+						<?php 
+						}
+						?>
 				</div>
 				<?php
 			}

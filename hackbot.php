@@ -7,6 +7,8 @@
 	$faq_link_id = null;
 	$quick_link_clicked = 0;
 	$mrequest_submitted = 0;
+	$completed_request_submitted = 0;
+	$completed_request_data = [0];
 	$mrequest_data = array(0);
 	$const = 'everything';
 
@@ -30,6 +32,11 @@
 		$faq_link_id = $_GET['faq'];
 	}elseif (isset($_GET['quick']) && empty($_GET['quick']) == false) {
 		$quick_link_clicked = $_GET['quick'];
+	}elseif(isset($_POST['completeSubmit']) && empty($_POST['completeSubmit']) == false){
+		$completed_request_submitted = 1;
+		$completed_request_data[0] = $_POST['completeRequestid'];
+		$completed_request_data[1] = $_POST['completeEmail'];
+		// echo "<script type=\"text/javascript\">console.log('". $completed_request_data[1] ."')</script>";
 	}
 
 	
@@ -43,7 +50,7 @@
 	$placeholder = "Search HackGSU";
 	$result = "";
 
-	if (isset($search_text) && empty($search_text) === false && $more_clicked != 1 && $faq_clicked != 1 && $quick_link_clicked < 1 && $mrequest_submitted != 1) {
+	if (isset($search_text) && empty($search_text) === false && $more_clicked != 1 && $faq_clicked != 1 && $quick_link_clicked < 1 && $mrequest_submitted != 1 && $completed_request_submitted !=1) {
 		$placeholder = $search_text;
 
 		$ev = new everything;
@@ -115,6 +122,14 @@
 	}elseif ($mrequest_submitted == 1 && isset($mrequest_submitted) && empty($mrequest_submitted) == false) {
 		$result = $mrequest_data;
 		$const = 'mrequest';
+	}elseif ($completed_request_submitted == 1 && isset($completed_request_submitted) && empty($completed_request_submitted) == false) {
+		$ev = new everything;
+		$mentor = new mentors;
+		$id = substr($completed_request_data[0], 6);
+		// echo "<script type=\"text/javascript\">console.log('".$completed_request_data[1] ."')</script>";
+		$result = $mentor -> validateEmailByRequest($id, $completed_request_data[1]);
+		$search = $completed_request_data[0];
+		$result = $ev -> selectFromTagsLimited($search);
 	}
 
 
