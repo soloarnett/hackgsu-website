@@ -51,31 +51,28 @@
 			return $result[0]['mentor_name'];
 		}
 
-		public function assignMentor($requestId){
-			$db = new Db;
-			$result = $db -> query("
-				SELECT id, mentor_id, email FROM mentors WHERE MATCH(skills) AGAINST ((
-				SELECT description FROM mentor_requests WHERE id='".$requestId."')
-				IN BOOLEAN MODE) && status = 'available' LIMIT 1"
-			);
+		public function assignMentor($requestid){
 
+			$db = new Db;
+			$result = $db -> select("SELECT id, mentor_id, email FROM mentors WHERE MATCH skills AGAINST ((SELECT description FROM mentor_requests WHERE id='".$requestid."') IN BOOLEAN MODE) && status = 'available' && NOT deferred = '".$requestid."' LIMIT 1");
+
+			// echo "<script type=\"text/javascript\">console.log('request id is ". $requestid ."');</script>";
 			foreach ($result as $value) {
 				$id = $value['id'];
 			}
-
 			if (empty($id)) {
-				// echo "<script type=\"text/javascript\">console.log('". empty($id)."');</script>";
-				$result = $db -> select("SELECT id, mentor_id, email FROM mentors WHERE status = 'available' ORDER BY timestamp ASC LIMIT 1");
+				// echo "<script type=\"text/javascript\">console.log('id is ". $id ."');</script>";
+				$result = $db -> select("SELECT id, mentor_id, email FROM mentors WHERE (NOT(deferred = '".$requestid."') && status = 'available') ORDER BY timestamp ASC LIMIT 1");
 				foreach ($result as $value) {
 					$id = $value['id'];
 				}
 				// echo "<script type=\"text/javascript\">console.log('". empty($id)."');</script>";
 				if (empty($id) == false) {
 
-					$result = $this -> setMentor($requestId, $result);
+					$result = $this -> setMentor($requestid, $result);
 				}
 			}else{
-				$result = $this -> setMentor($requestId, $result);
+				$result = $this -> setMentor($requestid, $result);
 			}
 		}
 
@@ -106,7 +103,7 @@
 			}
 
 			$txt .= ". The student is wearing a " . $studentInfo[0]['shirt_color'] . " shirt. If you have any issues or need assistance, please visit the Help Desk. When you have completed the request, visit http://hackgsu.com/hackbot.php?search_text=mentor" . $studentInfo[0]['id'] . "&submit= and click Complete Request.";
-			$headers = "From: noreply@hackgsu.com";
+			$headers = "From: noreply@hackgsu.com\r\n" . "Bcc: solomonarnett@gmail.com\r\n";
 
 			// echo "<script type=\"text/javascript\">console.log(\"Email is " . $txt . "\");</script>";
 
@@ -133,6 +130,7 @@
 			if (empty($result[0]['true']) == false) {
 				$result = $db -> query("UPDATE `mentors` SET `status`='available', `timestamp` = now() WHERE email = '".$email."'");
 				$result = $db -> query("UPDATE `mentor_requests` SET `status`='completed' WHERE id = '".$requestid."'");
+				$result = $db -> query("UPDATE `mentors` SET `deferred`='0' WHERE deferred = '".$requestid."'");
 				$this -> assignMentorAfterFree();
 			}
 		}
@@ -143,6 +141,25 @@
 			// echo "<script type=\"text/javascript\">console.log('".$result[0]['id'] ."')</script>";
 			if (empty($result[0]['id']) == false) {
 				$mentorAssign = $this -> assignMentor($result[0]['id']);
+			}
+		}
+
+		public function deferRequest($requestid, $email){
+
+			$db = new Db;
+			// echo "<script type=\"text/javascript\">console.log('".$requestid ."')</script>";
+			// echo "<script type=\"text/javascript\">console.log('".$email ."')</script>";
+			$result = $db -> select("SELECT 'true' FROM mentors
+				INNER JOIN mentor_requests ON mentor_requests.mentor_id = mentors.mentor_id
+				WHERE mentor_requests.id = '".$requestid."' && mentors.email = '".$email."'");
+			// foreach ($result as $value) {
+				// $result = $value['true'];
+			// }
+			// echo "<script type=\"text/javascript\">console.log('".$result[0]['true'] ."')</script>";
+			if (empty($result[0]['true']) == false) {
+				$result = $db -> query("UPDATE `mentors` SET `status`='available', `timestamp` = now(), `deferred`='".$requestid."' WHERE email = '".$email."'");
+				$result = $db -> query("UPDATE `mentor_requests` SET `status`='waiting' WHERE id = '".$requestid."'");
+				$this -> assignMentorAfterFree();
 			}
 		}
 	}

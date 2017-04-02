@@ -374,69 +374,17 @@ input:-moz-placeholder {
       float: left;
       width: 100%;
       clear: both; }
-    .top_result > .mrequest_status > .completeButton {
-      display: block;
+    .top_result > .mrequest_status > .buttonContainer {
       position: relative;
       float: left;
       left: 50%;
-      transform: translateX(-50%);
-      -webkit-user-select: none;
-      /* Chrome/Safari */
-      -moz-user-select: none;
-      /* Firefox */
-      -ms-user-select: none;
-      /* IE10+ */
-      /* Rules below not implemented in browsers yet */
-      -o-user-select: none;
-      user-select: none;
-      cursor: default;
-      outline: none;
-      text-decoration: none;
-      color: inherit;
-      -webkit-tap-highlight-color: transparent;
-      -moz-transition: all 0.2s ease;
-      -o-transition: all 0.2s ease;
-      -webkit-transition: all 0.2s ease;
-      -ms-transition: all 0.2s ease;
-      transition: all 0.2s ease;
-      position: relative;
-      float: left;
-      margin-top: 10px;
-      clear: both;
-      padding: 10px;
-      border: solid 2px white;
-      border-radius: 5px;
-      color: white;
-      cursor: pointer; }
-      .top_result > .mrequest_status > .completeButton:visted {
-        outline: none;
-        text-decoration: none;
-        color: inherit;
-        -webkit-tap-highlight-color: transparent; }
-      .top_result > .mrequest_status > .completeButton:not(.isMobile):hover {
-        background-color: white;
-        color: black; }
-    .top_result > .mrequest_status > #completeButtonForm {
-      margin-top: 10px;
-      border-top: 1px solid white;
-      display: none;
-      position: relative;
-      float: left;
-      clear: both; }
-      .top_result > .mrequest_status > #completeButtonForm > * {
-        position: relative;
-        float: left;
-        clear: both; }
-      .top_result > .mrequest_status > #completeButtonForm input[type=email] {
-        margin-top: 20px;
-        height: 30px;
-        line-height: 30px;
-        padding: 10px;
-        font-size: calc(12px + 0.5vw); }
-      .top_result > .mrequest_status > #completeButtonForm > #completeSubmit {
-        display: none; }
-      .top_result > .mrequest_status > #completeButtonForm > label > div {
-        @inlude noDecoration();
+      transform: translateX(-50%); }
+      .top_result > .mrequest_status > .buttonContainer > .completeButton {
+        clear: left; }
+      .top_result > .mrequest_status > .buttonContainer > .deferButton {
+        margin-left: 10px; }
+      .top_result > .mrequest_status > .buttonContainer > .actionButton {
+        display: block;
         -webkit-user-select: none;
         /* Chrome/Safari */
         -moz-user-select: none;
@@ -447,11 +395,103 @@ input:-moz-placeholder {
         -o-user-select: none;
         user-select: none;
         cursor: default;
+        outline: none;
+        text-decoration: none;
+        color: inherit;
+        -webkit-tap-highlight-color: transparent;
+        -moz-transition: all 0.2s ease;
+        -o-transition: all 0.2s ease;
+        -webkit-transition: all 0.2s ease;
+        -ms-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+        position: relative;
+        float: left;
         margin-top: 10px;
+        padding: 10px;
+        border: solid 2px white;
+        border-radius: 5px;
+        color: white;
         cursor: pointer; }
-      .top_result > .mrequest_status > #completeButtonForm span {
-        color: #82ddf0;
-        margin-top: 20px; }
+        .top_result > .mrequest_status > .buttonContainer > .actionButton:visted {
+          outline: none;
+          text-decoration: none;
+          color: inherit;
+          -webkit-tap-highlight-color: transparent; }
+        .top_result > .mrequest_status > .buttonContainer > .actionButton:not(.isMobile):hover {
+          background-color: white;
+          color: black; }
+      .top_result > .mrequest_status > .buttonContainer > #completeButtonForm {
+        margin-top: 10px;
+        border-top: 1px solid white;
+        display: none;
+        position: relative;
+        float: left;
+        clear: both; }
+        .top_result > .mrequest_status > .buttonContainer > #completeButtonForm > * {
+          position: relative;
+          float: left;
+          clear: both; }
+        .top_result > .mrequest_status > .buttonContainer > #completeButtonForm input[type=email] {
+          margin-top: 20px;
+          height: 30px;
+          line-height: 30px;
+          padding: 10px;
+          font-size: calc(12px + 0.5vw); }
+        .top_result > .mrequest_status > .buttonContainer > #completeButtonForm > #completeSubmit {
+          display: none; }
+        .top_result > .mrequest_status > .buttonContainer > #completeButtonForm > label > div {
+          @inlude noDecoration();
+          -webkit-user-select: none;
+          /* Chrome/Safari */
+          -moz-user-select: none;
+          /* Firefox */
+          -ms-user-select: none;
+          /* IE10+ */
+          /* Rules below not implemented in browsers yet */
+          -o-user-select: none;
+          user-select: none;
+          cursor: default;
+          margin-top: 10px;
+          cursor: pointer; }
+        .top_result > .mrequest_status > .buttonContainer > #completeButtonForm span {
+          color: #82ddf0;
+          margin-top: 20px; }
+      .top_result > .mrequest_status > .buttonContainer > #deferButtonForm {
+        margin-top: 10px;
+        border-top: 1px solid white;
+        display: none;
+        position: relative;
+        float: left;
+        clear: both; }
+        .top_result > .mrequest_status > .buttonContainer > #deferButtonForm > * {
+          position: relative;
+          float: left;
+          clear: both; }
+        .top_result > .mrequest_status > .buttonContainer > #deferButtonForm input[type=email] {
+          margin-top: 20px;
+          height: 30px;
+          line-height: 30px;
+          padding: 10px;
+          font-size: calc(12px + 0.5vw); }
+        .top_result > .mrequest_status > .buttonContainer > #deferButtonForm > #deferSubmit {
+          display: none; }
+        .top_result > .mrequest_status > .buttonContainer > #deferButtonForm > label > div {
+          @inlude noDecoration();
+          -webkit-user-select: none;
+          /* Chrome/Safari */
+          -moz-user-select: none;
+          /* Firefox */
+          -ms-user-select: none;
+          /* IE10+ */
+          /* Rules below not implemented in browsers yet */
+          -o-user-select: none;
+          user-select: none;
+          cursor: default;
+          margin-top: 10px;
+          cursor: pointer; }
+        .top_result > .mrequest_status > .buttonContainer > #deferButtonForm span {
+          color: #82ddf0;
+          margin-top: 20px; }
   .top_result .mcolor {
     color: #82ddf0; }
 

@@ -459,82 +459,144 @@ input:-moz-placeholder { font-weight: 300; }
 			
 		}
 
-		>.completeButton{
-			display: block;
+		>.buttonContainer{
 
 			//{ ** INCLUDES
 				@include relativeMiddle();
-				@include notSelectable();
-				@include noDecoration();
-				@include quickTransition(all);
 			//} ** END INCLUDES
 
-			//{ ** ATTRIBUTES
-				position: relative;
-				float: left;
-			//} ** END ATTRIBUTES
-			
+			//{ ** NESTED
+				>.completeButton{
+					clear: left;
+				}
 
+				>.deferButton{
+					margin-left: 10px;
+				}
 
-			//{ ** ATTRIBUTES
-				margin-top: 10px;
-				clear: both;
-				padding: 10px;
-				border: solid 2px white;
-				border-radius: 5px;
-				color: white;
-				cursor: pointer;
-			//} ** END ATTRIBUTES
-			
-			&:not(.isMobile):hover{
-				background-color: white;
-				color: black;
-			}
-			
-		}
-		>#completeButtonForm{
-			margin-top: 10px;
-			border-top: 1px solid white;
-			display: none;
-			position: relative;
-			float: left;
-			clear: both;
-			>*{
-				position: relative;
-				float: left;
-				clear: both;
-			}
-			input[type=email]{
-
-				//{ ** INCLUDES
-					// @include noDecoration();
-				//} ** END INCLUDES
-				
-				margin-top: 20px;
-				height: 30px;
-				line-height: 30px;
-				padding: 10px;
-				font-size: calc(12px + 0.5vw);
-			}
-			>#completeSubmit{
-				display: none;
-			}
-			>label{
-				>div{
+				>.actionButton{
+					display: block;
 
 					//{ ** INCLUDES
-						@inlude noDecoration();
+						// @include relativeMiddle();
 						@include notSelectable();
+						@include noDecoration();
+						@include quickTransition(all);
 					//} ** END INCLUDES
+
+					//{ ** ATTRIBUTES
+						position: relative;
+						float: left;
+					//} ** END ATTRIBUTES
 					
-					margin-top: 10px;
-					cursor: pointer;
+
+
+					//{ ** ATTRIBUTES
+						margin-top: 10px;
+						// clear: both;
+						padding: 10px;
+						border: solid 2px white;
+						border-radius: 5px;
+						color: white;
+						cursor: pointer;
+					//} ** END ATTRIBUTES
+					
+					&:not(.isMobile):hover{
+						background-color: white;
+						color: black;
+					}
+					
 				}
-			}
-			span{
-				color: $color-link;
-				margin-top: 20px;
-			}
+				>#completeButtonForm{
+					margin-top: 10px;
+					border-top: 1px solid white;
+					display: none;
+					position: relative;
+					float: left;
+					clear: both;
+					>*{
+						position: relative;
+						float: left;
+						clear: both;
+					}
+					input[type=email]{
+
+						//{ ** INCLUDES
+							// @include noDecoration();
+						//} ** END INCLUDES
+						
+						margin-top: 20px;
+						height: 30px;
+						line-height: 30px;
+						padding: 10px;
+						font-size: calc(12px + 0.5vw);
+					}
+					>#completeSubmit{
+						display: none;
+					}
+					>label{
+						>div{
+
+							//{ ** INCLUDES
+								@inlude noDecoration();
+								@include notSelectable();
+							//} ** END INCLUDES
+							
+							margin-top: 10px;
+							cursor: pointer;
+						}
+					}
+					span{
+						color: $color-link;
+						margin-top: 20px;
+					}
+				}
+				>#deferButtonForm{
+					margin-top: 10px;
+					border-top: 1px solid white;
+					display: none;
+					position: relative;
+					float: left;
+					clear: both;
+					>*{
+						position: relative;
+						float: left;
+						clear: both;
+					}
+					input[type=email]{
+
+						//{ ** INCLUDES
+							// @include noDecoration();
+						//} ** END INCLUDES
+						
+						margin-top: 20px;
+						height: 30px;
+						line-height: 30px;
+						padding: 10px;
+						font-size: calc(12px + 0.5vw);
+					}
+					>#deferSubmit{
+						display: none;
+					}
+					>label{
+						>div{
+
+							//{ ** INCLUDES
+								@inlude noDecoration();
+								@include notSelectable();
+							//} ** END INCLUDES
+							
+							margin-top: 10px;
+							cursor: pointer;
+						}
+					}
+					span{
+						color: $color-link;
+						margin-top: 20px;
+					}
+				}
+			//} ** END NESTED
+				
 		}
 	}
 	.mcolor{

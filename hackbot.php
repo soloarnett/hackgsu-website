@@ -9,6 +9,8 @@
 	$mrequest_submitted = 0;
 	$completed_request_submitted = 0;
 	$completed_request_data = [0];
+	$deferred_request_submitted = 0;
+	$deferred_request_data = [0];
 	$mrequest_data = array(0);
 	$const = 'everything';
 
@@ -37,6 +39,11 @@
 		$completed_request_data[0] = $_POST['completeRequestid'];
 		$completed_request_data[1] = $_POST['completeEmail'];
 		// echo "<script type=\"text/javascript\">console.log('". $completed_request_data[1] ."')</script>";
+	}elseif(isset($_POST['deferSubmit']) && empty($_POST['deferSubmit']) == false){
+		$defer_request_submitted = 1;
+		$defer_request_data[0] = $_POST['deferRequestid'];
+		$defer_request_data[1] = $_POST['deferEmail'];
+
 	}
 
 	
@@ -129,6 +136,14 @@
 		// echo "<script type=\"text/javascript\">console.log('".$completed_request_data[1] ."')</script>";
 		$result = $mentor -> validateEmailByRequest($id, $completed_request_data[1]);
 		$search = $completed_request_data[0];
+		$result = $ev -> selectFromTagsLimited($search);
+	}elseif ($defer_request_submitted == 1 && isset($defer_request_submitted) && empty($defer_request_submitted) == false) {
+		$ev = new everything;
+		$mentor = new mentors;
+		$id = substr($defer_request_data[0], 6);
+		// echo "<script type=\"text/javascript\">console.log('".$completed_request_data[1] ."')</script>";
+		$result = $mentor -> deferRequest($id, $defer_request_data[1]);
+		$search = $defer_request_data[0];
 		$result = $ev -> selectFromTagsLimited($search);
 	}
 

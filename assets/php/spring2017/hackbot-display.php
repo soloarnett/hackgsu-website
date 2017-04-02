@@ -190,21 +190,38 @@
 					<?php if ($result[0]['status'] == 'accepted') {
 						# code...
 					?>
-						<div class="completeButton">Complete Request</div>
-						<form id="completeButtonForm" action="hackbot.php" method="POST">
-							<input type="hidden" name="completeRequestid" <?php echo "value=\"MENTOR".$result[0]['id']."\""; ?> >
-							<input type="email" name="completeEmail" placeholder="Enter Mentor Email">
-							<input type="submit" name="completeSubmit" value="submit" id="completeSubmit">
-							<label for="completeSubmit">
-								<div class="completeSubmitButton">Complete Request</div>
-							</label>
-							<span>If you were returned to this page after submission, you may have entered the wrong email.<br><br>Enter the email address that you used to register as a mentor. If you have any other questions, contact Solo at the volunteer desk.</span>
-						</form>
+						<div class="buttonContainer">
+							<div class="completeButton actionButton">Complete Request</div>
+							<form id="completeButtonForm" action="hackbot.php" method="POST">
+								<input type="hidden" name="completeRequestid" <?php echo "value=\"MENTOR".$result[0]['id']."\""; ?> >
+								<input type="email" name="completeEmail" placeholder="Enter Mentor Email">
+								<input type="submit" name="completeSubmit" value="submit" id="completeSubmit">
+								<label for="completeSubmit">
+									<div class="completeSubmitButton">Complete Request</div>
+								</label>
+								<span>If you were returned to this page after submission, you may have entered the wrong email.<br><br>Enter the email address that you used to register as a mentor. If you have any other questions, contact Solo at the volunteer desk.</span>
+							</form>
+							<div class="deferButton actionButton">Defer Request</div>
+							<form id="deferButtonForm" action="hackbot.php" method="POST">
+								<input type="hidden" name="deferRequestid" <?php echo "value=\"MENTOR".$result[0]['id']."\""; ?> >
+								<input type="email" name="deferEmail" placeholder="Enter Mentor Email">
+								<input type="submit" name="deferSubmit" value="submit" id="deferSubmit">
+								<label for="deferSubmit">
+									<div class="deferSubmitButton">Defer Request</div>
+								</label>
+								<span>You can only defer one request at a time. If you defer this request, it will be assigned to the next available mentor.<br><br>Please do not take advantage of this feature as we would like for all participants to get as much help as possible.<br><br>If you were returned to this page after submission, you may have entered the wrong email.<br><br>Enter the email address that you used to register as a mentor. If you have any other questions, contact Solo at the volunteer desk.</span>
+							</form>
+						</div>
+						
 						<script type="text/javascript">
 							$(document).ready(function(){
 								$('.completeButton').click(function(){
-									$('.completeButton').css('display', 'none');
+									$('.actionButton').css('display', 'none');
 									$('#completeButtonForm').css('display', 'block');
+								});
+								$('.deferButton').click(function(){
+									$('.actionButton').css('display', 'none');
+									$('#deferButtonForm').css('display', 'block');
 								});
 							});
 						</script>
